@@ -1,0 +1,1347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Settings - Calcura</title>
+
+    <!-- GLOBAL -->
+    <link rel="stylesheet"
+          href="../css/global.css">
+
+    <!-- DASHBOARD -->
+    <link rel="stylesheet"
+          href="../css/dashboard.css">
+
+    <!-- SETTINGS -->
+    <link rel="stylesheet"
+          href="../css/settings.css">
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+
+<body>
+
+
+<main class="settings-page">
+
+
+      <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside class="calcura-sidebar">
+
+        <div class="sidebar-brand">
+
+            <div class="sidebar-logo">
+                <i class="fa-solid fa-calculator"></i>
+            </div>
+
+            <div class="sidebar-brand-text">
+                <h1>Calcura</h1>
+                <span>Speak · Calculate · Explore</span>
+            </div>
+
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <a href="dashboard.html" class="sidebar-item">
+                <i class="fa-solid fa-house"></i>
+                <span>Home</span>
+            </a>
+
+            <a href="calculator.html" class="sidebar-item">
+                <i class="fa-solid fa-calculator"></i>
+                <span>Calculator</span>
+            </a>
+
+            <a href="voice-input.html" class="sidebar-item">
+                <i class="fa-solid fa-microphone"></i>
+                <span>Voice Input</span>
+            </a>
+
+            <a href="graph.html" class="sidebar-item">
+                <i class="fa-solid fa-chart-line"></i>
+                <span>Graph &amp; Plot</span>
+            </a>
+
+             <a href="ai-calculator.html" class="calcura-nav-item">
+                <i class="fa-solid fa-robot"></i>
+                <span>AI Assistant</span>
+            </a>
+
+            <a href="formulas.html" class="sidebar-item">
+                <i class="fa-solid fa-book-open"></i>
+                <span>Formula Library</span>
+            </a>
+
+            <a href="converter.html" class="sidebar-item">
+                <i class="fa-solid fa-right-left"></i>
+                <span>Unit Converter</span>
+            </a>
+
+            <a href="history.html" class="sidebar-item">
+                <i class="fa-regular fa-clock"></i>
+                <span>History</span>
+            </a>
+
+            <a href="saved.html" class="sidebar-item">
+                <i class="fa-regular fa-bookmark"></i>
+                <span>Saved</span>
+            </a>
+
+            <a href="settings.html" class="sidebar-item active">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+            </a>
+
+            <a href="profile.html" class="sidebar-item">
+                <i class="fa-solid fa-user"></i>
+                <span>Profile</span>
+            </a>
+
+            <a href="about.html" class="sidebar-item">
+                <i class="fa-solid fa-circle-info"></i>
+                <span>About</span>
+            </a>
+
+            <a href="help.html" class="sidebar-item">
+                <i class="fa-solid fa-circle-question"></i>
+                <span>Help &amp; Support</span>
+            </a>
+
+            <a href="upgrade.html"
+               class="sidebar-item">
+
+                <i class="fa-solid fa-crown"></i>
+
+                <span>
+                    Upgrade to Pro
+                </span>
+
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+
+
+    <!-- =====================================================
+         MAIN AREA
+    ====================================================== -->
+
+    <section class="settings-main">
+
+
+        <!-- =================================================
+             TOP HEADER
+        ================================================== -->
+
+        <header class="settings-topbar">
+
+
+            <!-- SEARCH -->
+
+            <div class="settings-search">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input
+                    type="text"
+                    id="settingsSearch"
+                    placeholder="Search settings, features, or help...">
+
+            </div>
+
+
+            <!-- HEADER ACTIONS -->
+
+            <div class="settings-header-actions">
+
+
+                <a href="upgrade.html"
+                   class="settings-upgrade">
+
+                    <i class="fa-solid fa-crown"></i>
+
+                    Upgrade to Pro
+
+                </a>
+
+
+                <button
+                    type="button"
+                    class="settings-notification"
+                    id="notificationButton">
+
+                    <i class="fa-regular fa-bell"></i>
+
+                </button>
+
+
+                <!-- REAL USER -->
+
+                <a href="profile.html"
+                   class="settings-user"
+                   id="profileLink">
+
+
+                    <div class="settings-avatar"
+                         id="profileAvatar">
+
+                        U
+
+                    </div>
+
+
+                    <div class="settings-user-info">
+
+                        <strong id="profileName">
+                            User
+                        </strong>
+
+                        <span id="profilePlan">
+                            Free Plan
+                        </span>
+
+                    </div>
+
+
+                    <i class="fa-solid fa-chevron-down"></i>
+
+                </a>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =================================================
+             CONTENT GRID
+        ================================================== -->
+
+        <div class="settings-layout">
+
+
+            <!-- MAIN COLUMN -->
+
+            <section class="settings-center">
+
+
+                <!-- HERO -->
+
+                <div class="settings-hero">
+
+
+                    <div class="settings-hero-text">
+
+                        <h1>
+                            Settings
+                        </h1>
+
+                        <p>
+                            Customize your experience and manage your account.
+                        </p>
+
+                    </div>
+
+
+                    <div class="settings-hero-art">
+
+                        <i class="fa-solid fa-gear"></i>
+
+                        <div>
+                            “Your calculator,
+                            <br>
+                            your way.”
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     SETTINGS TABS
+                ================================================== -->
+
+                <div class="settings-tabs">
+
+
+                    <button
+                        type="button"
+                        class="settings-tab active"
+                        data-tab="general">
+
+                        <i class="fa-solid fa-gear"></i>
+
+                        General
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="settings-tab"
+                        data-tab="account">
+
+                        <i class="fa-regular fa-user"></i>
+
+                        Account
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="settings-tab"
+                        data-tab="appearance">
+
+                        <i class="fa-solid fa-palette"></i>
+
+                        Appearance
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="settings-tab"
+                        data-tab="voice">
+
+                        <i class="fa-solid fa-microphone"></i>
+
+                        Voice &amp; Speech
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="settings-tab"
+                        data-tab="calculations">
+
+                        <i class="fa-solid fa-calculator"></i>
+
+                        Calculations
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="settings-tab"
+                        data-tab="storage">
+
+                        <i class="fa-solid fa-database"></i>
+
+                        Data &amp; Storage
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="settings-tab"
+                        data-tab="notifications">
+
+                        <i class="fa-regular fa-bell"></i>
+
+                        Notifications
+
+                    </button>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     GENERAL PANEL
+                ================================================== -->
+
+                <section
+                    class="settings-panel active"
+                    id="generalPanel">
+
+
+                    <div class="panel-heading">
+
+                        <h2>
+                            General Settings
+                        </h2>
+
+                        <p>
+                            Manage your app preferences and experience.
+                        </p>
+
+                    </div>
+
+
+
+                    <!-- LANGUAGE -->
+
+                    <div class="setting-item">
+
+
+                        <div class="setting-item-left">
+
+                            <div class="setting-icon">
+                                <i class="fa-solid fa-globe"></i>
+                            </div>
+
+
+                            <div>
+
+                                <strong>
+                                    Language
+                                </strong>
+
+                                <p>
+                                    Choose your preferred language.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <select id="languageSelect">
+
+                            <option value="en-US">
+                                English (US)
+                            </option>
+
+                            <option value="en-GB">
+                                English (UK)
+                            </option>
+
+                            <option value="hi-IN">
+                                Hindi
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <!-- ANGLE -->
+
+                    <div class="setting-item">
+
+
+                        <div class="setting-item-left">
+
+                            <div class="setting-icon">
+                                <i class="fa-solid fa-ruler-combined"></i>
+                            </div>
+
+
+                            <div>
+
+                                <strong>
+                                    Default Angle Unit
+                                </strong>
+
+                                <p>
+                                    Used in trigonometric calculations.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <select id="angleMode">
+
+                            <option value="DEG">
+                                Degrees (°)
+                            </option>
+
+                            <option value="RAD">
+                                Radians (rad)
+                            </option>
+
+                            <option value="GRAD">
+                                Gradians (grad)
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <!-- NUMBER FORMAT -->
+
+                    <div class="setting-item">
+
+
+                        <div class="setting-item-left">
+
+                            <div class="setting-icon">
+                                <i class="fa-solid fa-hashtag"></i>
+                            </div>
+
+
+                            <div>
+
+                                <strong>
+                                    Number Format
+                                </strong>
+
+                                <p>
+                                    Choose how numbers are displayed.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <select id="numberFormat">
+
+                            <option value="standard">
+                                Standard (1,234.56)
+                            </option>
+
+                            <option value="indian">
+                                Indian (1,23,456.78)
+                            </option>
+
+                            <option value="scientific">
+                                Scientific
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <!-- THEME -->
+
+                    <div class="setting-item">
+
+
+                        <div class="setting-item-left">
+
+                            <div class="setting-icon">
+                                <i class="fa-solid fa-moon"></i>
+                            </div>
+
+
+                            <div>
+
+                                <strong>
+                                    Theme
+                                </strong>
+
+                                <p>
+                                    Select your preferred appearance.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="theme-options">
+
+
+                            <button
+                                type="button"
+                                class="theme-option"
+                                data-theme="light">
+
+                                <i class="fa-solid fa-sun"></i>
+
+                                Light
+
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="theme-option active"
+                                data-theme="dark">
+
+                                <i class="fa-solid fa-moon"></i>
+
+                                Dark
+
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="theme-option"
+                                data-theme="system">
+
+                                <i class="fa-solid fa-desktop"></i>
+
+                                System
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- SOUND -->
+
+                    <div class="setting-item">
+
+
+                        <div class="setting-item-left">
+
+                            <div class="setting-icon">
+                                <i class="fa-solid fa-volume-high"></i>
+                            </div>
+
+
+                            <div>
+
+                                <strong>
+                                    Sound Effects
+                                </strong>
+
+                                <p>
+                                    Play sounds for button clicks and actions.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <label class="toggle">
+
+                            <input
+                                type="checkbox"
+                                id="soundEffects"
+                                checked>
+
+                            <span></span>
+
+                        </label>
+
+                    </div>
+
+
+
+                    <!-- AUTO SAVE -->
+
+                    <div class="setting-item">
+
+
+                        <div class="setting-item-left">
+
+                            <div class="setting-icon">
+                                <i class="fa-solid fa-floppy-disk"></i>
+                            </div>
+
+
+                            <div>
+
+                                <strong>
+                                    Auto Save
+                                </strong>
+
+                                <p>
+                                    Automatically save your calculations and settings.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <label class="toggle">
+
+                            <input
+                                type="checkbox"
+                                id="autoSave"
+                                checked>
+
+                            <span></span>
+
+                        </label>
+
+                    </div>
+
+
+
+                    <!-- CLEAR DATA -->
+
+                    <div class="setting-item danger-item">
+
+
+                        <div class="setting-item-left">
+
+                            <div class="setting-icon danger-icon">
+                                <i class="fa-regular fa-trash-can"></i>
+                            </div>
+
+
+                            <div>
+
+                                <strong>
+                                    Clear Data
+                                </strong>
+
+                                <p>
+                                    Remove all history, saved items, and cached data.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <button
+                            type="button"
+                            class="clear-data-btn"
+                            id="clearDataButton">
+
+                            Clear All Data
+
+                        </button>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- =================================================
+                     OTHER PANELS
+                ================================================== -->
+
+                <section
+                    class="settings-panel"
+                    id="accountPanel">
+
+                    <div class="panel-heading">
+
+                        <h2>
+                            Account Settings
+                        </h2>
+
+                        <p>
+                            Manage your Calcura account.
+                        </p>
+
+                    </div>
+
+
+                    <div class="simple-settings-box">
+
+                        <i class="fa-regular fa-user"></i>
+
+                        <div>
+
+                            <strong id="accountUserName">
+                                User
+                            </strong>
+
+                            <p id="accountUserEmail">
+                                —
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <a href="profile.html"
+                       class="panel-action-btn">
+
+                        <i class="fa-solid fa-user-pen"></i>
+
+                        Edit Profile
+
+                    </a>
+
+                </section>
+
+
+
+                <section
+                    class="settings-panel"
+                    id="appearancePanel">
+
+                    <div class="panel-heading">
+
+                        <h2>
+                            Appearance
+                        </h2>
+
+                        <p>
+                            Customize the visual appearance of Calcura.
+                        </p>
+
+                    </div>
+
+                    <div class="appearance-info">
+
+                        <i class="fa-solid fa-palette"></i>
+
+                        <span>
+                            Use the Theme controls in General Settings to switch between Light, Dark and System mode.
+                        </span>
+
+                    </div>
+
+                </section>
+
+
+
+                <section
+                    class="settings-panel"
+                    id="voicePanel">
+
+                    <div class="panel-heading">
+
+                        <h2>
+                            Voice &amp; Speech
+                        </h2>
+
+                        <p>
+                            Manage voice input and speech output preferences.
+                        </p>
+
+                    </div>
+
+
+                    <div class="setting-item">
+
+                        <div class="setting-item-left">
+
+                            <div class="setting-icon">
+                                <i class="fa-solid fa-microphone"></i>
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Voice Feedback
+                                </strong>
+
+                                <p>
+                                    Enable spoken calculator results.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <label class="toggle">
+
+                            <input
+                                type="checkbox"
+                                id="voiceFeedback"
+                                checked>
+
+                            <span></span>
+
+                        </label>
+
+                    </div>
+
+                </section>
+
+
+
+                <section
+                    class="settings-panel"
+                    id="calculationsPanel">
+
+                    <div class="panel-heading">
+
+                        <h2>
+                            Calculation Settings
+                        </h2>
+
+                        <p>
+                            Configure calculation behavior.
+                        </p>
+
+                    </div>
+
+
+                    <div class="setting-item">
+
+                        <div class="setting-item-left">
+
+                            <div class="setting-icon">
+                                <i class="fa-solid fa-calculator"></i>
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Decimal Precision
+                                </strong>
+
+                                <p>
+                                    Choose the number of decimal places.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <select id="decimalPrecision">
+
+                            <option value="2">2</option>
+                            <option value="4">4</option>
+                            <option value="6">6</option>
+                            <option value="8">8</option>
+                            <option value="10">10</option>
+
+                        </select>
+
+                    </div>
+
+                </section>
+
+
+
+                <section
+                    class="settings-panel"
+                    id="storagePanel">
+
+                    <div class="panel-heading">
+
+                        <h2>
+                            Data &amp; Storage
+                        </h2>
+
+                        <p>
+                            Manage your calculation history and saved data.
+                        </p>
+
+                    </div>
+
+
+                    <div class="storage-actions">
+
+                        <a href="history.html"
+                           class="panel-action-btn">
+
+                            <i class="fa-regular fa-clock"></i>
+
+                            Open History
+
+                        </a>
+
+
+                        <a href="saved.html"
+                           class="panel-action-btn">
+
+                            <i class="fa-regular fa-bookmark"></i>
+
+                            Open Saved
+
+                        </a>
+
+                    </div>
+
+                </section>
+
+
+
+                <section
+                    class="settings-panel"
+                    id="notificationsPanel">
+
+                    <div class="panel-heading">
+
+                        <h2>
+                            Notifications
+                        </h2>
+
+                        <p>
+                            Manage your notification preferences.
+                        </p>
+
+                    </div>
+
+
+                    <div class="setting-item">
+
+                        <div class="setting-item-left">
+
+                            <div class="setting-icon">
+                                <i class="fa-regular fa-bell"></i>
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Calculation Notifications
+                                </strong>
+
+                                <p>
+                                    Receive notifications about saved calculations.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <label class="toggle">
+
+                            <input
+                                type="checkbox"
+                                id="calculationNotifications"
+                                checked>
+
+                            <span></span>
+
+                        </label>
+
+                    </div>
+
+
+                    <div class="setting-item">
+
+                        <div class="setting-item-left">
+
+                            <div class="setting-icon">
+                                <i class="fa-solid fa-bullhorn"></i>
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Updates &amp; Offers
+                                </strong>
+
+                                <p>
+                                    Receive updates about Calcura features.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <label class="toggle">
+
+                            <input
+                                type="checkbox"
+                                id="updateNotifications"
+                                checked>
+
+                            <span></span>
+
+                        </label>
+
+                    </div>
+
+                </section>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 RIGHT SIDEBAR
+            ================================================== -->
+
+            <aside class="settings-right">
+
+
+                <!-- ACCOUNT INFORMATION -->
+
+                <section class="right-card account-card">
+
+
+                    <h2>
+                        Account Information
+                    </h2>
+
+
+                    <div class="account-user">
+
+
+                        <div class="account-avatar"
+                             id="accountAvatar">
+
+                            U
+
+                        </div>
+
+
+                        <div>
+
+                            <strong id="rightUserName">
+                                User
+                            </strong>
+
+                            <span id="rightUserEmail">
+                                user@example.com
+                            </span>
+
+                            <em id="rightUserPlan">
+                                Free Plan
+                            </em>
+
+                        </div>
+
+                    </div>
+
+
+                    <a href="upgrade.html"
+                       class="right-upgrade-btn">
+
+                        <i class="fa-solid fa-crown"></i>
+
+                        Upgrade to Pro
+
+                    </a>
+
+
+                    <a href="profile.html"
+                       class="account-link">
+
+                        <i class="fa-regular fa-user"></i>
+
+                        <span>
+                            Edit Profile
+                        </span>
+
+                        <i class="fa-solid fa-chevron-right"></i>
+
+                    </a>
+
+
+                    <a href="profile.html"
+                       class="account-link">
+
+                        <i class="fa-solid fa-lock"></i>
+
+                        <span>
+                            Change Password
+                        </span>
+
+                        <i class="fa-solid fa-chevron-right"></i>
+
+                    </a>
+
+
+                    <a href="upgrade.html"
+                       class="account-link">
+
+                        <i class="fa-regular fa-credit-card"></i>
+
+                        <span>
+                            Manage Subscription
+                        </span>
+
+                        <i class="fa-solid fa-chevron-right"></i>
+
+                    </a>
+
+
+                    <button
+                        type="button"
+                        class="account-link signout-link"
+                        id="signOutButton">
+
+                        <i class="fa-solid fa-right-from-bracket"></i>
+
+                        <span>
+                            Sign Out
+                        </span>
+
+                        <i class="fa-solid fa-chevron-right"></i>
+
+                    </button>
+
+                </section>
+
+
+
+                <!-- APP PREFERENCES -->
+
+                <section class="right-card">
+
+
+                    <h2>
+                        App Preferences
+                    </h2>
+
+
+                    <label class="check-option">
+
+                        <input
+                            type="checkbox"
+                            id="welcomeTips"
+                            checked>
+
+                        <span>
+                            Show welcome tips
+                        </span>
+
+                    </label>
+
+
+                    <label class="check-option">
+
+                        <input
+                            type="checkbox"
+                            id="offlineMode"
+                            checked>
+
+                        <span>
+                            Enable offline mode
+                        </span>
+
+                    </label>
+
+
+                    <label class="check-option">
+
+                        <input
+                            type="checkbox"
+                            id="usageAnalytics">
+
+                        <span>
+                            Allow usage analytics
+                        </span>
+
+                    </label>
+
+
+                    <label class="check-option">
+
+                        <input
+                            type="checkbox"
+                            id="emailUpdates"
+                            checked>
+
+                        <span>
+                            Send email updates
+                        </span>
+
+                    </label>
+
+                </section>
+
+
+
+                <!-- HELP -->
+
+                <section class="help-card">
+
+
+                    <div class="help-icon">
+
+                        <i class="fa-solid fa-question"></i>
+
+                    </div>
+
+
+                    <h2>
+                        Need Help?
+                    </h2>
+
+
+                    <p>
+                        Check our Help Center or contact support
+                        for any questions.
+                    </p>
+
+
+                    <a href="help.html"
+                       class="help-button">
+
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                        Visit Help Center
+
+                    </a>
+
+                </section>
+
+            </aside>
+
+        </div>
+
+
+
+        <!-- =================================================
+             FOOTER
+        ================================================== -->
+
+        <footer class="settings-footer">
+
+
+            <span>
+                © 2026 Calcura. All rights reserved.
+            </span>
+
+
+            <div>
+
+              
+              <a href="help.html">
+                    Help
+                </a>
+
+                <a href="about.html">
+                    About
+                </a>
+
+            </div>
+
+        </footer>
+
+    </section>
+
+</main>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+====================================================== -->
+
+<!-- API -->
+<script src="../js/api.js"></script>
+
+<!-- AUTH -->
+<script src="../js/auth.js"></script>
+
+<!-- SETTINGS -->
+<script src="../js/settings.js"></script>
+
+
+</body>
+
+</html>

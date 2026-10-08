@@ -1,0 +1,3097 @@
+/* ==========================================
+   CALCURA - GRAPH CALCULATOR
+   ========================================== */
+
+.graph-page {
+    min-height: 100vh;
+    padding: 0 20px;
+    background: #020d1a;
+    box-sizing: border-box;
+}
+
+.graph-container {
+    width: 100%;
+    max-width: none;
+    margin: 0 auto;
+    padding-top: 0;
+    box-sizing: border-box;
+}
+
+/* HEADER */
+
+
+.graph-top-header {
+    position: fixed;
+
+    top: 0;
+    left: 260px;
+    right: 0;
+
+    height: 88px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+
+    padding:
+        0 25px;
+
+    background:
+        rgba(3, 14, 27, 0.97);
+
+    border-bottom:
+        1px solid #142a42;
+
+    z-index: 900;
+}
+
+
+/* SEARCH */
+
+.graph-search {
+    width: 465px;
+
+    height: 50px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    padding:
+        0 16px;
+
+    background:
+        #071a2d;
+
+    border:
+        1px solid #193a5b;
+
+    border-radius: 10px;
+
+    color: #8ba8c8;
+
+    box-shadow:
+        inset 0 0 20px
+        rgba(0,0,0,0.12);
+
+    transition: 0.2s;
+}
+
+.graph-search:focus-within {
+    border-color:
+        #087cff;
+
+    box-shadow:
+        0 0 0 2px
+        rgba(8,124,255,0.10);
+}
+
+.graph-search span {
+    margin-right: 11px;
+
+    color: #a6c2e3;
+
+    font-size: 23px;
+}
+
+.graph-search input {
+    width: 100%;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    color: #e7f0fc;
+
+    font-family: inherit;
+
+    font-size: 14px;
+}
+
+.graph-search input::placeholder {
+    color: #7890ad;
+}
+
+
+/* HEADER RIGHT */
+
+.graph-header-actions {
+    margin-left: auto;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+}
+
+.header-pro-button {
+    height: 50px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding:
+        0 17px;
+
+    border:
+        1px solid #d99c24;
+
+    border-radius: 10px;
+
+    background:
+        rgba(95, 62, 5, 0.12);
+
+    color: #ffd15a;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+.header-pro-button:hover {
+    background:
+        rgba(217,156,36,0.12);
+
+    text-decoration: none;
+}
+
+.header-icon-button {
+    width: 50px;
+    height: 50px;
+
+    border:
+        1px solid #193a5b;
+
+    border-radius: 10px;
+
+    background:
+        #06192c;
+
+    color: #c6d9ef;
+
+    cursor: pointer;
+
+    font-size: 19px;
+}
+
+.header-icon-button:hover {
+    border-color:
+        #087cff;
+
+    color:
+        #087cff;
+}
+
+.header-user {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    color: #ffffff;
+
+    text-decoration: none;
+}
+
+.header-user:hover {
+    text-decoration: none;
+}
+
+.header-avatar {
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #315ee8,
+            #5279ed
+        );
+
+    color: #ffffff;
+
+    font-size: 18px;
+
+    font-weight: 600;
+}
+
+.header-user-details {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 3px;
+}
+
+.header-user-details strong {
+    color: #f2f7ff;
+
+    font-size: 14px;
+}
+
+.header-user-details span {
+    color: #91a8c2;
+
+    font-size: 12px;
+}
+
+.header-arrow {
+    color: #8ea5c0;
+
+    font-size: 17px;
+
+    margin-left: 4px;
+}
+
+
+/* MAIN CARD */
+
+.graph-card {
+    background: #061525;
+    border: 1px solid #163957;
+    border-radius: 14px;
+    padding: 20px;
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.30);
+    box-sizing: border-box;
+}
+
+/* FUNCTION INPUT */
+
+.graph-input-area {
+    margin-bottom: 25px;
+}
+
+.graph-input-area > label {
+    display: block;
+    margin-bottom: 10px;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.function-input-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.function-label {
+    color: #ffffff;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.function-input-row input {
+    flex: 1;
+    min-width: 0;
+    height: 48px;
+    padding: 0 15px;
+
+    background: #091d31;
+    border: 1px solid #1d4568;
+    border-radius: 9px;
+
+    color: #ffffff;
+    font-size: 17px;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.function-input-row input::placeholder {
+    color: #7f96af;
+}
+
+.function-input-row input:focus {
+    border-color: #1688ff;
+    box-shadow: 0 0 0 2px rgba(22, 136, 255, 0.12);
+}
+
+.plot-btn {
+    height: 48px;
+    padding: 0 22px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.input-help {
+    margin: 9px 0 0;
+    color: #8fa8c2;
+    font-size: 13px;
+}
+
+/* SETTINGS */
+
+.graph-settings {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.range-group label {
+    display: block;
+    margin-bottom: 7px;
+    color: #dce9f7;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.range-group input {
+    width: 100%;
+    height: 42px;
+    padding: 0 12px;
+
+    background: #091d31;
+    border: 1px solid #1d4568;
+    border-radius: 8px;
+
+    color: #ffffff;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.range-group input:focus {
+    border-color: #1688ff;
+}
+
+/* GRAPH */
+
+.graph-wrapper {
+    width: 100%;
+    height: 550px;
+    border: 1px solid #e2e2e2;
+    border-radius: 14px;
+    overflow: hidden;
+    background: #ffffff;
+}
+
+#graphCanvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/* STATUS */
+
+.graph-status {
+    margin-top: 15px;
+    padding: 13px 15px;
+    border-radius: 10px;
+    background: #f5f5f5;
+    color: #555;
+    font-size: 14px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 800px) {
+
+    .graph-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .graph-settings {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .function-input-row {
+        flex-wrap: wrap;
+    }
+
+    .function-input-row input {
+        width: 100%;
+        flex: 1 1 100%;
+    }
+
+    .plot-btn {
+        width: 100%;
+    }
+
+    .graph-wrapper {
+        height: 450px;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .graph-page {
+        padding: 20px 12px;
+    }
+
+    .graph-card {
+        padding: 18px;
+    }
+
+    .graph-header h1 {
+        font-size: 26px;
+    }
+
+    .graph-settings {
+        grid-template-columns: 1fr;
+    }
+
+    .graph-wrapper {
+        height: 350px;
+    }
+}
+/* ==========================================
+   COMPACT GOOGLE-STYLE SEARCH
+   ========================================== */
+
+.graph-search {
+    position: relative;
+    z-index: 1000;
+}
+
+#searchSuggestions {
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 20px;
+    width: 100%;
+
+    background: #07182b;
+
+    border: 1px solid #294966;
+    border-radius: 0 0 12px 12px;
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.45);
+
+    overflow: hidden;
+
+    z-index: 2000;
+}
+
+/* Suggestion */
+
+.search-suggestion-item {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    min-height: 42px;
+
+    padding: 9px 14px;
+
+    color: #dce9f7;
+
+    font-size: 13px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition:
+        background 0.15s ease;
+}
+
+.search-suggestion-item i {
+    width: 18px;
+
+    color: #91a8c2;
+
+    font-size: 13px;
+
+    text-align: center;
+}
+
+.search-suggestion-item:hover {
+    background: #102d49;
+}
+
+.search-suggestion-item:hover i {
+    color: #ffffff;
+}
+
+.search-no-result {
+    padding: 11px 14px;
+
+    color: #91a8c2;
+
+    font-size: 13px;
+}
+/* Final compact search suggestions */
+
+#searchSuggestions .search-suggestion-item {
+    min-height: 36px !important;
+    padding: 7px 12px !important;
+    gap: 10px !important;
+    font-size: 13px !important;
+}
+
+#searchSuggestions .search-suggestion-item i {
+    width: 16px !important;
+    font-size: 12px !important;
+}
+
+#searchSuggestions .search-no-result {
+    padding: 9px 12px !important;
+    font-size: 13px !important;
+}
+/* ==========================================
+   NOTIFICATION PANEL
+   ========================================== */
+
+.notification-panel {
+    position: absolute;
+
+    top: 72px;
+    right: 90px;
+
+    width: 300px;
+
+    background: #07182b;
+
+    border: 1px solid #294966;
+    border-radius: 14px;
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.45);
+
+    overflow: hidden;
+
+    z-index: 3000;
+
+    display: none;
+}
+
+/* Header */
+
+.notification-panel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 15px 16px;
+
+    border-bottom: 1px solid #1d3852;
+}
+
+.notification-panel-header strong {
+    color: #ffffff;
+
+    font-size: 15px;
+}
+
+.notification-panel-header span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 22px;
+    height: 22px;
+
+    border-radius: 50%;
+
+    background: #1677ff;
+
+    color: #ffffff;
+
+    font-size: 11px;
+}
+
+/* Empty notification */
+
+.notification-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 28px 18px;
+}
+
+.notification-empty i {
+    font-size: 25px;
+
+    color: #6f8ca8;
+
+    margin-bottom: 12px;
+}
+
+.notification-empty p {
+    margin: 0 0 5px;
+
+    color: #ffffff;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.notification-empty small {
+    color: #91a8c2;
+
+    font-size: 12px;
+}
+/* ==========================================
+   SEARCH CLEAR BUTTON
+   ========================================== */
+
+#clearGlobalSearch {
+    position: absolute;
+
+    right: 12px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 28px;
+    height: 28px;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    color: #91a8c2;
+
+    cursor: pointer;
+
+    z-index: 1002;
+}
+
+#clearGlobalSearch i {
+    font-size: 14px;
+}
+
+#clearGlobalSearch:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.08);
+
+    border-radius: 50%;
+}
+/* ==========================================
+   GRAPH HERO SECTION
+   ========================================== */
+
+.graph-hero {
+    position: relative;
+    min-height: 128px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+
+    margin-bottom: 14px;
+    padding: 22px 28px;
+
+    background:
+        linear-gradient(
+            110deg,
+            #061a30 0%,
+            #09294a 55%,
+            #06182c 100%
+        );
+
+    border: 1px solid #123c63;
+    border-radius: 14px;
+
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+
+/* HERO TEXT */
+
+.graph-hero-content {
+    position: relative;
+    z-index: 3;
+}
+
+.graph-hero-content h1 {
+    margin: 0 0 5px;
+
+    color: #ffffff;
+
+    font-size: 34px;
+    line-height: 1.1;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.graph-hero-content h1 span {
+    color: #087cff;
+}
+
+.graph-hero-content p {
+    margin: 0;
+
+    color: #b7cce5;
+    font-size: 16px;
+}
+
+
+/* HERO QUOTE */
+
+.graph-hero-quote {
+    position: relative;
+    z-index: 3;
+
+    margin-left: auto;
+
+    color: #dce9f7;
+    text-align: left;
+    font-style: italic;
+}
+
+.graph-hero-quote p {
+    margin: 0;
+
+    font-size: 15px;
+    line-height: 1.55;
+}
+
+
+/* HERO ART */
+
+.graph-hero-art {
+    position: absolute;
+    right: 18px;
+    top: 8px;
+    bottom: 8px;
+
+    width: 350px;
+
+    pointer-events: none;
+}
+
+
+/* GRAPH WAVES */
+
+.hero-wave {
+    position: absolute;
+
+    width: 250px;
+    height: 80px;
+
+    border-top: 2px solid #087cff;
+    border-radius: 50%;
+
+    opacity: 0.75;
+}
+
+.wave-one {
+    top: 35px;
+    left: 20px;
+
+    transform:
+        rotate(-5deg)
+        skewX(-15deg);
+}
+
+.wave-two {
+    top: 48px;
+    left: 75px;
+
+    transform:
+        rotate(7deg)
+        skewX(12deg);
+
+    opacity: 0.45;
+}
+
+
+/* HERO WORDS */
+
+.graph-hero-art span {
+    position: absolute;
+
+    right: 0;
+
+    color: #1688ff;
+
+    font-size: 14px;
+    font-weight: 600;
+    font-style: italic;
+
+    transform: rotate(-8deg);
+}
+
+.graph-hero-art span:nth-of-type(1) {
+    top: 18px;
+}
+
+.graph-hero-art span:nth-of-type(2) {
+    top: 42px;
+    right: -5px;
+}
+
+.graph-hero-art span:nth-of-type(3) {
+    top: 66px;
+    right: 8px;
+}
+
+
+/* ==========================================
+   HERO RESPONSIVE
+   ========================================== */
+
+@media (max-width: 900px) {
+
+    .graph-hero {
+        padding: 20px;
+    }
+
+    .graph-hero-quote {
+        display: none;
+    }
+
+    .graph-hero-art {
+        opacity: 0.5;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .graph-hero {
+        min-height: 110px;
+        padding: 18px;
+    }
+
+    .graph-hero-content h1 {
+        font-size: 28px;
+    }
+
+    .graph-hero-content p {
+        font-size: 14px;
+    }
+
+    .graph-hero-art {
+        display: none;
+    }
+
+}
+/* ==========================================
+   GRAPH MAIN 2-COLUMN LAYOUT
+   ========================================== */
+
+.graph-main-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 340px;
+    gap: 14px;
+    width: 100%;
+    align-items: start;
+}
+
+.graph-left-column {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.graph-right-column {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+@media (max-width: 1000px) {
+
+    .graph-main-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .graph-right-column {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+@media (max-width: 650px) {
+
+    .graph-right-column {
+        grid-template-columns: 1fr;
+    }
+
+}
+/* ==========================================
+   QUICK EXAMPLES CARD
+   ========================================== */
+
+.graph-side-card {
+    background: #061525;
+    border: 1px solid #163957;
+    border-radius: 12px;
+    padding: 16px;
+    box-sizing: border-box;
+}
+
+.graph-side-card h2 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    margin: 0 0 14px;
+
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.graph-side-card h2 i {
+    color: #ffd34f;
+    font-size: 20px;
+}
+
+
+/* QUICK EXAMPLE LIST */
+
+.quick-example-list {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.quick-example-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+
+    min-height: 38px;
+    padding: 4px 5px 4px 10px;
+
+    background: #091d31;
+    border: 1px solid #173957;
+    border-radius: 8px;
+
+    box-sizing: border-box;
+}
+
+.quick-example-item span {
+    color: #e5effb;
+    font-size: 14px;
+}
+
+.quick-example-use {
+    min-width: 52px;
+    height: 30px;
+
+    padding: 0 12px;
+
+    border: none;
+    border-radius: 6px;
+
+    background: #087cff;
+    color: #ffffff;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.quick-example-use:hover {
+    background: #1688ff;
+    transform: translateY(-1px);
+}
+/* ==========================================
+   GRAPH SETTINGS CARD
+   ========================================== */
+
+.graph-settings-card h2 i {
+    color: #9bb7d3;
+}
+
+.graph-setting-row {
+    margin-bottom: 16px;
+}
+
+.graph-setting-row > label {
+    display: block;
+    margin-bottom: 8px;
+
+    color: #dce9f7;
+    font-size: 13px;
+}
+
+
+/* LINE COLOR */
+
+#lineColor {
+    width: 30px;
+    height: 30px;
+
+    padding: 0;
+
+    border: 2px solid #294966;
+    border-radius: 50%;
+
+    background: transparent;
+    cursor: pointer;
+}
+
+
+/* LINE WIDTH */
+
+.line-width-control {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#lineWidth {
+    flex: 1;
+    height: 4px;
+
+    accent-color: #087cff;
+    cursor: pointer;
+}
+
+#lineWidthValue {
+    min-width: 18px;
+
+    color: #dce9f7;
+    font-size: 12px;
+    text-align: right;
+}
+
+
+/* LINE STYLE */
+
+#lineStyle {
+    width: 100%;
+    height: 38px;
+
+    padding: 0 10px;
+
+    background: #091d31;
+    border: 1px solid #1d4568;
+    border-radius: 7px;
+
+    color: #e5effb;
+    font-size: 13px;
+    outline: none;
+
+    cursor: pointer;
+}
+
+#lineStyle:focus {
+    border-color: #1688ff;
+}
+
+
+/* CHECKBOXES */
+
+.graph-checkbox-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+
+    margin-top: 4px;
+}
+
+.graph-checkbox-row label {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    color: #c8d9eb;
+    font-size: 12px;
+
+    cursor: pointer;
+}
+
+.graph-checkbox-row input {
+    width: 16px;
+    height: 16px;
+
+    margin: 0;
+
+    accent-color: #087cff;
+
+    cursor: pointer;
+}
+/* ==========================================
+   EXPORT GRAPH
+   ========================================== */
+
+.graph-export-card {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.graph-export-button {
+    width: 100%;
+    min-height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 16px;
+
+    background: #061525;
+    border: 1px solid #1b6cc1;
+    border-radius: 10px;
+
+    color: #ffffff;
+
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.graph-export-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.graph-export-left i {
+    color: #9fc9ff;
+    font-size: 22px;
+}
+
+.graph-export-left span {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.graph-export-button > i {
+    color: #9fc9ff;
+    font-size: 14px;
+}
+
+.graph-export-button:hover {
+    background: #0a2037;
+    border-color: #1688ff;
+}
+/* ==========================================
+   GRAPH MODE TABS
+   ========================================== */
+
+   /* ==========================================
+   GRAPH MODE TABS - REFERENCE DESIGN
+========================================== */
+
+.graph-mode-tabs {
+    display: flex;
+    align-items: stretch;
+
+    width: 100%;
+    height: 60px;
+
+    margin-bottom: 20px;
+    padding: 4px 4px 0;
+
+    border-bottom: 1px solid #173957;
+
+    box-sizing: border-box;
+}
+
+
+/* ALL TABS */
+
+.graph-mode-tab {
+    position: relative;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    height: 52px;
+
+    padding: 0 28px;
+
+    border: none;
+    border-right: 1px solid #102d46;
+    border-radius: 7px 7px 0 0;
+
+    background: transparent;
+
+    color: #9db4cc;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    white-space: nowrap;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+
+/* ICON */
+
+.graph-mode-tab i {
+    font-size: 17px;
+    color: #9db4cc;
+
+    transition: color 0.2s ease;
+}
+
+
+/* LAST TAB */
+
+.graph-mode-tab:last-child {
+    border-right: none;
+}
+
+
+/* HOVER */
+
+.graph-mode-tab:hover {
+    background: #071f35;
+    color: #ffffff;
+}
+
+.graph-mode-tab:hover i {
+    color: #ffffff;
+}
+
+
+/* ACTIVE FUNCTION PLOT */
+
+.graph-mode-tab.active {
+    background: linear-gradient(
+        135deg,
+        #087cff,
+        #0874ee
+    );
+
+    color: #ffffff;
+
+    border-right-color: transparent;
+
+    box-shadow:
+        0 5px 15px rgba(8, 124, 255, 0.20);
+}
+
+.graph-mode-tab.active i {
+    color: #ffffff;
+}
+
+
+/* KEEP NON-ACTIVE TABS TRANSPARENT */
+
+.graph-mode-tab:not(.active) {
+    background: transparent;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+
+    .graph-mode-tabs {
+        height: 56px;
+
+        overflow-x: auto;
+        overflow-y: hidden;
+
+        scrollbar-width: none;
+    }
+
+    .graph-mode-tabs::-webkit-scrollbar {
+        display: none;
+    }
+
+    .graph-mode-tab {
+        flex-shrink: 0;
+
+        height: 48px;
+
+        padding: 0 20px;
+    }
+
+}
+/* ==========================================
+   FUNCTION INPUT - REFERENCE STYLE
+   ========================================== */
+
+.graph-input-area {
+    margin-bottom: 18px;
+}
+
+.graph-input-area > label {
+    display: block;
+    margin-bottom: 10px;
+
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.function-input-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.function-input-row input {
+    flex: 1;
+    min-width: 0;
+    height: 56px;
+
+    padding: 0 18px;
+
+    background: #091d31;
+    border: 1px solid #1d4568;
+    border-radius: 8px;
+
+    color: #ffffff;
+    font-size: 17px;
+
+    outline: none;
+    box-sizing: border-box;
+}
+
+.function-input-row input::placeholder {
+    color: #7890ad;
+}
+
+.function-input-row input:focus {
+    border-color: #1688ff;
+
+    box-shadow:
+        0 0 0 2px rgba(22, 136, 255, 0.10);
+}
+
+
+/* PLOT BUTTON */
+
+.plot-btn {
+    flex-shrink: 0;
+
+    height: 56px;
+    min-width: 155px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+
+    padding: 0 20px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #087cff;
+    color: #ffffff;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.plot-btn i {
+    font-size: 14px;
+}
+
+.plot-btn:hover {
+    background: #1688ff;
+    transform: translateY(-1px);
+}
+
+.plot-btn:active {
+    transform: translateY(0);
+}
+
+
+/* HELP TEXT */
+
+.input-help {
+    margin: 8px 0 0;
+
+    color: #7f98b2;
+    font-size: 12px;
+}
+/* ==========================================
+   RANGE + GRAPH OPTIONS
+   ========================================== */
+
+.graph-settings {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 18px;
+
+    margin-top: 14px;
+    margin-bottom: 0;
+}
+
+.graph-range-control {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.range-title {
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 600;
+    margin-right: 4px;
+}
+
+.graph-range-control label {
+    color: #9db4ca;
+    font-size: 12px;
+}
+
+.graph-range-control input {
+    width: 78px;
+    height: 38px;
+
+    padding: 0 10px;
+
+    background: #091d31;
+    border: 1px solid #1d4568;
+    border-radius: 7px;
+
+    color: #ffffff;
+    font-size: 13px;
+
+    outline: none;
+    box-sizing: border-box;
+}
+
+.graph-range-control input:focus {
+    border-color: #1688ff;
+}
+
+
+/* GRAPH OPTIONS */
+
+.graph-options {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-left: auto;
+}
+
+.graph-option {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    color: #c7d8e9;
+    font-size: 12px;
+
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.graph-option input {
+    width: 18px;
+    height: 18px;
+
+    margin: 0;
+
+    accent-color: #087cff;
+    cursor: pointer;
+}
+
+
+/* HIDDEN Y RANGE */
+
+.graph-hidden-range {
+    display: none;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+
+    .graph-settings {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .graph-options {
+        margin-left: 0;
+        flex-wrap: wrap;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .graph-range-control {
+        flex-wrap: wrap;
+    }
+
+    .graph-options {
+        gap: 12px;
+    }
+
+}
+/* ==========================================
+   GRAPH DISPLAY CARD
+   ========================================== */
+
+.graph-display-card {
+    background: #061525;
+    border: 1px solid #163957;
+    border-radius: 12px;
+    padding: 16px;
+    box-sizing: border-box;
+}
+
+.graph-display-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+
+    margin-bottom: 12px;
+}
+
+.graph-display-header h2 {
+    margin: 0;
+
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.graph-display-header h2 span {
+    color: #dce9f7;
+    font-weight: 500;
+}
+
+
+/* GRAPH ACTION BUTTONS */
+
+.graph-display-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.graph-display-actions button {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    height: 36px;
+    padding: 0 12px;
+
+    background: #091d31;
+    border: 1px solid #294966;
+    border-radius: 7px;
+
+    color: #cfe0f2;
+
+    font-size: 12px;
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.graph-display-actions button i {
+    color: #9fc9ff;
+    font-size: 12px;
+}
+
+.graph-display-actions button:hover {
+    background: #0b2945;
+    border-color: #1688ff;
+    color: #ffffff;
+}
+
+
+/* GRAPH CANVAS AREA */
+
+.graph-wrapper {
+    width: 100%;
+    height: 430px;
+
+    border: 1px solid #21435f;
+    border-radius: 9px;
+
+    overflow: hidden;
+
+    background: #020d1a;
+    box-sizing: border-box;
+}
+
+#graphCanvas {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    background: #020d1a;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 800px) {
+
+    .graph-display-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .graph-display-actions {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+}
+/* ==========================================
+   FULL SCREEN GRAPH BUTTON
+   ========================================== */
+
+#fullscreenGraphBtn {
+    border-color: #1b6cc1;
+}
+
+#fullscreenGraphBtn i {
+    color: #9fc9ff;
+}
+
+#fullscreenGraphBtn:hover {
+    background: #0b2945;
+    border-color: #1688ff;
+    color: #ffffff;
+}
+/* ==========================================
+   GRAPH FULL SCREEN MODE
+   ========================================== */
+
+.graph-display-card.graph-fullscreen {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    margin: 0;
+    padding: 20px;
+
+    background: #020d1a;
+
+    border: none;
+    border-radius: 0;
+
+    z-index: 9999;
+
+    box-sizing: border-box;
+}
+
+/* ==========================================
+   GRAPH FULL SCREEN MODE - FIXED
+========================================== */
+
+/* ==========================================
+   GRAPH FULL SCREEN MODE
+========================================== */
+/* ==========================================
+   COMPLETE GRAPH CARD FULL SCREEN
+========================================== */
+
+.graph-card.graph-fullscreen {
+    position: fixed !important;
+
+    top: 0 !important;
+    left: 0 !important;
+
+    width: 100vw !important;
+    height: 100vh !important;
+
+    margin: 0 !important;
+    padding: 24px !important;
+
+    background: #020d1a !important;
+
+    border: none !important;
+    border-radius: 0 !important;
+
+    z-index: 99999 !important;
+
+    box-sizing: border-box !important;
+
+    overflow-y: auto !important;
+}
+
+/* Graph area inside fullscreen */
+
+.graph-card.graph-fullscreen .graph-wrapper {
+    width: 100% !important;
+    height: calc(100vh - 330px) !important;
+
+    min-height: 400px !important;
+}
+
+/* Canvas */
+
+.graph-card.graph-fullscreen #graphCanvas {
+    display: block !important;
+
+    width: 100% !important;
+    height: 100% !important;
+}
+/* ==========================================
+   GRAPH FEATURE CARDS
+   ========================================== */
+
+.graph-feature-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-top: 14px;
+}
+
+.graph-feature-card {
+    min-height: 105px;
+    padding: 18px 20px;
+}
+
+.graph-feature-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    min-height: 96px;
+    padding: 16px 18px;
+
+    background: #07182b;
+    border: 1px solid #193a5b;
+    border-radius: 12px;
+
+    box-sizing: border-box;
+}
+
+.graph-feature-icon {
+    width: 52px;
+    height: 52px;
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    background: #082b50;
+    color: #1688ff;
+    font-size: 21px;
+}
+
+.graph-feature-card strong {
+    display: block;
+    margin-bottom: 5px;
+
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.graph-feature-card p {
+    margin: 0;
+    color: #91a8c2;
+    font-size: 12px;
+    line-height: 1.5;
+}
+/* ==========================================
+   GRAPH FOOTER
+========================================== */
+
+.graph-footer {
+    width: 100%;
+    min-height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-top: 18px;
+    padding: 0 8px;
+
+    border-top: 1px solid #193a5b;
+
+    box-sizing: border-box;
+}
+
+.graph-footer-left {
+    color: #91a8c2;
+    font-size: 12px;
+}
+
+.graph-footer-links {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.graph-footer-links a {
+    color: #91a8c2;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+.graph-footer-links a:hover {
+    color: #ffffff;
+}
+/* ==========================================
+   GRAPH HEADER - PROFILE ALIGNMENT
+========================================== */
+
+.header-user {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 165px;
+    margin-left: 0;
+}
+
+.header-avatar {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+}
+
+.header-user-details {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 3px;
+}
+
+.header-user-details strong {
+    white-space: nowrap;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+.header-user-details span {
+    white-space: nowrap;
+    font-size: 12px;
+    line-height: 16px;
+}
+
+.header-arrow {
+    margin-left: auto;
+    font-size: 16px;
+}
+/* =========================================================
+   GRAPH PAGE - REFERENCE LAYOUT ALIGNMENT
+   ========================================================= */
+
+/* ---------- SIDEBAR ---------- */
+
+.calcura-sidebar {
+    width: 260px !important;
+    left: 0 !important;
+    top: 0 !important;
+    bottom: 0 !important;
+}
+
+
+/* ---------- PAGE ---------- */
+
+.graph-page {
+    width: 100% !important;
+    min-height: 100vh !important;
+
+    margin: 0 !important;
+
+    padding:
+        105px
+        15px
+        20px !important;
+
+    box-sizing: border-box !important;
+}
+
+.graph-container {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+}
+
+
+/* ---------- TOP HEADER ---------- */
+
+.graph-top-header {
+    position: fixed !important;
+
+    top: 0 !important;
+    left: 260px !important;
+    right: 0 !important;
+
+    width: auto !important;
+    height: 88px !important;
+
+    display: flex !important;
+    align-items: center !important;
+
+    gap: 25px !important;
+
+    padding:
+        0 25px !important;
+
+    box-sizing: border-box !important;
+
+    z-index: 1500 !important;
+}
+
+
+/* ---------- SEARCH ---------- */
+
+.graph-search {
+    width: 500px !important;
+    min-width: 500px !important;
+
+    margin-left: 0 !important;
+
+    flex-shrink: 0 !important;
+}
+
+
+/* ---------- HEADER RIGHT SIDE ---------- */
+
+.header-pro-button {
+    margin-left: auto !important;
+    flex-shrink: 0 !important;
+}
+
+.header-icon-button {
+    flex-shrink: 0 !important;
+}
+
+
+/* ---------- USER PROFILE ---------- */
+
+.header-user {
+    display: flex !important;
+    align-items: center !important;
+
+    gap: 10px !important;
+
+    min-width: 165px !important;
+
+    flex-shrink: 0 !important;
+
+    margin-left: 0 !important;
+}
+
+.header-avatar {
+    width: 48px !important;
+    height: 48px !important;
+
+    flex-shrink: 0 !important;
+}
+
+.header-user-details {
+    display: flex !important;
+    flex-direction: column !important;
+
+    justify-content: center !important;
+
+    gap: 3px !important;
+
+    min-width: 0 !important;
+}
+
+.header-user-details strong {
+    white-space: nowrap !important;
+
+    font-size: 14px !important;
+    line-height: 18px !important;
+}
+
+.header-user-details span {
+    white-space: nowrap !important;
+
+    font-size: 12px !important;
+    line-height: 16px !important;
+}
+
+.header-arrow {
+    margin-left: auto !important;
+
+    font-size: 17px !important;
+}
+
+
+/* ---------- MAIN TWO COLUMN LAYOUT ---------- */
+
+.graph-main-layout {
+    display: grid !important;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        340px !important;
+
+    gap: 14px !important;
+
+    width: 100% !important;
+    max-width: none !important;
+
+    margin: 0 !important;
+
+    align-items: start !important;
+}
+
+
+/* ---------- LEFT COLUMN ---------- */
+
+.graph-left-column {
+    width: 100% !important;
+    min-width: 0 !important;
+}
+
+
+/* ---------- RIGHT COLUMN ---------- */
+
+.graph-right-column {
+    width: 340px !important;
+    min-width: 340px !important;
+
+    margin: 0 !important;
+}
+/* =========================================================
+   GRAPH HERO - REFERENCE DESIGN
+========================================================= */
+
+.graph-hero {
+    position: relative;
+
+    width: 100%;
+    height: 132px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 28px;
+
+    box-sizing: border-box;
+
+    overflow: hidden;
+
+    border: 1px solid #143b62;
+    border-radius: 14px;
+
+    background:
+        radial-gradient(
+            circle at 72% 50%,
+            rgba(12, 91, 180, 0.22),
+            transparent 34%
+        ),
+        linear-gradient(
+            105deg,
+            #07172d 0%,
+            #09264a 52%,
+            #07172d 100%
+        );
+
+    box-shadow:
+        inset 0 0 45px rgba(8, 124, 255, 0.07);
+}
+
+
+/* =========================================================
+   HERO LEFT CONTENT
+========================================================= */
+
+.graph-hero-content {
+    position: relative;
+
+    z-index: 10;
+
+    flex-shrink: 0;
+}
+
+.graph-hero-content h1 {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: 40px;
+    line-height: 1.1;
+
+    font-weight: 800;
+
+    letter-spacing: -1.2px;
+}
+
+.graph-hero-content h1 span {
+    color: #087cff;
+}
+
+.graph-hero-content p {
+    margin: 7px 0 0;
+
+    color: #c5d8f5;
+
+    font-size: 17px;
+    line-height: 1.4;
+
+    font-weight: 500;
+}
+
+
+/* =========================================================
+   HERO QUOTE
+========================================================= */
+
+.graph-hero-quote {
+    position: absolute;
+
+    top: 39px;
+    right: 215px;
+
+    width: 220px;
+
+    z-index: 10;
+
+    text-align: right;
+}
+
+.graph-hero-quote p {
+    margin: 0;
+
+    color: #d8e5f5;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 14px;
+
+    line-height: 1.55;
+
+    font-style: italic;
+}
+
+
+/* =========================================================
+   HERO ART AREA
+========================================================= */
+
+.graph-hero-art {
+    position: absolute;
+
+    top: 0;
+    right: 0;
+
+    width: 55%;
+    height: 100%;
+
+    pointer-events: none;
+
+    z-index: 2;
+}
+
+
+/* =========================================================
+   MAIN WAVE
+========================================================= */
+
+.graph-hero-art .wave-one {
+    position: absolute;
+
+    left: 15%;
+    top: 20px;
+
+    width: 390px;
+    height: 78px;
+
+    border-top: 2px solid #087cff;
+
+    border-radius: 50%;
+
+    transform:
+        rotate(-4deg)
+        skewX(-8deg);
+
+    opacity: 0.9;
+
+    filter:
+        drop-shadow(
+            0 0 5px
+            rgba(8, 124, 255, 0.75)
+        );
+}
+
+
+/* =========================================================
+   SECOND WAVE
+========================================================= */
+
+.graph-hero-art .wave-two {
+    position: absolute;
+
+    left: 17%;
+    top: 35px;
+
+    width: 365px;
+    height: 70px;
+
+    border-top: 1px solid
+        rgba(8, 124, 255, 0.42);
+
+    border-radius: 50%;
+
+    transform:
+        rotate(-5deg)
+        skewX(-8deg);
+
+    opacity: 0.75;
+}
+
+
+/* =========================================================
+   HERO ART TEXT
+========================================================= */
+
+.graph-hero-art span {
+    position: absolute;
+
+    z-index: 10;
+
+    color: #1688ff;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    font-style: italic;
+
+    line-height: 1.2;
+
+    text-shadow:
+        0 0 7px
+        rgba(8, 124, 255, 0.35);
+}
+
+
+/* Visualize */
+
+.graph-hero-art span:nth-of-type(1) {
+    top: 25px;
+    right: 18px;
+
+    transform: rotate(-8deg);
+}
+
+
+/* Understand */
+
+.graph-hero-art span:nth-of-type(2) {
+    top: 48px;
+    right: 10px;
+
+    transform: rotate(-5deg);
+}
+
+
+/* Explore */
+
+.graph-hero-art span:nth-of-type(3) {
+    top: 71px;
+    right: 18px;
+
+    transform: rotate(-3deg);
+}
+
+
+/* =========================================================
+   HERO GLOW
+========================================================= */
+
+.graph-hero::after {
+    content: "";
+
+    position: absolute;
+
+    left: 43%;
+    top: 15px;
+
+    width: 300px;
+    height: 100px;
+
+    background:
+        radial-gradient(
+            ellipse,
+            rgba(8, 124, 255, 0.09),
+            transparent 70%
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   HERO RESPONSIVE
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .graph-hero-content h1 {
+        font-size: 34px;
+    }
+
+    .graph-hero-content p {
+        font-size: 15px;
+    }
+
+    .graph-hero-quote {
+        right: 170px;
+        width: 190px;
+    }
+
+    .graph-hero-art {
+        width: 50%;
+    }
+}
+
+
+@media (max-width: 750px) {
+
+    .graph-hero {
+        height: 120px;
+        padding: 0 20px;
+    }
+
+    .graph-hero-content h1 {
+        font-size: 30px;
+    }
+
+    .graph-hero-content p {
+        font-size: 14px;
+    }
+
+    .graph-hero-quote {
+        display: none;
+    }
+
+    .graph-hero-art {
+        width: 45%;
+    }
+}
+/* =========================================================
+   GRAPH PAGE - REFERENCE LAYOUT FIX
+========================================================= */
+
+/* Main page should begin directly below fixed header */
+.graph-page {
+    min-height: 100vh !important;
+
+    width: 100% !important;
+
+    margin: 0 !important;
+
+    padding:
+        102px
+        14px
+        25px
+        14px !important;
+
+    box-sizing: border-box !important;
+}
+
+
+/* Sidebar reference width */
+.calcura-sidebar {
+    width: 260px !important;
+}
+
+
+/* Header starts exactly after sidebar */
+.graph-top-header {
+    left: 260px !important;
+    right: 0 !important;
+}
+
+
+/* Main content */
+.graph-container {
+    width: 100% !important;
+    max-width: none !important;
+
+    margin: 0 !important;
+}
+
+
+/* Two-column layout */
+.graph-main-layout {
+    width: 100% !important;
+
+    display: grid !important;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        340px !important;
+
+    column-gap: 14px !important;
+
+    row-gap: 14px !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    align-items: start !important;
+}
+
+
+/* Left side */
+.graph-left-column {
+    width: 100% !important;
+
+    min-width: 0 !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+
+/* Right side */
+.graph-right-column {
+    width: 340px !important;
+
+    min-width: 340px !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+
+/* =========================================================
+   HERO POSITION & SIZE
+========================================================= */
+
+.graph-hero {
+    width: 100% !important;
+
+    height: 132px !important;
+    min-height: 132px !important;
+
+    margin:
+        0 0 14px 0 !important;
+
+    padding:
+        0 28px !important;
+
+    box-sizing: border-box !important;
+
+    border-radius: 14px !important;
+
+    overflow: hidden !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+}
+.graph-hero-content h1 {
+    margin: 0 !important;
+
+    font-size: 40px !important;
+
+    line-height: 1.1 !important;
+
+    font-weight: 800 !important;
+
+    letter-spacing: -1.2px !important;
+}
+
+.graph-hero-content p {
+    margin:
+        7px 0 0 !important;
+
+    font-size: 17px !important;
+
+    line-height: 1.4 !important;
+
+    color: #c5d8f5 !important;
+}
+/* =========================================================
+   GRAPH PAGE - REMOVE TOP GAP
+========================================================= */
+
+.graph-page {
+    padding-top: 92px !important;
+}
+
+.graph-main-layout {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+.graph-left-column {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+.graph-right-column {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+/* ==========================================
+   GRAPH CANVAS - REFERENCE SIZE
+========================================== */
+
+.graph-display-card .graph-wrapper {
+    width: 100% !important;
+    height: 200px !important;
+
+    border-radius: 9px !important;
+}
+
+.graph-display-card #graphCanvas {
+    width: 100% !important;
+    height: 100% !important;
+}
+/* CALCURA SIDEBAR - MATCH CALCULATOR PAGE */
+.calcura-sidebar {
+    position: fixed !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 260px !important;
+    height: 100vh !important;
+    z-index: 3000 !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    box-sizing: border-box !important;
+    padding: 0 12px !important;
+    background: linear-gradient(180deg,#061321 0%,#04101d 100%) !important;
+    border-right: 1px solid #17354d !important;
+}
+
+.sidebar-brand {
+    height: 88px !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 13px !important;
+    margin: 0 !important;
+    padding: 0 10px !important;
+    border-bottom: 1px solid #17354d !important;
+}
+
+.sidebar-logo {
+    width: 48px !important;
+    height: 48px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
+    border-radius: 7px !important;
+    background: #087cff !important;
+    color: #fff !important;
+    font-size: 25px !important;
+}
+
+.sidebar-brand-text h1 {
+    margin: 0 !important;
+    color: #f4f8ff !important;
+    font-size: 28px !important;
+    font-weight: 800 !important;
+}
+
+.sidebar-brand-text span {
+    display: block !important;
+    margin-top: 3px !important;
+    color: #8da4bf !important;
+    font-size: 11px !important;
+}
+
+.sidebar-nav {
+    padding: 18px 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 4px !important;
+}
+
+.sidebar-item, .calcura-nav-item {
+    min-height: 45px !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 15px !important;
+    padding: 0 13px !important;
+    margin: 0 !important;
+    border-radius: 9px !important;
+    color: #b7c8df !important;
+    text-decoration: none !important;
+    font-size: 15px !important;
+    font-weight: 500 !important;
+    box-sizing: border-box !important;
+}
+
+.sidebar-item i, .calcura-nav-item i {
+    width: 22px !important;
+    text-align: center !important;
+    color: #a8c4e5 !important;
+    font-size: 19px !important;
+}
+
+.sidebar-item:hover, .calcura-nav-item:hover {
+    background: #0b2540 !important;
+    color: #fff !important;
+}
+
+.sidebar-item.active, .calcura-nav-item.active {
+    background: linear-gradient(135deg,#087cff,#0868dc) !important;
+    color: #fff !important;
+    box-shadow: 0 7px 22px rgba(8,124,255,.28) !important;
+}
+
+.sidebar-item.active i, .calcura-nav-item.active i {
+    color: #fff !important;
+}
+
+.sidebar-upgrade {
+    margin: 8px 4px 20px !important;
+    padding: 15px !important;
+    border: 1px solid #176ac3 !important;
+    border-radius: 12px !important;
+    background: linear-gradient(145deg,#0b2847,#06182a) !important;
+}
+
+.sidebar-upgrade-icon {
+    color: #ffd34f !important;
+    font-size: 21px !important;
+    margin-bottom: 6px !important;
+}
+
+.sidebar-upgrade h3 {
+    margin: 0 0 8px !important;
+    color: #fff !important;
+    font-size: 16px !important;
+}
+
+.sidebar-upgrade ul {
+    margin: 0 0 12px !important;
+    padding-left: 17px !important;
+    color: #9fb5ce !important;
+    font-size: 12px !important;
+    line-height: 1.7 !important;
+}
+
+.sidebar-upgrade-btn {
+    display: block !important;
+    text-align: center !important;
+    padding: 9px !important;
+    border-radius: 8px !important;
+    background: #087cff !important;
+    color: #fff !important;
+    text-decoration: none !important;
+    font-weight: 700 !important;
+    font-size: 13px !important;
+}
+
+.sidebar-upgrade-btn:hover { background: #1688ff !important; }
+
+/* Keep page/header to the right of the fixed sidebar */
+.graph-container {
+    margin-left: 260px !important;
+    max-width: none !important;
+    width: auto !important;
+    padding-top: 88px !important;
+}
+
+.graph-top-header {
+    left: 260px !important;
+}
+
+
+/* =========================================================
+   FINAL REFERENCE LAYOUT ONLY
+   Keeps existing design, colors and functionality unchanged.
+========================================================= */
+
+/* Content begins to the right of the fixed sidebar and below the header. */
+.graph-page {
+    width: 100% !important;
+    min-height: 100vh !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+}
+
+.graph-container {
+    margin-left: 260px !important;
+    width: auto !important;
+    max-width: none !important;
+    padding: 102px 15px 20px 15px !important;
+    box-sizing: border-box !important;
+}
+
+/* Reference: left content + 340px right column. */
+.graph-main-layout {
+    width: 100% !important;
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) 340px !important;
+    gap: 14px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    align-items: start !important;
+}
+
+.graph-left-column,
+.graph-right-column {
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.graph-right-column {
+    width: 340px !important;
+}
+
+/* Reference graph area height. */
+.graph-display-card .graph-wrapper {
+    height: 270px !important;
+}
+
+/* Keep the graph canvas filling its wrapper. */
+.graph-display-card #graphCanvas {
+    width: 100% !important;
+    height: 100% !important;
+}
+/* =========================================================
+   GRAPH PAGE - LAYOUT ONLY
+   DO NOT CHANGE DESIGN / FUNCTIONALITY
+========================================================= */
+
+/* Page starts after the fixed sidebar */
+.graph-page {
+    width: 100% !important;
+    min-height: 100vh !important;
+    margin: 0 !important;
+    padding: 102px 14px 25px 14px !important;
+    box-sizing: border-box !important;
+}
+
+/* Sidebar - KEEP AS IT IS */
+.calcura-sidebar {
+    position: fixed !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 260px !important;
+    height: 100vh !important;
+    z-index: 3000 !important;
+}
+
+/* Main content starts exactly after sidebar */
+.graph-container {
+    width: calc(100% - 260px) !important;
+    max-width: none !important;
+    margin-left: 260px !important;
+    margin-right: 0 !important;
+    padding-top: 0 !important;
+    box-sizing: border-box !important;
+}
+
+/* Header */
+.graph-top-header {
+    position: fixed !important;
+    top: 0 !important;
+    left: 260px !important;
+    right: 0 !important;
+    width: auto !important;
+    height: 88px !important;
+    z-index: 1500 !important;
+}
+
+/* Main two-column area */
+.graph-main-layout {
+    width: 100% !important;
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) 340px !important;
+    gap: 14px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    align-items: start !important;
+}
+
+/* Left column */
+.graph-left-column {
+    width: 100% !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Right column */
+.graph-right-column {
+    width: 340px !important;
+    min-width: 340px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Hero */
+.graph-hero {
+    width: 100% !important;
+    height: 132px !important;
+    min-height: 132px !important;
+    margin: 0 0 14px 0 !important;
+    box-sizing: border-box !important;
+}
+
+/* Graph display */
+.graph-display-card {
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+.graph-display-card .graph-wrapper {
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+/* Bottom feature cards */
+.graph-features {
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+/* Footer */
+.graph-footer {
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+/* =========================================================
+   FINAL GRAPH PAGE LAYOUT FIX
+   ONLY LAYOUT - NO DESIGN CHANGE
+========================================================= */
+
+.graph-page {
+    width: 100% !important;
+    min-height: 100vh !important;
+
+    margin: 0 !important;
+
+    /* 260px = sidebar + 14px page gap */
+    padding: 102px 14px 25px 274px !important;
+
+    box-sizing: border-box !important;
+}
+
+/* Main container MUST NOT have another 260px offset */
+.graph-container {
+    width: 100% !important;
+    max-width: none !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    box-sizing: border-box !important;
+}
+
+/* Header remains after sidebar */
+.graph-top-header {
+    left: 260px !important;
+    right: 0 !important;
+}
+
+/* Main left + right layout */
+.graph-main-layout {
+    width: 100% !important;
+
+    display: grid !important;
+
+    grid-template-columns: minmax(0, 1fr) 340px !important;
+
+    gap: 14px !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    box-sizing: border-box !important;
+}
+
+/* Left content */
+.graph-left-column {
+    width: 100% !important;
+    min-width: 0 !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Right content */
+.graph-right-column {
+    width: 340px !important;
+    min-width: 340px !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+}
+/* =========================================================
+   GRAPH PAGE - SEARCH ICON FINAL FIX
+========================================================= */
+
+.graph-search {
+    position: relative !important;
+
+    display: flex !important;
+    align-items: center !important;
+
+    height: 50px !important;
+    box-sizing: border-box !important;
+}
+
+/* Search icon wrapper */
+.graph-search .search-icon,
+.graph-search > span {
+    position: static !important;
+
+    width: 22px !important;
+    min-width: 22px !important;
+    height: 22px !important;
+
+    margin: 0 10px 0 0 !important;
+    padding: 0 !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    flex-shrink: 0 !important;
+
+    color: #9bb8d6 !important;
+}
+
+/* Actual magnifying glass */
+.graph-search .search-icon i,
+.graph-search > span i {
+    position: static !important;
+
+    display: block !important;
+
+    width: auto !important;
+    height: auto !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    color: #9bb8d6 !important;
+
+    font-size: 17px !important;
+    line-height: 1 !important;
+}
+
+/* Search input */
+.graph-search input {
+    flex: 1 !important;
+
+    width: auto !important;
+    min-width: 0 !important;
+
+    height: 100% !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    border: none !important;
+    outline: none !important;
+
+    background: transparent !important;
+
+    color: #ffffff !important;
+
+    font-size: 14px !important;
+}
+
+/* Placeholder */
+.graph-search input::placeholder {
+    color: #7890ad !important;
+    opacity: 1 !important;
+}
+
+/* Remove unwanted underline/extra line */
+.graph-search::after,
+.graph-search::before {
+    display: none !important;
+    content: none !important;
+}
+
+/* Focus should only glow around complete search box */
+.graph-search:focus-within {
+    border-color: #087cff !important;
+
+    box-shadow:
+        0 0 0 2px rgba(8,124,255,0.10) !important;
+}
+/* SEARCH ICON - FINAL POSITION */
+.graph-search .search-icon,
+.graph-search > span {
+    position: absolute !important;
+
+    left: 18px !important;
+    top: 50% !important;
+
+    transform: translateY(-50%) !important;
+
+    width: 20px !important;
+    height: 20px !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+/* Magnifying glass */
+.graph-search .search-icon i,
+.graph-search > span i {
+    font-size: 17px !important;
+    line-height: 1 !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    position: static !important;
+}
+
+/* Keep text away from icon */
+.graph-search input {
+    padding-left: 34px !important;
+}

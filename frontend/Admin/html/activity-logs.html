@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>CALCURA - Activity Logs</title>
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../admin-css/activity-logs.css"
+    >
+</head>
+
+<body>
+
+<div class="admin-layout">
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside
+        class="admin-sidebar"
+        id="adminSidebar"
+    >
+
+        <div class="sidebar-brand">
+
+            <div class="brand-logo">
+                <span>C</span>
+            </div>
+
+            <div class="brand-text">
+                <h2>CALCURA</h2>
+                <p>Admin Panel</p>
+            </div>
+
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <a href="dashboard.html"
+               class="sidebar-link">
+                <i class="fa-solid fa-house"></i>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="users.html"
+               class="sidebar-link">
+                <i class="fa-solid fa-users"></i>
+                <span>Users</span>
+            </a>
+
+            <a href="calculations.html"
+               class="sidebar-link">
+                <i class="fa-solid fa-calculator"></i>
+                <span>Calculations</span>
+            </a>
+
+            <a href="formulas.html"
+               class="sidebar-link">
+                <i class="fa-solid fa-book-open"></i>
+                <span>Formula Library</span>
+            </a>
+
+            <a href="subscriptions.html"
+               class="sidebar-link">
+                <i class="fa-solid fa-credit-card"></i>
+                <span>Subscriptions</span>
+            </a>
+
+            <a href="reports.html"
+               class="sidebar-link">
+                <i class="fa-solid fa-chart-column"></i>
+                <span>Reports</span>
+            </a>
+
+            <a href="activity-logs.html"
+               class="sidebar-link active">
+                <i class="fa-solid fa-file-lines"></i>
+                <span>Activity Logs</span>
+            </a>
+
+            <a href="system-settings.html"
+               class="sidebar-link">
+                <i class="fa-solid fa-gear"></i>
+                <span>System Settings</span>
+            </a>
+
+            <a href="website-content.html"
+               class="sidebar-link">
+                <i class="fa-solid fa-palette"></i>
+                <span>Website Content</span>
+            </a>
+
+            <a href="user-accounts.html"
+               class="sidebar-link">
+                <i class="fa-solid fa-user-shield"></i>
+                <span>User Accounts</span>
+            </a>
+
+        </nav>
+
+
+        <!-- ADMIN CONTROL -->
+
+        <div class="admin-control-card">
+
+            <div class="control-icon">
+                <i class="fa-solid fa-crown"></i>
+            </div>
+
+            <h3>Admin Control</h3>
+
+            <strong>Full Control</strong>
+
+            <p>
+                You have complete access to manage Calcura.
+            </p>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <div class="admin-main">
+
+
+        <!-- HEADER -->
+
+        <header class="admin-header">
+
+            <button
+                type="button"
+                class="sidebar-toggle"
+                id="sidebarToggle"
+                aria-label="Toggle sidebar"
+            >
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+
+            <div class="global-search">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input
+                    type="text"
+                    id="globalSearch"
+                    placeholder="Search logs by user, action, description..."
+                >
+
+            </div>
+
+
+            <div class="header-right">
+
+                <button
+                    class="notification-button"
+                    id="notificationButton"
+                >
+                    <i class="fa-regular fa-bell"></i>
+                    <span class="notification-dot"></span>
+                </button>
+
+
+                <button
+                    class="admin-profile"
+                    id="adminProfileButton"
+                >
+
+                    <span
+                        class="admin-avatar"
+                        id="adminAvatar"
+                    >
+                        A
+                    </span>
+
+                    <span class="admin-profile-text">
+
+                        <strong id="adminName">
+                            Admin
+                        </strong>
+
+                        <small id="adminRole">
+                            Administrator
+                        </small>
+
+                    </span>
+
+                    <i class="fa-solid fa-chevron-down"></i>
+
+                </button>
+
+
+                <div
+                    class="profile-dropdown"
+                    id="profileDropdown"
+                >
+
+                    <div class="profile-dropdown-head">
+
+                        <div
+                            class="profile-avatar"
+                            id="profileAvatar"
+                        >
+                            A
+                        </div>
+
+                        <div>
+                            <strong id="profileName">
+                                Admin
+                            </strong>
+
+                            <span id="profileEmail">
+                                —
+                            </span>
+                        </div>
+
+                    </div>
+
+                    <div class="profile-line"></div>
+
+                    <div class="profile-info">
+                        <span>Role</span>
+                        <strong id="profileRole">
+                            Administrator
+                        </strong>
+                    </div>
+
+                    <div class="profile-info">
+                        <span>ID</span>
+                        <strong id="profileId">
+                            —
+                        </strong>
+                    </div>
+
+                    <button
+                        type="button"
+                        id="logoutButton"
+                        class="logout-button"
+                    >
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        Logout
+                    </button>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- =====================================================
+             CONTENT
+        ====================================================== -->
+
+        <main class="page-content">
+
+
+            <!-- PAGE TITLE -->
+
+            <section class="page-heading">
+
+                <div>
+
+                    <h1>
+                        Activity
+                        <span>Logs</span>
+                    </h1>
+
+                    <p>
+                        Track and monitor all important activities in Calcura.
+                    </p>
+
+                </div>
+
+
+                <div class="heading-actions">
+
+<div class="date-selector" id="dateSelector">
+
+    <i class="fa-regular fa-calendar"></i>
+
+    <button
+        type="button"
+        id="dateRangeButton"
+        class="date-range-button"
+    >
+        <span id="dateRangeText">
+            Sep 1, 2026 - Sep 30, 2026
+        </span>
+
+        <i class="fa-solid fa-chevron-down"></i>
+    </button>
+
+
+    <!-- CALENDAR -->
+
+    <div
+        class="calendar-dropdown"
+        id="calendarDropdown"
+    >
+
+        <div class="calendar-header">
+
+            <button
+                type="button"
+                id="prevMonth"
+                class="calendar-nav"
+            >
+                <i class="fa-solid fa-chevron-left"></i>
+            </button>
+
+            <strong id="calendarMonth">
+                September 2026
+            </strong>
+
+            <button
+                type="button"
+                id="nextMonth"
+                class="calendar-nav"
+            >
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
+
+        </div>
+
+
+        <div class="calendar-weekdays">
+
+            <span>Sun</span>
+            <span>Mon</span>
+            <span>Tue</span>
+            <span>Wed</span>
+            <span>Thu</span>
+            <span>Fri</span>
+            <span>Sat</span>
+
+        </div>
+
+
+        <div
+            class="calendar-days"
+            id="calendarDays"
+        ></div>
+
+
+        <div class="calendar-footer">
+
+            <button
+                type="button"
+                id="clearDateRange"
+            >
+                Clear
+            </button>
+
+            <button
+                type="button"
+                id="applyDateRange"
+            >
+                Apply
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<input
+    type="hidden"
+    id="startDate"
+>
+
+<input
+    type="hidden"
+    id="endDate"
+>
+
+
+                    <button
+                        type="button"
+                        class="export-button"
+                        id="exportButton"
+                    >
+                        <i class="fa-solid fa-download"></i>
+                        Export Logs
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 STAT CARDS
+            ================================================== -->
+
+            <section class="stats-grid">
+
+                <div class="stat-card blue">
+
+                    <div class="stat-icon">
+                        <i class="fa-solid fa-file-lines"></i>
+                    </div>
+
+                    <div class="stat-content">
+
+                        <span>Total Logs</span>
+
+                        <strong id="totalLogs">
+                            0
+                        </strong>
+
+                        <small id="totalLogsInfo">
+                            All system activities
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card green">
+
+                    <div class="stat-icon">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+
+                    <div class="stat-content">
+
+                        <span>User Activities</span>
+
+                        <strong id="userActivities">
+                            0
+                        </strong>
+
+                        <small>
+                            User-related actions
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card orange">
+
+                    <div class="stat-icon">
+                        <i class="fa-solid fa-crown"></i>
+                    </div>
+
+                    <div class="stat-content">
+
+                        <span>Subscription Activities</span>
+
+                        <strong id="subscriptionActivities">
+                            0
+                        </strong>
+
+                        <small>
+                            Subscription-related actions
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card pink">
+
+                    <div class="stat-icon">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+
+                    <div class="stat-content">
+
+                        <span>Security / System</span>
+
+                        <strong id="systemActivities">
+                            0
+                        </strong>
+
+                        <small>
+                            System and security actions
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 LOG PANEL
+            ================================================== -->
+
+            <section class="logs-panel">
+
+
+                <!-- FILTER ROW -->
+
+                <div class="filter-row">
+
+                    <div class="filter-search">
+
+                        <i class="fa-solid fa-magnifying-glass"></i>
+
+                        <input
+                            type="text"
+                            id="logSearch"
+                            placeholder="Search logs by user, action, description..."
+                        >
+
+                    </div>
+
+
+                    <select id="userFilter">
+
+                        <option value="">
+                            All Users
+                        </option>
+
+                    </select>
+
+
+                    <select id="activityFilter">
+
+                        <option value="">
+                            All Activities
+                        </option>
+
+                        <option value="user">
+                            User Activities
+                        </option>
+
+                        <option value="subscription">
+                            Subscription Activities
+                        </option>
+
+                        <option value="system">
+                            Security / System Activities
+                        </option>
+
+                    </select>
+
+
+                    <select id="statusFilter">
+
+                        <option value="">
+                            All Status
+                        </option>
+
+                        <option value="success">
+                            Success
+                        </option>
+
+                        <option value="failed">
+                            Failed
+                        </option>
+
+                    </select>
+
+
+                    <button
+                        type="button"
+                        class="reset-button"
+                        id="resetButton"
+                    >
+                        Reset
+                    </button>
+
+                </div>
+
+
+                <!-- CATEGORY TABS -->
+
+                <div class="activity-tabs">
+
+                    <button
+                        class="activity-tab active"
+                        data-category=""
+                    >
+                        All
+                    </button>
+
+                    <button
+                        class="activity-tab"
+                        data-category="user"
+                    >
+                        User Activities
+                    </button>
+
+                    <button
+                        class="activity-tab"
+                        data-category="subscription"
+                    >
+                        Subscription Activities
+                    </button>
+
+                    
+
+                </div>
+
+
+                <!-- TABLE -->
+
+                <div class="table-wrapper">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>#</th>
+
+                                <th>User</th>
+
+                                <th>Activity Type</th>
+
+                                <th>Description</th>
+
+                                <th>IP Address</th>
+
+                                <th>Date & Time</th>
+
+                                <th>Status</th>
+
+                                <th>Actions</th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="logsTableBody">
+
+                            <tr>
+
+                                <td
+                                    colspan="8"
+                                    class="loading-row"
+                                >
+                                    <i class="fa-solid fa-spinner fa-spin"></i>
+                                    Loading activity logs...
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+                <!-- FOOTER -->
+
+                <div class="table-footer">
+
+                    <div id="paginationInfo">
+                        Showing 0 logs
+                    </div>
+
+
+                    <div
+                        class="pagination"
+                        id="pagination"
+                    ></div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     DETAILS MODAL
+========================================================= -->
+
+<div
+    class="modal-overlay"
+    id="detailsModal"
+>
+
+    <div class="details-modal">
+
+        <button
+            class="modal-close"
+            id="modalClose"
+        >
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <div class="modal-title">
+            <i class="fa-solid fa-circle-info"></i>
+            Activity Details
+        </div>
+
+        <div id="detailsContent"></div>
+
+    </div>
+
+</div>
+
+
+<script src="../admin-js/activity-logs.js"></script>
+
+</body>
+</html>

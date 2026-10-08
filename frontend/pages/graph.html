@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <title>Graph Calculator - Calcura</title>
+
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/graph.css">
+</head>
+
+<body>
+
+    <main class="graph-page">
+    <!---SIDEBAR--->
+           <aside class="calcura-sidebar">
+
+        <div class="sidebar-brand">
+
+            <div class="sidebar-logo">
+                <i class="fa-solid fa-calculator"></i>
+            </div>
+
+            <div class="sidebar-brand-text">
+                <h1>Calcura</h1>
+                <span>Speak · Calculate · Explore</span>
+            </div>
+
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <a href="dashboard.html" class="sidebar-item">
+                <i class="fa-solid fa-house"></i>
+                <span>Home</span>
+            </a>
+
+            <a href="calculator.html" class="sidebar-item">
+                <i class="fa-solid fa-calculator"></i>
+                <span>Calculator</span>
+            </a>
+
+            <a href="voice-input.html" class="sidebar-item">
+                <i class="fa-solid fa-microphone"></i>
+                <span>Voice Input</span>
+            </a>
+
+            <a href="graph.html" class="sidebar-item active">
+                <i class="fa-solid fa-chart-line"></i>
+                <span>Graph &amp; Plot</span>
+            </a>
+
+             <a href="ai-calculator.html" class="calcura-nav-item">
+                <i class="fa-solid fa-robot"></i>
+                <span>AI Assistant</span>
+            </a>
+
+            <a href="formulas.html" class="sidebar-item">
+                <i class="fa-solid fa-book-open"></i>
+                <span>Formula Library</span>
+            </a>
+
+            <a href="converter.html" class="sidebar-item">
+                <i class="fa-solid fa-right-left"></i>
+                <span>Unit Converter</span>
+            </a>
+
+            <a href="history.html" class="sidebar-item">
+                <i class="fa-regular fa-clock"></i>
+                <span>History</span>
+            </a>
+
+            <a href="saved.html" class="sidebar-item">
+                <i class="fa-regular fa-bookmark"></i>
+                <span>Saved</span>
+            </a>
+
+            <a href="settings.html" class="sidebar-item">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+            </a>
+
+            <a href="profile.html" class="sidebar-item">
+                <i class="fa-solid fa-user"></i>
+                <span>Profile</span>
+            </a>
+
+            <a href="about.html" class="sidebar-item">
+                <i class="fa-solid fa-circle-info"></i>
+                <span>About</span>
+            </a>
+
+            <a href="help.html" class="sidebar-item">
+                <i class="fa-solid fa-circle-question"></i>
+                <span>Help &amp; Support</span>
+            </a>
+
+            <a href="upgrade.html"
+               class="sidebar-item">
+
+                <i class="fa-solid fa-crown"></i>
+
+                <span>
+                    Upgrade to Pro
+                </span>
+
+            </a>
+
+        </nav>
+
+    </aside>
+
+        <div class="graph-container">
+
+            <!-- HEADER -->
+        
+                <header class="graph-top-header">
+
+                      <!-- SEARCH -->
+
+                <div class="graph-search">
+
+    <span class="search-icon">
+        <i class="fa-solid fa-magnifying-glass"></i>
+    </span>
+
+    <input
+        type="text"
+        id="globalSearch"
+        placeholder="Search tools, history, or help..."
+    >
+
+    <button
+    id="clearGlobalSearch"
+    type="button"
+    title="Clear search"
+>
+    <i class="fa-solid fa-xmark"></i>
+</button>
+
+    <div
+        id="searchSuggestions"
+        class="search-suggestions"
+    ></div>
+
+                </div>
+
+            <a
+                href="upgrade.html"
+                class="header-pro-button"
+            >
+                <i class="fa-solid fa-crown"></i>
+                Upgrade to Pro
+            </a>
+
+
+            <button
+                class="header-icon-button"
+                id="notificationButton"
+                type="button">
+                <i class="fa-regular fa-bell"></i>
+            </button>
+
+            <div
+                id="notificationPanel"
+                 class="notification-panel"
+>
+                <div class="notification-panel-header">
+                   <strong>Notifications</strong>
+                      <span>0</span>
+                </div>
+
+                    <div class="notification-empty">
+                        <i class="fa-regular fa-bell-slash"></i>
+
+                    p>No new notifications</p>
+
+                    <small>
+                         You're all caught up.
+                    </small>
+                </div>
+            </div>
+
+
+            <a
+                href="profile.html"
+                class="header-user">
+
+                <div
+                    class="header-avatar"
+                    id="profileAvatar"
+                >
+                    U
+                </div>
+
+                <div class="header-user-details">
+
+                    <strong id="profileName">
+                        User
+                    </strong>
+
+                    <span>
+                        Free Plan
+                    </span>
+
+                </div>
+
+                <span class="header-arrow">
+                    ⌄
+                </span>
+
+            </a>
+
+        </div>
+
+    </header>
+
+    <div class="graph-main-layout">
+
+    <div class="graph-left-column">
+
+                <!-- GRAPH HERO -->
+            <section class="graph-hero">
+
+                <div class="graph-hero-content">
+
+                    <h1>
+                        Graph & <span>Plot</span>
+                    </h1>
+
+                    <p>
+                        Visualize mathematical functions with ease.
+                    </p>
+
+                </div>
+
+                <div class="graph-hero-quote">
+                    <p>
+                        "A picture is worth<br>
+                        a thousand calculations."
+                    </p>
+                </div>
+
+                <div class="graph-hero-art">
+                    <div class="hero-wave wave-one"></div>
+                    <div class="hero-wave wave-two"></div>
+                    <span>Visualize</span>
+                    <span>Understand</span>
+                    <span>Explore</span>
+                </div>
+
+            </section>
+            
+            <!-- GRAPH INPUT CARD -->
+            <section class="graph-card">
+
+                <!-- GRAPH MODE TABS -->
+<div class="graph-mode-tabs">
+
+  <button class="graph-mode-tab active" data-mode="function">
+    <i class="fa-solid fa-chart-line"></i>
+    <span>f(x) Function Plot</span>
+</button>
+
+<button class="graph-mode-tab" data-mode="parametric">
+    <i class="fa-solid fa-bezier-curve"></i>
+    <span>Parametric</span>
+</button>
+
+<button class="graph-mode-tab" data-mode="polar">
+    <i class="fa-solid fa-draw-polygon"></i>
+    <span>Polar</span>
+</button>
+
+<button class="graph-mode-tab" data-mode="3d">
+    <i class="fa-solid fa-cube"></i>
+    <span>3D Graph</span>
+</button>
+
+</div>
+             <div class="graph-input-area">
+
+    <label for="functionInput">
+        Enter a function:
+    </label>
+
+    <div class="function-input-row">
+
+        <input
+            type="text"
+            id="functionInput"
+            placeholder="sin(x)"
+            autocomplete="off"
+        >
+
+        <button
+            id="plotBtn"
+            class="plot-btn"
+            type="button"
+        >
+            <i class="fa-solid fa-circle-play"></i>
+            Plot Graph
+        </button>
+
+    </div>
+
+    <p class="input-help">
+        Enter a mathematical function using x.
+    </p>
+
+</div>
+<!-- ==========================================
+     PARAMETRIC INPUT
+========================================== -->
+
+<div class="graph-input-area parametric-input-area"
+     id="parametricInputArea"
+     style="display: none;">
+
+    <label>
+        Enter parametric equations:
+    </label>
+
+    <div class="function-input-row">
+
+        <input
+            type="text"
+            id="parametricXInput"
+            placeholder="x(t) = cos(t)"
+            autocomplete="off"
+        >
+
+        <input
+            type="text"
+            id="parametricYInput"
+            placeholder="y(t) = sin(t)"
+            autocomplete="off"
+        >
+
+        <button
+            id="parametricPlotBtn"
+            class="plot-btn"
+            type="button"
+        >
+            <i class="fa-solid fa-circle-play"></i>
+            Plot Graph
+        </button>
+
+    </div>
+
+    <p class="input-help">
+        Enter x(t) and y(t) using parameter t.
+    </p>
+
+</div>
+<!-- ==========================================
+     POLAR INPUT
+========================================== -->
+
+<div class="graph-input-area polar-input-area"
+     id="polarInputArea"
+     style="display: none;">
+
+    <label>
+        Enter polar equation:
+    </label>
+
+    <div class="function-input-row">
+
+        <input
+            type="text"
+            id="polarInput"
+            placeholder="1 + cos(t)"
+            autocomplete="off"
+        >
+
+        <button
+            id="polarPlotBtn"
+            class="plot-btn"
+            type="button"
+        >
+            <i class="fa-solid fa-circle-play"></i>
+            Plot Graph
+        </button>
+
+    </div>
+
+    <p class="input-help">
+        Enter r as a function of θ (t).
+    </p>
+
+</div>
+<!-- ==========================================
+     3D GRAPH INPUT
+========================================== -->
+
+<div class="graph-input-area graph-3d-input-area"
+     id="graph3DInputArea"
+     style="display: none;">
+
+    <label for="graph3DInput">
+        Enter 3D function:
+    </label>
+
+    <div class="function-input-row">
+
+        <input
+            type="text"
+            id="graph3DInput"
+            placeholder="x^2 + y^2"
+            autocomplete="off"
+        >
+
+        <button
+            id="graph3DPlotBtn"
+            class="plot-btn"
+            type="button"
+        >
+            <i class="fa-solid fa-cube"></i>
+            Plot 3D Graph
+        </button>
+
+    </div>
+
+    <p class="input-help">
+        Enter a function using x and y, for example x² + y².
+    </p>
+
+</div>
+
+
+                <!-- GRAPH SETTINGS -->
+              <div class="graph-settings">
+
+    <div class="graph-range-control">
+
+        <span class="range-title">
+            Range:
+        </span>
+
+        <label for="xMin">
+            From
+        </label>
+
+        <input
+            type="number"
+            id="xMin"
+            value="-10"
+        >
+
+        <label for="xMax">
+            To
+        </label>
+
+        <input
+            type="number"
+            id="xMax"
+            value="10"
+        >
+
+    </div>
+
+
+    <div class="graph-options">
+
+        <label class="graph-option">
+
+            <input
+                type="checkbox"
+                id="showGrid"
+                checked
+            >
+
+            <span>Show Grid</span>
+
+        </label>
+
+
+        <label class="graph-option">
+
+            <input
+                type="checkbox"
+                id="showAxes"
+                checked
+            >
+
+            <span>Show Axes</span>
+
+        </label>
+
+
+        <label class="graph-option">
+
+            <input
+                type="checkbox"
+                id="multipleFunctions"
+            >
+
+            <span>Multiple Functions</span>
+
+        </label>
+
+    </div>
+
+
+    <!-- PRESERVE Y RANGE FOR EXISTING GRAPH ENGINE -->
+
+    <div class="graph-hidden-range">
+
+        <input
+            type="number"
+            id="yMin"
+            value="-10"
+        >
+
+        <input
+            type="number"
+            id="yMax"
+            value="10"
+        >
+
+    </div>
+
+</div>
+
+
+                <!-- GRAPH AREA -->
+               <div class="graph-display-card">
+
+    <div class="graph-display-header">
+
+        <h2 id="graphTitle">
+            Graph of <span>y = sin(x)</span>
+        </h2>
+
+        <div class="graph-display-actions">
+
+            <button
+                type="button"
+                id="zoomInBtn"
+                title="Zoom In"
+            >
+                <i class="fa-solid fa-magnifying-glass-plus"></i>
+                <span>Zoom In</span>
+            </button>
+
+            <button
+                type="button"
+                id="zoomOutBtn"
+                title="Zoom Out"
+            >
+                <i class="fa-solid fa-magnifying-glass-minus"></i>
+                <span>Zoom Out</span>
+            </button>
+
+            <button
+    type="button"
+    id="fullscreenGraphBtn"
+    title="Full Screen"
+>
+    <i class="fa-solid fa-expand"></i>
+    <span>Full Screen</span>
+</button>
+
+            <button
+                type="button"
+                id="resetGraphBtn"
+                title="Reset Graph"
+            >
+                <i class="fa-solid fa-rotate-right"></i>
+                <span>Reset</span>
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <div class="graph-wrapper">
+
+        <canvas id="graphCanvas"></canvas>
+
+    </div>
+
+</div>
+
+<!-- GRAPH FEATURE CARDS -->
+
+<div class="graph-feature-cards">
+
+    <div class="graph-feature-card">
+        <div class="graph-feature-icon">
+            <i class="fa-solid fa-chart-column"></i>
+        </div>
+
+        <div>
+            <strong>Multiple Functions</strong>
+            <p>Plot and compare multiple functions together.</p>
+        </div>
+    </div>
+
+
+    <div class="graph-feature-card">
+        <div class="graph-feature-icon">
+            <i class="fa-solid fa-palette"></i>
+        </div>
+
+        <div>
+            <strong>Customize Graphs</strong>
+            <p>Change colors, styles, and view settings.</p>
+        </div>
+    </div>
+
+
+    <div class="graph-feature-card">
+        <div class="graph-feature-icon">
+            <i class="fa-solid fa-cube"></i>
+        </div>
+
+        <div>
+            <strong>Advanced Plots</strong>
+            <p>Explore parametric, polar, and 3D graphs.</p>
+        </div>
+    </div>
+
+</div>
+       
+        </div>
+        <!-- RIGHT SIDE -->
+<aside class="graph-right-column">
+
+    <!-- QUICK EXAMPLES -->
+    <section class="graph-side-card quick-examples-card">
+
+        <h2>
+            <i class="fa-solid fa-lightbulb"></i>
+            Quick Examples
+        </h2>
+
+        <div class="quick-example-list">
+
+            <div class="quick-example-item">
+                <span>sin(x)</span>
+                <button
+                    type="button"
+                    class="quick-example-use"
+                    data-function="sin(x)"
+                >
+                    Use
+                </button>
+            </div>
+
+            <div class="quick-example-item">
+                <span>cos(x)</span>
+                <button
+                    type="button"
+                    class="quick-example-use"
+                    data-function="cos(x)"
+                >
+                    Use
+                </button>
+            </div>
+
+            <div class="quick-example-item">
+                <span>x²</span>
+                <button
+                    type="button"
+                    class="quick-example-use"
+                    data-function="x^2"
+                >
+                    Use
+                </button>
+            </div>
+
+            <div class="quick-example-item">
+                <span>eˣ</span>
+                <button
+                    type="button"
+                    class="quick-example-use"
+                    data-function="e^x"
+                >
+                    Use
+                </button>
+            </div>
+
+            <div class="quick-example-item">
+                <span>log(x)</span>
+                <button
+                    type="button"
+                    class="quick-example-use"
+                    data-function="log(x)"
+                >
+                    Use
+                </button>
+            </div>
+
+            <div class="quick-example-item">
+                <span>tan(x)</span>
+                <button
+                    type="button"
+                    class="quick-example-use"
+                    data-function="tan(x)"
+                >
+                    Use
+                </button>
+            </div>
+
+        </div>
+
+    </section>
+<aside class="graph-right-column">
+
+    <!-- GRAPH SETTINGS -->
+    <section class="graph-side-card graph-settings-card">
+
+        <h2>
+            <i class="fa-solid fa-gear"></i>
+            Graph Settings
+        </h2>
+
+        <div class="graph-setting-row">
+
+            <label>
+                Line Color
+            </label>
+
+            <input
+                type="color"
+                id="lineColor"
+                value="#1688ff"
+            >
+
+        </div>
+
+
+        <div class="graph-setting-row">
+
+            <label for="lineWidth">
+                Line Width
+            </label>
+
+            <div class="line-width-control">
+
+                <input
+                    type="range"
+                    id="lineWidth"
+                    min="1"
+                    max="6"
+                    value="3"
+                >
+
+                <span id="lineWidthValue">
+                    3
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="graph-setting-row">
+
+            <label for="lineStyle">
+                Style
+            </label>
+
+            <select id="lineStyle">
+
+                <option value="solid">
+                    Solid
+                </option>
+
+                <option value="dashed">
+                    Dashed
+                </option>
+
+                <option value="dotted">
+                    Dotted
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <div class="graph-checkbox-row">
+
+            <label>
+                <input
+                    type="checkbox"
+                    id="showLegend"
+                    checked
+                >
+                <span>Show Legend</span>
+            </label>
+
+
+            <label>
+                <input
+                    type="checkbox"
+                    id="showPoints"
+                >
+                <span>Show Points</span>
+            </label>
+
+        </div>
+
+    </section>
+
+        <!-- EXPORT GRAPH -->
+    <section class="graph-export-card">
+
+        <button
+            type="button"
+            id="exportGraphBtn"
+            class="graph-export-button"
+        >
+            <span class="graph-export-left">
+                <i class="fa-solid fa-download"></i>
+                <span>Export Graph</span>
+            </span>
+
+            <i class="fa-solid fa-chevron-down"></i>
+        </button>
+
+    </section>
+
+</aside>
+
+    </div>
+<!-- ==========================================
+     GRAPH FOOTER
+========================================== -->
+
+<footer class="graph-footer">
+
+    <div class="graph-footer-left">
+        © 2026 Calcura. All rights reserved.
+    </div>
+
+    <div class="graph-footer-links">
+
+        <a href="help.html">Help</a>
+        <a href="about.html">About</a>
+    </div>
+
+</footer>
+    </main>
+
+    <script src="../js/api.js"></script>
+     <script src="../js/auth.js"></script>
+    <script src="../js/graph.js"></script>
+   
+</body>
+
+</html>

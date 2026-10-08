@@ -1,0 +1,507 @@
+/* ==========================================
+   CALCURA LOGIN PAGE
+   ========================================== */
+
+/* Main Page */
+.auth-container {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px 20px;
+
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(22, 136, 255, 0.18),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 85% 80%,
+            rgba(0, 204, 255, 0.12),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #020914 0%,
+            #071525 48%,
+            #020b16 100%
+        );
+
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* Decorative Glow */
+.auth-container::before {
+    content: "";
+
+    position: absolute;
+
+    width: 380px;
+    height: 380px;
+
+    top: -170px;
+    right: -130px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(22, 136, 255, 0.18),
+            transparent 70%
+        );
+
+    pointer-events: none;
+}
+
+
+.auth-container::after {
+    content: "";
+
+    position: absolute;
+
+    width: 320px;
+    height: 320px;
+
+    bottom: -150px;
+    left: -110px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(0, 180, 255, 0.10),
+            transparent 70%
+        );
+
+    pointer-events: none;
+}
+
+
+/* ==========================================
+   LOGIN CARD
+   ========================================== */
+
+.auth-card {
+    width: 100%;
+    max-width: 450px;
+
+    padding: 42px 38px 34px;
+
+    position: relative;
+    z-index: 2;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(15, 31, 49, 0.94),
+            rgba(5, 17, 29, 0.97)
+        );
+
+    border: 1px solid rgba(120, 170, 215, 0.18);
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.50),
+        0 0 40px rgba(22, 136, 255, 0.08);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    overflow: hidden;
+}
+
+
+/* Top glow inside card */
+.auth-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 15%;
+
+    width: 70%;
+    height: 2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #1688ff,
+            #45c9ff,
+            #1688ff,
+            transparent
+        );
+
+    box-shadow:
+        0 0 18px rgba(22, 136, 255, 0.6);
+}
+
+
+/* ==========================================
+   LOGO
+   ========================================== */
+
+.auth-card .logo {
+    text-align: center;
+
+    font-size: 34px;
+    font-weight: 800;
+
+    letter-spacing: -1.2px;
+
+    margin-bottom: 20px;
+
+    color: #ffffff;
+
+    text-shadow:
+        0 0 18px rgba(22, 136, 255, 0.30);
+}
+
+
+/* ==========================================
+   HEADING
+   ========================================== */
+
+.auth-card h1 {
+    margin: 0;
+
+    text-align: center;
+
+    color: #f4f8fc;
+
+    font-size: 29px;
+    font-weight: 700;
+
+    line-height: 1.2;
+
+    letter-spacing: -0.5px;
+}
+
+
+/* Subtitle */
+.auth-subtitle {
+    margin: 10px auto 30px;
+
+    text-align: center;
+
+    max-width: 320px;
+
+    color: #8fa5ba;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+/* ==========================================
+   FORM
+   ========================================== */
+
+#loginForm {
+    width: 100%;
+}
+
+
+/* Form Group */
+.form-group {
+    margin-bottom: 21px;
+}
+
+
+/* Labels */
+.form-group label {
+    display: block;
+
+    margin-bottom: 9px;
+
+    color: #d9e7f4;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    letter-spacing: 0.2px;
+}
+
+
+/* ==========================================
+   INPUTS
+   ========================================== */
+
+.form-group input {
+    width: 100%;
+
+    height: 52px;
+
+    padding: 0 16px;
+
+    box-sizing: border-box;
+
+    border: 1px solid rgba(121, 157, 190, 0.20);
+
+    border-radius: 12px;
+
+    outline: none;
+
+    background:
+        rgba(4, 15, 27, 0.78);
+
+    color: #eef7ff;
+
+    font-size: 14px;
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+/* Placeholder */
+.form-group input::placeholder {
+    color: #637b91;
+}
+
+
+/* Focus */
+.form-group input:focus {
+    border-color: rgba(22, 136, 255, 0.85);
+
+    background:
+        rgba(6, 21, 37, 0.95);
+
+    box-shadow:
+        0 0 0 3px rgba(22, 136, 255, 0.10),
+        0 0 22px rgba(22, 136, 255, 0.08);
+
+    transform: translateY(-1px);
+}
+
+
+/* Valid */
+.form-group input:valid {
+    color: #eef7ff;
+}
+
+
+/* ==========================================
+   LOGIN MESSAGE
+   ========================================== */
+
+#loginMessage {
+    min-height: 20px;
+
+    margin: -2px 0 15px;
+
+    text-align: center;
+
+    font-size: 13px;
+
+    font-weight: 500;
+
+    line-height: 1.5;
+}
+
+
+/* Success */
+#loginMessage.text-success {
+    color: #4ade80;
+}
+
+
+/* Error */
+#loginMessage.text-danger {
+    color: #ff6b7a;
+}
+
+
+/* ==========================================
+   LOGIN BUTTON
+   ========================================== */
+
+#loginBtn {
+    width: 100%;
+
+    height: 52px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    color: #ffffff;
+
+    background:
+        linear-gradient(
+            135deg,
+            #1688ff 0%,
+            #176de5 55%,
+            #1154bd 100%
+        );
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.2px;
+
+    box-shadow:
+        0 12px 28px rgba(22, 136, 255, 0.24);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        filter 0.25s ease;
+}
+
+
+/* Button Hover */
+#loginBtn:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 16px 34px rgba(22, 136, 255, 0.32);
+
+    filter: brightness(1.06);
+}
+
+
+/* Button Active */
+#loginBtn:active {
+    transform: translateY(0);
+
+    box-shadow:
+        0 8px 18px rgba(22, 136, 255, 0.20);
+}
+
+
+/* Disabled */
+#loginBtn:disabled {
+    cursor: not-allowed;
+
+    opacity: 0.65;
+
+    transform: none;
+
+    box-shadow:
+        none;
+}
+
+
+/* ==========================================
+   FOOTER
+   ========================================== */
+
+.auth-footer {
+    margin: 25px 0 0;
+
+    padding-top: 21px;
+
+    text-align: center;
+
+    border-top: 1px solid rgba(120, 160, 195, 0.12);
+
+    color: #8096aa;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+
+/* Register Link */
+.auth-footer a {
+    margin-left: 5px;
+
+    color: #42a5ff;
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition:
+        color 0.2s ease,
+        text-shadow 0.2s ease;
+}
+
+
+.auth-footer a:hover {
+    color: #78c2ff;
+
+    text-shadow:
+        0 0 12px rgba(66, 165, 255, 0.35);
+}
+
+
+/* ==========================================
+   MOBILE
+   ========================================== */
+
+@media (max-width: 600px) {
+
+    .auth-container {
+        padding: 20px 14px;
+    }
+
+    .auth-card {
+        max-width: 100%;
+
+        padding: 34px 24px 28px;
+
+        border-radius: 18px;
+    }
+
+    .auth-card .logo {
+        font-size: 30px;
+
+        margin-bottom: 17px;
+    }
+
+    .auth-card h1 {
+        font-size: 25px;
+    }
+
+    .auth-subtitle {
+        margin-bottom: 25px;
+
+        font-size: 13px;
+    }
+
+    .form-group input,
+    #loginBtn {
+        height: 50px;
+    }
+
+}
+
+
+/* ==========================================
+   VERY SMALL SCREENS
+   ========================================== */
+
+@media (max-width: 380px) {
+
+    .auth-card {
+        padding: 30px 19px 24px;
+    }
+
+    .auth-card h1 {
+        font-size: 23px;
+    }
+
+    .auth-footer {
+        font-size: 12px;
+    }
+
+}

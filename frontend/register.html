@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Create Account - Calcura</title>
+
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/auth.css">
+</head>
+
+<body>
+
+    <main class="auth-container">
+
+        <section class="auth-card">
+
+            <div class="logo">Calcura</div>
+
+            <h1>Create Account</h1>
+
+            <p class="auth-subtitle">
+                Create your account to start using Calcura.
+            </p>
+
+            <form id="registerForm">
+
+                <!-- Full Name -->
+                <div class="form-group">
+
+                    <label for="name">
+                        Full Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Enter your full name"
+                        minlength="2"
+                        maxlength="50"
+                        autocomplete="name"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Email -->
+                <div class="form-group">
+
+                    <label for="email">
+                        Email Address
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Enter your email address"
+                        autocomplete="email"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Password -->
+                <div class="form-group">
+
+                    <label for="password">
+                        Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Create a password"
+                        minlength="8"
+                        autocomplete="new-password"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Confirm Password -->
+                <div class="form-group">
+
+                    <label for="confirmPassword">
+                        Confirm Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="confirmPassword"
+                        name="confirmPassword"
+                        placeholder="Confirm your password"
+                        minlength="8"
+                        autocomplete="new-password"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Message -->
+                <p id="registerMessage"></p>
+
+
+                <!-- Register Button -->
+                <button
+                    type="submit"
+                    id="registerBtn"
+                >
+                    Create Account
+                </button>
+
+            </form>
+
+
+            <!-- Login Link -->
+            <p class="auth-footer">
+
+                Already have an account?
+
+                <a href="login.html">
+                    Login
+                </a>
+
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <!-- API -->
+    <script src="js/api.js"></script>
+
+    <!-- Authentication -->
+    <script src="js/auth.js"></script>
+
+
+    <!-- Register Logic -->
+    <script>
+
+        const registerForm =
+            document.getElementById("registerForm");
+
+        const registerMessage =
+            document.getElementById("registerMessage");
+
+        const registerBtn =
+            document.getElementById("registerBtn");
+
+
+        registerForm.addEventListener(
+            "submit",
+            async function (event) {
+
+                event.preventDefault();
+
+
+                const name =
+                    document.getElementById("name")
+                        .value
+                        .trim();
+
+                const email =
+                    document.getElementById("email")
+                        .value
+                        .trim();
+
+                const password =
+                    document.getElementById("password")
+                        .value;
+
+                const confirmPassword =
+                    document.getElementById("confirmPassword")
+                        .value;
+
+
+                /* ---------------------------
+                   BASIC VALIDATION
+                --------------------------- */
+
+                if (name.length < 2) {
+
+                    registerMessage.textContent =
+                        "Please enter your full name.";
+
+                    registerMessage.className =
+                        "text-danger";
+
+                    return;
+                }
+
+
+                if (password.length < 8) {
+
+                    registerMessage.textContent =
+                        "Password must contain at least 8 characters.";
+
+                    registerMessage.className =
+                        "text-danger";
+
+                    return;
+                }
+
+
+                if (password !== confirmPassword) {
+
+                    registerMessage.textContent =
+                        "Passwords do not match.";
+
+                    registerMessage.className =
+                        "text-danger";
+
+                    return;
+                }
+
+
+                /* ---------------------------
+                   START REGISTERING
+                --------------------------- */
+
+                registerBtn.disabled = true;
+
+                registerBtn.textContent =
+                    "Creating Account...";
+
+                registerMessage.textContent =
+                    "";
+
+
+                try {
+
+                    const data =
+                        await registerUser(
+                            name,
+                            email,
+                            password
+                        );
+
+
+                    /* ---------------------------
+                       SUCCESS
+                    --------------------------- */
+
+                    if (data.success) {
+
+                        registerMessage.textContent =
+                            "Account created successfully!";
+
+                        registerMessage.className =
+                            "text-success";
+
+
+                        registerForm.reset();
+
+
+                        setTimeout(function () {
+
+                            window.location.href =
+                                "login.html";
+
+                        }, 1500);
+
+                    }
+
+                } catch (error) {
+
+                    /* ---------------------------
+                       ERROR
+                    --------------------------- */
+
+                    registerMessage.textContent =
+                        error.message ||
+                        "Registration failed.";
+
+                    registerMessage.className =
+                        "text-danger";
+
+                } finally {
+
+                    registerBtn.disabled = false;
+
+                    registerBtn.textContent =
+                        "Create Account";
+
+                }
+
+            }
+        );
+
+    </script>
+
+</body>
+
+</html>

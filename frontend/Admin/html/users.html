@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Users Management - Calcura Admin</title>
+
+    <!-- Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <!-- Admin Users CSS -->
+    <link rel="stylesheet" href="../admin-css/admin-users.css">
+</head>
+
+<body>
+
+<div class="admin-layout">
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside class="admin-sidebar" id="adminSidebar">
+
+        <div class="sidebar-brand">
+
+            <div class="brand-logo">
+                <span>C</span>
+            </div>
+
+            <div class="brand-text">
+                <h2>CALCURA</h2>
+                <p>Admin Panel</p>
+            </div>
+
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <a href="dashboard.html" class="sidebar-link">
+                <i class="fa-solid fa-house"></i>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="users.html" class="sidebar-link active">
+                <i class="fa-solid fa-users"></i>
+                <span>Users</span>
+            </a>
+
+            <a href="calculations.html" class="sidebar-link">
+                <i class="fa-solid fa-calculator"></i>
+                <span>Calculations</span>
+            </a>
+
+            <a href="formulas.html" class="sidebar-link">
+                <i class="fa-solid fa-book-open"></i>
+                <span>Formula Library</span>
+            </a>
+
+            <a href="subscriptions.html" class="sidebar-link">
+                <i class="fa-solid fa-credit-card"></i>
+                <span>Subscriptions</span>
+            </a>
+
+            <a href="reports.html" class="sidebar-link">
+                <i class="fa-solid fa-chart-column"></i>
+                <span>Reports</span>
+            </a>
+
+            <a href="activity-logs.html" class="sidebar-link">
+                <i class="fa-solid fa-file-lines"></i>
+                <span>Activity Logs</span>
+            </a>
+
+            <a href="settings.html" class="sidebar-link">
+                <i class="fa-solid fa-gear"></i>
+                <span>System Settings</span>
+            </a>
+
+            <a href="website-content.html" class="sidebar-link">
+                <i class="fa-solid fa-palette"></i>
+                <span>Website Content</span>
+            </a>
+
+            <a href="user-accounts.html" class="sidebar-link">
+                <i class="fa-solid fa-user-shield"></i>
+                <span>User Accounts</span>
+            </a>
+
+
+        </nav>
+
+
+        <!-- ADMIN CONTROL -->
+
+        <div class="admin-control-card">
+
+            <div class="control-icon">
+                <i class="fa-solid fa-crown"></i>
+            </div>
+
+            <h3>Admin Control</h3>
+
+            <strong>Full Control</strong>
+
+            <p>
+                You have complete access to manage Calcura.
+            </p>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <div class="admin-main">
+
+
+        <!-- =================================================
+             TOP HEADER
+        ================================================== -->
+
+        <header class="admin-header">
+
+            <button
+                class="sidebar-toggle"
+                id="sidebarToggle"
+                type="button"
+                aria-label="Toggle sidebar"
+            >
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+
+            <!-- GLOBAL SEARCH
+                 This search is NOT user-management search.
+            -->
+
+            <div class="global-search">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input
+                    type="text"
+                    id="globalSearch"
+                    placeholder="Search users by name, email, plan or role..."
+                    autocomplete="off"
+                >
+
+            </div>
+
+
+            <div class="header-right">
+<button
+    class="notification-btn"
+    id="adminNotificationBtn"
+    type="button"
+    title="Notifications"
+>
+    <i class="fa-regular fa-bell"></i>
+</button>
+
+
+                <div class="admin-profile">
+
+                    <div class="admin-avatar" id="adminAvatar">
+    A
+</div>
+
+<div class="admin-info">
+
+    <strong id="adminName">
+        Admin
+    </strong>
+
+    <span id="adminRole">
+        Administrator
+    </span>
+
+</div>
+
+                    <i class="fa-solid fa-chevron-down"></i>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- =================================================
+             PAGE CONTENT
+        ================================================== -->
+
+        <main class="users-page">
+
+
+            <!-- PAGE TITLE -->
+
+            <section class="page-heading">
+
+                <div>
+
+                    <h1>
+                        Users <span>Management</span>
+                    </h1>
+
+                    <p>
+                        View, edit and manage all registered users of Calcura.
+                    </p>
+
+                </div>
+
+
+                <!-- SELECT USER -->
+
+                <button
+                    type="button"
+                    id="selectUserBtn"
+                    class="select-user-btn"
+                >
+                    <i class="fa-solid fa-users"></i>
+                    <span>Select User</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+
+            </section>
+
+
+            <!-- =================================================
+                 STAT CARDS
+            ================================================== -->
+
+            <section class="user-stat-grid">
+
+
+                <!-- TOTAL -->
+
+                <div class="user-stat-card total-card">
+
+                    <div class="stat-icon">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+
+                    <div class="stat-content">
+
+                        <span>Total Users</span>
+
+                        <strong id="totalUsers">
+                            0
+                        </strong>
+
+                        <small>
+                            All registered users
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ACTIVE -->
+
+                <div class="user-stat-card active-card">
+
+                    <div class="stat-icon">
+                        <i class="fa-solid fa-user-check"></i>
+                    </div>
+
+                    <div class="stat-content">
+
+                        <span>Active Users</span>
+
+                        <strong id="activeUsers">
+                            0
+                        </strong>
+
+                        <small>
+                            Currently active
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <!-- INACTIVE -->
+
+                <div class="user-stat-card inactive-card">
+
+                    <div class="stat-icon">
+                        <i class="fa-solid fa-user-xmark"></i>
+                    </div>
+
+                    <div class="stat-content">
+
+                        <span>Inactive Users</span>
+
+                        <strong id="inactiveUsers">
+                            0
+                        </strong>
+
+                        <small>
+                            Not active / suspended
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PREMIUM -->
+
+                <div class="user-stat-card premium-card">
+
+                    <div class="stat-icon">
+                        <i class="fa-solid fa-crown"></i>
+                    </div>
+
+                    <div class="stat-content">
+
+                        <span>Premium Users</span>
+
+                        <strong id="premiumUsers">
+                            0
+                        </strong>
+
+                        <small>
+                            With active subscription
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 FILTER BAR
+            ================================================== -->
+
+            <section class="user-management-panel">
+
+
+                <div class="user-filter-bar">
+
+
+                    <!-- USER MANAGEMENT SEARCH -->
+
+                    <div class="user-search">
+
+                        <i class="fa-solid fa-magnifying-glass"></i>
+
+                        <input
+                            type="text"
+                            id="userSearch"
+                            placeholder="Search users..."
+                            autocomplete="off"
+                        >
+
+                    </div>
+
+
+                    <!-- ROLE -->
+
+                    <select id="roleFilter">
+
+                        <option value="all">
+                            All Roles
+                        </option>
+
+                        <option value="user">
+                            User
+                        </option>
+
+                        <option value="admin">
+                            Admin
+                        </option>
+
+                    </select>
+
+
+                    <!-- PLAN -->
+
+                    <select id="planFilter">
+
+                        <option value="all">
+                            All Plans
+                        </option>
+
+                        <option value="free">
+                            Free
+                        </option>
+
+                        <option value="pro">
+                            Pro
+                        </option>
+
+                        <option value="student">
+                            Student
+                        </option>
+
+                    </select>
+
+
+                    <!-- STATUS -->
+
+                    <select id="statusFilter">
+
+                        <option value="all">
+                            All Status
+                        </option>
+
+                        <option value="active">
+                            Active
+                        </option>
+
+                        <option value="inactive">
+                            Inactive
+                        </option>
+
+                    </select>
+
+
+                    <!-- DATE -->
+
+                    <div class="registration-date">
+
+                        <i class="fa-regular fa-calendar"></i>
+
+                        <input
+                            type="date"
+                            id="registrationDate"
+                        >
+
+                    </div>
+
+
+                    <!-- RESET -->
+
+                    <button
+                        type="button"
+                        id="resetFilters"
+                        class="reset-btn"
+                    >
+                        Reset
+                    </button>
+
+                </div>
+
+
+                <!-- =================================================
+                     BULK ACTION BAR
+                     HIDDEN UNTIL SELECT USER IS CLICKED
+                ================================================== -->
+
+                <div
+                    class="bulk-action-bar"
+                    id="bulkActionBar"
+                    hidden
+                >
+
+                    <div class="selected-info">
+
+                        <span id="selectedCount">
+                            0
+                        </span>
+
+                        <span>
+                            user selected
+                        </span>
+
+                    </div>
+
+
+                    <div class="bulk-actions">
+
+                        <button
+                            type="button"
+                            id="viewSelectedBtn"
+                            class="bulk-btn view-btn"
+                        >
+                            <i class="fa-solid fa-eye"></i>
+                            View Details
+                        </button>
+
+
+                        <button
+                            type="button"
+                            id="changeRoleBtn"
+                            class="bulk-btn role-btn"
+                        >
+                            <i class="fa-solid fa-users-gear"></i>
+                            Change Role
+                        </button>
+
+
+                        <button
+                            type="button"
+                            id="changePlanBtn"
+                            class="bulk-btn plan-btn"
+                        >
+                            <i class="fa-solid fa-crown"></i>
+                            Change Plan
+                        </button>
+
+
+                        <button
+                            type="button"
+                            id="activateBtn"
+                            class="bulk-btn activate-btn"
+                        >
+                            <i class="fa-solid fa-circle-check"></i>
+                            Activate
+                        </button>
+
+
+                        <button
+                            type="button"
+                            id="deactivateBtn"
+                            class="bulk-btn deactivate-btn"
+                        >
+                            <i class="fa-solid fa-ban"></i>
+                            Deactivate
+                        </button>
+
+
+                        <button
+                            type="button"
+                            id="deleteSelectedBtn"
+                            class="bulk-btn delete-btn"
+                        >
+                            <i class="fa-solid fa-trash"></i>
+                            Delete
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =================================================
+                     USERS TABLE
+                ================================================== -->
+
+                <div class="users-table-wrapper">
+
+                    <table class="users-table">
+
+                        <thead>
+
+                            <tr>
+
+                                <!-- HIDDEN UNTIL SELECT USER -->
+
+                                <th
+                                    class="checkbox-column"
+                                    id="selectAllHeader"
+                                    hidden
+                                >
+                                    <input
+                                        type="checkbox"
+                                        id="selectAllUsers"
+                                    >
+                                </th>
+
+
+                                <th>
+                                    #
+                                </th>
+
+                                <th>
+                                    User
+                                </th>
+
+                                <th>
+                                    Email
+                                </th>
+
+                                <th>
+                                    Role
+                                </th>
+
+                                <th>
+                                    Plan
+                                </th>
+
+                                <th>
+                                    Status
+                                </th>
+
+                                <th>
+                                    Registered On
+                                </th>
+
+                                <th>
+                                    Last Active
+                                </th>
+
+                                <th>
+                                    Actions
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="usersTableBody">
+
+                            <!-- Real MongoDB users will be inserted here -->
+
+                            <tr id="usersLoadingRow">
+
+                                <td
+                                    colspan="10"
+                                    class="loading-cell"
+                                >
+
+                                    <i class="fa-solid fa-spinner fa-spin"></i>
+
+                                    Loading users...
+
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+                <!-- =================================================
+                     PAGINATION
+                ================================================== -->
+
+                <div class="users-pagination">
+
+                    <div class="pagination-info">
+
+                        Showing
+                        <strong id="showingFrom">0</strong>
+                        to
+                        <strong id="showingTo">0</strong>
+                        of
+                        <strong id="totalUserCount">0</strong>
+                        users
+
+                    </div>
+
+
+                    <div
+                        class="pagination-controls"
+                        id="paginationControls"
+                    >
+
+                        <button
+                            type="button"
+                            id="previousPage"
+                            class="page-btn"
+                        >
+                            <i class="fa-solid fa-chevron-left"></i>
+                        </button>
+
+                        <!-- JS creates page buttons -->
+
+                        <button
+                            type="button"
+                            id="nextPage"
+                            class="page-btn"
+                        >
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     USER DETAILS MODAL
+====================================================== -->
+
+<div
+    class="admin-modal"
+    id="userDetailsModal"
+    hidden
+>
+
+    <div class="modal-overlay"></div>
+
+    <div class="modal-box">
+
+        <button
+            type="button"
+            class="modal-close"
+            id="closeUserDetails"
+        >
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <div class="modal-header">
+
+            <div
+                class="modal-avatar"
+                id="detailsAvatar"
+            >
+                U
+            </div>
+
+            <div>
+
+                <h2 id="detailsName">
+                    User
+                </h2>
+
+                <p id="detailsEmail">
+                    -
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="user-details-grid">
+
+            <div>
+                <span>Role</span>
+                <strong id="detailsRole">-</strong>
+            </div>
+
+            <div>
+                <span>Plan</span>
+                <strong id="detailsPlan">-</strong>
+            </div>
+
+            <div>
+                <span>Status</span>
+                <strong id="detailsStatus">-</strong>
+            </div>
+
+            <div>
+                <span>Registered</span>
+                <strong id="detailsRegistered">-</strong>
+            </div>
+
+            <div>
+                <span>Subscription</span>
+                <strong id="detailsSubscription">-</strong>
+            </div>
+
+            <div>
+                <span>Payment ID</span>
+                <strong id="detailsPayment">-</strong>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     CONFIRMATION MODAL
+====================================================== -->
+
+<div
+    class="admin-modal"
+    id="confirmModal"
+    hidden
+>
+
+    <div class="modal-overlay"></div>
+
+    <div class="modal-box confirm-box">
+
+        <div class="confirm-icon">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+        </div>
+
+        <h2 id="confirmTitle">
+            Confirm Action
+        </h2>
+
+        <p id="confirmMessage">
+            Are you sure?
+        </p>
+
+        <div class="confirm-actions">
+
+            <button
+                type="button"
+                id="cancelConfirm"
+                class="cancel-btn"
+            >
+                Cancel
+            </button>
+
+            <button
+                type="button"
+                id="confirmAction"
+                class="confirm-btn"
+            >
+                Confirm
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- Toast -->
+
+<div
+    class="admin-toast"
+    id="adminToast"
+    hidden
+>
+    <i class="fa-solid fa-circle-check"></i>
+    <span id="toastMessage">
+        Done
+    </span>
+</div>
+
+
+<!-- Admin Users JavaScript -->
+<script src="../admin-js/admin-users.js"></script>
+
+</body>
+</html>

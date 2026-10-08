@@ -1,0 +1,1902 @@
+/* =========================================================
+   CALCURA - UNIT CONVERTER
+========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    background: #020d1a;
+    color: #edf6ff;
+    font-family: inherit;
+}
+
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+.converter-page {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background: #020d1a;
+}
+
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.converter-page .calcura-sidebar {
+    position: fixed !important;
+    left: 0 !important;
+    top: 0 !important;
+
+    width: 260px !important;
+    height: 100vh !important;
+
+    z-index: 5000 !important;
+}
+
+
+/* =========================================================
+   MAIN CONTAINER
+========================================================= */
+
+.converter-container {
+    position: relative;
+
+    width: 100%;
+    min-height: 100vh;
+
+    margin: 0 !important;
+    padding-left: 260px;
+
+    background: #020d1a;
+}
+
+
+/* =========================================================
+   TOP HEADER
+========================================================= */
+
+.converter-top-header {
+    position: fixed;
+
+    left: 260px;
+    right: 0;
+    top: 0;
+
+    height: 88px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 24px;
+
+    background: #020d1a;
+
+    border-bottom: 1px solid #112c45;
+
+    z-index: 4000;
+}
+
+
+/* GLOBAL SEARCH */
+
+.converter-global-search {
+    width: 485px;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 16px;
+
+    background: #071a2d;
+
+    border: 1px solid #193c5d;
+    border-radius: 11px;
+
+    color: #8fc8ff;
+}
+
+.converter-global-search i {
+    font-size: 19px;
+    margin-right: 13px;
+}
+
+.converter-global-search input {
+    width: 100%;
+    height: 100%;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    color: #edf6ff;
+
+    font-size: 14px;
+}
+
+.converter-global-search input::placeholder {
+    color: #7895b3;
+}
+
+
+/* HEADER ACTIONS */
+
+.converter-header-actions {
+    margin-left: auto;
+
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+}
+
+
+/* PRO BUTTON */
+
+.converter-pro-btn {
+    height: 50px;
+
+    padding: 0 18px;
+
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    border: 1px solid #d99c24;
+    border-radius: 11px;
+
+    background: transparent;
+
+    color: #ffd34f;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+.converter-pro-btn i {
+    font-size: 15px;
+}
+
+
+/* NOTIFICATION */
+
+.converter-notification {
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #193c5d;
+    border-radius: 11px;
+
+    background: #071a2d;
+
+    color: #c9e0f8;
+
+    font-size: 18px;
+
+    cursor: pointer;
+}
+
+
+/* USER */
+
+.converter-user {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+
+    color: white;
+}
+
+.converter-user strong {
+    display: block;
+    font-size: 14px;
+}
+
+.converter-user span {
+    display: block;
+
+    margin-top: 3px;
+
+    color: #8ca6c0;
+
+    font-size: 12px;
+}
+
+.converter-user > i {
+    margin-left: 8px;
+    color: #9bb5d0;
+    font-size: 12px;
+}
+
+.converter-avatar {
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #456de5;
+
+    color: white;
+
+    font-size: 20px;
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+========================================================= */
+
+.converter-main {
+    width: 100%;
+
+    padding: 106px 18px 0;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.converter-hero {
+    position: relative;
+
+    width: 100%;
+    height: 126px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 28px;
+
+    background:
+        linear-gradient(
+            110deg,
+            #0a2744,
+            #08223d 55%,
+            #071c35
+        );
+
+    border: 1px solid #173d61;
+    border-radius: 13px;
+
+    overflow: hidden;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 5;
+}
+
+.hero-content h1 {
+    margin: 0;
+
+    font-size: 40px;
+    line-height: 1;
+
+    font-weight: 750;
+
+    color: #f5f8ff;
+}
+
+.hero-content h1 span {
+    color: #1687ff;
+}
+
+.hero-content p {
+    margin: 14px 0 0;
+
+    color: #d2e1f1;
+
+    font-size: 17px;
+}
+
+
+.hero-illustration {
+    position: absolute;
+
+    right: 470px;
+
+    display: flex;
+    align-items: center;
+
+    color: #087cff;
+}
+
+.globe-icon {
+    font-size: 84px;
+    line-height: 1;
+
+    filter:
+        drop-shadow(0 0 8px rgba(8,124,255,.25));
+}
+
+.hero-arrows {
+    position: absolute;
+
+    left: 55px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 4px;
+
+    font-size: 35px;
+}
+
+.hero-arrows i:first-child {
+    transform: translateX(20px);
+}
+
+.hero-arrows i:last-child {
+    transform: translateX(5px);
+}
+
+
+.hero-quote {
+    position: absolute;
+
+    right: 180px;
+
+    color: #e4eef9;
+
+    font-size: 17px;
+    font-style: italic;
+
+    line-height: 1.45;
+}
+
+
+.hero-handwriting {
+    position: absolute;
+
+    right: 35px;
+
+    color: #087cff;
+
+    font-size: 22px;
+    font-weight: 700;
+    font-style: italic;
+
+    line-height: 1.15;
+
+    transform: rotate(-5deg);
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   CONTENT GRID
+========================================================= */
+
+.converter-content-grid {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        274px;
+
+    gap: 14px;
+
+    margin-top: 15px;
+}
+
+.converter-left {
+    min-width: 0;
+}
+
+
+/* =========================================================
+   CATEGORY TABS
+========================================================= */
+
+.category-tabs {
+    width: 100%;
+    height: 69px;
+
+    display: flex;
+
+    background: #06182a;
+
+    border: 1px solid #173b5b;
+    border-radius: 12px;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.category-tabs::-webkit-scrollbar {
+    height: 4px;
+}
+
+.category-tabs::-webkit-scrollbar-thumb {
+    background: #24557d;
+    border-radius: 5px;
+}
+
+.category-tab {
+    min-width: 105px;
+
+    flex: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    border: none;
+    border-right: 1px solid #173b5b;
+
+    background: transparent;
+
+    color: #e2edf9;
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+    white-space: nowrap;
+}
+
+.category-tab:last-child {
+    border-right: none;
+}
+
+.category-tab i {
+    color: #74c3ff;
+    font-size: 17px;
+}
+
+.category-tab:hover {
+    background: rgba(8,124,255,.10);
+}
+
+.category-tab.active {
+    background: #087cff;
+    color: white;
+}
+
+.category-tab.active i {
+    color: white;
+}
+
+
+/* =========================================================
+   MAIN CONVERTER CARD
+========================================================= */
+
+.converter-main-card {
+    margin-top: 14px;
+
+    padding: 18px;
+
+    background: #06182a;
+
+    border: 1px solid #163a5b;
+    border-radius: 13px;
+}
+
+
+/* HEADING */
+
+.converter-card-heading {
+    display: flex;
+    align-items: center;
+
+    gap: 13px;
+
+    margin-bottom: 22px;
+}
+
+.heading-icon {
+    width: 43px;
+    height: 43px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    color: #a9d7ff;
+
+    font-size: 25px;
+}
+
+.converter-card-heading h2 {
+    margin: 0;
+
+    font-size: 20px;
+}
+
+.converter-card-heading p {
+    margin: 5px 0 0;
+
+    color: #a6bfd8;
+
+    font-size: 13px;
+}
+
+.switch-units-btn {
+    margin-left: auto;
+
+    height: 53px;
+
+    padding: 0 19px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: #087cff;
+
+    color: white;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   INPUT ROW
+========================================================= */
+
+.converter-input-row {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        62px
+        minmax(0, 1fr);
+
+    gap: 16px;
+
+    align-items: center;
+}
+
+.converter-input-card {
+    padding: 16px;
+
+    background: #071d32;
+
+    border: 1px solid #1a4162;
+    border-radius: 11px;
+}
+
+.converter-input-card label {
+    display: block;
+
+    margin-bottom: 9px;
+
+    color: #f0f6fc;
+
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.converter-input-card input,
+.converter-input-card select {
+    width: 100%;
+    height: 47px;
+
+    padding: 0 13px;
+
+    border: 1px solid #245274;
+    border-radius: 8px;
+
+    outline: none;
+
+    background: #06182a;
+
+    color: #eaf4ff;
+
+    font-size: 16px;
+}
+
+.converter-input-card input {
+    margin-bottom: 9px;
+}
+
+.converter-input-card input:focus,
+.converter-input-card select:focus {
+    border-color: #087cff;
+    box-shadow: 0 0 0 2px rgba(8,124,255,.10);
+}
+
+
+/* SWAP */
+
+.swap-button {
+    width: 52px;
+    height: 52px;
+
+    justify-self: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #087cff;
+    border-radius: 50%;
+
+    background: #071d32;
+
+    color: #9ed1ff;
+
+    font-size: 20px;
+
+    cursor: pointer;
+}
+
+.swap-button:hover {
+    background: #087cff;
+    color: white;
+}
+
+
+/* =========================================================
+   MARKS CONVERTER
+========================================================= */
+
+.marks-converter {
+    display: none;
+    width: 100%;
+}
+
+.marks-input-row {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        60px
+        minmax(0, 1fr);
+
+    gap: 16px;
+
+    align-items: center;
+}
+
+.marks-input-card {
+    padding: 16px;
+
+    background: #071d32;
+
+    border: 1px solid #1a4162;
+    border-radius: 11px;
+}
+
+.marks-input-card label {
+    display: block;
+
+    margin-bottom: 9px;
+
+    color: #f0f6fc;
+
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.marks-input-card input {
+    width: 100%;
+    height: 47px;
+
+    display: block;
+
+    margin-bottom: 9px;
+
+    padding: 0 13px;
+
+    border: 1px solid #245274;
+    border-radius: 8px;
+
+    outline: none;
+
+    background: #06182a;
+
+    color: #eaf4ff;
+
+    font-size: 16px;
+}
+
+.marks-input-card input:focus {
+    border-color: #087cff;
+
+    box-shadow:
+        0 0 0 2px rgba(8,124,255,.10);
+}
+
+.marks-input-card select {
+    width: 100%;
+    height: 47px;
+
+    padding: 0 13px;
+
+    border: 1px solid #245274;
+    border-radius: 8px;
+
+    outline: none;
+
+    background: #06182a;
+
+    color: #eaf4ff;
+
+    font-size: 15px;
+
+    cursor: pointer;
+}
+
+.marks-input-card select:focus {
+    border-color: #087cff;
+}
+
+
+/* SWAP BUTTON */
+
+.marks-swap-button {
+    width: 52px;
+    height: 52px;
+
+    justify-self: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #087cff;
+    border-radius: 50%;
+
+    background: #071d32;
+
+    color: #9ed1ff;
+
+    font-size: 19px;
+
+    cursor: pointer;
+}
+
+.marks-swap-button:hover {
+    background: #087cff;
+
+    color: white;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .marks-input-row {
+        grid-template-columns: 1fr;
+    }
+
+    .marks-swap-button {
+        transform: rotate(90deg);
+    }
+
+}
+/* =========================================================
+   RESULT
+========================================================= */
+
+.converter-result-card {
+    margin-top: 18px;
+
+    padding: 18px 20px;
+
+    background: linear-gradient(
+        135deg,
+        #08294a,
+        #071d34
+    );
+
+    border: 1px solid #167bdb;
+
+    border-radius: 11px;
+
+    text-align: center;
+}
+
+.result-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    color: #e8f3ff;
+
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.result-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.result-actions button {
+    width: 35px;
+    height: 35px;
+
+    border: none;
+
+    background: transparent;
+
+    color: #bdd8f3;
+
+    font-size: 18px;
+
+    cursor: pointer;
+}
+
+.result-actions button:hover {
+    color: #1687ff;
+}
+
+.result-main {
+    margin-top: 8px;
+
+    color: #f1f7ff;
+
+    font-size: 29px;
+    font-weight: 700;
+}
+
+.result-secondary {
+    margin-top: 6px;
+
+    color: #9bb7d1;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   COMMON CONVERSIONS
+========================================================= */
+
+.common-conversions {
+    margin-top: 14px;
+
+    padding: 16px;
+
+    background: #06182a;
+
+    border: 1px solid #163a5b;
+    border-radius: 13px;
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 14px;
+}
+
+.section-title i {
+    color: #d7e6f5;
+}
+
+.section-title h3 {
+    margin: 0;
+
+    font-size: 17px;
+}
+
+.common-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 10px;
+}
+
+.common-item {
+    min-height: 68px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 13px;
+
+    background: #071d32;
+
+    border: 1px solid #1a4162;
+    border-radius: 9px;
+
+    color: #e8f2fc;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   RIGHT SIDEBAR
+========================================================= */
+
+.converter-right-sidebar {
+    min-width: 0;
+}
+
+.quick-convert-card,
+.converter-tips-card {
+    padding: 15px;
+
+    background: #06182a;
+
+    border: 1px solid #163a5b;
+    border-radius: 13px;
+}
+
+.right-card-title {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    padding-bottom: 12px;
+
+    border-bottom: 1px solid #193b59;
+}
+
+.right-card-title i {
+    color: #a6d4ff;
+}
+
+.right-card-title h3 {
+    margin: 0;
+
+    font-size: 16px;
+}
+
+.quick-item {
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 5px;
+
+    border-bottom: 1px solid #183650;
+
+    color: #e2edf8;
+
+    cursor: pointer;
+}
+
+.quick-item:last-child {
+    border-bottom: none;
+}
+
+.quick-item i:first-child {
+    width: 28px;
+
+    color: #63bfff;
+}
+
+.quick-item span {
+    flex: 1;
+
+    font-size: 14px;
+}
+
+.quick-item .quick-arrow {
+    color: #91b9da;
+}
+
+
+/* =========================================================
+   TIPS
+========================================================= */
+
+.converter-tips-card {
+    margin-top: 15px;
+
+    padding: 18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #182d82,
+            #13236a
+        );
+
+    border-color: #344fc4;
+}
+
+.tips-icon {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(95,160,255,.18);
+
+    color: #8fc4ff;
+}
+
+.converter-tips-card h3 {
+    margin: 11px 0;
+
+    color: #f2f6ff;
+
+    font-size: 16px;
+}
+
+.converter-tips-card ul {
+    list-style: none;
+
+    padding: 0;
+    margin: 0;
+}
+
+.converter-tips-card li {
+    display: flex;
+    gap: 8px;
+
+    margin: 10px 0;
+
+    color: #dce8ff;
+
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+.converter-tips-card li i {
+    color: white;
+    margin-top: 2px;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.converter-footer {
+    min-height: 70px;
+
+    margin-top: 22px;
+    padding: 0 8px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-top: 1px solid #17354f;
+
+    color: #b2c7dc;
+
+    font-size: 13px;
+}
+
+.converter-footer div {
+    display: flex;
+    gap: 25px;
+}
+
+.converter-footer a {
+    color: #b2c7dc;
+    text-decoration: none;
+}
+
+.converter-footer a:hover {
+    color: #1687ff;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1200px) {
+
+    .converter-content-grid {
+        grid-template-columns:
+            minmax(0, 1fr)
+            250px;
+    }
+
+    .hero-illustration {
+        right: 390px;
+    }
+
+    .hero-quote {
+        right: 130px;
+    }
+
+    .hero-handwriting {
+        display: none;
+    }
+
+    .category-tab {
+        min-width: 90px;
+    }
+}
+
+
+@media (max-width: 950px) {
+
+    .converter-page .calcura-sidebar {
+        width: 240px !important;
+    }
+
+    .converter-container {
+        padding-left: 240px;
+    }
+
+    .converter-top-header {
+        left: 240px;
+    }
+
+    .converter-content-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .converter-right-sidebar {
+        display: grid;
+
+        grid-template-columns: 1fr 1fr;
+
+        gap: 14px;
+    }
+
+    .converter-tips-card {
+        margin-top: 0;
+    }
+
+    .hero-illustration,
+    .hero-quote {
+        display: none;
+    }
+}
+
+
+@media (max-width: 700px) {
+
+    .converter-container {
+        padding-left: 0;
+    }
+
+    .converter-page .calcura-sidebar {
+        position: relative !important;
+
+        width: 100% !important;
+        height: auto !important;
+    }
+
+    .converter-top-header {
+        position: relative;
+
+        left: 0;
+
+        height: auto;
+
+        padding: 15px;
+
+        flex-direction: column;
+
+        gap: 12px;
+    }
+
+    .converter-global-search {
+        width: 100%;
+    }
+
+    .converter-header-actions {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .converter-main {
+        padding: 15px;
+    }
+
+    .converter-hero {
+        height: 140px;
+
+        padding: 20px;
+    }
+
+    .hero-content h1 {
+        font-size: 30px;
+    }
+
+    .converter-input-row,
+    .marks-input-row {
+        grid-template-columns: 1fr;
+    }
+
+    .swap-button {
+        transform: rotate(90deg);
+    }
+
+    .common-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .converter-right-sidebar {
+        display: block;
+    }
+
+    .converter-tips-card {
+        margin-top: 14px;
+    }
+
+    .converter-footer {
+        flex-direction: column;
+
+        justify-content: center;
+
+        gap: 12px;
+
+        padding: 20px;
+    }
+}
+/* =========================================================
+   MARKS CONVERTER - FINAL
+========================================================= */
+
+.marks-converter {
+    display: none;
+    width: 100%;
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   FROM / TO
+========================================================= */
+
+.marks-input-row {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        60px
+        minmax(0, 1fr);
+
+    gap: 16px;
+
+    align-items: center;
+}
+
+
+.marks-input-card {
+    padding: 16px;
+
+    background: #071d32;
+
+    border: 1px solid #1b4567;
+
+    border-radius: 12px;
+
+    color: #ffffff;
+}
+
+
+.marks-input-card label {
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: #ffffff !important;
+
+    font-size: 15px;
+
+    font-weight: 700;
+}
+
+
+.marks-input-card input {
+    width: 100%;
+    height: 48px;
+
+    box-sizing: border-box;
+
+    margin-bottom: 10px;
+
+    padding: 0 14px;
+
+    border: 1px solid #245274;
+
+    border-radius: 8px;
+
+    outline: none;
+
+    background: #06182a;
+
+    color: #ffffff !important;
+
+    font-size: 16px;
+}
+
+
+.marks-input-card input::placeholder {
+    color: #a9bfd4 !important;
+}
+
+
+.marks-input-card input:focus {
+    border-color: #1685ff;
+
+    box-shadow:
+        0 0 0 2px rgba(22,133,255,.15);
+}
+
+
+.marks-input-card select {
+    width: 100%;
+    height: 48px;
+
+    box-sizing: border-box;
+
+    padding: 0 14px;
+
+    border: 1px solid #245274;
+
+    border-radius: 8px;
+
+    outline: none;
+
+    background: #06182a !important;
+
+    color: #ffffff !important;
+
+    font-size: 15px;
+
+    cursor: pointer;
+}
+
+
+.marks-input-card select option {
+    background: #071d32 !important;
+
+    color: #ffffff !important;
+}
+
+
+/* =========================================================
+   SWAP
+========================================================= */
+
+.marks-swap-button {
+    width: 54px;
+    height: 54px;
+
+    justify-self: center;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #1685ff;
+
+    border-radius: 50%;
+
+    background: #071d32;
+
+    color: #8ecaff;
+
+    font-size: 19px;
+
+    cursor: pointer;
+
+    transition: .2s ease;
+}
+
+
+.marks-swap-button:hover {
+    background: #1685ff;
+
+    color: #ffffff;
+
+    transform: scale(1.05);
+}
+
+
+/* =========================================================
+   SEMESTER SECTION
+========================================================= */
+
+.semester-section {
+    margin-top: 20px;
+
+    padding: 20px;
+
+    background: #061a2d;
+
+    border: 1px solid #163e5e;
+
+    border-radius: 12px;
+
+    color: #ffffff;
+}
+
+
+.semester-header {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin-bottom: 18px;
+}
+
+
+.semester-header h3 {
+    margin: 0 0 5px;
+
+    color: #ffffff !important;
+
+    font-size: 18px;
+}
+
+
+.semester-header p {
+    margin: 0;
+
+    color: #b9cde0 !important;
+
+    font-size: 13px;
+}
+
+
+.add-semester-btn {
+    flex-shrink: 0;
+
+    padding: 10px 16px;
+
+    border: 1px solid #1685ff;
+
+    border-radius: 8px;
+
+    background: #087cff;
+
+    color: #ffffff;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+
+.add-semester-btn:hover {
+    background: #006de6;
+}
+
+
+/* =========================================================
+   SEMESTER ROW
+========================================================= */
+
+.semester-list {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+
+.semester-row {
+    display: grid;
+
+    grid-template-columns:
+        1.2fr
+        1fr
+        1fr
+        45px;
+
+    gap: 10px;
+
+    align-items: center;
+
+    padding: 10px;
+
+    background: #071d32;
+
+    border: 1px solid #193f5d;
+
+    border-radius: 9px;
+}
+
+
+.semester-number {
+    color: #ffffff !important;
+
+    font-size: 14px;
+
+    font-weight: 700;
+}
+
+
+.semester-row input {
+    width: 100%;
+    height: 42px;
+
+    box-sizing: border-box;
+
+    padding: 0 12px;
+
+    border: 1px solid #245274;
+
+    border-radius: 7px;
+
+    outline: none;
+
+    background: #06182a;
+
+    color: #ffffff !important;
+}
+
+
+.semester-row input::placeholder {
+    color: #9eb5c9 !important;
+}
+
+
+.semester-row input:focus {
+    border-color: #1685ff;
+}
+
+
+.remove-semester {
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #5c3040;
+
+    border-radius: 7px;
+
+    background: #241522;
+
+    color: #ff7d96;
+
+    cursor: pointer;
+}
+
+
+.remove-semester:hover {
+    background: #a83250;
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   CALCULATE CGPA
+========================================================= */
+
+.calculate-cgpa-btn {
+    width: 100%;
+
+    margin-top: 15px;
+
+    padding: 13px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #087cff;
+
+    color: #ffffff;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+
+.calculate-cgpa-btn:hover {
+    background: #006de6;
+}
+
+
+/* =========================================================
+   FORCE MARKS TEXT WHITE
+========================================================= */
+
+.marks-converter h1,
+.marks-converter h2,
+.marks-converter h3,
+.marks-converter h4,
+.marks-converter p,
+.marks-converter label,
+.marks-converter span,
+.marks-converter div {
+    color: inherit;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 800px) {
+
+    .marks-input-row {
+        grid-template-columns: 1fr;
+    }
+
+    .marks-swap-button {
+        transform: rotate(90deg);
+    }
+
+    .semester-header {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .add-semester-btn {
+        width: 100%;
+    }
+
+    .semester-row {
+        grid-template-columns: 1fr 1fr;
+
+    }
+
+    .semester-number {
+        grid-column: 1 / -1;
+    }
+
+    .remove-semester {
+        width: 100%;
+    }
+}
+/* =========================================================
+   MARKS CONVERTER - TEXT VISIBILITY FIX
+========================================================= */
+
+#marksConverter,
+#marksConverter h1,
+#marksConverter h2,
+#marksConverter h3,
+#marksConverter h4,
+#marksConverter p,
+#marksConverter label,
+#marksConverter span,
+#marksConverter div {
+    color: #ffffff !important;
+}
+
+#marksConverter input,
+#marksConverter select {
+    color: #ffffff !important;
+}
+
+#marksConverter input::placeholder {
+    color: #9fb0c5 !important;
+}
+
+#commonTitle {
+    color: #ffffff !important;
+}
+
+.common-item {
+    color: #ffffff !important;
+}
+/* =========================================================
+   MARKS CONVERTER - MAKE ALL TEXT WHITE
+========================================================= */
+
+#marksConverter,
+#marksConverter * {
+    color: #ffffff !important;
+}
+
+/* Main title */
+#converterTitle {
+    color: #ffffff !important;
+}
+
+/* Description */
+#converterDescription {
+    color: #ffffff !important;
+}
+
+/* Marks converter heading */
+#marksConverter h1,
+#marksConverter h2,
+#marksConverter h3,
+#marksConverter h4,
+#marksConverter h5,
+#marksConverter h6 {
+    color: #ffffff !important;
+}
+
+/* Paragraphs */
+#marksConverter p {
+    color: #ffffff !important;
+}
+
+/* Labels */
+#marksConverter label {
+    color: #ffffff !important;
+}
+
+/* Semester section */
+#marksConverter .semester-title,
+#marksConverter .semester-description {
+    color: #ffffff !important;
+}
+
+/* Input text */
+#marksConverter input {
+    color: #ffffff !important;
+}
+
+/* Select text */
+#marksConverter select {
+    color: #ffffff !important;
+}
+
+/* Placeholder */
+#marksConverter input::placeholder {
+    color: #b9c9dc !important;
+}
+
+/* Semester text */
+#marksConverter .semester-number,
+#marksConverter .semester-row,
+#marksConverter .semester-row span {
+    color: #ffffff !important;
+}
+
+/* Common conversions */
+#commonTitle {
+    color: #ffffff !important;
+}
+
+.common-item {
+    color: #ffffff !important;
+}
+/* =========================================================
+   QUICK CONVERT - FORCE WHITE TEXT
+========================================================= */
+
+.quick-convert-panel,
+.quick-convert-panel h2,
+.quick-convert-panel h3,
+.quick-convert-panel span,
+.quick-convert-panel div {
+    color: #ffffff !important;
+}
+
+.quick-convert-panel .quick-convert-title {
+    color: #ffffff !important;
+}
+
+.quick-convert-panel .quick-item span {
+    color: #ffffff !important;
+}
+
+.quick-convert-panel .quick-item i {
+    color: #72c7ff !important;
+}
+
+.quick-convert-panel .quick-item .quick-arrow {
+    color: #b9dfff !important;
+}
+/* QUICK CONVERT - FINAL */
+
+[class*="quick"] h2,
+[class*="quick"] h3,
+[class*="quick"] span,
+[class*="quick"] .quick-item {
+    color: #ffffff !important;
+}
+
+#quickConvertList span {
+    color: #ffffff !important;
+}
+
+#quickConvertList .quick-item {
+    color: #ffffff !important;
+}
+
+#quickConvertList .quick-item i {
+    color: #72c7ff !important;
+}
+/* =========================================================
+   MAXIMUM MARKS INPUT
+========================================================= */
+
+#maximumMarks {
+    background: #ffffff !important;
+    color: #071d32 !important;
+    border: 1px solid #1a4162 !important;
+    caret-color: #071d32 !important;
+}
+
+#maximumMarks::placeholder {
+    color: #7a8a9a !important;
+    opacity: 1 !important;
+}
+
+#maximumMarks:focus {
+    background: #ffffff !important;
+    color: #071d32 !important;
+    outline: none !important;
+}
+#totalMarksSection label {
+    color: #ffffff !important;
+}
+/* Maximum / Total Marks input */
+
+#maximumMarks {
+    background: #071d32 !important;
+    color: #ffffff !important;
+    border: 1px solid #1a4162 !important;
+    caret-color: #ffffff !important;
+}
+
+#maximumMarks::placeholder {
+    color: #8fa6bb !important;
+    opacity: 1 !important;
+}
+
+#maximumMarks:focus {
+    background: #071d32 !important;
+    color: #ffffff !important;
+    outline: none !important;
+}

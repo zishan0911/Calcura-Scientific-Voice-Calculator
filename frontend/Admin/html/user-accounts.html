@@ -1,0 +1,1241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        CALCURA - User Accounts
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../admin-css/user-accounts.css"
+    >
+
+</head>
+
+
+<body>
+
+<div class="admin-layout">
+
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside
+        class="admin-sidebar"
+        id="adminSidebar"
+    >
+
+        <div class="sidebar-brand">
+
+            <div class="brand-logo">
+                <span>C</span>
+            </div>
+
+            <div class="brand-text">
+
+                <h2>
+                    CALCURA
+                </h2>
+
+                <p>
+                    Admin Panel
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <a
+                href="dashboard.html"
+                class="sidebar-link"
+            >
+                <i class="fa-solid fa-house"></i>
+                <span>Dashboard</span>
+            </a>
+
+
+            <a
+                href="users.html"
+                class="sidebar-link"
+            >
+                <i class="fa-solid fa-users"></i>
+                <span>Users</span>
+            </a>
+
+
+            <a
+                href="calculations.html"
+                class="sidebar-link"
+            >
+                <i class="fa-solid fa-calculator"></i>
+                <span>Calculations</span>
+            </a>
+
+
+            <a
+                href="formulas.html"
+                class="sidebar-link"
+            >
+                <i class="fa-solid fa-book-open"></i>
+                <span>Formula Library</span>
+            </a>
+
+
+            <a
+                href="subscriptions.html"
+                class="sidebar-link"
+            >
+                <i class="fa-solid fa-credit-card"></i>
+                <span>Subscriptions</span>
+            </a>
+
+
+            <a
+                href="reports.html"
+                class="sidebar-link"
+            >
+                <i class="fa-solid fa-chart-column"></i>
+                <span>Reports</span>
+            </a>
+
+
+            <a
+                href="activity-logs.html"
+                class="sidebar-link"
+            >
+                <i class="fa-solid fa-file-lines"></i>
+                <span>Activity Logs</span>
+            </a>
+
+
+            <a
+                href="system-settings.html"
+                class="sidebar-link"
+            >
+                <i class="fa-solid fa-gear"></i>
+                <span>System Settings</span>
+            </a>
+
+
+            <a
+                href="website-content.html"
+                class="sidebar-link"
+            >
+                <i class="fa-solid fa-palette"></i>
+                <span>Website Content</span>
+            </a>
+
+
+            <a
+                href="user-accounts.html"
+                class="sidebar-link active"
+            >
+                <i class="fa-solid fa-user-shield"></i>
+                <span>User Accounts</span>
+            </a>
+
+
+        </nav>
+
+
+        <div class="admin-control-card">
+
+            <div class="control-icon">
+                <i class="fa-solid fa-crown"></i>
+            </div>
+
+            <h3>
+                Admin Control
+            </h3>
+
+            <strong>
+                Full Control
+            </strong>
+
+            <p>
+                You have complete access
+                to manage Calcura.
+            </p>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <div class="admin-main">
+
+
+        <!-- HEADER -->
+
+        <header class="admin-header">
+
+            <button
+                type="button"
+                class="sidebar-toggle"
+                id="sidebarToggle"
+            >
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+
+            <div class="global-search">
+
+                <i
+                    class="fa-solid fa-magnifying-glass"
+                ></i>
+
+                <input
+                    type="text"
+                    id="globalSearch"
+                    placeholder="Search accounts, email, IP, device, status..."
+                    autocomplete="off"
+                >
+
+            </div>
+
+
+            <div class="header-right">
+
+                <button
+                    type="button"
+                    class="notification-button"
+                    id="notificationButton"
+                >
+                    <i
+                        class="fa-regular fa-bell"
+                    ></i>
+
+                    <span
+                        id="notificationDot"
+                    ></span>
+
+                </button>
+
+
+                <div class="header-divider"></div>
+
+
+                <button
+                    type="button"
+                    class="admin-profile"
+                    id="adminProfileButton"
+                >
+
+                    <span
+                        class="admin-avatar"
+                        id="adminAvatar"
+                    >
+                        A
+                    </span>
+
+                    <span
+                        class="admin-name"
+                        id="adminName"
+                    >
+                        Admin
+                    </span>
+
+                    <i
+                        class="fa-solid fa-chevron-down"
+                    ></i>
+
+                </button>
+
+
+                <div
+                    class="profile-dropdown"
+                    id="profileDropdown"
+                >
+
+                    <div class="profile-dropdown-header">
+
+                        <div
+                            class="dropdown-avatar"
+                            id="dropdownAvatar"
+                        >
+                            A
+                        </div>
+
+                        <div>
+
+                            <strong
+                                id="dropdownName"
+                            >
+                                Admin
+                            </strong>
+
+                            <span
+                                id="dropdownRole"
+                            >
+                                Administrator
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        id="logoutButton"
+                    >
+                        <i
+                            class="fa-solid fa-right-from-bracket"
+                        ></i>
+
+                        Logout
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =====================================================
+             PAGE
+        ====================================================== -->
+
+        <main class="page-content">
+
+
+            <!-- HEADING -->
+
+            <section class="page-heading">
+
+                <div>
+
+                    <h1>
+                        User
+                        <span>Accounts</span>
+                    </h1>
+
+                    <p>
+                        Manage account security, login sessions,
+                        access control and account-related actions.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 STAT CARDS
+            ================================================== -->
+
+            <section class="stats-grid">
+
+
+                <div class="stat-card blue">
+
+                    <div class="stat-icon">
+
+                        <i
+                            class="fa-solid fa-users"
+                        ></i>
+
+                    </div>
+
+                    <div class="stat-content">
+
+                        <span>
+                            Total Accounts
+                        </span>
+
+                        <strong id="totalAccounts">
+                            0
+                        </strong>
+
+                        <small>
+                            All registered accounts
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="stat-card green">
+
+                    <div class="stat-icon">
+
+                        <i
+                            class="fa-solid fa-user"
+                        ></i>
+
+                    </div>
+
+                    <div class="stat-content">
+
+                        <span>
+                            Active Accounts
+                        </span>
+
+                        <strong id="activeAccounts">
+                            0
+                        </strong>
+
+                        <small>
+                            Active in last 30 days
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="stat-card pink">
+
+                    <div class="stat-icon">
+
+                        <i
+                            class="fa-solid fa-ban"
+                        ></i>
+
+                    </div>
+
+                    <div class="stat-content">
+
+                        <span>
+                            Blocked Accounts
+                        </span>
+
+                        <strong id="blockedAccounts">
+                            0
+                        </strong>
+
+                        <small>
+                            Blocking not yet tracked
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="stat-card orange">
+
+                    <div class="stat-icon">
+
+                        <i
+                            class="fa-solid fa-key"
+                        ></i>
+
+                    </div>
+
+                    <div class="stat-content">
+
+                        <span>
+                            Password Reset Requests
+                        </span>
+
+                        <strong id="resetRequests">
+                            0
+                        </strong>
+
+                        <small>
+                            Reset requests tracked
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 ACCOUNT TABS
+            ================================================== -->
+
+            <section class="account-tabs">
+
+                <button
+                    type="button"
+                    class="account-tab active"
+                    data-tab="sessions"
+                >
+                    <i class="fa-regular fa-clock"></i>
+                    Login Sessions
+                </button>
+
+
+                <button
+                    type="button"
+                    class="account-tab"
+                    data-tab="security"
+                >
+                    <i class="fa-solid fa-shield-halved"></i>
+                    Security & Access
+                </button>
+
+
+                <button
+                    type="button"
+                    class="account-tab"
+                    data-tab="blocked"
+                >
+                    <i class="fa-solid fa-ban"></i>
+                    Blocked Accounts
+                </button>
+
+
+                <button
+                    type="button"
+                    class="account-tab"
+                    data-tab="reset"
+                >
+                    <i class="fa-solid fa-key"></i>
+                    Password Reset
+                </button>
+
+
+                <button
+                    type="button"
+                    class="account-tab"
+                    data-tab="verification"
+                >
+                    <i class="fa-solid fa-envelope"></i>
+                    Email Verification
+                </button>
+
+
+                <button
+                    type="button"
+                    class="account-tab"
+                    data-tab="twofactor"
+                >
+                    <i class="fa-solid fa-shield"></i>
+                    Two-Factor Authentication
+                </button>
+
+
+                <button
+                    type="button"
+                    class="account-tab"
+                    data-tab="recovery"
+                >
+                    <i class="fa-solid fa-rotate"></i>
+                    Account Recovery
+                </button>
+
+
+                <button
+                    type="button"
+                    class="account-tab"
+                    data-tab="attempts"
+                >
+                    <i class="fa-solid fa-chart-column"></i>
+                    Login Attempts
+                </button>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 TOP PANELS
+            ================================================== -->
+
+            <section class="dashboard-panels">
+
+
+                <!-- RECENT ACTIVITY -->
+
+                <div class="panel recent-panel">
+
+                    <div class="panel-header">
+
+                        <h2>
+
+                            <i
+                                class="fa-regular fa-clock"
+                            ></i>
+
+                            Recent Login Activity
+
+                        </h2>
+
+                        <button
+                            type="button"
+                            id="viewAllButton"
+                        >
+                            View All
+                        </button>
+
+                    </div>
+
+
+                    <div
+                        class="recent-list"
+                        id="recentLoginList"
+                    >
+
+                        <div class="loading-small">
+                            Loading...
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- LOGIN STATISTICS -->
+
+                <div class="panel chart-panel">
+
+                    <div class="panel-header">
+
+                        <h2>
+
+                            <i
+                                class="fa-solid fa-chart-line"
+                            ></i>
+
+                            Login Statistics
+
+                        </h2>
+
+
+                        <select
+                            id="chartPeriod"
+                        >
+
+                            <option value="7">
+                                Last 7 Days
+                            </option>
+
+                            <option value="30">
+                                Last 30 Days
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="chart-container">
+
+                        <canvas
+                            id="loginChart"
+                        ></canvas>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- DEVICE -->
+
+                <div class="panel device-panel">
+
+                    <div class="panel-header">
+
+                        <h2>
+
+                            <i
+                                class="fa-solid fa-laptop"
+                            ></i>
+
+                            Device & Browser Usage
+
+                        </h2>
+
+                    </div>
+
+
+                    <div
+                        class="device-content"
+                        id="deviceContent"
+                    >
+
+                        <div class="donut-wrap">
+
+                            <div
+                                class="donut"
+                                id="deviceDonut"
+                            >
+
+                                <div
+                                    class="donut-center"
+                                >
+                                    <strong
+                                        id="deviceTotal"
+                                    >
+                                        0
+                                    </strong>
+
+                                    <span>
+                                        Accounts
+                                    </span>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div
+                            class="device-legend"
+                            id="deviceLegend"
+                        >
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 FILTERS
+            ================================================== -->
+
+            <section class="filter-panel">
+
+                <div class="filter-search">
+
+                    <i
+                        class="fa-solid fa-magnifying-glass"
+                    ></i>
+
+                    <input
+                        type="text"
+                        id="accountSearch"
+                        placeholder="Search by user, email, IP address or device..."
+                    >
+
+                </div>
+
+
+                <select
+                    id="statusFilter"
+                    class="filter-select"
+                >
+
+                    <option value="all">
+                        All Status
+                    </option>
+
+                    <option value="active">
+                        Active
+                    </option>
+
+                    <option value="inactive">
+                        Inactive
+                    </option>
+
+                </select>
+
+
+                <select
+                    id="deviceFilter"
+                    class="filter-select"
+                >
+
+                    <option value="all">
+                        All Devices
+                    </option>
+
+                    <option value="Windows">
+                        Windows
+                    </option>
+
+                    <option value="Android">
+                        Android
+                    </option>
+
+                    <option value="iPhone">
+                        iPhone
+                    </option>
+
+                    <option value="Mac">
+                        Mac
+                    </option>
+
+                    <option value="Unknown">
+                        Unknown
+                    </option>
+
+                </select>
+
+
+                <select
+                    id="browserFilter"
+                    class="filter-select"
+                >
+
+                    <option value="all">
+                        All Browsers
+                    </option>
+
+                    <option value="Chrome">
+                        Chrome
+                    </option>
+
+                    <option value="Edge">
+                        Edge
+                    </option>
+
+                    <option value="Firefox">
+                        Firefox
+                    </option>
+
+                    <option value="Safari">
+                        Safari
+                    </option>
+
+                    <option value="Unknown">
+                        Unknown
+                    </option>
+
+                </select>
+
+
+                <input
+                    type="date"
+                    id="dateFilter"
+                    class="date-filter"
+                >
+
+
+                <button
+                    type="button"
+                    id="resetButton"
+                    class="reset-button"
+                >
+                    Reset
+                </button>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 TABLE
+            ================================================== -->
+
+            <section class="table-panel">
+
+                <div class="table-wrapper">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    #
+                                </th>
+
+                                <th>
+                                    User
+                                </th>
+
+                                <th>
+                                    Email
+                                </th>
+
+                                <th>
+                                    IP Address
+                                </th>
+
+                                <th>
+                                    Device
+                                </th>
+
+                                <th>
+                                    Browser
+                                </th>
+
+                                <th>
+                                    Login Time
+                                </th>
+
+                                <th>
+                                    Status
+                                </th>
+
+                                <th>
+                                    Actions
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody
+                            id="accountsTableBody"
+                        >
+
+                            <tr>
+
+                                <td
+                                    colspan="9"
+                                    class="loading-row"
+                                >
+
+                                    <i
+                                        class="fa-solid fa-spinner fa-spin"
+                                    ></i>
+
+                                    Loading accounts...
+
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+                <div class="pagination-area">
+
+                    <span
+                        id="showingText"
+                    >
+                        Showing 0 accounts
+                    </span>
+
+
+                    <div class="pagination">
+
+                        <button
+                            type="button"
+                            id="previousPage"
+                        >
+                            <i
+                                class="fa-solid fa-chevron-left"
+                            ></i>
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="page-number active"
+                            id="currentPage"
+                        >
+                            1
+                        </button>
+
+
+                        <button
+                            type="button"
+                            id="nextPage"
+                        >
+                            <i
+                                class="fa-solid fa-chevron-right"
+                            ></i>
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+        </main>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     VIEW MODAL
+========================================================= -->
+
+<div
+    class="modal-overlay"
+    id="viewModal"
+>
+
+    <div class="account-modal">
+
+        <div class="modal-header">
+
+            <div>
+
+                <h2>
+                    Account Details
+                </h2>
+
+                <p>
+                    View account information
+                </p>
+
+            </div>
+
+            <button
+                type="button"
+                class="modal-close"
+                id="closeViewModal"
+            >
+                <i
+                    class="fa-solid fa-xmark"
+                ></i>
+            </button>
+
+        </div>
+
+
+        <div
+            class="account-details"
+            id="accountDetails"
+        ></div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     EDIT MODAL
+========================================================= -->
+
+<div
+    class="modal-overlay"
+    id="editModal"
+>
+
+    <div class="account-modal">
+
+        <div class="modal-header">
+
+            <div>
+
+                <h2>
+                    Edit Account
+                </h2>
+
+                <p>
+                    Update account information
+                </p>
+
+            </div>
+
+            <button
+                type="button"
+                class="modal-close"
+                id="closeEditModal"
+            >
+                <i
+                    class="fa-solid fa-xmark"
+                ></i>
+            </button>
+
+        </div>
+
+
+        <form id="editForm">
+
+            <input
+                type="hidden"
+                id="editUserId"
+            >
+
+
+            <div class="form-grid">
+
+                <div class="form-group">
+
+                    <label>
+                        Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="editName"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="editEmail"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Role
+                    </label>
+
+                    <select
+                        id="editRole"
+                    >
+
+                        <option value="user">
+                            User
+                        </option>
+
+                        <option value="admin">
+                            Admin
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Plan
+                    </label>
+
+                    <select
+                        id="editPlan"
+                    >
+
+                        <option value="free">
+                            Free
+                        </option>
+
+                        <option value="student">
+                            Student
+                        </option>
+
+                        <option value="pro">
+                            Pro
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Subscription Status
+                    </label>
+
+                    <select
+                        id="editSubscription"
+                    >
+
+                        <option value="inactive">
+                            Inactive
+                        </option>
+
+                        <option value="active">
+                            Active
+                        </option>
+
+                        <option value="cancelled">
+                            Cancelled
+                        </option>
+
+                        <option value="expired">
+                            Expired
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    class="cancel-button"
+                    id="cancelEdit"
+                >
+                    Cancel
+                </button>
+
+                <button
+                    type="submit"
+                    class="save-button"
+                >
+                    <i
+                        class="fa-solid fa-floppy-disk"
+                    ></i>
+
+                    Save Changes
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+
+<script
+    src="https://cdn.jsdelivr.net/npm/chart.js"
+></script>
+
+<script
+    src="../admin-js/user-accounts.js"
+></script>
+
+</body>
+
+</html>

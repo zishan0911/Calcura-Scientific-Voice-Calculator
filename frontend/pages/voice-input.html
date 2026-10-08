@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Voice Calculator - Calcura</title>
+
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/voice.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <main class="voice-page">
+
+         <!-- ================= SIDEBAR ================= -->
+  <aside class="calcura-sidebar">
+
+        <div class="sidebar-brand">
+
+            <div class="sidebar-logo">
+                <i class="fa-solid fa-calculator"></i>
+            </div>
+
+            <div class="sidebar-brand-text">
+                <h1>Calcura</h1>
+                <span>Speak · Calculate · Explore</span>
+            </div>
+
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <a href="dashboard.html" class="sidebar-item">
+                <i class="fa-solid fa-house"></i>
+                <span>Home</span>
+            </a>
+
+            <a href="calculator.html" class="sidebar-item">
+                <i class="fa-solid fa-calculator"></i>
+                <span>Calculator</span>
+            </a>
+
+            <a href="voice-input.html" class="sidebar-item active">
+                <i class="fa-solid fa-microphone"></i>
+                <span>Voice Input</span>
+            </a>
+
+            <a href="graph.html" class="sidebar-item">
+                <i class="fa-solid fa-chart-line"></i>
+                <span>Graph &amp; Plot</span>
+            </a>
+
+             <a href="ai-calculator.html" class="calcura-nav-item">
+                <i class="fa-solid fa-robot"></i>
+                <span>AI Assistant</span>
+            </a>
+
+            <a href="formulas.html" class="sidebar-item">
+                <i class="fa-solid fa-book-open"></i>
+                <span>Formula Library</span>
+            </a>
+
+            <a href="converter.html" class="sidebar-item">
+                <i class="fa-solid fa-right-left"></i>
+                <span>Unit Converter</span>
+            </a>
+
+            <a href="history.html" class="sidebar-item">
+                <i class="fa-regular fa-clock"></i>
+                <span>History</span>
+            </a>
+
+            <a href="saved.html" class="sidebar-item">
+                <i class="fa-regular fa-bookmark"></i>
+                <span>Saved</span>
+            </a>
+
+            <a href="settings.html" class="sidebar-item">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+            </a>
+
+            <a href="profile.html" class="sidebar-item">
+                <i class="fa-solid fa-user"></i>
+                <span>Profile</span>
+            </a>
+
+            <a href="about.html" class="sidebar-item">
+                <i class="fa-solid fa-circle-info"></i>
+                <span>About</span>
+            </a>
+
+            <a href="help.html" class="sidebar-item">
+                <i class="fa-solid fa-circle-question"></i>
+                <span>Help &amp; Support</span>
+            </a>
+
+            <a href="upgrade.html"
+               class="sidebar-item">
+
+                <i class="fa-solid fa-crown"></i>
+
+                <span>
+                    Upgrade to Pro
+                </span>
+
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+
+        <div class="voice-container">
+
+                 <!-- =========================================
+         TOP HEADER
+    ========================================== -->
+
+    <header class="voice-top-header">
+
+        <!-- SEARCH -->
+
+<div class="voice-search">
+
+    <span class="search-icon">
+        <i class="fa-solid fa-magnifying-glass"></i>
+    </span>
+
+    <input
+        type="text"
+        id="globalSearch"
+        placeholder="Search tools, history, or help..."
+    >
+
+    <button
+    id="clearGlobalSearch"
+    type="button"
+    title="Clear search"
+>
+    <i class="fa-solid fa-xmark"></i>
+</button>
+
+    <div
+        id="searchSuggestions"
+        class="search-suggestions"
+    ></div>
+
+</div>
+
+        <!-- HEADER ACTIONS -->
+
+        <div class="voice-header-actions">
+
+            <a
+                href="upgrade.html"
+                class="header-pro-button"
+            >
+                <i class="fa-solid fa-crown"></i>
+                Upgrade to Pro
+            </a>
+
+
+            <button
+                class="header-icon-button"
+                id="notificationButton"
+                type="button">
+                <i class="fa-regular fa-bell"></i>
+            </button>
+
+            <div
+    id="notificationPanel"
+    class="notification-panel"
+>
+    <div class="notification-panel-header">
+        <strong>Notifications</strong>
+        <span>0</span>
+    </div>
+
+    <div class="notification-empty">
+        <i class="fa-regular fa-bell-slash"></i>
+
+        <p>No new notifications</p>
+
+        <small>
+            You're all caught up.
+        </small>
+    </div>
+</div>
+
+
+            <a
+                href="profile.html"
+                class="header-user">
+
+                <div
+                    class="header-avatar"
+                    id="profileAvatar"
+                >
+                    U
+                </div>
+
+                <div class="header-user-details">
+
+                    <strong id="profileName">
+                        User
+                    </strong>
+
+                    <span>
+                        Free Plan
+                    </span>
+
+                </div>
+
+                <span class="header-arrow">
+                    ⌄
+                </span>
+
+            </a>
+
+        </div>
+
+    </header>
+
+<!-- =========================================
+     VOICE MAIN CONTENT
+========================================= -->
+
+<div class="voice-content-grid">
+
+    <!-- =====================================
+         LEFT / CENTER CONTENT
+    ====================================== -->
+
+    <div class="voice-main-column">
+
+        <!-- HERO -->
+
+        <section class="voice-hero">
+
+            <div class="voice-hero-icon">
+                <i class="fa-solid fa-microphone"></i>
+            </div>
+
+            <div class="voice-hero-text">
+
+                <h1>
+                    Voice <span>Input</span>
+                </h1>
+
+                <p>
+                    Just speak your expression and let Calcura do the rest.
+                </p>
+
+            </div>
+
+            <div class="voice-hero-wave">
+                <div class="wave-bar"></div>
+                <div class="wave-bar"></div>
+                <div class="wave-bar"></div>
+                <div class="wave-bar"></div>
+                <div class="wave-bar"></div>
+                <div class="wave-bar"></div>
+                <div class="wave-bar"></div>
+                <div class="wave-bar"></div>
+                <div class="wave-bar"></div>
+                <div class="wave-bar"></div>
+            </div>
+
+            <div class="voice-hero-quote">
+                “Speak Math.<br>
+                See Results Instantly.”
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             LISTENING PANEL
+        ====================================== -->
+
+        <section class="voice-listening-card">
+
+            <div class="voice-wave left-wave">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+
+            <div class="voice-mic-wrapper">
+
+                <button
+                    id="micBtn"
+                    class="voice-big-mic"
+                    type="button"
+                >
+                    <i class="fa-solid fa-microphone"></i>
+                </button>
+
+            </div>
+
+
+            <div class="voice-wave right-wave">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+
+            <h2 id="status">
+                Click the microphone and speak
+            </h2>
+
+            <p>
+                Speak now. For example:
+                "inverse sine 0.5"
+            </p>
+
+        </section>
+
+
+        <!-- =====================================
+             RECOGNIZED TEXT
+        ====================================== -->
+
+        <section class="voice-output-card">
+
+            <div class="voice-output-title">
+
+                <div>
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    <strong>Recognized Text:</strong>
+                </div>
+
+                <button id="editRecognizedText"
+                        type="button"
+                        title="Edit recohnized text">
+                         <i class="fa-solid fa-pen"></i>
+                </button>
+            </div>
+
+
+            <div
+                id="recognizedText"
+                class="voice-output-box"
+            >
+                Your voice input will appear here...
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             RESULT
+        ====================================== -->
+
+        <section class="voice-output-card result-card">
+
+            <div class="voice-output-title">
+
+                <div>
+                    <i class="fa-solid fa-lightbulb"></i>
+                    <strong>Result:</strong>
+                </div>
+
+               <div class="result-actions">
+
+             <button
+                id="copyVoiceResult"
+                type="button"
+                title="Copy result">
+             <i class="fa-regular fa-copy"></i>
+            </button>
+
+            <button
+                id="saveVoiceBtn"
+                type="button"
+                title="Save calculation">
+            <i class="fa-regular fa-bookmark"></i>
+            </button>
+
+            </div>
+
+            </div>
+
+
+            <div
+                id="result"
+                class="voice-result-box"
+            >
+                —
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <!-- =====================================
+         RIGHT SIDEBAR
+    ====================================== -->
+
+    <aside class="voice-right-column">
+
+        <!-- TRY SAYING -->
+
+       <section class="voice-side-card">
+
+    <h2>
+        <i class="fa-solid fa-lightbulb"></i>
+        How to Say Functions
+    </h2>
+
+    <!-- BASIC OPERATORS -->
+
+    <button class="voice-example">
+        <span>+</span>
+        <small>Say “plus”</small>
+        
+    </button>
+
+    <button class="voice-example">
+        <span>−</span>
+        <small>Say “minus”</small>
+        
+    </button>
+
+    <button class="voice-example">
+        <span>×</span>
+        <small>Say “multiplied by”</small>
+        
+    </button>
+
+    <button class="voice-example">
+        <span>÷</span>
+        <small>Say “divided by”</small>
+        
+    </button>
+
+
+    <!-- POWERS -->
+
+    <button class="voice-example">
+        <span>x²</span>
+        <small>Say “x squared”</small>
+        
+    </button>
+
+    <button class="voice-example">
+        <span>x³</span>
+        <small>Say “x cubed”</small>
+        
+    </button>
+
+    <button class="voice-example">
+        <span>xⁿ</span>
+        <small>Say “x to the power n”</small>
+        
+    </button>
+
+
+    <!-- ROOTS -->
+
+    <button class="voice-example">
+        <span>√x</span>
+        <small>Say “square root of x”</small>
+        
+    </button>
+
+    <button class="voice-example">
+        <span>∛x</span>
+        <small>Say “cube root of x”</small>
+        
+    </button>
+
+
+    <!-- TRIGONOMETRY -->
+
+    <button class="voice-example">
+        <span>sin</span>
+        <small>Say “sine”</small>
+        
+    </button>
+
+    <button class="voice-example">
+        <span>cos</span>
+        <small>Say “cosine”</small>
+        
+    </button>
+
+    <button class="voice-example">
+        <span>tan</span>
+        <small>Say “tangent”</small>
+        
+    </button>
+
+    <button class="voice-example">
+        <span>cosec</span>
+        <small>Say “cosecant”</small>
+        
+    </button>
+
+    <button class="voice-example">
+        <span>sec</span>
+        <small>Say “secant”</small>
+        
+    </button>
+
+    <button class="voice-example">
+        <span>cot</span>
+        <small>Say “cotangent”</small>
+        
+    </button>
+
+
+    <!-- INVERSE TRIGONOMETRY -->
+
+    <button class="voice-example">
+        <span>sin⁻¹</span>
+        <small>Say “inverse sine”</small>
+        
+    </button>
+
+    <button class="voice-example">
+        <span>cos⁻¹</span>
+        <small>Say “inverse cosine”</small>
+        
+    </button>
+
+    <button class="voice-example">
+        <span>tan⁻¹</span>
+        <small>Say “inverse tangent”</small>
+        
+    </button>
+
+
+    <!-- LOGARITHMS -->
+
+    <button class="voice-example">
+        <span>log</span>
+        <small>Say “logarithm”</small>
+        
+    </button>
+
+    <button class="voice-example">
+        <span>ln</span>
+        <small>Say “natural logarithm”</small>
+        
+    </button>
+
+
+    <!-- EXPONENTIAL -->
+
+    <button class="voice-example">
+        <span>eˣ</span>
+        <small>Say “e to the power x”</small>
+        
+    </button>
+
+    <button class="voice-example">
+        <span>10ˣ</span>
+        <small>Say “ten to the power x”</small>
+        
+    </button>
+
+
+    <!-- CONSTANTS -->
+
+    <button class="voice-example">
+        <span>π</span>
+        <small>Say “pi”</small>
+        
+    </button>
+
+    <button class="voice-example">
+        <span>e</span>
+        <small>Say “Euler's number”</small>
+        
+    </button>
+
+
+    <!-- FACTORIAL -->
+
+    <button class="voice-example">
+        <span>n!</span>
+        <small>Say “n factorial”</small>
+        
+    </button>
+
+
+    <!-- ABSOLUTE VALUE -->
+
+    <button class="voice-example">
+        <span>|x|</span>
+        <small>Say “absolute value of x”</small>
+        
+    </button>
+
+
+    <!-- FRACTIONS -->
+
+    <button class="voice-example">
+        <span>a/b</span>
+        <small>Say “a divided by b”</small>
+        
+    </button>
+
+
+    <!-- BRACKETS -->
+
+    <button class="voice-example">
+        <span>( )</span>
+        <small>Say “open bracket” and “close bracket”</small>
+        
+    </button>
+
+
+    <!-- EQUALITY -->
+
+    <button class="voice-example">
+        <span>=</span>
+        <small>Say “equals”</small>
+        
+    </button>
+
+
+    <!-- COMPARISON -->
+
+    <button class="voice-example">
+        <span>&lt;</span>
+        <small>Say “less than”</small>
+        
+    </button>
+
+    <button class="voice-example">
+        <span>&gt;</span>
+        <small>Say “greater than”</small>
+        
+    </button>
+
+    <button class="voice-example">
+        <span>≤</span>
+        <small>Say “less than or equal to”</small>
+        
+    </button>
+
+    <button class="voice-example">
+        <span>≥</span>
+        <small>Say “greater than or equal to”</small>
+        
+    </button>
+
+
+    <!-- CALCULUS -->
+
+    <button class="voice-example">
+        <span>dy/dx</span>
+        <small>Say “d y by d x”</small>
+        
+    </button>
+
+    <button class="voice-example">
+        <span>∫</span>
+        <small>Say “integral”</small>
+        
+    </button>
+
+
+    <!-- DEGREE -->
+
+    <button class="voice-example">
+        <span>°</span>
+        <small>Say “degrees”</small>
+        
+    </button>
+
+</section>
+
+
+        <!-- VOICE SETTINGS -->
+
+        <section class="voice-side-card voice-settings-card">
+
+            <h2>
+                <i class="fa-solid fa-gear"></i>
+                Voice Settings
+            </h2>
+
+
+            <div class="voice-setting-row">
+
+                <label>
+                    Language
+                </label>
+
+            <select id="voiceLanguage">
+                <option value="en-US">English (US)</option>
+                <option value="hi-IN">Hindi (India)</option>
+            </select>
+
+            </div>
+
+
+            <div class="voice-setting-row">
+
+                <label>
+                    Voice Speed
+                </label>
+
+                <div class="voice-speed">
+
+                    <input
+                        type="range"
+                        id="voiceSpeed"
+                        min="0.5"
+                        max="2"
+                        step="0.1"
+                        value="1"
+                    >
+
+                    <span id="voiceSpeedValue">1.0x Normal</span>
+
+                </div>
+
+            </div>
+
+
+            <div class="voice-setting-row">
+
+                <label>
+                    Voice Feedback
+                </label>
+
+                <label class="voice-toggle">
+
+                    <input
+                        type="checkbox"
+                        id="voiceFeedback"
+                        checked
+                    >
+
+                    <span></span>
+
+                </label>
+
+            </div>
+
+            <p class="voice-setting-description">
+                Hear the result after calculation
+            </p>
+
+        </section>
+
+
+        <!-- PRO TIP -->
+
+        <section class="voice-pro-tip">
+
+            <h2>
+                <i class="fa-solid fa-headphones"></i>
+                Pro Tip
+            </h2>
+
+            <p>
+                Speak naturally. You can say full
+                sentences like “differentiate sin x”
+                or “convert 10 kilometers to miles”.
+            </p>
+
+        </section>
+
+    </aside>
+
+</div>
+
+        </div>
+
+        <footer class="voice-footer">
+
+    <div class="voice-footer-left">
+        © 2026 Calcura. All rights reserved.
+    </div>
+
+    <div class="voice-footer-links">
+
+        <a href="about.html">About</a>
+        <a href="help.html">Help</a>
+
+    </div>
+
+</footer>
+
+    </main>
+
+
+    <script src="../js/voice.js"></script>
+    <script src="../js/numericalMethods.js"></script>
+
+
+</body>
+
+</html>

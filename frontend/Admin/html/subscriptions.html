@@ -1,0 +1,1399 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Subscription Plans - Calcura Admin</title>
+
+    <!-- FONT AWESOME -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <!-- SUBSCRIPTIONS CSS -->
+    <link
+        rel="stylesheet"
+        href="../admin-css/subscriptions.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<div class="admin-layout">
+
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside
+        class="admin-sidebar"
+        id="adminSidebar"
+    >
+
+
+        <!-- BRAND -->
+
+        <div class="sidebar-brand">
+
+            <div class="brand-logo">
+                <span>C</span>
+            </div>
+
+            <div class="brand-text">
+
+                <h2>
+                    CALCURA
+                </h2>
+
+                <p>
+                    Admin Panel
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- NAVIGATION -->
+
+        <nav class="sidebar-nav">
+
+
+            <a
+                href="dashboard.html"
+                class="sidebar-link"
+            >
+
+                <i class="fa-solid fa-house"></i>
+
+                <span>
+                    Dashboard
+                </span>
+
+            </a>
+
+
+            <a
+                href="users.html"
+                class="sidebar-link"
+            >
+
+                <i class="fa-solid fa-users"></i>
+
+                <span>
+                    Users
+                </span>
+
+            </a>
+
+
+            <a
+                href="calculations.html"
+                class="sidebar-link"
+            >
+
+                <i class="fa-solid fa-calculator"></i>
+
+                <span>
+                    Calculations
+                </span>
+
+            </a>
+
+
+            <a
+                href="formulas.html"
+                class="sidebar-link"
+            >
+
+                <i class="fa-solid fa-book-open"></i>
+
+                <span>
+                    Formula Library
+                </span>
+
+            </a>
+
+
+            <a
+                href="subscriptions.html"
+                class="sidebar-link active"
+            >
+
+                <i class="fa-solid fa-credit-card"></i>
+
+                <span>
+                    Subscriptions
+                </span>
+
+            </a>
+
+
+            <a
+                href="reports.html"
+                class="sidebar-link"
+            >
+
+                <i class="fa-solid fa-chart-column"></i>
+
+                <span>
+                    Reports
+                </span>
+
+            </a>
+
+
+            <a
+                href="activity-logs.html"
+                class="sidebar-link"
+            >
+
+                <i class="fa-solid fa-file-lines"></i>
+
+                <span>
+                    Activity Logs
+                </span>
+
+            </a>
+
+
+            <a
+                href="settings.html"
+                class="sidebar-link"
+            >
+
+                <i class="fa-solid fa-gear"></i>
+
+                <span>
+                    System Settings
+                </span>
+
+            </a>
+
+
+            <a
+                href="website-content.html"
+                class="sidebar-link"
+            >
+
+                <i class="fa-solid fa-palette"></i>
+
+                <span>
+                    Website Content
+                </span>
+
+            </a>
+
+
+            <a
+                href="user-accounts.html"
+                class="sidebar-link"
+            >
+
+                <i class="fa-solid fa-user-shield"></i>
+
+                <span>
+                    User Accounts
+                </span>
+
+            </a>
+
+
+
+        </nav>
+
+
+        <!-- ADMIN CONTROL -->
+
+        <div class="admin-control-card">
+
+
+            <div class="control-icon">
+
+                <i class="fa-solid fa-crown"></i>
+
+            </div>
+
+
+            <h3>
+                Admin Control
+            </h3>
+
+
+            <strong>
+                Full Control
+            </strong>
+
+
+            <p>
+                You have complete access to manage Calcura.
+            </p>
+
+
+        </div>
+
+
+    </aside>
+
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <div class="admin-main">
+
+
+        <!-- =================================================
+             HEADER
+        ================================================== -->
+
+        <header class="admin-header">
+
+
+            <button
+                type="button"
+                class="sidebar-toggle"
+                id="sidebarToggle"
+                aria-label="Toggle sidebar"
+            >
+
+                <i class="fa-solid fa-bars"></i>
+
+            </button>
+
+
+
+            <!-- GLOBAL SEARCH -->
+
+            <div class="global-search">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input
+                    type="text"
+                    id="globalSearch"
+                    placeholder="Search plans, features, price..."
+                    autocomplete="off"
+                >
+
+            </div>
+
+
+
+            <!-- HEADER RIGHT -->
+
+            <div class="header-right">
+
+
+                <button
+                    type="button"
+                    class="notification-btn"
+                    title="Notifications"
+                >
+
+                    <i class="fa-regular fa-bell"></i>
+
+                    <span class="notification-dot"></span>
+
+                </button>
+
+
+
+                <div class="admin-profile">
+
+
+                    <div
+                        class="admin-avatar"
+                        id="adminAvatar"
+                    >
+                        A
+                    </div>
+
+
+                    <div class="admin-info">
+
+                        <strong id="adminName">
+                            Admin
+                        </strong>
+
+                        <span>
+                            Administrator
+                        </span>
+
+                    </div>
+
+
+                    <i class="fa-solid fa-chevron-down"></i>
+
+
+                </div>
+
+
+            </div>
+
+
+        </header>
+
+
+
+        <!-- =================================================
+             PAGE
+        ================================================== -->
+
+        <main class="subscriptions-page">
+
+
+            <!-- =================================================
+                 PAGE HEADING
+            ================================================== -->
+
+            <section class="subscription-heading">
+
+
+                <div class="heading-content">
+
+                    <h1>
+                        Subscription
+                        <span>
+                            Plans
+                        </span>
+                    </h1>
+
+
+                    <p>
+                        Create, edit and manage subscription plans for Calcura.
+                    </p>
+
+                </div>
+
+
+
+                <button
+                    type="button"
+                    class="add-plan-btn"
+                    id="addPlanButton"
+                >
+
+                    <i class="fa-solid fa-plus"></i>
+
+                    <span>
+                        Add New Plan
+                    </span>
+
+                </button>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 PLAN DECORATION
+            ================================================== -->
+
+            <div class="plan-decoration">
+
+
+                <div class="plan-decoration-card free-decoration">
+
+                    <i class="fa-solid fa-paper-plane"></i>
+
+                    <span>
+                        Free
+                    </span>
+
+                </div>
+
+
+                <div class="plan-decoration-card premium-decoration">
+
+                    <i class="fa-solid fa-crown"></i>
+
+                    <span>
+                        Premium
+                    </span>
+
+                </div>
+
+
+                <div class="plan-decoration-card pro-decoration">
+
+                    <i class="fa-solid fa-gem"></i>
+
+                    <span>
+                        Pro
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                 STATISTICS
+            ================================================== -->
+
+            <section class="subscription-stats">
+
+
+                <!-- TOTAL PLANS -->
+
+                <article class="subscription-stat-card">
+
+                    <div class="stat-icon stat-icon-gold">
+
+                        <i class="fa-solid fa-crown"></i>
+
+                    </div>
+
+
+                    <div class="stat-content">
+
+                        <span>
+                            Total Plans
+                        </span>
+
+                        <strong id="totalPlans">
+                            0
+                        </strong>
+
+                        <small>
+                            All subscription plans
+                        </small>
+
+                    </div>
+
+
+                    <div class="stat-growth">
+                        <i class="fa-solid fa-arrow-up"></i>
+                        <span id="totalPlansGrowth">
+                            +0%
+                        </span>
+                    </div>
+
+                </article>
+
+
+
+                <!-- ACTIVE PLANS -->
+
+                <article class="subscription-stat-card">
+
+                    <div class="stat-icon stat-icon-green">
+
+                        <i class="fa-solid fa-users"></i>
+
+                    </div>
+
+
+                    <div class="stat-content">
+
+                        <span>
+                            Active Plans
+                        </span>
+
+                        <strong id="activePlans">
+                            0
+                        </strong>
+
+                        <small>
+                            Currently active
+                        </small>
+
+                    </div>
+
+
+                    <div class="stat-growth">
+                        <i class="fa-solid fa-arrow-up"></i>
+                        <span>
+                            +0%
+                        </span>
+                    </div>
+
+                </article>
+
+
+
+                <!-- SUBSCRIBERS -->
+
+                <article class="subscription-stat-card">
+
+                    <div class="stat-icon stat-icon-blue">
+
+                        <i class="fa-solid fa-user-group"></i>
+
+                    </div>
+
+
+                    <div class="stat-content">
+
+                        <span>
+                            Total Subscribers
+                        </span>
+
+                        <strong id="totalSubscribers">
+                            0
+                        </strong>
+
+                        <small>
+                            Active paid subscribers
+                        </small>
+
+                    </div>
+
+
+                    <div class="stat-growth">
+                        <i class="fa-solid fa-arrow-up"></i>
+                        <span>
+                            +0%
+                        </span>
+                    </div>
+
+                </article>
+
+
+
+                <!-- REVENUE -->
+
+                <article class="subscription-stat-card">
+
+                    <div class="stat-icon stat-icon-purple">
+
+                        <i class="fa-solid fa-indian-rupee-sign"></i>
+
+                    </div>
+
+
+                    <div class="stat-content">
+
+                        <span>
+                            Monthly Revenue
+                        </span>
+
+                        <strong id="monthlyRevenue">
+                            ₹ 0
+                        </strong>
+
+                        <small>
+                            From active subscriptions
+                        </small>
+
+                    </div>
+
+
+                    <div class="stat-growth">
+                        <i class="fa-solid fa-arrow-up"></i>
+                        <span>
+                            +0%
+                        </span>
+                    </div>
+
+                </article>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 TABS
+            ================================================== -->
+
+            <section class="subscription-tabs-section">
+
+
+                <div class="subscription-tabs">
+
+                    <button
+                        type="button"
+                        class="subscription-tab active"
+                        id="plansManagementTab"
+                    >
+
+                        Plans Management
+
+                    </button>
+
+
+
+                </div>
+
+
+
+                <!-- =================================================
+                     PLAN MANAGEMENT
+                ================================================== -->
+
+                <div
+                    class="tab-panel active"
+                    id="plansManagementPanel"
+                >
+
+
+                    <!-- FILTER BAR -->
+
+                    <div class="plans-filter-bar">
+
+
+                        <div class="plans-search">
+
+                            <i class="fa-solid fa-magnifying-glass"></i>
+
+                            <input
+                                type="text"
+                                id="planSearch"
+                                placeholder="Search plans by name or price..."
+                                autocomplete="off"
+                            >
+
+                        </div>
+
+
+
+                        <div class="plans-status-filter">
+
+                            <select id="planStatusFilter">
+
+                                <option value="all">
+                                    All Status
+                                </option>
+
+                                <option value="active">
+                                    Active
+                                </option>
+
+                                <option value="inactive">
+                                    Inactive
+                                </option>
+
+                            </select>
+
+                            <i class="fa-solid fa-chevron-down"></i>
+
+                        </div>
+
+
+
+                        <button
+                            type="button"
+                            class="reset-btn"
+                            id="resetPlanFilters"
+                        >
+
+                            <i class="fa-solid fa-rotate-left"></i>
+
+                            Reset
+
+                        </button>
+
+
+                    </div>
+
+
+
+                    <!-- TABLE -->
+
+                    <div class="plans-table-wrapper">
+
+
+                        <table class="plans-table">
+
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>
+                                        #
+                                    </th>
+
+                                    <th>
+                                        Plan Name
+                                    </th>
+
+                                    <th>
+                                        Price (₹)
+                                    </th>
+
+                                    <th>
+                                        Duration
+                                    </th>
+
+                                    <th>
+                                        Subscribers
+                                    </th>
+
+                                    <th>
+                                        Status
+                                    </th>
+
+                                    <th>
+                                        Created On
+                                    </th>
+
+                                    <th>
+                                        Actions
+                                    </th>
+
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody id="plansTableBody">
+
+
+                                <tr>
+
+                                    <td
+                                        colspan="8"
+                                        class="table-loading"
+                                    >
+
+                                        <i class="fa-solid fa-spinner fa-spin"></i>
+
+                                        Loading subscription plans...
+
+                                    </td>
+
+                                </tr>
+
+
+                            </tbody>
+
+
+                        </table>
+
+
+                    </div>
+
+
+
+                    <!-- TABLE FOOTER -->
+
+                    <div class="plans-table-footer">
+
+
+                        <span id="plansShowingText">
+                            Showing 0 plans
+                        </span>
+
+
+                        <div class="pagination">
+
+                            <button
+                                type="button"
+                                id="previousPage"
+                                disabled
+                            >
+
+                                <i class="fa-solid fa-chevron-left"></i>
+
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="pagination-number active"
+                                id="currentPage"
+                            >
+                                1
+                            </button>
+
+
+                            <button
+                                type="button"
+                                id="nextPage"
+                                disabled
+                            >
+
+                                <i class="fa-solid fa-chevron-right"></i>
+
+                            </button>
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- =================================================
+                     PLAN FEATURES
+                ================================================== -->
+
+                <div
+                    class="tab-panel"
+                    id="planFeaturesPanel"
+                >
+
+                    <div
+                        class="plan-features-grid"
+                        id="planFeaturesGrid"
+                    >
+
+                        <!-- Real plan feature cards inserted by JS -->
+
+                    </div>
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 PLAN DETAILS
+            ================================================== -->
+
+            <section class="plan-details-section">
+
+
+                <div class="section-title">
+
+                    <h2>
+                        Plan Details
+                        <span>&amp; Features</span>
+                    </h2>
+
+
+                    <p>
+                        Manage plan features, limitations and settings.
+                    </p>
+
+                </div>
+
+
+
+                <div
+                    class="plan-details-grid"
+                    id="planDetailsGrid"
+                >
+
+
+                    <!-- Real plans inserted by JavaScript -->
+
+
+                </div>
+
+
+            </section>
+
+
+        </main>
+
+
+
+        <!-- =================================================
+             TOAST
+        ================================================== -->
+
+        <div
+            class="subscription-toast"
+            id="subscriptionToast"
+            hidden
+        >
+
+            <i class="fa-solid fa-circle-check"></i>
+
+            <span id="subscriptionToastMessage">
+                Success
+            </span>
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+
+<!-- =========================================================
+     VIEW PLAN MODAL
+========================================================= -->
+
+<div
+    class="subscription-modal"
+    id="viewPlanModal"
+    hidden
+>
+
+    <div class="subscription-modal-overlay"></div>
+
+
+    <div class="subscription-modal-box">
+
+
+        <button
+            type="button"
+            class="modal-close"
+            id="viewPlanClose"
+        >
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+
+        <div class="modal-icon" id="viewPlanIcon">
+
+            <i class="fa-solid fa-paper-plane"></i>
+
+        </div>
+
+
+        <h2 id="viewPlanName">
+            Plan
+        </h2>
+
+
+        <p id="viewPlanDescription">
+            —
+        </p>
+
+
+        <div class="modal-plan-price">
+
+            <strong id="viewPlanPrice">
+                ₹0
+            </strong>
+
+            <span id="viewPlanDuration">
+                / month
+            </span>
+
+        </div>
+
+
+        <div class="modal-plan-meta">
+
+
+            <div>
+
+                <span>
+                    Status
+                </span>
+
+                <strong id="viewPlanStatus">
+                    —
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    Subscribers
+                </span>
+
+                <strong id="viewPlanSubscribers">
+                    0
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    Created
+                </span>
+
+                <strong id="viewPlanCreated">
+                    —
+                </strong>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="modal-features">
+
+            <h3>
+                Features
+            </h3>
+
+            <ul id="viewPlanFeatures">
+
+            </ul>
+
+        </div>
+
+
+        <div class="modal-actions">
+
+            <button
+                type="button"
+                class="modal-secondary-btn"
+                id="viewPlanCancel"
+            >
+
+                Close
+
+            </button>
+
+
+            <button
+                type="button"
+                class="modal-primary-btn"
+                id="viewPlanEdit"
+            >
+
+                <i class="fa-solid fa-pen"></i>
+
+                Edit Plan
+
+            </button>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     ADD / EDIT PLAN MODAL
+========================================================= -->
+
+<div
+    class="subscription-modal"
+    id="planEditorModal"
+    hidden
+>
+
+    <div class="subscription-modal-overlay"></div>
+
+
+    <div class="subscription-modal-box editor-modal-box">
+
+
+        <button
+            type="button"
+            class="modal-close"
+            id="planEditorClose"
+        >
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+
+        <h2 id="planEditorTitle">
+            Add New Plan
+        </h2>
+
+
+        <p>
+            Create or update a Calcura subscription plan.
+        </p>
+
+
+        <form id="planEditorForm">
+
+
+            <input
+                type="hidden"
+                id="planId"
+            >
+
+
+            <div class="form-row">
+
+
+                <div class="form-group">
+
+                    <label for="planName">
+                        Plan Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="planName"
+                        required
+                        maxlength="100"
+                        placeholder="Premium Plan"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="planSlug">
+                        Slug
+                    </label>
+
+                    <input
+                        type="text"
+                        id="planSlug"
+                        required
+                        maxlength="100"
+                        placeholder="premium"
+                    >
+
+                </div>
+
+
+            </div>
+
+
+
+            <div class="form-row">
+
+
+               <div class="form-group">
+    <label for="planPrice">Price</label>
+
+    <input
+        type="number"
+        id="planPrice"
+        min="0"
+        step="0.01"
+        required
+        placeholder="4.99"
+    >
+</div>
+
+<div class="form-group">
+    <label for="planCurrency">
+        Currency
+    </label>
+
+    <select id="planCurrency">
+
+        <option value="USD">
+            USD ($)
+        </option>
+
+        <option value="INR">
+            INR (₹)
+        </option>
+
+    </select>
+</div>
+
+                <div class="form-group">
+
+                    <label for="planDuration">
+                        Duration
+                    </label>
+
+                    <select id="planDuration">
+
+                        <option value="Monthly">
+                            Monthly
+                        </option>
+
+                        <option value="Yearly">
+                            Yearly
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+            </div>
+
+
+
+            <div class="form-row">
+
+
+                <div class="form-group">
+
+                    <label for="planStatus">
+                        Status
+                    </label>
+
+                    <select id="planStatus">
+
+                        <option value="active">
+                            Active
+                        </option>
+
+                        <option value="inactive">
+                            Inactive
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="planIcon">
+                        Icon
+                    </label>
+
+                    <input
+                        type="text"
+                        id="planIcon"
+                        placeholder="fa-crown"
+                    >
+
+                </div>
+
+
+            </div>
+
+
+
+            <div class="form-group">
+
+                <label for="planDescription">
+                    Description
+                </label>
+
+                <textarea
+                    id="planDescription"
+                    rows="3"
+                    maxlength="500"
+                    placeholder="Describe this subscription plan..."
+                ></textarea>
+
+            </div>
+
+
+
+            <div class="form-group">
+
+                <label for="razorpayPlanId">
+                    Razorpay Plan ID
+                </label>
+
+                <input
+                    type="text"
+                    id="razorpayPlanId"
+                    placeholder="Optional"
+                >
+
+            </div>
+
+
+
+            <div class="form-group">
+
+                <label>
+                    Plan Features
+                </label>
+
+
+                <div
+                    class="feature-editor"
+                    id="featureEditor"
+                >
+
+                    <div class="feature-input-row">
+
+                        <input
+                            type="text"
+                            class="feature-input"
+                            placeholder="Enter plan feature"
+                        >
+
+                        <button
+                            type="button"
+                            class="remove-feature-btn"
+                        >
+
+                            <i class="fa-solid fa-trash"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="add-feature-btn"
+                    id="addFeatureButton"
+                >
+
+                    <i class="fa-solid fa-plus"></i>
+
+                    Add Feature
+
+                </button>
+
+            </div>
+
+
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    class="modal-secondary-btn"
+                    id="planEditorCancel"
+                >
+
+                    Cancel
+
+                </button>
+
+
+                <button
+                    type="submit"
+                    class="modal-primary-btn"
+                    id="savePlanButton"
+                >
+
+                    <i class="fa-solid fa-floppy-disk"></i>
+
+                    Save Plan
+
+                </button>
+
+            </div>
+
+
+        </form>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script src="../admin-js/subscriptions.js"></script>
+
+
+</body>
+
+</html>

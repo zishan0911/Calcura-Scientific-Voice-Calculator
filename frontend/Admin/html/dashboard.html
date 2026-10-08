@@ -1,0 +1,1162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>CALCURA - Admin Dashboard</title>
+
+
+    <!-- =====================================================
+         FONT AWESOME
+    ====================================================== -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+
+    <!-- =====================================================
+         ADMIN DASHBOARD CSS
+    ====================================================== -->
+    <link
+        rel="stylesheet"
+        href="../admin-css/admin-dashboard.css"
+    >
+
+</head>
+
+
+<body>
+
+<div class="admin-layout">
+
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside
+        class="admin-sidebar"
+        id="adminSidebar"
+    >
+
+
+        <!-- BRAND -->
+        <div class="sidebar-brand">
+
+            <div class="calcura-logo">
+                <span>C</span>
+            </div>
+
+            <div class="brand-content">
+
+                <h2>
+                    CALCURA
+                </h2>
+
+                <p>
+                    Admin Panel
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- NAVIGATION -->
+        <nav class="sidebar-navigation">
+
+
+            <!-- DASHBOARD -->
+            <a
+                href="dashboard.html"
+                class="sidebar-link active"
+            >
+
+                <span class="sidebar-icon">
+                    <i class="fa-solid fa-house"></i>
+                </span>
+
+                <span>
+                    Dashboard
+                </span>
+
+            </a>
+
+
+            <!-- USERS -->
+            <a
+                href="users.html"
+                class="sidebar-link"
+            >
+
+                <span class="sidebar-icon">
+                    <i class="fa-solid fa-users"></i>
+                </span>
+
+                <span>
+                    Users
+                </span>
+
+            </a>
+
+
+            <!-- CALCULATIONS -->
+            <a
+                href="calculations.html"
+                class="sidebar-link"
+            >
+
+                <span class="sidebar-icon">
+                    <i class="fa-solid fa-calculator"></i>
+                </span>
+
+                <span>
+                    Calculations
+                </span>
+
+            </a>
+
+
+            <!-- FORMULA LIBRARY -->
+            <a
+                href="formulas.html"
+                class="sidebar-link"
+            >
+
+                <span class="sidebar-icon">
+                    <i class="fa-solid fa-book-open"></i>
+                </span>
+
+                <span>
+                    Formula Library
+                </span>
+
+            </a>
+
+
+            <!-- SUBSCRIPTIONS -->
+            <a
+                href="subscriptions.html"
+                class="sidebar-link"
+            >
+
+                <span class="sidebar-icon">
+                    <i class="fa-solid fa-credit-card"></i>
+                </span>
+
+                <span>
+                    Subscriptions
+                </span>
+
+            </a>
+
+
+            <!-- REPORTS -->
+            <a
+                href="reports.html"
+                class="sidebar-link"
+            >
+
+                <span class="sidebar-icon">
+                    <i class="fa-solid fa-chart-simple"></i>
+                </span>
+
+                <span>
+                    Reports
+                </span>
+
+            </a>
+
+
+            <!-- ACTIVITY LOGS -->
+            <a
+                href="activity-logs.html"
+                class="sidebar-link"
+            >
+
+                <span class="sidebar-icon">
+                    <i class="fa-solid fa-file-lines"></i>
+                </span>
+
+                <span>
+                    Activity Logs
+                </span>
+
+            </a>
+
+
+            <!-- SYSTEM SETTINGS -->
+            <a
+                href="system-settings.html"
+                class="sidebar-link"
+            >
+
+                <span class="sidebar-icon">
+                    <i class="fa-solid fa-gear"></i>
+                </span>
+
+                <span>
+                    System Settings
+                </span>
+
+            </a>
+
+
+            <!-- WEBSITE CONTENT -->
+            <a
+                href="website-content.html"
+                class="sidebar-link"
+            >
+
+                <span class="sidebar-icon">
+                    <i class="fa-solid fa-palette"></i>
+                </span>
+
+                <span>
+                    Website Content
+                </span>
+
+            </a>
+
+
+            <!-- USER ACCOUNTS -->
+            <a
+                href="user-accounts.html"
+                class="sidebar-link"
+            >
+
+                <span class="sidebar-icon">
+                    <i class="fa-solid fa-user-shield"></i>
+                </span>
+
+                <span>
+                    User Accounts
+                </span>
+
+            </a>
+
+
+
+        </nav>
+
+
+        <!-- =================================================
+             ADMIN CONTROL CARD
+        ================================================== -->
+
+        <div class="admin-control-card">
+
+            <div class="control-crown">
+
+                <i class="fa-solid fa-crown"></i>
+
+            </div>
+
+            <h3>
+                Admin Control
+            </h3>
+
+            <strong>
+                Full Control
+            </strong>
+
+            <p>
+                You have complete access to manage Calcura.
+            </p>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =====================================================
+         MAIN AREA
+    ====================================================== -->
+
+    <div class="admin-main">
+
+
+        <!-- =================================================
+             TOP HEADER
+        ================================================== -->
+
+        <header class="admin-header">
+
+
+            <!-- MENU -->
+            <button
+                type="button"
+                class="sidebar-toggle"
+                id="sidebarToggle"
+                aria-label="Toggle sidebar"
+            >
+
+                <i class="fa-solid fa-bars"></i>
+
+            </button>
+
+
+            <!-- SEARCH -->
+            <div class="admin-search">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input
+                    type="search"
+                    id="adminSearch"
+                    placeholder="Search users, calculations, formulas..."
+                >
+
+            </div>
+
+
+            <!-- HEADER RIGHT -->
+            <div class="header-right">
+
+
+                <!-- NOTIFICATION -->
+                <button
+                    type="button"
+                    class="notification-button"
+                    id="notificationButton"
+                    aria-label="Notifications"
+                >
+
+                    <i class="fa-regular fa-bell"></i>
+
+                    <span
+                        class="notification-indicator"
+                        id="notificationIndicator"
+                    ></span>
+
+                </button>
+
+
+                <div class="header-separator"></div>
+
+
+              <!-- =================================================
+     ADMIN PROFILE
+================================================== -->
+
+<div class="admin-profile-wrapper">
+
+    <button
+        type="button"
+        class="admin-profile"
+        id="adminProfileButton"
+    >
+
+        <span
+            class="admin-avatar"
+            id="adminAvatar"
+        >
+            A
+        </span>
+
+        <span
+            class="admin-name"
+            id="adminName"
+        >
+            Admin
+        </span>
+
+        <i class="fa-solid fa-chevron-down"></i>
+
+    </button>
+
+
+    <!-- ADMIN PROFILE DROPDOWN -->
+
+    <div
+        class="admin-profile-dropdown"
+        id="adminProfileDropdown"
+    >
+
+        <div class="profile-dropdown-user">
+
+            <span
+                class="dropdown-avatar"
+                id="dropdownAvatar"
+            >
+                A
+            </span>
+
+            <div>
+
+                <strong id="dropdownAdminName">
+                    Admin
+                </strong>
+
+                <small>
+                    Administrator
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <div class="dropdown-divider"></div>
+
+
+        <!-- LOGOUT -->
+
+        <button
+            type="button"
+            class="profile-dropdown-item"
+            id="adminLogoutButton"
+        >
+
+            <i class="fa-solid fa-right-from-bracket"></i>
+
+            <span>
+                Logout
+            </span>
+
+        </button>
+
+    </div>
+
+</div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =================================================
+             PAGE CONTENT
+        ================================================== -->
+
+        <main class="dashboard-content">
+
+
+            <!-- PAGE TITLE -->
+            <section class="dashboard-heading">
+
+
+                <div class="heading-text">
+
+                    <h1>
+                        <span class="heading-white">Admin</span>
+                        <span class="heading-blue">Dashboard</span>
+                    </h1>
+
+                    <p>
+                        Manage users, calculations, formulas,
+                        subscriptions and complete website control.
+                    </p>
+
+                </div>
+
+
+                <!-- DATE SELECTOR -->
+               <!-- DATE RANGE -->
+<div class="date-selector" id="dateSelector">
+
+    <i class="fa-regular fa-calendar"></i>
+
+    <button
+        type="button"
+        class="date-picker-button"
+        id="datePickerButton"
+    >
+        <span id="dateRangeText">
+            Sep 1, 2026 - Sep 30, 2026
+        </span>
+    </button>
+
+    <i class="fa-solid fa-chevron-down date-arrow"></i>
+
+
+    <!-- CALENDAR POPUP -->
+    <div class="date-picker-popup" id="datePickerPopup">
+
+        <div class="date-picker-header">
+            <strong>Select Date Range</strong>
+        </div>
+
+
+        <div class="date-fields">
+
+            <div class="date-field">
+                <label>From</label>
+
+                <input
+                    type="date"
+                    id="fromDate"
+                    value="2026-09-01"
+                >
+            </div>
+
+
+            <div class="date-field">
+                <label>To</label>
+
+                <input
+                    type="date"
+                    id="toDate"
+                    value="2026-09-30"
+                >
+            </div>
+
+        </div>
+
+
+        <div class="quick-date-options">
+
+            <button type="button" data-days="7">
+                Last 7 Days
+            </button>
+
+            <button type="button" data-days="30">
+                Last 30 Days
+            </button>
+
+            <button type="button" data-days="90">
+                Last 90 Days
+            </button>
+
+            <button type="button" data-days="365">
+                Last 365 Days
+            </button>
+
+        </div>
+
+
+        <div class="date-picker-footer">
+
+            <button
+                type="button"
+                class="date-cancel"
+                id="dateCancel"
+            >
+                Cancel
+            </button>
+
+            <button
+                type="button"
+                class="date-apply"
+                id="dateApply"
+            >
+                Apply
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+            </section>
+
+
+
+            <!-- =================================================
+                 DATA ERROR / STATUS
+            ================================================== -->
+
+            <div
+                class="dashboard-status hidden"
+                id="dashboardStatus"
+            ></div>
+
+
+
+            <!-- =================================================
+                 STATISTICS
+            ================================================== -->
+
+            <section class="statistics-grid">
+
+
+                <!-- TOTAL USERS -->
+                <article class="statistics-card users-card">
+
+                    <div class="statistics-icon">
+
+                        <i class="fa-solid fa-users"></i>
+
+                    </div>
+
+                    <div class="statistics-content">
+
+                        <p>
+                            Total Users
+                        </p>
+
+                        <div class="stat-number-row">
+                            <h2 id="totalUsers">0</h2>
+                            <span class="stat-trend">↑ 12%</span>
+                        </div>
+
+                        <span class="stat-caption">
+                            Registered users
+                        </span>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- ACTIVE USERS -->
+                <article class="statistics-card active-card">
+
+                    <div class="statistics-icon">
+
+                        <i class="fa-solid fa-user-check"></i>
+
+                    </div>
+
+                    <div class="statistics-content">
+
+                        <p>
+                            Active Users
+                        </p>
+
+                        <div class="stat-number-row">
+                            <h2 id="activeUsers">0</h2>
+                            <span class="stat-trend">↑ 8%</span>
+                        </div>
+
+                        <span class="stat-caption">
+                            Currently active
+                        </span>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- TOTAL CALCULATIONS -->
+                <article class="statistics-card calculations-card">
+
+                    <div class="statistics-icon">
+
+                        <i class="fa-solid fa-calculator"></i>
+
+                    </div>
+
+                    <div class="statistics-content">
+
+                        <p>
+                            Total Calculations
+                        </p>
+
+                        <div class="stat-number-row">
+                            <h2 id="totalCalculations">0</h2>
+                            <span class="stat-trend">↑ 18%</span>
+                        </div>
+
+                        <span class="stat-caption">
+                            All time calculations
+                        </span>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- ACTIVE SUBSCRIPTIONS -->
+                <article class="statistics-card subscription-card">
+
+                    <div class="statistics-icon">
+
+                        <i class="fa-solid fa-credit-card"></i>
+
+                    </div>
+
+                    <div class="statistics-content">
+
+                        <p>
+                            Active Subscriptions
+                        </p>
+
+                        <div class="stat-number-row">
+                            <h2 id="activeSubscriptions">0</h2>
+                            <span class="stat-trend">↑ 14%</span>
+                        </div>
+
+                        <span class="stat-caption">
+                            Active plans
+                        </span>
+
+                    </div>
+
+                </article>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 ACTIVITY + LOGS
+            ================================================== -->
+
+            <section class="dashboard-two-column">
+
+
+                <!-- USER ACTIVITY -->
+                <article class="dashboard-panel user-activity-panel">
+
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <div class="panel-title">
+
+                                <span class="panel-icon blue">
+
+                                    <i class="fa-solid fa-chart-column"></i>
+
+                                </span>
+
+                                <h2>
+                                    User Activity
+                                </h2>
+
+                            </div>
+
+                            <p>
+                                New users, active users and calculations
+                            </p>
+
+                        </div>
+
+
+                        <select
+                            class="panel-select"
+                            id="activityRange"
+                        >
+
+                            <option value="7">
+                                Last 7 Days
+                            </option>
+
+                            <option
+                                value="30"
+                                selected
+                            >
+                                Last 30 Days
+                            </option>
+
+                            <option value="90">
+                                Last 90 Days
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- LEGEND -->
+                    <div class="chart-legend">
+
+                        <span>
+
+                            <i class="legend blue"></i>
+
+                            New Users
+
+                        </span>
+
+                        <span>
+
+                            <i class="legend purple"></i>
+
+                            Active Users
+
+                        </span>
+
+                        <span>
+
+                            <i class="legend lavender"></i>
+
+                            Calculations
+
+                        </span>
+
+                    </div>
+
+
+                    <!-- CHART -->
+                    <div class="chart-container">
+
+                        <canvas
+                            id="userActivityChart"
+                        ></canvas>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- RECENT ACTIVITY -->
+                <article class="dashboard-panel recent-activity-panel">
+
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <div class="panel-title">
+
+                                <span class="panel-icon blue">
+
+                                    <i class="fa-solid fa-file-lines"></i>
+
+                                </span>
+
+                                <h2>
+                                    Recent Activity Logs
+                                </h2>
+
+                            </div>
+
+                            <p>
+                                Latest admin and user activities
+                            </p>
+
+                        </div>
+
+
+                        <button
+                            type="button"
+                            class="view-all-button"
+                            id="viewActivityLogs"
+                        >
+                            View All
+                        </button>
+
+                    </div>
+
+
+                    <div
+                        class="activity-list"
+                        id="activityList"
+                    >
+
+                        <div class="empty-message">
+                            Loading activity...
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 CALCULATIONS + QUICK ACTIONS
+            ================================================== -->
+
+            <section class="dashboard-two-column bottom-section">
+
+
+                <!-- RECENT CALCULATIONS -->
+                <article class="dashboard-panel calculations-panel">
+
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <div class="panel-title">
+
+                                <span class="panel-icon blue">
+
+                                    <i class="fa-solid fa-calculator"></i>
+
+                                </span>
+
+                                <h2>
+                                    Recent Calculations
+                                </h2>
+
+                            </div>
+
+                            <p>
+                                Latest calculations done by users
+                            </p>
+
+                        </div>
+
+
+                        <button
+                            type="button"
+                            class="view-all-button"
+                            id="viewCalculations"
+                        >
+                            View All
+                        </button>
+
+                    </div>
+
+
+                    <div class="calculations-table-wrapper">
+
+                        <table class="calculations-table">
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>
+                                        #
+                                    </th>
+
+                                    <th>
+                                        User
+                                    </th>
+
+                                    <th>
+                                        Expression
+                                    </th>
+
+                                    <th>
+                                        Result
+                                    </th>
+
+                                    <th>
+                                        Time
+                                    </th>
+
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody id="calculationsBody">
+
+                                <tr>
+
+                                    <td
+                                        colspan="5"
+                                        class="empty-table"
+                                    >
+                                        Loading calculations...
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- QUICK ACTIONS -->
+                <article class="dashboard-panel quick-actions-panel">
+
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <div class="panel-title">
+
+                                <span class="panel-icon orange">
+
+                                    <i class="fa-solid fa-bolt"></i>
+
+                                </span>
+
+                                <h2>
+                                    Quick Actions
+                                </h2>
+
+                            </div>
+
+                            <p>
+                                Frequently used admin controls
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="quick-actions-grid">
+
+
+                        <!-- MANAGE USERS -->
+                        <a
+                            href="users.html"
+                            class="quick-action"
+                        >
+
+                            <span class="quick-icon blue">
+
+                                <i class="fa-solid fa-users"></i>
+
+                            </span>
+
+                            <strong>
+                                Manage Users
+                            </strong>
+
+                            <small>
+                                View, edit and manage users
+                            </small>
+
+                        </a>
+
+
+                        <!-- FORMULA LIBRARY -->
+                        <a
+                            href="formulas.html"
+                            class="quick-action"
+                        >
+
+                            <span class="quick-icon purple">
+
+                                <i class="fa-solid fa-book-open"></i>
+
+                            </span>
+
+                            <strong>
+                                Formula Library
+                            </strong>
+
+                            <small>
+                                Add or update formulas
+                            </small>
+
+                        </a>
+
+
+                        <!-- MANAGE PLANS -->
+                        <a
+                            href="subscriptions.html"
+                            class="quick-action"
+                        >
+
+                            <span class="quick-icon pink">
+
+                                <i class="fa-solid fa-credit-card"></i>
+
+                            </span>
+
+                            <strong>
+                                Manage Plans
+                            </strong>
+
+                            <small>
+                                Control subscriptions and pricing
+                            </small>
+
+                        </a>
+
+
+                        <!-- SYSTEM SETTINGS -->
+                        <a
+                            href="system-settings.html"
+                            class="quick-action"
+                        >
+
+                            <span class="quick-icon green">
+
+                                <i class="fa-solid fa-gear"></i>
+
+                            </span>
+
+                            <strong>
+                                System Settings
+                            </strong>
+
+                            <small>
+                                Change system configuration
+                            </small>
+
+                        </a>
+
+
+                        <!-- WEBSITE CONTENT -->
+                        <a
+                            href="website-content.html"
+                            class="quick-action"
+                        >
+
+                            <span class="quick-icon orange">
+
+                                <i class="fa-solid fa-palette"></i>
+
+                            </span>
+
+                            <strong>
+                                Website Content
+                            </strong>
+
+                            <small>
+                                Update website content and settings
+                            </small>
+
+                        </a>
+
+
+
+            
+
+                
+
+                    </div>
+
+                </article>
+
+            </section>
+
+        </main>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     TOAST
+====================================================== -->
+
+<div
+    class="admin-toast"
+    id="adminToast"
+></div>
+
+
+
+<!-- =====================================================
+     CHART.JS
+====================================================== -->
+
+<script
+    src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"
+></script>
+
+
+<!-- =====================================================
+     ADMIN DASHBOARD JS
+====================================================== -->
+
+<script src="../Admin-js/admin-dashboard.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Calcura AI</title>
+
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/ai-calculator.css">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+</head>
+
+<body>
+
+<div class="calcura-ai-page">
+
+    <!-- =====================================================
+         TOP HEADER
+    ====================================================== -->
+    <header class="calcura-header">
+
+        <!-- SEARCH -->
+        <div class="calcura-search">
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            <input
+                type="text"
+                id="globalSearch"
+                placeholder="Search calculations, history, or help..."
+                autocomplete="off"
+            >
+
+        </div>
+
+
+        <!-- HEADER RIGHT -->
+        <div class="calcura-header-right">
+
+            <a
+                href="payment.html"
+                class="header-pro-button"
+            >
+                <i class="fa-solid fa-crown"></i>
+                Upgrade to Pro
+            </a>
+
+
+            <button
+                type="button"
+                class="header-notification"
+                id="notificationBtn"
+            >
+                <i class="fa-regular fa-bell"></i>
+                <span></span>
+            </button>
+
+
+            <!-- REAL LOGGED-IN USER -->
+            <button
+                type="button"
+                class="header-user"
+                id="userProfileBtn"
+            >
+
+                <div
+                    class="header-user-avatar"
+                    id="profileAvatar"
+                >
+                    U
+                </div>
+
+                <div class="header-user-details">
+
+                    <strong id="profileName">
+                        User
+                    </strong>
+
+                    <span id="profilePlan">
+                        Free Plan
+                    </span>
+
+                </div>
+
+                <i class="fa-solid fa-chevron-down"></i>
+
+            </button>
+
+
+            <!-- USER DROPDOWN -->
+            <div
+                class="header-user-dropdown"
+                id="profileDropdown"
+            >
+
+                <a href="profile.html">
+                    <i class="fa-regular fa-user"></i>
+                    My Profile
+                </a>
+
+                <a href="settings.html">
+                    <i class="fa-solid fa-gear"></i>
+                    Settings
+                </a>
+
+                <button
+                    type="button"
+                    id="logoutBtn"
+                >
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    Logout
+                </button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         APPLICATION AREA
+    ====================================================== -->
+    <div class="calcura-app">
+
+
+         <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside class="calcura-sidebar">
+
+        <div class="sidebar-brand">
+
+            <div class="sidebar-logo">
+                <i class="fa-solid fa-calculator"></i>
+            </div>
+
+            <div class="sidebar-brand-text">
+                <h1>Calcura</h1>
+                <span>Speak · Calculate · Explore</span>
+            </div>
+
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <a href="dashboard.html" class="sidebar-item">
+                <i class="fa-solid fa-house"></i>
+                <span>Home</span>
+            </a>
+
+            <a href="calculator.html" class="sidebar-item">
+                <i class="fa-solid fa-calculator"></i>
+                <span>Calculator</span>
+            </a>
+
+            <a href="voice-input.html" class="sidebar-item">
+                <i class="fa-solid fa-microphone"></i>
+                <span>Voice Input</span>
+            </a>
+
+            <a href="graph.html" class="sidebar-item">
+                <i class="fa-solid fa-chart-line"></i>
+                <span>Graph &amp; Plot</span>
+            </a>
+
+             <a href="ai-calculator.html" class="calcura-nav-item active">
+                <i class="fa-solid fa-robot"></i>
+                <span>AI Assistant</span>
+            </a>
+
+            <a href="formulas.html" class="sidebar-item">
+                <i class="fa-solid fa-book-open"></i>
+                <span>Formula Library</span>
+            </a>
+
+            <a href="converter.html" class="sidebar-item">
+                <i class="fa-solid fa-right-left"></i>
+                <span>Unit Converter</span>
+            </a>
+
+            <a href="history.html" class="sidebar-item">
+                <i class="fa-regular fa-clock"></i>
+                <span>History</span>
+            </a>
+
+            <a href="saved.html" class="sidebar-item">
+                <i class="fa-regular fa-bookmark"></i>
+                <span>Saved</span>
+            </a>
+
+            <a href="settings.html" class="sidebar-item">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+            </a>
+
+            <a href="profile.html" class="sidebar-item">
+                <i class="fa-solid fa-user"></i>
+                <span>Profile</span>
+            </a>
+
+            <a href="about.html" class="sidebar-item">
+                <i class="fa-solid fa-circle-info"></i>
+                <span>About</span>
+            </a>
+
+            <a href="help.html" class="sidebar-item">
+                <i class="fa-solid fa-circle-question"></i>
+                <span>Help &amp; Support</span>
+            </a>
+
+            <a href="upgrade.html"
+               class="sidebar-item">
+
+                <i class="fa-solid fa-crown"></i>
+
+                <span>
+                    Upgrade to Pro
+                </span>
+
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+        <!-- =================================================
+             MAIN CONTENT
+        ================================================== -->
+        <main class="calcura-main">
+
+            <div class="calcura-main-grid">
+
+
+                <!-- =========================================
+                     CENTER COLUMN
+                ========================================== -->
+                <section class="ai-center-column">
+
+
+                    <!-- =====================================
+                         AI HERO
+                    ====================================== -->
+                    <section class="ai-reference-hero">
+
+                        <div class="hero-robot">
+
+                            <div class="hero-robot-circle">
+
+                                <div class="robot-head">
+
+                                    <span class="robot-antenna"></span>
+
+                                    <div class="robot-face">
+
+                                        <span class="robot-eye"></span>
+                                        <span class="robot-eye"></span>
+
+                                        <span class="robot-mouth"></span>
+
+                                    </div>
+
+                                    <span class="robot-ear left"></span>
+                                    <span class="robot-ear right"></span>
+
+                                </div>
+
+                                <div class="robot-body">
+                                    <span></span>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="hero-content">
+
+                            <h1>
+                                Calcura <span>AI</span>
+                            </h1>
+
+                            <p>
+                                Your intelligent math assistant for
+                                step-by-step solutions, explanations and more.
+                            </p>
+
+                        </div>
+
+
+                        <div class="powered-ai">
+
+                            <div class="powered-ai-icon">
+                                <i class="fa-solid fa-wand-magic-sparkles"></i>
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Powered by AI
+                                </strong>
+
+                                <span>
+                                    Ask · Learn · Solve
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+
+
+                    <!-- =====================================
+                         FOUR FEATURE CARDS
+                    ====================================== -->
+                    <section class="ai-feature-row">
+
+
+                        <button
+                            type="button"
+                            class="ai-feature-card"
+                            data-action="solve"
+                        >
+
+                            <div class="feature-card-icon purple">
+                                <i class="fa-solid fa-pen-ruler"></i>
+                            </div>
+
+                            <div class="feature-card-content">
+
+                                <h3>
+                                    Solve Problem
+                                </h3>
+
+                                <p>
+                                    Get step-by-step<br>
+                                    solutions
+                                </p>
+
+                            </div>
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="ai-feature-card"
+                            data-action="explain"
+                        >
+
+                            <div class="feature-card-icon pink">
+                                <i class="fa-regular fa-lightbulb"></i>
+                            </div>
+
+                            <div class="feature-card-content">
+
+                                <h3>
+                                    Explain Concept
+                                </h3>
+
+                                <p>
+                                    Understand with<br>
+                                    simple explanations
+                                </p>
+
+                            </div>
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="ai-feature-card"
+                            data-action="generate"
+                        >
+
+                            <div class="feature-card-icon blue">
+                                <i class="fa-solid fa-file-lines"></i>
+                            </div>
+
+                            <div class="feature-card-content">
+
+                                <h3>
+                                    Generate Questions
+                                </h3>
+
+                                <p>
+                                    Create practice<br>
+                                    problems
+                                </p>
+
+                            </div>
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="ai-feature-card"
+                            data-action="homework"
+                        >
+
+                            <div class="feature-card-icon cyan">
+                                <i class="fa-solid fa-graduation-cap"></i>
+                            </div>
+
+                            <div class="feature-card-content">
+
+                                <h3>
+                                    Homework Help
+                                </h3>
+
+                                <p>
+                                    Get academic<br>
+                                    support
+                                </p>
+
+                            </div>
+
+                        </button>
+
+                    </section>
+
+
+
+                    <!-- =====================================
+                         CHAT AREA
+                    ====================================== -->
+                    <section class="ai-reference-chat">
+
+                    <div id="aiConversation" class="ai-conversation"></div>
+
+                        <!-- =================================
+                             INPUT
+                        ================================== -->
+                        <div class="ai-input-area">
+
+                            <button
+                                type="button"
+                                class="input-attach"
+                                id="attachBtn"
+                                title="Attach file"
+                            >
+                                <i class="fa-solid fa-paperclip"></i>
+                            </button>
+
+
+                            <textarea
+                                id="aiInput"
+                                rows="1"
+                                placeholder="Ask anything about math..."
+                            ></textarea>
+
+
+                            <button
+                                type="button"
+                                class="input-send"
+                                id="aiSendBtn"
+                                title="Send"
+                            >
+                                <i class="fa-solid fa-paper-plane"></i>
+                            </button>
+
+                        </div>
+
+
+                        <input
+                            type="file"
+                            id="aiFileInput"
+                            hidden
+                            accept="image/*,.pdf,.txt,.doc,.docx"
+                        >
+
+
+                        <!-- QUICK ACTIONS -->
+                        <div class="ai-quick-actions">
+
+
+                            <button
+                                type="button"
+                                class="quick-action"
+                                data-action="solve"
+                            >
+                                <i class="fa-solid fa-calculator"></i>
+                                Solve
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="quick-action"
+                                data-action="explain"
+                            >
+                                <i class="fa-solid fa-book-open"></i>
+                                Explain
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="quick-action"
+                                data-action="simplify"
+                            >
+                                <i class="fa-solid fa-wand-magic-sparkles"></i>
+                                Simplify
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="quick-action"
+                                data-action="differentiate"
+                            >
+                                <span class="quick-symbol">
+                                    d
+                                </span>
+                                Differentiate
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="quick-action"
+                                data-action="integrate"
+                            >
+                                <span class="quick-symbol">
+                                    ∫
+                                </span>
+                                Integrate
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="quick-action"
+                                data-action="graph"
+                            >
+                                <i class="fa-solid fa-chart-line"></i>
+                                Plot Graph
+                            </button>
+
+                        </div>
+
+                    </section>
+
+                </section>
+
+
+
+                <!-- =========================================
+                     RIGHT COLUMN
+                ========================================== -->
+                <aside class="ai-right-column">
+
+
+                    <!-- =====================================
+                         EXAMPLES
+                    ====================================== -->
+                    <section class="reference-side-card examples-card">
+
+                        <div class="side-card-title">
+
+                            <div class="side-title-icon yellow">
+                                <i class="fa-solid fa-wand-magic-sparkles"></i>
+                            </div>
+
+                            <h2>
+                                Try these examples
+                            </h2>
+
+                        </div>
+
+
+                       <div class="example-card">
+
+
+                            <button
+                                type="button"
+                                class="reference-example"
+                                data-prompt="integrate x square dx"
+                            >
+                                <span>
+                                    "integrate x square dx"
+                                </span>
+
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="reference-example"
+                                data-prompt="differentiate sin x"
+                            >
+                                <span>
+                                    "differentiate sin x"
+                                </span>
+
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="reference-example"
+                                data-prompt="solve x^2 + 3x - 4 = 0"
+                            >
+                                <span>
+                                    "solve x^2 + 3x - 4 = 0"
+                                </span>
+
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="reference-example"
+                                data-prompt="explain chain rule"
+                            >
+                                <span>
+                                    "explain chain rule"
+                                </span>
+
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="reference-example"
+                                data-prompt="plot sin x from 0 to 2π"
+                            >
+                                <span>
+                                    "plot sin x from 0 to 2π"
+                                </span>
+
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="reference-example"
+                                data-prompt="convert 25°C to Fahrenheit"
+                            >
+                                <span>
+                                    "convert 25°C to Fahrenheit"
+                                </span>
+
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="reference-example"
+                                data-prompt="find eigenvalues of a matrix"
+                            >
+                                <span>
+                                    "find eigenvalues of a matrix"
+                                </span>
+
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="reference-example"
+                                data-prompt="what is Taylor series"
+                            >
+                                <span>
+                                    "what is Taylor series"
+                                </span>
+
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </button>
+
+                        </div>
+
+                    </section>
+
+
+
+                    <!-- =====================================
+                         CAPABILITIES
+                    ====================================== -->
+                    <section class="reference-side-card capabilities-card">
+
+                        <div class="side-card-title">
+
+                            <div class="side-title-icon purple">
+                                <i class="fa-solid fa-gear"></i>
+                            </div>
+
+                            <h2>
+                                Capabilities
+                            </h2>
+
+                        </div>
+
+
+                        <div class="reference-capabilities">
+
+
+                            <div class="reference-capability">
+
+                                <div class="capability-icon purple">
+                                    <i class="fa-solid fa-arrows-to-circle"></i>
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        Step-by-step solutions
+                                    </strong>
+
+                                    <span>
+                                        Detailed and easy to understand
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="reference-capability">
+
+                                <div class="capability-icon pink">
+                                    <i class="fa-solid fa-shapes"></i>
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        Multiple topics
+                                    </strong>
+
+                                    <span>
+                                        Algebra, Calculus, Geometry, etc.
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="reference-capability">
+
+                                <div class="capability-icon cyan">
+                                    <i class="fa-solid fa-chart-line"></i>
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        Graph and visualize
+                                    </strong>
+
+                                    <span>
+                                        Plots, charts and diagrams
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="reference-capability">
+
+                                <div class="capability-icon yellow">
+                                    <i class="fa-solid fa-comment-dots"></i>
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        Explain like a teacher
+                                    </strong>
+
+                                    <span>
+                                        Simple and clear explanations
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="reference-capability">
+
+                                <div class="capability-icon orange">
+                                    <i class="fa-solid fa-file-lines"></i>
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        Generate practice questions
+                                    </strong>
+
+                                    <span>
+                                        Improve your problem solving
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+                </aside>
+
+            </div>
+
+        </main>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+====================================================== -->
+
+<script src="../js/api.js"></script>
+<script src="../js/auth.js"></script>
+<script src="../js/aiCalculator.js"></script>
+
+</body>
+</html>

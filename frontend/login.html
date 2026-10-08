@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login - Calcura</title>
+
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/auth.css">
+    <link rel="stylesheet" href="css/login.css">
+    
+</head>
+
+<body>
+
+    <main class="auth-container">
+
+        <section class="auth-card">
+
+            <div class="logo">Calcura</div>
+
+            <h1>Welcome Back</h1>
+
+            <p class="auth-subtitle">
+                Login to continue using Calcura.
+            </p>
+
+            <form id="loginForm">
+
+                <!-- Email -->
+                <div class="form-group">
+
+                    <label for="email">
+                        Email Address
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Enter your email address"
+                        autocomplete="email"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Password -->
+                <div class="form-group">
+
+                    <label for="password">
+                        Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Enter your password"
+                        autocomplete="current-password"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Message -->
+                <p id="loginMessage"></p>
+
+
+                <!-- Login Button -->
+                <button
+                    type="submit"
+                    id="loginBtn"
+                >
+                    Login
+                </button>
+
+            </form>
+
+
+            <!-- Register Link -->
+            <p class="auth-footer">
+
+                Don't have an account?
+
+                <a href="register.html">
+                    Create Account
+                </a>
+
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <!-- API -->
+    <script src="js/api.js"></script>
+
+    <!-- Authentication -->
+    <script src="js/auth.js"></script>
+
+
+    <!-- Login Logic -->
+    <script>
+
+        const loginForm =
+            document.getElementById("loginForm");
+
+        const loginMessage =
+            document.getElementById("loginMessage");
+
+        const loginBtn =
+            document.getElementById("loginBtn");
+
+
+        loginForm.addEventListener(
+            "submit",
+            async function (event) {
+
+                event.preventDefault();
+
+
+                const email =
+                    document.getElementById("email")
+                        .value
+                        .trim();
+
+                const password =
+                    document.getElementById("password")
+                        .value;
+
+
+                /* ---------------------------
+                   BASIC VALIDATION
+                --------------------------- */
+
+                if (!email || !password) {
+
+                    loginMessage.textContent =
+                        "Please enter your email and password.";
+
+                    loginMessage.className =
+                        "text-danger";
+
+                    return;
+                }
+
+
+                /* ---------------------------
+                   START LOGIN
+                --------------------------- */
+
+                loginBtn.disabled = true;
+
+                loginBtn.textContent =
+                    "Logging in...";
+
+                loginMessage.textContent =
+                    "";
+
+
+                try {
+
+                    const data =
+                        await loginUser(
+                            email,
+                            password
+                        );
+
+
+                    /* ---------------------------
+                       SUCCESS
+                    --------------------------- */
+
+                    if (data.success) {
+
+                        loginMessage.textContent =
+                            "Login successful!";
+
+                        loginMessage.className =
+                            "text-success";
+
+
+                        /*
+                         * Redirect to dashboard
+                         * after successful login.
+                         */
+setTimeout(function () {
+
+    if (data.user && data.user.role === "admin") {
+
+        window.location.href =
+            "Admin/html/dashboard.html";
+
+    } else {
+
+        window.location.href =
+            "pages/dashboard.html";
+
+    }
+
+}, 800);
+
+                    }
+
+                } catch (error) {
+
+                    /* ---------------------------
+                       LOGIN ERROR
+                    --------------------------- */
+
+                    loginMessage.textContent =
+                        error.message ||
+                        "Login failed.";
+
+                    loginMessage.className =
+                        "text-danger";
+
+                } finally {
+
+                    loginBtn.disabled = false;
+
+                    loginBtn.textContent =
+                        "Login";
+
+                }
+
+            }
+        );
+
+    </script>
+
+</body>
+
+</html>

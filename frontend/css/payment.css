@@ -1,0 +1,1126 @@
+/* =========================================================
+   CALCURA - PAYMENT PAGE
+   REFERENCE MATCHING DESIGN
+========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+}
+
+body {
+    background: #020f1c;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* =========================================================
+   MAIN PAYMENT AREA
+========================================================= */
+
+.payment-wrapper {
+    padding: 22px 32px 0;
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   PROGRESS STEPS
+========================================================= */
+
+.payment-progress {
+    width: 58%;
+    margin: 0 auto 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.payment-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+    min-width: 100px;
+
+    color: #c3d2e2;
+    font-size: 15px;
+    white-space: nowrap;
+}
+
+.step-circle {
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #33445b;
+    color: #d5dfeb;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    transition: .25s;
+}
+
+.payment-step.active .step-circle {
+    background: #087dff;
+    color: #ffffff;
+
+    box-shadow:
+        0 0 18px rgba(8, 125, 255, .28);
+}
+
+.payment-step.active span {
+    color: #ffffff;
+}
+
+.step-line {
+    width: 180px;
+    height: 3px;
+
+    margin: -25px 0 0;
+
+    background: #34455d;
+
+    transition: .25s;
+}
+
+.step-line.active {
+    background: #087dff;
+}
+
+
+/* =========================================================
+   MAIN PAYMENT LAYOUT
+========================================================= */
+
+.payment-layout {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 2fr)
+        minmax(360px, .92fr);
+
+    gap: 24px;
+
+    align-items: start;
+}
+
+
+/* =========================================================
+   LEFT SIDE
+========================================================= */
+
+.payment-left {
+    min-width: 0;
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.payment-title {
+    margin-bottom: 22px;
+}
+
+.payment-title h1 {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: 42px;
+    line-height: 1.15;
+
+    font-weight: 800;
+
+    letter-spacing: -1px;
+}
+
+.payment-title h1 span {
+    color: #087dff;
+}
+
+.payment-title p {
+    margin: 10px 0 0;
+
+    color: #c4d4e5;
+
+    font-size: 20px;
+    line-height: 1.45;
+}
+
+
+/* =========================================================
+   RAZORPAY PAYMENT CARD
+========================================================= */
+
+.razorpay-payment-card {
+    width: 100%;
+
+    padding: 0 20px 18px;
+
+    border: 1px solid #17486d;
+    border-radius: 9px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #061e32,
+            #041725
+        );
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, .12);
+}
+
+
+/* =========================================================
+   CARD HEADER
+========================================================= */
+
+.razorpay-card-header {
+    min-height: 75px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom: 1px solid #17405f;
+}
+
+.razorpay-card-header h2 {
+    margin: 0 0 5px;
+
+    color: #ffffff;
+
+    font-size: 23px;
+}
+
+.razorpay-card-header p {
+    margin: 0;
+
+    color: #91a9bd;
+
+    font-size: 12px;
+}
+
+.razorpay-lock {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    color: #39b9ff;
+
+    font-size: 15px;
+}
+
+.razorpay-lock::after {
+    content: "Secure Payment";
+
+    font-size: 13px;
+    font-weight: 500;
+}
+
+
+/* =========================================================
+   RAZORPAY BOX
+========================================================= */
+
+.razorpay-box {
+    min-height: 112px;
+
+    margin-top: 20px;
+    padding: 20px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 17px;
+
+    border: 1px solid #1c5680;
+    border-radius: 9px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #082642,
+            #071c31
+        );
+}
+
+.razorpay-logo-icon {
+    width: 54px;
+    height: 54px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background: #0b64c8;
+
+    color: #ffffff;
+
+    font-size: 23px;
+
+    box-shadow:
+        0 5px 18px rgba(8, 125, 255, .2);
+}
+
+.razorpay-box-content {
+    flex: 1;
+}
+
+.razorpay-box-content h3 {
+    margin: 0 0 6px;
+
+    color: #ffffff;
+
+    font-size: 16px;
+}
+
+.razorpay-box-content p {
+    margin: 0;
+
+    color: #9bb1c4;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+}
+
+.razorpay-secure-badge {
+    padding: 7px 11px;
+
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    border-radius: 6px;
+
+    background: rgba(8, 125, 255, .12);
+
+    color: #5eafff;
+
+    font-size: 11px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   PAYMENT INFORMATION
+========================================================= */
+
+.payment-information {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 12px;
+
+    margin-top: 18px;
+}
+
+.payment-info-item {
+    min-height: 75px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 12px;
+
+    border: 1px solid #153d5b;
+    border-radius: 8px;
+
+    background: #071d30;
+}
+
+.payment-info-item > i {
+    width: 35px;
+    height: 35px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 7px;
+
+    background: #0b3154;
+
+    color: #51a9ff;
+
+    font-size: 14px;
+}
+
+.payment-info-item div {
+    display: flex;
+    flex-direction: column;
+
+    gap: 4px;
+}
+
+.payment-info-item strong {
+    color: #ffffff;
+
+    font-size: 11px;
+}
+
+.payment-info-item span {
+    color: #7f98ad;
+
+    font-size: 9px;
+
+    line-height: 1.35;
+}
+
+
+/* =========================================================
+   RAZORPAY PAY BUTTON
+========================================================= */
+
+.razorpay-pay-btn {
+    width: 100%;
+    height: 58px;
+
+    margin-top: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    border: none;
+    border-radius: 7px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #087dff,
+            #146cff
+        );
+
+    color: #ffffff;
+
+    font-size: 17px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 7px 22px rgba(8, 125, 255, .22);
+
+    transition: .2s;
+}
+
+.razorpay-pay-btn:hover {
+    background:
+        linear-gradient(
+            90deg,
+            #1687ff,
+            #2577ff
+        );
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 10px 27px rgba(8, 125, 255, .3);
+}
+
+.razorpay-pay-btn:active {
+    transform: translateY(0);
+}
+
+.razorpay-pay-btn:disabled {
+    opacity: .6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.razorpay-pay-btn i:first-child {
+    font-size: 15px;
+}
+
+.razorpay-pay-btn i:last-child {
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   PAYMENT MESSAGE
+========================================================= */
+
+.payment-message {
+    min-height: 18px;
+
+    margin: 8px 0 0;
+
+    text-align: center;
+
+    color: #ff6b6b;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   SECURITY NOTE
+========================================================= */
+
+.payment-security-note {
+    margin-top: 13px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    color: #9fb5c8;
+
+    font-size: 11px;
+
+    text-align: center;
+}
+
+.payment-security-note i {
+    color: #d5e6ff;
+
+    font-size: 16px;
+}
+
+
+/* =========================================================
+   ORDER SUMMARY
+========================================================= */
+
+.payment-summary {
+    min-width: 0;
+
+    padding: 22px 16px 16px;
+
+    border: 1px solid #17486d;
+    border-radius: 9px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #061e32,
+            #041725
+        );
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, .12);
+}
+
+.payment-summary > h2 {
+    margin: 0 0 16px;
+
+    color: #ffffff;
+
+    font-size: 25px;
+}
+
+
+/* =========================================================
+   SELECTED PLAN
+========================================================= */
+
+.summary-plan {
+    position: relative;
+
+    min-height: 105px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 13px;
+
+    padding: 16px;
+
+    border: 1px solid #8638dc;
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #27125b,
+            #111b4b
+        );
+}
+
+.summary-plan-icon {
+    width: 55px;
+    height: 55px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 9px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #9f2eff,
+            #7e22ce
+        );
+
+    color: #ffffff;
+
+    font-size: 25px;
+
+    box-shadow:
+        0 5px 15px rgba(159, 46, 255, .25);
+}
+
+.summary-plan-info {
+    padding-right: 105px;
+}
+
+.summary-plan-info h3 {
+    margin: 0 0 4px;
+
+    color: #ffffff;
+
+    font-size: 20px;
+}
+
+.summary-plan-info p {
+    margin: 0;
+
+    color: #d2c8ed;
+
+    font-size: 12px;
+
+    line-height: 1.35;
+}
+
+.summary-popular {
+    position: absolute;
+
+    right: 12px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    padding: 7px 12px;
+
+    border-radius: 6px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #b72aff,
+            #d735ff
+        );
+
+    color: #210532;
+
+    font-size: 11px;
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   SUMMARY PRICE
+========================================================= */
+
+.summary-price {
+    display: flex;
+    align-items: baseline;
+
+    gap: 8px;
+
+    margin: 18px 0 13px;
+}
+
+.summary-price strong {
+    color: #d9e8ff;
+
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.summary-price > span {
+    color: #c8d5e2;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   FEATURES
+========================================================= */
+
+.summary-features {
+    margin: 0;
+    padding: 0 0 14px;
+
+    list-style: none;
+
+    border-bottom: 1px solid #1a405c;
+}
+
+.summary-features li {
+    display: flex;
+    align-items: center;
+
+    gap: 11px;
+
+    padding: 5px 0;
+
+    color: #dce7f2;
+
+    font-size: 13px;
+}
+
+.summary-features li i {
+    color: #dce8ff;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   BREAKDOWN
+========================================================= */
+
+.summary-breakdown {
+    padding: 14px 0 0;
+}
+
+.summary-breakdown > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 9px;
+}
+
+.summary-breakdown > div > span:first-child {
+    color: #c1d1df;
+
+    font-size: 13px;
+}
+
+.summary-breakdown strong {
+    color: #ffffff;
+
+    font-size: 13px;
+}
+
+.summary-total {
+    margin-top: 12px;
+    padding-top: 12px;
+
+    border-top: 1px solid #1b4565;
+}
+
+.summary-total > span {
+    color: #ffffff !important;
+
+    font-size: 20px !important;
+    font-weight: 700;
+}
+
+.summary-total strong {
+    color: #ffffff;
+
+    font-size: 20px;
+}
+
+.summary-total strong > span {
+    color: #12a0ff;
+
+    font-size: 24px;
+}
+
+.summary-total small {
+    color: #c2d3e4;
+
+    font-size: 15px;
+}
+
+
+/* =========================================================
+   COUPON
+========================================================= */
+
+.coupon-section {
+    margin-top: 18px;
+}
+
+.coupon-section label {
+    display: block;
+
+    margin-bottom: 9px;
+
+    color: #ffffff;
+
+    font-size: 13px;
+}
+
+.coupon-input {
+    height: 44px;
+
+    display: flex;
+
+    border: 1px solid #1c5277;
+    border-radius: 8px;
+
+    overflow: hidden;
+
+    background: #061b2d;
+}
+
+.coupon-input input {
+    flex: 1;
+
+    min-width: 0;
+
+    border: none;
+    outline: none;
+
+    padding: 0 12px;
+
+    background: transparent;
+
+    color: #ffffff;
+
+    font-size: 12px;
+}
+
+.coupon-input input::placeholder {
+    color: #849caf;
+}
+
+.coupon-input button {
+    width: 88px;
+
+    border: 1px solid #4c7193;
+
+    background: #071c30;
+
+    color: #d9e8f7;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+.coupon-input button:hover {
+    background: #0b2b46;
+}
+
+#couponMessage {
+    min-height: 14px;
+
+    margin: 5px 0 0;
+
+    color: #39d99d;
+
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   SUMMARY SECURITY
+========================================================= */
+
+.summary-security {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 15px;
+
+    margin-top: 18px;
+
+    padding-top: 16px;
+
+    border-top: 1px solid #173d58;
+}
+
+.summary-security > div {
+    display: grid;
+
+    grid-template-columns: 28px 1fr;
+
+    column-gap: 8px;
+
+    align-items: center;
+}
+
+.summary-security i {
+    grid-row: span 2;
+
+    color: #2d9dff;
+
+    font-size: 24px;
+}
+
+.summary-security span {
+    color: #d7e5f1;
+
+    font-size: 10px;
+}
+
+.summary-security small {
+    color: #8197aa;
+
+    font-size: 9px;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.payment-footer {
+    min-height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-top: 15px;
+
+    padding: 0 4px;
+
+    border-top: 1px solid #17354d;
+
+    color: #a2b5c6;
+
+    font-size: 12px;
+}
+
+.payment-footer div {
+    display: flex;
+
+    gap: 28px;
+}
+
+.payment-footer a {
+    color: #bdcedd;
+
+    text-decoration: none;
+}
+
+.payment-footer a:hover {
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   PROGRESS INITIAL STATE
+========================================================= */
+
+/*
+   Step 1 is active when page opens.
+   Step 2 and Step 3 become active through JavaScript.
+*/
+
+#paymentStep1.active .step-circle {
+    background: #087dff;
+}
+
+#paymentStep2.active .step-circle {
+    background: #087dff;
+}
+
+#paymentStep3.active .step-circle {
+    background: #087dff;
+}
+
+#stepLine1.active {
+    background: #087dff;
+}
+
+#stepLine2.active {
+    background: #087dff;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1200px) {
+
+    .payment-wrapper {
+        padding-left: 22px;
+        padding-right: 22px;
+    }
+
+    .payment-title h1 {
+        font-size: 36px;
+    }
+
+    .payment-title p {
+        font-size: 17px;
+    }
+
+    .payment-progress {
+        width: 65%;
+    }
+
+    .step-line {
+        width: 130px;
+    }
+}
+
+
+@media (max-width: 1000px) {
+
+    .payment-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .payment-summary {
+        order: 2;
+    }
+
+    .payment-progress {
+        width: 75%;
+    }
+}
+
+
+@media (max-width: 800px) {
+
+    .payment-wrapper {
+        padding: 18px 14px 0;
+    }
+
+    .payment-progress {
+        width: 100%;
+    }
+
+    .step-line {
+        width: 80px;
+    }
+
+    .payment-title h1 {
+        font-size: 31px;
+    }
+
+    .payment-title p {
+        font-size: 15px;
+    }
+
+    .payment-information {
+        grid-template-columns: 1fr;
+    }
+
+    .razorpay-box {
+        align-items: flex-start;
+    }
+
+    .razorpay-secure-badge {
+        display: none;
+    }
+}
+
+
+@media (max-width: 560px) {
+
+    .payment-wrapper {
+        padding: 15px 10px 0;
+    }
+
+    .payment-progress {
+        display: none;
+    }
+
+    .payment-title h1 {
+        font-size: 27px;
+    }
+
+    .payment-title p {
+        font-size: 14px;
+    }
+
+    .razorpay-payment-card {
+        padding: 0 14px 15px;
+    }
+
+    .razorpay-card-header h2 {
+        font-size: 19px;
+    }
+
+    .razorpay-box {
+        padding: 14px;
+    }
+
+    .razorpay-logo-icon {
+        width: 45px;
+        height: 45px;
+        font-size: 18px;
+    }
+
+    .razorpay-box-content h3 {
+        font-size: 13px;
+    }
+
+    .razorpay-box-content p {
+        font-size: 10px;
+    }
+
+    .razorpay-pay-btn {
+        height: 52px;
+        font-size: 14px;
+    }
+
+    .payment-summary {
+        padding: 17px 13px;
+    }
+
+    .summary-plan-info {
+        padding-right: 0;
+    }
+
+    .summary-popular {
+        display: none;
+    }
+
+    .summary-security {
+        grid-template-columns: 1fr;
+    }
+
+    .payment-footer {
+        flex-direction: column;
+        justify-content: center;
+
+        gap: 10px;
+
+        padding: 14px 0;
+    }
+}

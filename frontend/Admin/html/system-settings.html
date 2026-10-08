@@ -1,0 +1,2017 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>CALCURA - System Settings</title>
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../admin-css/system-settings.css"
+    >
+
+</head>
+
+
+<body>
+
+<div class="admin-layout">
+
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside
+        class="admin-sidebar"
+        id="adminSidebar"
+    >
+
+        <div class="sidebar-brand">
+
+            <div class="brand-logo">
+                <span>C</span>
+            </div>
+
+            <div class="brand-text">
+
+                <h2>CALCURA</h2>
+
+                <p>Admin Panel</p>
+
+            </div>
+
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <a
+                href="dashboard.html"
+                class="sidebar-link"
+            >
+                <i class="fa-solid fa-house"></i>
+                <span>Dashboard</span>
+            </a>
+
+
+            <a
+                href="users.html"
+                class="sidebar-link"
+            >
+                <i class="fa-solid fa-users"></i>
+                <span>Users</span>
+            </a>
+
+
+            <a
+                href="calculations.html"
+                class="sidebar-link"
+            >
+                <i class="fa-solid fa-calculator"></i>
+                <span>Calculations</span>
+            </a>
+
+
+            <a
+                href="formulas.html"
+                class="sidebar-link"
+            >
+                <i class="fa-solid fa-book-open"></i>
+                <span>Formula Library</span>
+            </a>
+
+
+            <a
+                href="subscriptions.html"
+                class="sidebar-link"
+            >
+                <i class="fa-solid fa-credit-card"></i>
+                <span>Subscriptions</span>
+            </a>
+
+
+            <a
+                href="reports.html"
+                class="sidebar-link"
+            >
+                <i class="fa-solid fa-chart-column"></i>
+                <span>Reports</span>
+            </a>
+
+
+            <a
+                href="activity-logs.html"
+                class="sidebar-link"
+            >
+                <i class="fa-solid fa-file-lines"></i>
+                <span>Activity Logs</span>
+            </a>
+
+
+            <a
+                href="system-settings.html"
+                class="sidebar-link active"
+            >
+                <i class="fa-solid fa-gear"></i>
+                <span>System Settings</span>
+            </a>
+
+
+            <a
+                href="website-content.html"
+                class="sidebar-link"
+            >
+                <i class="fa-solid fa-palette"></i>
+                <span>Website Content</span>
+            </a>
+
+
+            <a
+                href="user-accounts.html"
+                class="sidebar-link"
+            >
+                <i class="fa-solid fa-user-shield"></i>
+                <span>User Accounts</span>
+            </a>
+
+
+
+        </nav>
+
+
+        <!-- ADMIN CONTROL -->
+
+        <div class="admin-control-card">
+
+            <div class="control-icon">
+                <i class="fa-solid fa-crown"></i>
+            </div>
+
+            <h3>Admin Control</h3>
+
+            <strong>Full Control</strong>
+
+            <p>
+                You have complete access
+                to manage Calcura.
+            </p>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <main class="admin-main">
+
+
+        <!-- HEADER -->
+
+        <header class="admin-header">
+
+            <button
+                type="button"
+                class="sidebar-toggle"
+                id="sidebarToggle"
+            >
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+
+            <div class="global-search">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input
+                    type="text"
+                    id="globalSearch"
+                    placeholder="Search settings, configuration, system..."
+                >
+
+            </div>
+
+
+            <div class="header-right">
+
+
+                <button
+                    type="button"
+                    class="notification-button"
+                    id="notificationButton"
+                >
+
+                    <i class="fa-regular fa-bell"></i>
+
+                    <span
+                        class="notification-dot"
+                        id="notificationDot"
+                    ></span>
+
+                </button>
+
+
+                <div class="header-divider"></div>
+
+
+                <button
+                    type="button"
+                    class="admin-profile"
+                    id="adminProfileButton"
+                >
+
+                    <div
+                        class="admin-avatar"
+                        id="adminAvatar"
+                    >
+                        A
+                    </div>
+
+                    <div class="admin-info">
+
+                        <strong id="adminName">
+                            Admin
+                        </strong>
+
+                        <span id="adminRole">
+                            Administrator
+                        </span>
+
+                    </div>
+
+                    <i class="fa-solid fa-chevron-down"></i>
+
+                </button>
+
+
+                <!-- PROFILE DROPDOWN -->
+
+                <div
+                    class="profile-dropdown"
+                    id="profileDropdown"
+                >
+
+                    <div class="profile-head">
+
+                        <div
+                            class="profile-avatar"
+                            id="profileAvatar"
+                        >
+                            A
+                        </div>
+
+                        <div>
+
+                            <strong id="profileName">
+                                Admin
+                            </strong>
+
+                            <span id="profileEmail">
+                                —
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="profile-line"></div>
+
+
+                    <div class="profile-row">
+
+                        <span>Role</span>
+
+                        <strong id="profileRole">
+                            Administrator
+                        </strong>
+
+                    </div>
+
+
+                    <div class="profile-row">
+
+                        <span>User ID</span>
+
+                        <strong id="profileId">
+                            —
+                        </strong>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="logout-button"
+                        id="logoutButton"
+                    >
+
+                        <i class="fa-solid fa-right-from-bracket"></i>
+
+                        Logout
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =====================================================
+             PAGE
+        ====================================================== -->
+
+        <section class="settings-page">
+
+
+            <!-- PAGE HEADER -->
+
+            <div class="page-header">
+
+                <div>
+
+                    <h1>
+                        System
+                        <span>Settings</span>
+                    </h1>
+
+                    <p>
+                        Configure and manage system settings for Calcura.
+                    </p>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="save-button"
+                    id="saveChanges"
+                >
+
+                    <i class="fa-solid fa-floppy-disk"></i>
+
+                    Save Changes
+
+                </button>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 SUMMARY CARDS
+            ================================================== -->
+
+            <div class="summary-grid">
+
+
+                <div class="summary-card purple">
+
+                    <div class="summary-icon">
+
+                        <i class="fa-solid fa-gear"></i>
+
+                    </div>
+
+                    <div>
+
+                        <span>General Settings</span>
+
+                        <strong>12</strong>
+
+                        <small>
+                            Configuration options
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="summary-card green">
+
+                    <div class="summary-icon">
+
+                        <i class="fa-solid fa-shield-halved"></i>
+
+                    </div>
+
+                    <div>
+
+                        <span>Security Settings</span>
+
+                        <strong>8</strong>
+
+                        <small>
+                            Security options
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="summary-card blue">
+
+                    <div class="summary-icon">
+
+                        <i class="fa-solid fa-server"></i>
+
+                    </div>
+
+                    <div>
+
+                        <span>System Status</span>
+
+                        <strong class="healthy">
+
+                            <b></b>
+
+                            Healthy
+
+                        </strong>
+
+                        <small>
+                            All systems operational
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="summary-card orange">
+
+                    <div class="summary-icon">
+
+                        <i class="fa-solid fa-clock"></i>
+
+                    </div>
+
+                    <div>
+
+                        <span>Last Updated</span>
+
+                        <strong id="lastUpdated">
+                            Sep 30, 2026
+                        </strong>
+
+                        <small>
+                            by <span id="updatedBy">Admin</span>
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 SETTINGS TABS
+            ================================================== -->
+
+            <div class="settings-tabs">
+
+
+                <button
+                    class="settings-tab active"
+                    data-tab="general"
+                >
+                    <i class="fa-solid fa-gear"></i>
+                    General
+                </button>
+
+
+                <button
+                    class="settings-tab"
+                    data-tab="security"
+                >
+                    <i class="fa-solid fa-shield-halved"></i>
+                    Security
+                </button>
+
+
+                <button
+                    class="settings-tab"
+                    data-tab="email"
+                >
+                    <i class="fa-solid fa-envelope"></i>
+                    Email & Notifications
+                </button>
+
+
+                <button
+                    class="settings-tab"
+                    data-tab="payment"
+                >
+                    <i class="fa-solid fa-credit-card"></i>
+                    Payment & Subscription
+                </button>
+
+
+                <button
+                    class="settings-tab"
+                    data-tab="system"
+                >
+                    <i class="fa-solid fa-database"></i>
+                    System
+                </button>
+
+
+                <button
+                    class="settings-tab"
+                    data-tab="appearance"
+                >
+                    <i class="fa-solid fa-palette"></i>
+                    Appearance
+                </button>
+
+
+                <button
+                    class="settings-tab"
+                    data-tab="integrations"
+                >
+                    <i class="fa-solid fa-link"></i>
+                    Integrations
+                </button>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 GENERAL TAB
+            ================================================== -->
+
+            <div
+                class="settings-content active"
+                data-content="general"
+            >
+
+                <div class="settings-columns">
+
+
+                    <div class="settings-panel">
+
+                        <div class="panel-title">
+
+                            <i class="fa-solid fa-gear"></i>
+
+                            <div>
+
+                                <h2>General Settings</h2>
+
+                                <p>
+                                    Basic configuration for your website.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-grid">
+
+                            <div class="form-group">
+
+                                <label>
+                                    Website Name
+                                </label>
+
+                                <input
+                                    id="websiteName"
+                                    type="text"
+                                    value="Calcura"
+                                >
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label>
+                                    Website URL
+                                </label>
+
+                                <input
+                                    id="websiteURL"
+                                    type="text"
+                                    value="http://localhost:5500"
+                                >
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label>
+                                    Contact Email
+                                </label>
+
+                                <input
+                                    id="contactEmail"
+                                    type="email"
+                                    value="admin@calcura.com"
+                                >
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label>
+                                    Support Email
+                                </label>
+
+                                <input
+                                    id="supportEmail"
+                                    type="email"
+                                    value="support@calcura.com"
+                                >
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label>
+                                    Timezone
+                                </label>
+
+                                <select id="timezone">
+
+                                    <option>
+                                        (GMT+05:30) India Standard Time
+                                    </option>
+
+                                    <option>
+                                        (GMT+00:00) UTC
+                                    </option>
+
+                                    <option>
+                                        (GMT+01:00) Europe/London
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label>
+                                    Default Language
+                                </label>
+
+                                <select id="defaultLanguage">
+
+                                    <option>English</option>
+
+                                    <option>Hindi</option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="settings-panel">
+
+                        <div class="panel-title security-title">
+
+                            <i class="fa-solid fa-shield-halved"></i>
+
+                            <div>
+
+                                <h2>Security Settings</h2>
+
+                                <p>
+                                    Manage security and access controls.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="switch-list">
+
+
+                            <div class="setting-row">
+
+                                <div class="row-icon">
+                                    <i class="fa-solid fa-mobile-screen-button"></i>
+                                </div>
+
+                                <div class="row-text">
+
+                                    <strong>
+                                        Two-Factor Authentication (2FA)
+                                    </strong>
+
+                                    <span>
+                                        Require 2FA for admin accounts
+                                    </span>
+
+                                </div>
+
+                                <label class="switch">
+
+                                    <input
+                                        type="checkbox"
+                                        id="twoFactor"
+                                        checked
+                                    >
+
+                                    <span></span>
+
+                                </label>
+
+                            </div>
+
+
+                            <div class="setting-row">
+
+                                <div class="row-icon">
+                                    <i class="fa-solid fa-lock"></i>
+                                </div>
+
+                                <div class="row-text">
+
+                                    <strong>
+                                        Login Attempt Limit
+                                    </strong>
+
+                                    <span>
+                                        Limit failed login attempts
+                                    </span>
+
+                                </div>
+
+                                <select
+                                    class="small-select"
+                                    id="loginLimit"
+                                >
+
+                                    <option>30 minutes</option>
+                                    <option>15 minutes</option>
+                                    <option>60 minutes</option>
+
+                                </select>
+
+                                <label class="switch">
+
+                                    <input
+                                        type="checkbox"
+                                        id="loginLimitEnabled"
+                                        checked
+                                    >
+
+                                    <span></span>
+
+                                </label>
+
+                            </div>
+
+
+                            <div class="setting-row">
+
+                                <div class="row-icon">
+                                    <i class="fa-solid fa-clock"></i>
+                                </div>
+
+                                <div class="row-text">
+
+                                    <strong>
+                                        Session Timeout
+                                    </strong>
+
+                                    <span>
+                                        Password Expiry
+                                    </span>
+
+                                </div>
+
+                                <select
+                                    class="small-select"
+                                    id="sessionTimeout"
+                                >
+
+                                    <option>90 days</option>
+                                    <option>30 days</option>
+                                    <option>180 days</option>
+
+                                </select>
+
+                            </div>
+
+
+                            <div class="setting-row">
+
+                                <div class="row-icon">
+                                    <i class="fa-solid fa-key"></i>
+                                </div>
+
+                                <div class="row-text">
+
+                                    <strong>
+                                        IP Whitelist (Admin)
+                                    </strong>
+
+                                    <span>
+                                        Restrict admin access to specific IPs
+                                    </span>
+
+                                </div>
+
+                                <label class="switch">
+
+                                    <input
+                                        type="checkbox"
+                                        id="ipWhitelist"
+                                    >
+
+                                    <span></span>
+
+                                </label>
+
+                            </div>
+
+
+                            <div class="setting-row">
+
+                                <div class="row-icon">
+                                    <i class="fa-solid fa-file-lines"></i>
+                                </div>
+
+                                <div class="row-text">
+
+                                    <strong>
+                                        Enable Activity Logging
+                                    </strong>
+
+                                    <span>
+                                        Log all important system activities
+                                    </span>
+
+                                </div>
+
+                                <label class="switch">
+
+                                    <input
+                                        type="checkbox"
+                                        id="activityLogging"
+                                        checked
+                                    >
+
+                                    <span></span>
+
+                                </label>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="settings-columns bottom-panels">
+
+
+                    <!-- EMAIL -->
+
+                    <div class="settings-panel">
+
+                        <div class="panel-title">
+
+                            <i class="fa-solid fa-envelope"></i>
+
+                            <div>
+
+                                <h2>Email & Notifications</h2>
+
+                                <p>
+                                    Configure email settings and notifications.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="email-grid">
+
+                            <div class="form-group">
+                                <label>SMTP Host</label>
+                                <input
+                                    id="smtpHost"
+                                    value="smtp.gmail.com"
+                                >
+                            </div>
+
+
+                            <div class="form-group">
+                                <label>SMTP Port</label>
+                                <input
+                                    id="smtpPort"
+                                    value="587"
+                                >
+                            </div>
+
+
+                            <div class="form-group">
+                                <label>SMTP Username</label>
+                                <input
+                                    id="smtpUsername"
+                                    value="your-email@gmail.com"
+                                >
+                            </div>
+
+
+                            <div class="form-group">
+                                <label>SMTP Password</label>
+
+                                <div class="password-input">
+
+                                    <input
+                                        id="smtpPassword"
+                                        type="password"
+                                        value="password"
+                                    >
+
+                                    <button
+                                        type="button"
+                                        class="password-toggle"
+                                        data-target="smtpPassword"
+                                    >
+                                        <i class="fa-regular fa-eye"></i>
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="form-group">
+                                <label>From Email</label>
+                                <input
+                                    id="fromEmail"
+                                    value="noreply@calcura.com"
+                                >
+                            </div>
+
+
+                            <div class="form-group">
+                                <label>From Name</label>
+                                <input
+                                    id="fromName"
+                                    value="Calcura"
+                                >
+                            </div>
+
+                        </div>
+
+
+                        <div class="switch-list email-switches">
+
+
+                            <div class="setting-row">
+
+                                <div class="row-icon blue-icon">
+                                    <i class="fa-solid fa-users"></i>
+                                </div>
+
+                                <div class="row-text">
+
+                                    <strong>
+                                        Send User Registration Emails
+                                    </strong>
+
+                                    <span>
+                                        Notify users on successful registration
+                                    </span>
+
+                                </div>
+
+                                <label class="switch">
+
+                                    <input
+                                        type="checkbox"
+                                        id="registrationEmails"
+                                        checked
+                                    >
+
+                                    <span></span>
+
+                                </label>
+
+                            </div>
+
+
+                            <div class="setting-row">
+
+                                <div class="row-icon gold-icon">
+                                    <i class="fa-solid fa-crown"></i>
+                                </div>
+
+                                <div class="row-text">
+
+                                    <strong>
+                                        Send Subscription Emails
+                                    </strong>
+
+                                    <span>
+                                        Notify users on plan changes
+                                    </span>
+
+                                </div>
+
+                                <label class="switch">
+
+                                    <input
+                                        type="checkbox"
+                                        id="subscriptionEmails"
+                                        checked
+                                    >
+
+                                    <span></span>
+
+                                </label>
+
+                            </div>
+
+
+                            <div class="setting-row">
+
+                                <div class="row-icon blue-icon">
+                                    <i class="fa-solid fa-bell"></i>
+                                </div>
+
+                                <div class="row-text">
+
+                                    <strong>
+                                        Send System Alerts
+                                    </strong>
+
+                                    <span>
+                                        Get notified about important system events
+                                    </span>
+
+                                </div>
+
+                                <label class="switch">
+
+                                    <input
+                                        type="checkbox"
+                                        id="systemAlerts"
+                                        checked
+                                    >
+
+                                    <span></span>
+
+                                </label>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- PAYMENT -->
+
+                    <div class="settings-panel">
+
+                        <div class="panel-title">
+
+                            <i class="fa-solid fa-credit-card"></i>
+
+                            <div>
+
+                                <h2>Payment & Subscription</h2>
+
+                                <p>
+                                    Configure payment gateway and subscription settings.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="payment-grid">
+
+
+                            <div class="form-group">
+
+                                <label>
+                                    Payment Gateway
+                                </label>
+
+                                <select id="paymentGateway">
+
+                                    <option>Razorpay</option>
+
+                                </select>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label>
+                                    Razorpay Key ID
+                                </label>
+
+                                <input
+                                    id="razorpayKey"
+                                    type="text"
+                                    placeholder="rzp_test_xxxxxxxxx"
+                                >
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label>
+                                    Razorpay Key Secret
+                                </label>
+
+                                <div class="password-input">
+
+                                    <input
+                                        id="razorpaySecret"
+                                        type="password"
+                                        value=""
+                                        placeholder="Enter secret"
+                                    >
+
+                                    <button
+                                        type="button"
+                                        class="password-toggle"
+                                        data-target="razorpaySecret"
+                                    >
+                                        <i class="fa-regular fa-eye"></i>
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label>
+                                    Currency
+                                </label>
+
+                                <select id="currency">
+
+                                    <option>INR (₹)</option>
+                                    <option>USD ($)</option>
+
+                                </select>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label>
+                                    Default Plan Duration
+                                </label>
+
+                                <select id="planDuration">
+
+                                    <option>Monthly</option>
+                                    <option>Yearly</option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="switch-list">
+
+
+                            <div class="setting-row">
+
+                                <div class="row-icon">
+                                    <i class="fa-solid fa-credit-card"></i>
+                                </div>
+
+                                <div class="row-text">
+
+                                    <strong>
+                                        Enable Subscriptions
+                                    </strong>
+
+                                    <span>
+                                        Allow users to purchase subscription plans
+                                    </span>
+
+                                </div>
+
+                                <label class="switch">
+
+                                    <input
+                                        type="checkbox"
+                                        id="enableSubscriptions"
+                                        checked
+                                    >
+
+                                    <span></span>
+
+                                </label>
+
+                            </div>
+
+
+                            <div class="setting-row">
+
+                                <div class="row-icon gold-icon">
+                                    <i class="fa-solid fa-crown"></i>
+                                </div>
+
+                                <div class="row-text">
+
+                                    <strong>
+                                        Enable Free Plan
+                                    </strong>
+
+                                    <span>
+                                        Allow free plan for new users
+                                    </span>
+
+                                </div>
+
+                                <label class="switch">
+
+                                    <input
+                                        type="checkbox"
+                                        id="enableFreePlan"
+                                        checked
+                                    >
+
+                                    <span></span>
+
+                                </label>
+
+                            </div>
+
+
+                            <div class="setting-row">
+
+                                <div class="row-icon">
+                                    <i class="fa-solid fa-rotate"></i>
+                                </div>
+
+                                <div class="row-text">
+
+                                    <strong>
+                                        Auto-renew Subscriptions
+                                    </strong>
+
+                                    <span>
+                                        Automatically renew subscriptions
+                                    </span>
+
+                                </div>
+
+                                <label class="switch">
+
+                                    <input
+                                        type="checkbox"
+                                        id="autoRenew"
+                                    >
+
+                                    <span></span>
+
+                                </label>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 SECURITY TAB
+            ================================================== -->
+
+            <div
+                class="settings-content"
+                data-content="security"
+            >
+
+                <div class="single-panel">
+
+                    <div class="panel-title security-title">
+
+                        <i class="fa-solid fa-shield-halved"></i>
+
+                        <div>
+
+                            <h2>Security Settings</h2>
+
+                            <p>
+                                Manage administrator security and authentication.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="large-settings-grid">
+
+                        <div class="security-box">
+
+                            <i class="fa-solid fa-lock"></i>
+
+                            <div>
+
+                                <strong>Password Policy</strong>
+
+                                <span>
+                                    Require strong passwords for administrator accounts.
+                                </span>
+
+                            </div>
+
+                            <label class="switch">
+
+                                <input
+                                    type="checkbox"
+                                    id="strongPasswords"
+                                    checked
+                                >
+
+                                <span></span>
+
+                            </label>
+
+                        </div>
+
+
+                        <div class="security-box">
+
+                            <i class="fa-solid fa-mobile-screen"></i>
+
+                            <div>
+
+                                <strong>Two-Factor Authentication</strong>
+
+                                <span>
+                                    Add an additional authentication layer.
+                                </span>
+
+                            </div>
+
+                            <label class="switch">
+
+                                <input
+                                    type="checkbox"
+                                    id="security2FA"
+                                    checked
+                                >
+
+                                <span></span>
+
+                            </label>
+
+                        </div>
+
+
+                        <div class="security-box">
+
+                            <i class="fa-solid fa-user-shield"></i>
+
+                            <div>
+
+                                <strong>Admin Session Protection</strong>
+
+                                <span>
+                                    Protect administrator sessions from unauthorized access.
+                                </span>
+
+                            </div>
+
+                            <label class="switch">
+
+                                <input
+                                    type="checkbox"
+                                    id="sessionProtection"
+                                    checked
+                                >
+
+                                <span></span>
+
+                            </label>
+
+                        </div>
+
+
+                        <div class="security-box">
+
+                            <i class="fa-solid fa-shield-halved"></i>
+
+                            <div>
+
+                                <strong>Security Alerts</strong>
+
+                                <span>
+                                    Notify administrator about security events.
+                                </span>
+
+                            </div>
+
+                            <label class="switch">
+
+                                <input
+                                    type="checkbox"
+                                    id="securityAlerts"
+                                    checked
+                                >
+
+                                <span></span>
+
+                            </label>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 EMAIL TAB
+            ================================================== -->
+
+            <div
+                class="settings-content"
+                data-content="email"
+            >
+
+                <div class="single-panel">
+
+                    <div class="panel-title">
+
+                        <i class="fa-solid fa-envelope"></i>
+
+                        <div>
+
+                            <h2>Email & Notifications</h2>
+
+                            <p>
+                                Configure how Calcura sends emails and notifications.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="large-settings-grid">
+
+                        <div class="email-setting-card">
+
+                            <i class="fa-solid fa-user-plus"></i>
+
+                            <div>
+
+                                <strong>User Registration</strong>
+
+                                <span>
+                                    Send confirmation email after registration.
+                                </span>
+
+                            </div>
+
+                            <label class="switch">
+
+                                <input
+                                    type="checkbox"
+                                    id="emailRegistrationTab"
+                                    checked
+                                >
+
+                                <span></span>
+
+                            </label>
+
+                        </div>
+
+
+                        <div class="email-setting-card">
+
+                            <i class="fa-solid fa-crown"></i>
+
+                            <div>
+
+                                <strong>Subscription Updates</strong>
+
+                                <span>
+                                    Notify users about subscription changes.
+                                </span>
+
+                            </div>
+
+                            <label class="switch">
+
+                                <input
+                                    type="checkbox"
+                                    id="emailSubscriptionTab"
+                                    checked
+                                >
+
+                                <span></span>
+
+                            </label>
+
+                        </div>
+
+
+                        <div class="email-setting-card">
+
+                            <i class="fa-solid fa-bell"></i>
+
+                            <div>
+
+                                <strong>System Notifications</strong>
+
+                                <span>
+                                    Send important system notifications.
+                                </span>
+
+                            </div>
+
+                            <label class="switch">
+
+                                <input
+                                    type="checkbox"
+                                    id="emailSystemTab"
+                                    checked
+                                >
+
+                                <span></span>
+
+                            </label>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 PAYMENT TAB
+            ================================================== -->
+
+            <div
+                class="settings-content"
+                data-content="payment"
+            >
+
+                <div class="single-panel">
+
+                    <div class="panel-title">
+
+                        <i class="fa-solid fa-credit-card"></i>
+
+                        <div>
+
+                            <h2>Payment & Subscription</h2>
+
+                            <p>
+                                Manage payment and subscription configuration.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="large-settings-grid">
+
+                        <div class="integration-card">
+
+                            <i class="fa-solid fa-credit-card"></i>
+
+                            <div>
+
+                                <strong>Razorpay</strong>
+
+                                <span>
+                                    Payment gateway selected for Calcura.
+                                </span>
+
+                            </div>
+
+                            <span class="connected-badge">
+                                Configurable
+                            </span>
+
+                        </div>
+
+
+                        <div class="integration-card">
+
+                            <i class="fa-solid fa-repeat"></i>
+
+                            <div>
+
+                                <strong>Monthly Subscriptions</strong>
+
+                                <span>
+                                    Subscription billing duration.
+                                </span>
+
+                            </div>
+
+                            <span class="connected-badge">
+                                Active
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 SYSTEM TAB
+            ================================================== -->
+
+            <div
+                class="settings-content"
+                data-content="system"
+            >
+
+                <div class="single-panel">
+
+                    <div class="panel-title">
+
+                        <i class="fa-solid fa-server"></i>
+
+                        <div>
+
+                            <h2>System Settings</h2>
+
+                            <p>
+                                Monitor and configure Calcura system behaviour.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="large-settings-grid">
+
+                        <div class="status-box">
+
+                            <span class="status-indicator"></span>
+
+                            <div>
+
+                                <strong>System Status</strong>
+
+                                <span>
+                                    All systems operational
+                                </span>
+
+                            </div>
+
+                            <b>Healthy</b>
+
+                        </div>
+
+
+                        <div class="status-box">
+
+                            <i class="fa-solid fa-database"></i>
+
+                            <div>
+
+                                <strong>Database</strong>
+
+                                <span>
+                                    MongoDB connection
+                                </span>
+
+                            </div>
+
+                            <b>Connected</b>
+
+                        </div>
+
+
+                        <div class="status-box">
+
+                            <i class="fa-brands fa-node-js"></i>
+
+                            <div>
+
+                                <strong>Backend</strong>
+
+                                <span>
+                                    Node.js / Express server
+                                </span>
+
+                            </div>
+
+                            <b>Running</b>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 APPEARANCE TAB
+            ================================================== -->
+
+            <div
+                class="settings-content"
+                data-content="appearance"
+            >
+
+                <div class="single-panel">
+
+                    <div class="panel-title">
+
+                        <i class="fa-solid fa-palette"></i>
+
+                        <div>
+
+                            <h2>Appearance</h2>
+
+                            <p>
+                                Configure the visual appearance of Calcura Admin.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="large-settings-grid">
+
+                        <div class="appearance-card">
+
+                            <strong>Admin Theme</strong>
+
+                            <span>
+                                Dark Neon Navy
+                            </span>
+
+                            <select id="adminTheme">
+
+                                <option>
+                                    Dark Neon Navy
+                                </option>
+
+                                <option>
+                                    Dark Blue
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="appearance-card">
+
+                            <strong>Accent Color</strong>
+
+                            <span>
+                                Blue / Purple
+                            </span>
+
+                            <select id="accentColor">
+
+                                <option>
+                                    Blue / Purple
+                                </option>
+
+                                <option>
+                                    Cyan / Blue
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 INTEGRATIONS TAB
+            ================================================== -->
+
+            <div
+                class="settings-content"
+                data-content="integrations"
+            >
+
+                <div class="single-panel">
+
+                    <div class="panel-title">
+
+                        <i class="fa-solid fa-link"></i>
+
+                        <div>
+
+                            <h2>Integrations</h2>
+
+                            <p>
+                                Manage external services connected with Calcura.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="large-settings-grid">
+
+                        <div class="integration-card">
+
+                            <i class="fa-brands fa-google"></i>
+
+                            <div>
+
+                                <strong>Google Services</strong>
+
+                                <span>
+                                    External Google service integration.
+                                </span>
+
+                            </div>
+
+                            <label class="switch">
+
+                                <input
+                                    type="checkbox"
+                                    id="googleIntegration"
+                                >
+
+                                <span></span>
+
+                            </label>
+
+                        </div>
+
+
+                        <div class="integration-card">
+
+                            <i class="fa-solid fa-envelope"></i>
+
+                            <div>
+
+                                <strong>Email Service</strong>
+
+                                <span>
+                                    SMTP email service integration.
+                                </span>
+
+                            </div>
+
+                            <label class="switch">
+
+                                <input
+                                    type="checkbox"
+                                    id="emailIntegration"
+                                    checked
+                                >
+
+                                <span></span>
+
+                            </label>
+
+                        </div>
+
+
+                        <div class="integration-card">
+
+                            <i class="fa-solid fa-credit-card"></i>
+
+                            <div>
+
+                                <strong>Payment Gateway</strong>
+
+                                <span>
+                                    Razorpay integration configuration.
+                                </span>
+
+                            </div>
+
+                            <label class="switch">
+
+                                <input
+                                    type="checkbox"
+                                    id="paymentIntegration"
+                                    checked
+                                >
+
+                                <span></span>
+
+                            </label>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- TOAST -->
+
+<div
+    class="toast"
+    id="toast"
+>
+    <i class="fa-solid fa-circle-check"></i>
+    <span id="toastMessage">
+        Changes saved successfully.
+    </span>
+</div>
+
+
+<script
+    src="../admin-js/system-settings.js"
+></script>
+
+</body>
+
+</html>

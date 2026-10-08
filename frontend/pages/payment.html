@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Complete Your Upgrade - Calcura</title>
+
+    <!-- Same CSS as Upgrade Page -->
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/upgrade.css">
+
+    <!-- Payment Page CSS -->
+    <link rel="stylesheet" href="../css/payment.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     SIDEBAR
+     SAME AS UPGRADE PAGE
+========================================================= -->
+
+<aside class="calcura-sidebar">
+
+    <div class="sidebar-brand">
+
+        <div class="sidebar-logo">
+            <i class="fa-solid fa-calculator"></i>
+        </div>
+
+        <div class="sidebar-brand-text">
+
+            <h1>Calcura</h1>
+
+            <span>
+                Speak · Calculate · Explore
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <nav class="sidebar-nav">
+
+        <a href="dashboard.html" class="sidebar-item">
+            <i class="fa-solid fa-house"></i>
+            <span>Home</span>
+        </a>
+
+        <a href="calculator.html" class="sidebar-item">
+            <i class="fa-solid fa-calculator"></i>
+            <span>Calculator</span>
+        </a>
+
+        <a href="voice-calculator.html" class="sidebar-item">
+            <i class="fa-solid fa-microphone"></i>
+            <span>Voice Input</span>
+        </a>
+
+        <a href="graph.html" class="sidebar-item">
+            <i class="fa-solid fa-chart-line"></i>
+            <span>Graph &amp; Plot</span>
+        </a>
+
+        <a href="formulas.html" class="sidebar-item">
+            <i class="fa-solid fa-book-open"></i>
+            <span>Formula Library</span>
+        </a>
+
+        <a href="converter.html" class="sidebar-item">
+            <i class="fa-solid fa-right-left"></i>
+            <span>Unit Converter</span>
+        </a>
+
+        <a href="history.html" class="sidebar-item">
+            <i class="fa-regular fa-clock"></i>
+            <span>History</span>
+        </a>
+
+        <a href="saved.html" class="sidebar-item">
+            <i class="fa-regular fa-bookmark"></i>
+            <span>Saved</span>
+        </a>
+
+        <a href="settings.html" class="sidebar-item">
+            <i class="fa-solid fa-gear"></i>
+            <span>Settings</span>
+        </a>
+
+        <a href="profile.html" class="sidebar-item">
+            <i class="fa-solid fa-user"></i>
+            <span>Profile</span>
+        </a>
+
+        <a href="about.html" class="sidebar-item">
+            <i class="fa-solid fa-circle-info"></i>
+            <span>About</span>
+        </a>
+
+        <a href="help.html" class="sidebar-item">
+            <i class="fa-solid fa-circle-question"></i>
+            <span>Help &amp; Support</span>
+        </a>
+
+        <a href="upgrade.html"
+           class="sidebar-item active">
+
+            <i class="fa-solid fa-crown"></i>
+
+            <span>
+                Upgrade to Pro
+            </span>
+
+        </a>
+
+    </nav>
+
+
+    <!-- SIDEBAR UPGRADE CARD -->
+
+    <div class="sidebar-upgrade">
+
+        <div class="sidebar-upgrade-icon">
+            <i class="fa-solid fa-crown"></i>
+        </div>
+
+        <h3>Upgrade to Pro</h3>
+
+        <ul>
+            <li>Unlock all features</li>
+            <li>No ads</li>
+            <li>Cloud sync</li>
+            <li>Priority support</li>
+            <li>Early access</li>
+        </ul>
+
+        <a href="payment.html"
+           class="sidebar-upgrade-btn">
+
+            Get Pro
+
+        </a>
+
+    </div>
+
+</aside>
+
+
+
+<!-- =========================================================
+     MAIN CONTENT
+========================================================= -->
+
+<main class="upgrade-content">
+
+
+    <!-- =====================================================
+         TOPBAR
+    ====================================================== -->
+
+    <header class="upgrade-topbar">
+
+
+        <!-- SEARCH -->
+
+        <div class="upgrade-search">
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            <input
+                type="text"
+                id="paymentSearch"
+                placeholder="Search features, tools, or anything..."
+            >
+
+        </div>
+
+
+        <!-- TOP ACTIONS -->
+
+        <div class="upgrade-top-actions">
+
+
+            <a href="upgrade.html"
+               class="top-upgrade-btn">
+
+                <i class="fa-solid fa-crown"></i>
+
+                Upgrade to Pro
+
+            </a>
+
+
+            <button
+                type="button"
+                class="notification-btn"
+                id="notificationBtn">
+
+                <i class="fa-regular fa-bell"></i>
+
+            </button>
+
+
+            <!-- REAL USER -->
+
+            <a href="profile.html"
+               class="real-user">
+
+
+                <div
+                    class="real-user-avatar"
+                    id="headerAvatar">
+
+                    U
+
+                </div>
+
+
+                <div class="real-user-info">
+
+                    <strong id="headerUserName">
+                        User
+                    </strong>
+
+                    <span id="headerPlan">
+                        Free Plan
+                    </span>
+
+                </div>
+
+
+                <i class="fa-solid fa-chevron-down"></i>
+
+            </a>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         PAYMENT WRAPPER
+    ====================================================== -->
+
+    <div class="payment-wrapper">
+
+
+        <!-- =================================================
+             PROGRESS
+        ================================================== -->
+
+        <section class="payment-progress">
+
+
+            <!-- STEP 1 -->
+
+            <div
+                class="payment-step active"
+                id="paymentStep1">
+
+                <div class="step-circle">
+                    1
+                </div>
+
+                <span>
+                    Choose Plan
+                </span>
+
+            </div>
+
+
+            <div
+                class="step-line"
+                id="stepLine1">
+            </div>
+
+
+            <!-- STEP 2 -->
+
+            <div
+                class="payment-step"
+                id="paymentStep2">
+
+                <div class="step-circle">
+                    2
+                </div>
+
+                <span>
+                    Payment
+                </span>
+
+            </div>
+
+
+            <div
+                class="step-line"
+                id="stepLine2">
+            </div>
+
+
+            <!-- STEP 3 -->
+
+            <div
+                class="payment-step"
+                id="paymentStep3">
+
+                <div class="step-circle">
+                    3
+                </div>
+
+                <span>
+                    Activate
+                </span>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             MAIN PAYMENT GRID
+        ================================================== -->
+
+        <div class="payment-layout">
+
+
+            <!-- =================================================
+                 LEFT SIDE
+            ================================================== -->
+
+            <section class="payment-left">
+
+
+                <!-- PAGE TITLE -->
+
+                <div class="payment-title">
+
+                    <h1>
+                        Complete Your
+                        <span>Upgrade</span>
+                    </h1>
+
+                    <p>
+                        Secure payment. Instant activation.
+                        Start using Calcura Pro right away!
+                    </p>
+
+                </div>
+
+
+
+                <!-- RAZORPAY PAYMENT CARD -->
+
+                <div class="razorpay-payment-card">
+
+
+                    <div class="razorpay-card-header">
+
+                        <div>
+
+                            <h2>
+                                Secure Payment
+                            </h2>
+
+                            <p>
+                                Complete your payment securely
+                                with Razorpay.
+                            </p>
+
+                        </div>
+
+
+                        <div class="razorpay-lock">
+
+                            <i class="fa-solid fa-lock"></i>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- RAZORPAY BOX -->
+
+                    <div class="razorpay-box">
+
+
+                        <div class="razorpay-logo-icon">
+
+                            <i class="fa-solid fa-shield-halved"></i>
+
+                        </div>
+
+
+                        <div class="razorpay-box-content">
+
+                            <h3>
+                                Razorpay Secure Checkout
+                            </h3>
+
+                            <p>
+                                Pay securely using the payment
+                                methods available through Razorpay.
+                            </p>
+
+                        </div>
+
+
+                        <div class="razorpay-secure-badge">
+
+                            <i class="fa-solid fa-check"></i>
+
+                            Secure
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- PAYMENT INFORMATION -->
+
+                    <div class="payment-information">
+
+                        <div class="payment-info-item">
+
+                            <i class="fa-solid fa-credit-card"></i>
+
+                            <div>
+
+                                <strong>
+                                    Secure Payment
+                                </strong>
+
+                                <span>
+                                    Payment is handled securely
+                                    by Razorpay.
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="payment-info-item">
+
+                            <i class="fa-solid fa-shield-halved"></i>
+
+                            <div>
+
+                                <strong>
+                                    Protected
+                                </strong>
+
+                                <span>
+                                    Your payment information
+                                    remains protected.
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="payment-info-item">
+
+                            <i class="fa-solid fa-bolt"></i>
+
+                            <div>
+
+                                <strong>
+                                    Instant Activation
+                                </strong>
+
+                                <span>
+                                    Your plan activates after
+                                    successful verification.
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- PAY BUTTON -->
+
+                    <button
+                        type="button"
+                        id="payBtn"
+                        class="razorpay-pay-btn">
+
+                        <i class="fa-solid fa-lock"></i>
+
+                        <span id="payButtonText">
+    Loading plan...
+</span>
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </button>
+
+
+
+                    <!-- MESSAGE -->
+
+                    <p
+                        id="paymentMessage"
+                        class="payment-message">
+                    </p>
+
+
+
+                    <!-- SECURITY NOTE -->
+
+                    <div class="payment-security-note">
+
+                        <i class="fa-solid fa-shield-halved"></i>
+
+                        <span>
+                            Your payment information is encrypted
+                            and securely processed by Razorpay.
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 RIGHT SIDE - ORDER SUMMARY
+            ================================================== -->
+
+            <aside class="payment-summary">
+
+
+                <h2>
+                    Order Summary
+                </h2>
+
+
+                <!-- SELECTED PLAN -->
+
+                <div class="summary-plan">
+
+
+                    <div class="summary-plan-icon">
+
+                        <i class="fa-solid fa-crown"></i>
+
+                    </div>
+
+
+                    <div class="summary-plan-info">
+
+                        <h3 id="summaryPlanName">
+                            Calcura Pro
+                        </h3>
+
+                        <p>
+                            Advanced tools for smarter
+                            calculations
+                        </p>
+
+                    </div>
+
+
+                    <span
+                        class="summary-popular"
+                        id="summaryPopular">
+
+                        Most Popular
+
+                    </span>
+
+                </div>
+
+
+
+                <!-- PRICE -->
+
+                <div class="summary-price">
+
+                    <strong id="summaryPrice">
+                        ₹20
+                    </strong>
+
+                    <span>
+                        / month
+                    </span>
+
+                </div>
+
+
+
+                <!-- FEATURES -->
+
+                <ul class="summary-features">
+
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Advanced calculations
+                    </li>
+
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Voice input &amp; AI assistant
+                    </li>
+
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Unlimited history &amp; saved items
+                    </li>
+
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Premium formula library
+                    </li>
+
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Graph plotting with more options
+                    </li>
+
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Cloud sync across devices
+                    </li>
+
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        No ads
+                    </li>
+
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Priority support
+                    </li>
+
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Early access to new features
+                    </li>
+
+
+                </ul>
+
+
+
+                <!-- PRICE BREAKDOWN -->
+
+                <div class="summary-breakdown">
+
+
+                    <div>
+
+                        <span>
+                            Subtotal
+                        </span>
+
+                        <strong id="summarySubtotal">
+                            ₹20
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Tax (if applicable)
+                        </span>
+
+                        <strong id="summaryTax">
+                            ₹0.00
+                        </strong>
+
+                    </div>
+
+
+                    <div class="summary-total">
+
+                        <span>
+                            Total
+                        </span>
+
+                        <strong>
+
+                            <span id="summaryTotal">
+                                ₹20
+                            </span>
+
+                            <small>
+                                / month
+                            </small>
+
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- COUPON -->
+
+                <div class="coupon-section">
+
+                    <label for="couponCode">
+                        Have a coupon code?
+                    </label>
+
+
+                    <div class="coupon-input">
+
+                        <input
+                            type="text"
+                            id="couponCode"
+                            placeholder="Enter coupon code"
+                        >
+
+                        <button
+                            type="button"
+                            id="applyCouponBtn">
+
+                            Apply
+
+                        </button>
+
+                    </div>
+
+
+                    <p id="couponMessage"></p>
+
+                </div>
+
+
+
+                <!-- SECURITY -->
+
+                <div class="summary-security">
+
+
+                    <div>
+
+                        <i class="fa-solid fa-shield-halved"></i>
+
+                        <span>
+                            Secure Payment
+                        </span>
+
+                        <small>
+                            Powered by Razorpay
+                        </small>
+
+                    </div>
+
+
+                    <div>
+
+                        <i class="fa-solid fa-lock"></i>
+
+                        <span>
+                            100% Safe &amp; Private
+                        </span>
+
+                        <small>
+                            Your data is protected
+                        </small>
+
+                    </div>
+
+
+                </div>
+
+
+            </aside>
+
+        </div>
+
+
+
+        <!-- =================================================
+             FOOTER
+        ================================================== -->
+
+        <footer class="payment-footer">
+
+            <span>
+                © 2026 Calcura. All rights reserved.
+            </span>
+
+
+            <div>
+
+                <a href="#">
+                    Privacy
+                </a>
+
+                <a href="#">
+                    Terms
+                </a>
+
+                <a href="help.html">
+                    Help
+                </a>
+
+                <a href="mailto:support@calcura.com">
+                    Contact
+                </a>
+
+            </div>
+
+        </footer>
+
+
+    </div>
+
+</main>
+
+
+
+<!-- =========================================================
+     SCRIPTS
+========================================================= -->
+
+<script src="../js/api.js"></script>
+<script src="../js/auth.js"></script>
+<script src="../js/payment.js"></script>
+
+</body>
+</html>

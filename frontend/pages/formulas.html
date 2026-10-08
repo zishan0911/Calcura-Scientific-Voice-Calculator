@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Formulas - Calcura</title>
+
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/formulas.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+<main class="formulas-page">
+
+    <!-- ================= SIDEBAR ================= -->
+
+       <aside class="calcura-sidebar">
+
+        <div class="sidebar-brand">
+
+            <div class="sidebar-logo">
+                <i class="fa-solid fa-calculator"></i>
+            </div>
+
+            <div class="sidebar-brand-text">
+                <h1>Calcura</h1>
+                <span>Speak · Calculate · Explore</span>
+            </div>
+
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <a href="dashboard.html" class="sidebar-item">
+                <i class="fa-solid fa-house"></i>
+                <span>Home</span>
+            </a>
+
+            <a href="calculator.html" class="sidebar-item">
+                <i class="fa-solid fa-calculator"></i>
+                <span>Calculator</span>
+            </a>
+
+            <a href="voice-input.html" class="sidebar-item">
+                <i class="fa-solid fa-microphone"></i>
+                <span>Voice Input</span>
+            </a>
+
+            <a href="graph.html" class="sidebar-item">
+                <i class="fa-solid fa-chart-line"></i>
+                <span>Graph &amp; Plot</span>
+            </a>
+
+             <a href="ai-calculator.html" class="calcura-nav-item">
+                <i class="fa-solid fa-robot"></i>
+                <span>AI Assistant</span>
+            </a>
+
+            <a href="formulas.html" class="sidebar-item active">
+                <i class="fa-solid fa-book-open"></i>
+                <span>Formula Library</span>
+            </a>
+
+            <a href="converter.html" class="sidebar-item">
+                <i class="fa-solid fa-right-left"></i>
+                <span>Unit Converter</span>
+            </a>
+
+            <a href="history.html" class="sidebar-item">
+                <i class="fa-regular fa-clock"></i>
+                <span>History</span>
+            </a>
+
+            <a href="saved.html" class="sidebar-item">
+                <i class="fa-regular fa-bookmark"></i>
+                <span>Saved</span>
+            </a>
+
+            <a href="settings.html" class="sidebar-item">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+            </a>
+
+            <a href="profile.html" class="sidebar-item">
+                <i class="fa-solid fa-user"></i>
+                <span>Profile</span>
+            </a>
+
+            <a href="about.html" class="sidebar-item">
+                <i class="fa-solid fa-circle-info"></i>
+                <span>About</span>
+            </a>
+
+            <a href="help.html" class="sidebar-item">
+                <i class="fa-solid fa-circle-question"></i>
+                <span>Help &amp; Support</span>
+            </a>
+
+            <a href="upgrade.html"
+               class="sidebar-item">
+
+                <i class="fa-solid fa-crown"></i>
+
+                <span>
+                    Upgrade to Pro
+                </span>
+
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+    <!-- ================= MAIN CONTAINER ================= -->
+
+    <div class="formulas-container">
+
+
+        <!-- ================= TOP HEADER ================= -->
+
+        <header class="formula-top-header">
+
+
+            <!-- GLOBAL SEARCH -->
+
+            <div class="formula-search">
+
+                <span class="search-icon">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </span>
+
+                <input
+                    type="text"
+                    id="globalSearch"
+                    placeholder="Search formulas, topics, or keywords..."
+                    autocomplete="off"
+                >
+
+                <button
+                    id="clearGlobalSearch"
+                    type="button"
+                    title="Clear search"
+                >
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+
+                <div
+                    id="searchSuggestions"
+                    class="search-suggestions">
+                </div>
+
+            </div>
+
+
+            <!-- HEADER ACTIONS -->
+
+            <div class="formula-header-actions">
+
+
+                <a
+                    href="upgrade.html"
+                    class="header-pro-button"
+                >
+                    <i class="fa-solid fa-crown"></i>
+                    Upgrade to Pro
+                </a>
+
+
+                <button
+                    class="header-icon-button"
+                    id="notificationButton"
+                    type="button"
+                    title="Notifications"
+                >
+                    <i class="fa-regular fa-bell"></i>
+                </button>
+
+
+                <!-- NOTIFICATION PANEL -->
+
+                <div
+                    id="notificationPanel"
+                    class="notification-panel"
+                >
+
+                    <div class="notification-panel-header">
+
+                        <strong>
+                            Notifications
+                        </strong>
+
+                        <span>
+                            0
+                        </span>
+
+                    </div>
+
+
+                    <div class="notification-empty">
+
+                        <i class="fa-regular fa-bell-slash"></i>
+
+                        <p>
+                            No new notifications
+                        </p>
+
+                        <small>
+                            You're all caught up.
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <!-- USER -->
+
+                <a
+                    href="profile.html"
+                    class="header-user"
+                >
+
+                    <div
+                        class="header-avatar"
+                        id="profileAvatar"
+                    >
+                        U
+                    </div>
+
+
+                    <div class="header-user-details">
+
+                        <strong id="profileName">
+                            User
+                        </strong>
+
+                        <span>
+                            Free Plan
+                        </span>
+
+                    </div>
+
+
+                    <span class="header-arrow">
+                        ⌄
+                    </span>
+
+                </a>
+
+            </div>
+
+        </header>
+
+
+        <!-- ================= FORMULA MAIN ================= -->
+
+        <section class="formula-main-layout">
+
+
+            <!-- ================= HERO ================= -->
+
+            <section class="formula-hero">
+
+                <div class="formula-hero-content">
+
+                    <h1>
+                        Formula <span>Library</span>
+                    </h1>
+
+                    <p>
+                        All the important formulas in one place.
+                    </p>
+
+                </div>
+
+
+                <div class="formula-hero-art">
+
+                    <div class="formula-hero-handwriting">
+
+                        <span>
+                            Learn
+                        </span>
+
+                        <span>
+                            Calculate
+                        </span>
+
+                        <span>
+                            Apply
+                        </span>
+
+                    </div>
+
+
+                    <div class="formula-hero-line">
+                    </div>
+
+                </div>
+
+
+                <div class="formula-hero-quote">
+
+                    <p>
+                        "Formulas are the<br>
+                        building blocks of a<br>
+                        smarter tomorrow."
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= CONTENT ================= -->
+
+            <div class="formula-content-layout">
+
+
+                <!-- ================= LEFT AREA ================= -->
+
+                <section class="formula-library-main">
+
+
+                    <!-- CATEGORY TABS -->
+
+                    <div class="formula-category-tabs">
+
+
+                        <button
+                            class="formula-tab active"
+                            data-category="all"
+                            type="button"
+                        >
+
+                            <i class="fa-solid fa-book-open"></i>
+
+                            <span>
+                                All
+                            </span>
+
+                        </button>
+
+
+                        <button
+                            class="formula-tab"
+                            data-category="algebra"
+                            type="button"
+                        >
+
+                            <i class="fa-solid fa-square-root-variable"></i>
+
+                            <span>
+                                Algebra
+                            </span>
+
+                        </button>
+
+
+                        <button
+                            class="formula-tab"
+                            data-category="trigonometry"
+                            type="button"
+                        >
+
+                            <i class="fa-solid fa-triangle-exclamation"></i>
+
+                            <span>
+                                Trigonometry
+                            </span>
+
+                        </button>
+
+
+                        <button
+                            class="formula-tab"
+                            data-category="calculus"
+                            type="button"
+                        >
+
+                             <div class="quick-action-icon">
+                                 ∫
+                            </div>
+
+                            <span>
+                                Calculus
+                            </span>
+
+                        </button>
+
+
+                        <button
+                            class="formula-tab"
+                            data-category="matrices"
+                            type="button"
+                        >
+
+                            <i class="fa-solid fa-border-all"></i>
+
+                            <span>
+                                Matrices
+                            </span>
+
+                        </button>
+
+
+                        <button
+                            class="formula-tab"
+                            data-category="geometry"
+                            type="button"
+                        >
+
+                            <i class="fa-solid fa-cube"></i>
+
+                            <span>
+                                Geometry
+                            </span>
+
+                        </button>
+
+
+                        <button
+                            class="formula-tab"
+                            data-category="statistics"
+                            type="button"
+                        >
+
+                            <i class="fa-solid fa-chart-column"></i>
+
+                            <span>
+                                Statistics
+                            </span>
+
+                        </button>
+
+
+                        <button
+                            class="formula-tab"
+                            data-category="physics"
+                            type="button"
+                        >
+
+                            <i class="fa-solid fa-atom"></i>
+
+                            <span>
+                                Physics
+                            </span>
+
+                        </button>
+
+
+                    </div>
+
+
+                    <!-- FORMULA LIST -->
+
+                    <div
+                        id="formulaList"
+                        class="formula-list"
+                    >
+                    </div>
+
+
+                </section>
+
+
+                <!-- ================= RIGHT SIDEBAR ================= -->
+
+                <aside class="formula-right-sidebar">
+
+
+                    <!-- SEARCH FORMULAS -->
+
+                    <div class="formula-side-card formula-search-card">
+
+                        <div class="formula-side-title">
+
+                            <i class="fa-solid fa-magnifying-glass"></i>
+
+                            <h3>
+                                Search Formulas
+                            </h3>
+
+                        </div>
+
+
+                        <div class="formula-side-search">
+
+                            <i class="fa-solid fa-magnifying-glass"></i>
+
+                            <input
+                                type="text"
+                                id="sideFormulaSearch"
+                                placeholder="Search by name or keyword..."
+                                autocomplete="off"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- POPULAR FORMULAS -->
+
+                    <div class="formula-side-card popular-formulas-card">
+
+                        <div class="formula-side-title">
+
+                            <span class="popular-fire">
+                                🔥
+                            </span>
+
+                            <h3>
+                                Popular Formulas
+                            </h3>
+
+                            <i class="fa-solid fa-arrow-right popular-arrow">
+                            </i>
+
+                        </div>
+
+
+                        <div
+                            id="popularFormulaList"
+                            class="popular-formula-list"
+                        >
+                        </div>
+
+                    </div>
+
+
+                    <!-- STUDY TIP -->
+
+                    <div class="formula-study-tip">
+
+                        <div class="study-tip-icon">
+
+                            <i class="fa-solid fa-lightbulb">
+                            </i>
+
+                        </div>
+
+
+                        <div class="study-tip-content">
+
+                            <h3>
+                                Study Tip
+                            </h3>
+
+                            <p>
+                                Save frequently used formulas
+                                to access them quickly during
+                                calculations.
+                            </p>
+
+
+                            <button
+                                id="studySaveButton"
+                                type="button"
+                            >
+                                Save Formula
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                </aside>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= FOOTER ================= -->
+
+        <footer class="formula-footer">
+
+            <div class="formula-footer-left">
+                © 2026 Calcura. All rights reserved.
+            </div>
+
+            <div class="formula-footer-links">
+
+                <a href="help.html">
+                    Help
+                </a>
+
+                <a href="about.html">
+                    About
+                </a>
+
+                </a>
+
+            </div>
+
+        </footer>
+
+
+    </div>
+<!-- ================= FORMULA DETAIL MODAL ================= -->
+
+<div
+    id="formulaDetailModal"
+    class="formula-detail-modal"
+>
+
+    <div class="formula-detail-overlay"></div>
+
+    <div class="formula-detail-box">
+
+        <!-- CLOSE BUTTON -->
+        <button
+            type="button"
+            id="closeFormulaDetail"
+            class="formula-detail-close"
+            aria-label="Close"
+        >
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+
+        <!-- HEADER -->
+        <div class="formula-detail-header">
+
+            <div
+                id="formulaDetailIcon"
+                class="formula-detail-icon"
+            >
+                <i class="fa-solid fa-book"></i>
+            </div>
+
+            <div>
+
+                <h2 id="formulaDetailName">
+                    Formula
+                </h2>
+
+                <span id="formulaDetailCategory">
+                    Category
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- FORMULA EXPRESSION -->
+        <div class="formula-detail-section">
+
+            <label>
+                Formula
+            </label>
+
+            <div
+                id="formulaDetailExpression"
+                class="formula-detail-expression"
+            >
+            </div>
+
+        </div>
+
+
+        <!-- DESCRIPTION -->
+        <div class="formula-detail-section">
+
+            <label>
+                Description
+            </label>
+
+            <p id="formulaDetailDescription">
+            </p>
+
+        </div>
+
+
+        <!-- DETAILS -->
+        <div class="formula-detail-info">
+
+            <div class="formula-detail-info-item">
+
+                <span>
+                    Level
+                </span>
+
+                <strong id="formulaDetailLevel">
+                    —
+                </strong>
+
+            </div>
+
+
+            <div class="formula-detail-info-item">
+
+                <span>
+                    Difficulty
+                </span>
+
+                <strong id="formulaDetailDifficulty">
+                    —
+                </strong>
+
+            </div>
+
+
+            <div class="formula-detail-info-item">
+
+                <span>
+                    Views
+                </span>
+
+                <strong id="formulaDetailViews">
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <!-- ACTIONS -->
+        <div class="formula-detail-actions">
+
+            <button
+                type="button"
+                id="formulaDetailCopy"
+                class="formula-detail-copy"
+            >
+                <i class="fa-regular fa-copy"></i>
+                Copy Formula
+            </button>
+
+            <button
+                type="button"
+                id="formulaDetailCloseButton"
+                class="formula-detail-close-button"
+            >
+                Close
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+</main>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script src="../js/api.js"></script>
+<script src="../js/auth.js"></script>
+<script src="../js/formulas.js"></script>
+
+<script>
+    window.MathJax = {
+        tex: {
+            inlineMath: [
+                ['\\(', '\\)']
+            ],
+            displayMath: [
+                ['\\[', '\\]']
+            ]
+        },
+        svg: {
+            fontCache: 'global'
+        }
+    };
+</script>
+
+<script
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    async>
+</script>
+
+</body>
+</html>

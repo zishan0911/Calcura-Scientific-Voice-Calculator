@@ -1,0 +1,1134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>CALCURA - Reports & Analytics</title>
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <link
+        rel="stylesheet"
+        href="../admin-css/reports.css"
+    >
+</head>
+
+<body>
+
+<div class="admin-layout">
+
+    <!-- ==================================================
+         SIDEBAR
+    ================================================== -->
+
+   <aside class="admin-sidebar" id="adminSidebar">
+
+        <div class="brand">
+
+            <div class="brand-logo">
+                C
+            </div>
+
+            <div class="brand-name">
+
+                <h2>CALCURA</h2>
+
+                <span>
+                    Admin Panel
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <a href="dashboard.html">
+                <i class="fa-solid fa-house"></i>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="users.html">
+                <i class="fa-solid fa-users"></i>
+                <span>Users</span>
+            </a>
+
+            <a href="calculations.html">
+                <i class="fa-solid fa-calculator"></i>
+                <span>Calculations</span>
+            </a>
+
+            <a href="formulas.html">
+                <i class="fa-solid fa-book-open"></i>
+                <span>Formula Library</span>
+            </a>
+
+            <a href="subscriptions.html">
+                <i class="fa-solid fa-credit-card"></i>
+                <span>Subscriptions</span>
+            </a>
+
+            <a
+                href="reports.html"
+                class="active"
+            >
+                <i class="fa-solid fa-chart-column"></i>
+                <span>Reports</span>
+            </a>
+
+            <a href="activity-logs.html">
+                <i class="fa-solid fa-file-lines"></i>
+                <span>Activity Logs</span>
+            </a>
+
+            <a href="system-settings.html">
+                <i class="fa-solid fa-gear"></i>
+                <span>System Settings</span>
+            </a>
+
+            <a href="website-content.html">
+                <i class="fa-solid fa-palette"></i>
+                <span>Website Content</span>
+            </a>
+
+            <a href="user-accounts.html">
+                <i class="fa-solid fa-user-shield"></i>
+                <span>User Accounts</span>
+            </a>
+
+        </nav>
+
+
+        <!-- ADMIN CONTROL -->
+
+        <div class="admin-control">
+
+            <div class="admin-control-icon">
+                <i class="fa-solid fa-crown"></i>
+            </div>
+
+            <h3>
+                Admin Control
+            </h3>
+
+            <strong>
+                Full Control
+            </strong>
+
+            <p>
+                You have complete access
+                to manage Calcura.
+            </p>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ==================================================
+         MAIN
+    ================================================== -->
+
+    <main class="main">
+
+        <!-- HEADER -->
+
+        <header class="header">
+
+            <button
+                type="button"
+                class="menu-button"
+                id="sidebarToggle"
+                aria-label="Toggle Sidebar"
+            >
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+
+            <div class="global-search">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input
+                    id="globalSearch"
+                    type="text"
+                    placeholder="Search users, reports, calculations..."
+                >
+
+            </div>
+
+
+            <div class="header-right">
+
+                <button
+                    class="notification-button"
+                    id="notificationButton"
+                >
+
+                    <i class="fa-regular fa-bell"></i>
+
+                    <span
+                        id="notificationDot"
+                    ></span>
+
+                </button>
+
+
+                <div class="header-divider"></div>
+
+
+                <button
+                    class="admin-profile-button"
+                    id="adminProfileButton"
+                >
+
+                    <div
+                        class="admin-avatar"
+                        id="adminAvatar"
+                    >
+                        A
+                    </div>
+
+                    <div class="admin-profile-text">
+
+                        <strong id="adminName">
+                            Admin
+                        </strong>
+
+                        <span id="adminRole">
+                            Administrator
+                        </span>
+
+                    </div>
+
+                    <i class="fa-solid fa-chevron-down"></i>
+
+                </button>
+
+            </div>
+
+
+            <!-- PROFILE DROPDOWN -->
+
+            <div
+                class="profile-dropdown"
+                id="profileDropdown"
+            >
+
+                <div class="profile-user">
+
+                    <div
+                        class="profile-avatar"
+                        id="profileAvatar"
+                    >
+                        A
+                    </div>
+
+                    <div>
+
+                        <strong id="profileName">
+                            Admin
+                        </strong>
+
+                        <span id="profileEmail">
+                            —
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="profile-line"></div>
+
+
+                <div class="profile-detail">
+
+                    <span>
+                        Admin ID
+                    </span>
+
+                    <strong id="profileId">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <div class="profile-detail">
+
+                    <span>
+                        Role
+                    </span>
+
+                    <strong id="profileRole">
+                        Administrator
+                    </strong>
+
+                </div>
+
+
+                <button
+                    id="logoutButton"
+                    class="logout-button"
+                >
+
+                    <i class="fa-solid fa-right-from-bracket"></i>
+
+                    Logout
+
+                </button>
+
+            </div>
+
+
+            <!-- NOTIFICATIONS -->
+
+            <div
+                class="notification-dropdown"
+                id="notificationDropdown"
+            >
+
+                <div class="notification-header">
+
+                    <strong>
+                        Notifications
+                    </strong>
+
+                    <span>
+                        Recent activity
+                    </span>
+
+                </div>
+
+                <div
+                    id="notificationList"
+                ></div>
+
+            </div>
+
+        </header>
+
+
+        <!-- ==================================================
+             CONTENT
+        ================================================== -->
+
+        <section class="content">
+
+            <!-- TITLE -->
+
+            <div class="page-top">
+
+                <div>
+
+                    <h1>
+                        Reports &
+                        <span>Analytics</span>
+                    </h1>
+
+                    <p>
+                        View detailed reports and analytics for Calcura.
+                    </p>
+
+                </div>
+
+
+                <div class="page-actions">
+
+                    <div class="date-selector">
+
+                        <i class="fa-regular fa-calendar"></i>
+
+                        <select id="dateRange">
+
+                            <option value="7">
+                                Last 7 Days
+                            </option>
+
+                            <option
+                                value="30"
+                                selected
+                            >
+                                Last 30 Days
+                            </option>
+
+                            <option value="90">
+                                Last 90 Days
+                            </option>
+
+                            <option value="365">
+                                Last 365 Days
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <button
+                        class="export-button"
+                        id="exportButton"
+                    >
+
+                        <i class="fa-solid fa-download"></i>
+
+                        Export Report
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==================================================
+                 KPI CARDS
+            ================================================== -->
+
+            <div class="stats-grid">
+
+                <!-- USERS -->
+
+                <div class="stat-card users-card">
+
+                    <div class="stat-icon">
+
+                        <i class="fa-solid fa-users"></i>
+
+                    </div>
+
+                    <div class="stat-content">
+
+                        <span>
+                            Total Users
+                        </span>
+
+                        <strong id="totalUsers">
+                            0
+                        </strong>
+
+                        <small id="usersComparison">
+                            Loading...
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CALCULATIONS -->
+
+                <div class="stat-card calculations-card">
+
+                    <div class="stat-icon">
+
+                        <i class="fa-solid fa-calculator"></i>
+
+                    </div>
+
+                    <div class="stat-content">
+
+                        <span>
+                            Total Calculations
+                        </span>
+
+                        <strong id="totalCalculations">
+                            0
+                        </strong>
+
+                        <small id="calculationsComparison">
+                            Loading...
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <!-- REVENUE -->
+
+                <div class="stat-card revenue-card">
+
+                    <div class="stat-icon">
+
+                        <i class="fa-solid fa-indian-rupee-sign"></i>
+
+                    </div>
+
+                    <div class="stat-content">
+
+                        <span>
+                            Total Revenue
+                        </span>
+
+                        <strong id="totalRevenue">
+                            ₹0
+                        </strong>
+
+                        <small id="revenueComparison">
+                            Verified payments
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <!-- SUBSCRIPTIONS -->
+
+                <div class="stat-card subscriptions-card">
+
+                    <div class="stat-icon">
+
+                        <i class="fa-solid fa-crown"></i>
+
+                    </div>
+
+                    <div class="stat-content">
+
+                        <span>
+                            Active Subscriptions
+                        </span>
+
+                        <strong id="activeSubscriptions">
+                            0
+                        </strong>
+
+                        <small id="subscriptionComparison">
+                            Current active plans
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==================================================
+                 TABS
+            ================================================== -->
+
+            <div class="report-tabs">
+
+                <button
+                    class="report-tab active"
+                    data-tab="overview"
+                >
+                    Overview
+                </button>
+
+                <button
+                    class="report-tab"
+                    data-tab="userGrowth"
+                >
+                    User Growth
+                </button>
+
+                <button
+                    class="report-tab"
+                    data-tab="calculations"
+                >
+                    Calculations
+                </button>
+
+                <button
+                    class="report-tab"
+                    data-tab="revenue"
+                >
+                    Revenue
+                </button>
+
+                <button
+                    class="report-tab"
+                    data-tab="subscriptions"
+                >
+                    Subscriptions
+                </button>
+
+                <button
+                    class="report-tab"
+                    data-tab="formulas"
+                >
+                    Popular Formulas
+                </button>
+
+            </div>
+
+
+            <!-- ==================================================
+                 OVERVIEW
+            ================================================== -->
+
+            <div
+                class="tab-content active"
+                id="overview"
+            >
+
+                <!-- FIRST CHART ROW -->
+
+                <div class="chart-grid-top">
+
+                    <!-- USER REGISTRATION -->
+
+                    <div class="chart-card user-growth-card">
+
+                        <div class="chart-header">
+
+                            <div class="chart-title">
+
+                                <div class="chart-title-icon blue">
+                                    <i class="fa-solid fa-users"></i>
+                                </div>
+
+                                <div>
+
+                                    <h2>
+                                        User Registration Trend
+                                    </h2>
+
+                                    <p>
+                                        New users registered
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <select
+                                class="chart-select"
+                                id="userPeriod"
+                            >
+
+                                <option value="daily">
+                                    Daily
+                                </option>
+
+                                <option value="weekly">
+                                    Weekly
+                                </option>
+
+                                <option value="monthly">
+                                    Monthly
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="chart-area large">
+                            <canvas id="userChart"></canvas>
+                        </div>
+
+                    </div>
+
+
+                    <!-- CALCULATIONS -->
+
+                    <div class="chart-card calculation-growth-card">
+
+                        <div class="chart-header">
+
+                            <div class="chart-title">
+
+                                <div class="chart-title-icon purple">
+                                    <i class="fa-solid fa-calculator"></i>
+                                </div>
+
+                                <div>
+
+                                    <h2>
+                                        Calculations Per Day
+                                    </h2>
+
+                                    <p>
+                                        Calculation activity
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <select
+                                class="chart-select"
+                                id="calculationPeriod"
+                            >
+
+                                <option value="daily">
+                                    Daily
+                                </option>
+
+                                <option value="weekly">
+                                    Weekly
+                                </option>
+
+                                <option value="monthly">
+                                    Monthly
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="chart-area large">
+                            <canvas id="calculationChart"></canvas>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- SECOND CHART ROW -->
+
+                <div class="chart-grid-bottom">
+
+                    <!-- PLAN -->
+
+                    <div class="chart-card">
+
+                        <div class="chart-header">
+
+                            <div class="chart-title">
+
+                                <div class="chart-title-icon purple">
+                                    <i class="fa-solid fa-calculator"></i>
+                                </div>
+
+                                <div>
+
+                                    <h2>
+                                        User Distribution by Plan
+                                    </h2>
+
+                                    <p>
+                                        Current users
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="distribution-layout">
+
+                            <div class="donut-container">
+                                <canvas id="planChart"></canvas>
+
+                                <div class="donut-center">
+
+                                    <strong id="planTotal">
+                                        0
+                                    </strong>
+
+                                    <span>
+                                        Users
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <div
+                                class="legend-list"
+                                id="planLegend"
+                            ></div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- TYPES -->
+
+                    <div class="chart-card">
+
+                        <div class="chart-header">
+
+                            <div class="chart-title">
+
+                                <div class="chart-title-icon blue">
+                                    <i class="fa-solid fa-file-lines"></i>
+                                </div>
+
+                                <div>
+
+                                    <h2>
+                                        Popular Calculation Types
+                                    </h2>
+
+                                    <p>
+                                        Stored calculations
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="distribution-layout">
+
+                            <div class="donut-container">
+
+                                <canvas
+                                    id="typeChart"
+                                ></canvas>
+
+                                <div class="donut-center">
+
+                                    <strong id="typeTotal">
+                                        0
+                                    </strong>
+
+                                    <span>
+                                        Calculations
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <div
+                                class="legend-list"
+                                id="typeLegend"
+                            ></div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- REVENUE -->
+
+                    <div class="chart-card">
+
+                        <div class="chart-header">
+
+                            <div class="chart-title">
+
+                                <div class="chart-title-icon green">
+                                    <i class="fa-solid fa-indian-rupee-sign"></i>
+                                </div>
+
+                                <div>
+
+                                    <h2>
+                                        Revenue Overview
+                                    </h2>
+
+                                    <p>
+                                        Verified payments
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <select
+                                class="chart-select"
+                                id="revenuePeriod"
+                            >
+
+                                <option value="daily">
+                                    Daily
+                                </option>
+
+                                <option value="weekly">
+                                    Weekly
+                                </option>
+
+                                <option value="monthly">
+                                    Monthly
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="chart-area medium">
+                            <canvas id="revenueChart"></canvas>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ==================================================
+                     MONTHLY SUMMARY
+                ================================================== -->
+
+                <div class="summary-card">
+
+                    <div class="summary-title">
+
+                        <div class="summary-icon">
+                            <i class="fa-solid fa-file-lines"></i>
+                        </div>
+
+                        <div>
+
+                            <h2>
+                                Monthly Summary
+                            </h2>
+
+                            <p>
+                                Real data from Calcura
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="table-container">
+
+                        <table>
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>
+                                        Month
+                                    </th>
+
+                                    <th>
+                                        New Users
+                                    </th>
+
+                                    <th>
+                                        Total Calculations
+                                    </th>
+
+                                    <th>
+                                        Active Subscriptions
+                                    </th>
+
+                                    <th>
+                                        Revenue (₹)
+                                    </th>
+
+                                    <th>
+                                        Growth
+                                    </th>
+
+                                </tr>
+
+                            </thead>
+
+                            <tbody id="monthlyTable"></tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==================================================
+                 USER GROWTH TAB
+            ================================================== -->
+
+            <div
+                class="tab-content"
+                id="userGrowth"
+            >
+
+                <div class="full-chart-card">
+
+                    <h2>
+                        User Registration Trend
+                    </h2>
+
+                    <div class="full-chart">
+                        <canvas id="userGrowthFull"></canvas>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==================================================
+                 CALCULATIONS TAB
+            ================================================== -->
+
+            <div
+                class="tab-content"
+                id="calculations"
+            >
+
+                <div class="full-chart-card">
+
+                    <h2>
+                        Calculations Per Day
+                    </h2>
+
+                    <div class="full-chart">
+                        <canvas id="calculationFull"></canvas>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==================================================
+                 REVENUE TAB
+            ================================================== -->
+
+            <div
+                class="tab-content"
+                id="revenue"
+            >
+
+                <div class="full-chart-card">
+
+                    <h2>
+                        Revenue Overview
+                    </h2>
+
+                    <div class="full-chart">
+                        <canvas id="revenueFull"></canvas>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==================================================
+                 SUBSCRIPTIONS TAB
+            ================================================== -->
+
+            <div
+                class="tab-content"
+                id="subscriptions"
+            >
+
+                <div class="subscription-grid">
+
+                    <div class="subscription-box">
+                        <span>Active</span>
+                        <strong id="subActive">0</strong>
+                    </div>
+
+                    <div class="subscription-box">
+                        <span>Student</span>
+                        <strong id="subStudent">0</strong>
+                    </div>
+
+                    <div class="subscription-box">
+                        <span>Pro</span>
+                        <strong id="subPro">0</strong>
+                    </div>
+
+                    <div class="subscription-box">
+                        <span>Free</span>
+                        <strong id="subFree">0</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==================================================
+                 FORMULAS TAB
+            ================================================== -->
+
+            <div
+                class="tab-content"
+                id="formulas"
+            >
+
+                <div class="summary-card">
+
+                    <div class="summary-title">
+
+                        <div class="summary-icon">
+                            <i class="fa-solid fa-book"></i>
+                        </div>
+
+                        <div>
+
+                            <h2>
+                                Popular Formulas
+                            </h2>
+
+                            <p>
+                                Formula library activity
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="table-container">
+
+                        <table>
+
+                            <thead>
+
+                                <tr>
+                                    <th>Formula</th>
+                                    <th>Expression</th>
+                                    <th>Category</th>
+                                    <th>Level</th>
+                                    <th>Views</th>
+                                </tr>
+
+                            </thead>
+
+                            <tbody id="formulaTable"></tbody>
+
+                            <tbody id="popularFormulaTableBody">
+</tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<script src="../admin-js/reports.js"></script>
+
+</body>
+</html>

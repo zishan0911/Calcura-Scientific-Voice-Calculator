@@ -1,0 +1,3143 @@
+/* =========================================================
+   CALCURA - FORMULA LIBRARY
+   CLEAN FINAL VERSION
+========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+    background: #020d1a;
+}
+
+body {
+    color: #eaf3ff;
+}
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+.formulas-page {
+    width: 100%;
+    min-height: 100vh;
+    background: #020d1a;
+}
+
+/* =========================================================
+   LEFT SIDEBAR
+========================================================= */
+
+.formulas-page .calcura-sidebar {
+    position: fixed !important;
+    left: 0 !important;
+    top: 0 !important;
+    bottom: 0 !important;
+
+    width: 280px !important;
+    height: 100vh !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+
+    overflow: hidden !important;
+
+    z-index: 1000 !important;
+}
+
+/* Navigation must scroll */
+.formulas-page .sidebar-navigation {
+    flex: 1 1 auto !important;
+    min-height: 0 !important;
+
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+
+    padding-bottom: 10px !important;
+
+    scrollbar-width: thin;
+    scrollbar-color: #16466d transparent;
+}
+
+.formulas-page .sidebar-navigation::-webkit-scrollbar {
+    width: 5px;
+}
+
+.formulas-page .sidebar-navigation::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.formulas-page .sidebar-navigation::-webkit-scrollbar-thumb {
+    background: #16466d;
+    border-radius: 10px;
+}
+
+/* Upgrade card stays inside sidebar */
+.formulas-page .sidebar-upgrade {
+    flex: 0 0 auto !important;
+
+    width: calc(100% - 28px) !important;
+
+    margin: 8px 14px 16px !important;
+
+    position: relative !important;
+
+    z-index: 5 !important;
+}
+
+/* =========================================================
+   MAIN CONTAINER
+========================================================= */
+
+.formulas-page .formulas-container {
+    width: calc(100% - 280px) !important;
+
+    margin-left: 280px !important;
+
+    min-height: 100vh !important;
+
+    padding-top: 88px !important;
+
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+
+    scrollbar-width: thin;
+    scrollbar-color: #16466d #020d1a;
+}
+
+.formulas-page .formulas-container::-webkit-scrollbar {
+    width: 7px;
+}
+
+.formulas-page .formulas-container::-webkit-scrollbar-track {
+    background: #020d1a;
+}
+
+.formulas-page .formulas-container::-webkit-scrollbar-thumb {
+    background: #16466d;
+    border-radius: 10px;
+}
+
+/* =========================================================
+   TOP HEADER
+========================================================= */
+
+.formulas-page .formula-top-header {
+    position: fixed !important;
+
+    top: 0 !important;
+    left: 280px !important;
+    right: 0 !important;
+
+    height: 88px !important;
+
+    padding: 0 25px !important;
+
+    display: flex !important;
+    align-items: center !important;
+
+    gap: 20px !important;
+
+    background: #030e1b !important;
+
+    border-bottom: 1px solid #142a42 !important;
+
+    z-index: 900 !important;
+}
+
+/* =========================================================
+   GLOBAL SEARCH
+========================================================= */
+
+.formulas-page .formula-search {
+    width: 525px !important;
+    max-width: 525px !important;
+    height: 54px !important;
+
+    flex: 0 1 525px !important;
+
+    display: flex !important;
+    align-items: center !important;
+
+    padding: 0 17px !important;
+
+    background: #071a2d !important;
+
+    border: 1px solid #193a5b !important;
+    border-radius: 11px !important;
+}
+
+.formulas-page .formula-search .search-icon {
+    margin-right: 12px !important;
+
+    color: #82b8ed !important;
+
+    font-size: 20px !important;
+}
+
+.formulas-page .formula-search input {
+    width: 100% !important;
+
+    border: none !important;
+    outline: none !important;
+
+    background: transparent !important;
+
+    color: #eaf3ff !important;
+
+    font-size: 14px !important;
+}
+
+.formulas-page .formula-search input::placeholder {
+    color: #7890ad !important;
+}
+
+/* =========================================================
+   HEADER RIGHT
+========================================================= */
+
+.formulas-page .formula-header-actions {
+    margin-left: auto !important;
+
+    display: flex !important;
+    align-items: center !important;
+
+    gap: 14px !important;
+}
+
+.formulas-page .header-pro-button {
+    height: 54px !important;
+
+    display: flex !important;
+    align-items: center !important;
+
+    gap: 8px !important;
+
+    padding: 0 18px !important;
+
+    border: 1px solid #d99c24 !important;
+    border-radius: 11px !important;
+
+    background: rgba(95, 62, 5, 0.15) !important;
+
+    color: #ffd15a !important;
+
+    text-decoration: none !important;
+
+    font-size: 14px !important;
+    font-weight: 600 !important;
+}
+
+.formulas-page .header-icon-button {
+    width: 54px !important;
+    height: 54px !important;
+
+    border: 1px solid #193a5b !important;
+    border-radius: 11px !important;
+
+    background: #06192c !important;
+
+    color: #c6d9ef !important;
+
+    cursor: pointer !important;
+
+    font-size: 19px !important;
+}
+
+.formulas-page .header-user {
+    display: flex !important;
+    align-items: center !important;
+
+    gap: 10px !important;
+
+    text-decoration: none !important;
+
+    color: white !important;
+
+    flex-shrink: 0 !important;
+}
+
+.formulas-page .header-avatar {
+    width: 54px !important;
+    height: 54px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    border-radius: 50% !important;
+
+    background: linear-gradient(
+        135deg,
+        #315ee8,
+        #5279ed
+    ) !important;
+
+    color: white !important;
+
+    font-size: 18px !important;
+    font-weight: 600 !important;
+}
+
+.formulas-page .header-user-details {
+    display: flex !important;
+    flex-direction: column !important;
+
+    gap: 3px !important;
+}
+
+.formulas-page .header-user-details strong {
+    color: #f2f7ff !important;
+    font-size: 14px !important;
+}
+
+.formulas-page .header-user-details span {
+    color: #91a8c2 !important;
+    font-size: 12px !important;
+}
+
+.formulas-page .header-arrow {
+    color: #8ea5c0 !important;
+    font-size: 17px !important;
+}
+
+/* =========================================================
+   NOTIFICATION
+========================================================= */
+
+.formulas-page .notification-panel {
+    display: none;
+
+    position: absolute !important;
+
+    top: 68px !important;
+    right: 105px !important;
+
+    width: 280px !important;
+
+    padding: 15px !important;
+
+    background: #071a2d !important;
+
+    border: 1px solid #21415f !important;
+    border-radius: 12px !important;
+
+    box-shadow: 0 15px 40px rgba(0,0,0,.45) !important;
+
+    z-index: 5000 !important;
+}
+
+/* =========================================================
+   MAIN AREA
+========================================================= */
+
+.formulas-page .formula-main-layout {
+    width: 100% !important;
+
+    min-height: calc(100vh - 88px) !important;
+
+    padding: 16px 18px 25px !important;
+
+    overflow: visible !important;
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.formulas-page .formula-hero {
+    position: relative !important;
+
+    width: 100% !important;
+    height: 135px !important;
+
+    display: flex !important;
+    align-items: center !important;
+
+    padding: 22px 28px !important;
+
+    margin: 0 0 11px !important;
+
+    overflow: hidden !important;
+
+    border: 1px solid #173c61 !important;
+    border-radius: 13px !important;
+
+    background:
+        radial-gradient(
+            circle at 75% 40%,
+            rgba(9,93,177,.15),
+            transparent 42%
+        ),
+        linear-gradient(
+            135deg,
+            #092442,
+            #06192c
+        ) !important;
+}
+
+.formulas-page .formula-hero-content {
+    position: relative !important;
+    z-index: 3 !important;
+}
+
+.formulas-page .formula-hero-content h1 {
+    margin: 0 !important;
+
+    color: #f5f8ff !important;
+
+    font-size: 43px !important;
+    line-height: 1.05 !important;
+
+    font-weight: 700 !important;
+}
+
+.formulas-page .formula-hero-content h1 span {
+    color: #1688ff !important;
+}
+
+.formulas-page .formula-hero-content p {
+    margin: 10px 0 0 !important;
+
+    color: #c0d2e7 !important;
+
+    font-size: 18px !important;
+}
+
+.formulas-page .formula-hero-art {
+    position: absolute !important;
+
+    right: 215px !important;
+    top: 22px !important;
+
+    width: 130px !important;
+    height: 90px !important;
+
+    transform: rotate(-5deg) !important;
+}
+
+.formulas-page .formula-hero-handwriting {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+
+    color: #1688ff !important;
+
+    font-size: 21px !important;
+    font-weight: 700 !important;
+
+    line-height: .95 !important;
+    font-style: italic !important;
+}
+
+.formulas-page .formula-hero-line {
+    width: 90px !important;
+    height: 4px !important;
+
+    margin: 8px auto 0 !important;
+
+    background: #1688ff !important;
+
+    border-radius: 50% !important;
+
+    transform: rotate(-7deg) !important;
+}
+
+.formulas-page .formula-hero-quote {
+    position: absolute !important;
+
+    right: 28px !important;
+    top: 27px !important;
+}
+
+.formulas-page .formula-hero-quote p {
+    margin: 0 !important;
+
+    color: #d3deec !important;
+
+    font-size: 16px !important;
+    line-height: 1.5 !important;
+
+    font-style: italic !important;
+}
+
+/* =========================================================
+   CONTENT LAYOUT
+========================================================= */
+
+.formulas-page .formula-content-layout {
+    width: 100% !important;
+
+    display: grid !important;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        288px !important;
+
+    gap: 14px !important;
+
+    align-items: start !important;
+
+    overflow: visible !important;
+}
+
+/* =========================================================
+   LEFT LIBRARY
+========================================================= */
+
+.formulas-page .formula-library-main {
+    min-width: 0 !important;
+
+    overflow: visible !important;
+}
+
+/* =========================================================
+   CATEGORY TABS
+========================================================= */
+
+.formulas-page .formula-category-tabs {
+    width: 100% !important;
+    height: 65px !important;
+
+    display: flex !important;
+    align-items: stretch !important;
+
+    margin: 0 0 11px !important;
+
+    overflow: hidden !important;
+
+    background: #06182a !important;
+
+    border: 1px solid #173957 !important;
+    border-radius: 11px !important;
+}
+
+.formulas-page .formula-tab {
+    flex: 1 1 0 !important;
+
+    min-width: 0 !important;
+    height: 65px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    gap: 8px !important;
+
+    padding: 0 9px !important;
+
+    border: none !important;
+    border-right: 1px solid #173957 !important;
+
+    background: transparent !important;
+
+    color: #c6d4e5 !important;
+
+    font-size: 14px !important;
+    font-weight: 500 !important;
+
+    white-space: nowrap !important;
+
+    cursor: pointer !important;
+}
+
+.formulas-page .formula-tab:last-child {
+    border-right: none !important;
+}
+
+.formulas-page .formula-tab i {
+    color: #70b7f3 !important;
+    font-size: 17px !important;
+}
+
+.formulas-page .formula-tab.active {
+    background: #087cff !important;
+    color: white !important;
+}
+
+.formulas-page .formula-tab.active i {
+    color: white !important;
+}
+
+/* =========================================================
+   FORMULA GRID
+========================================================= */
+
+.formulas-page .formula-list {
+    width: 100% !important;
+
+    display: grid !important;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr)) !important;
+
+    gap: 12px !important;
+
+    overflow: visible !important;
+}
+
+/* =========================================================
+   FORMULA CARD
+========================================================= */
+
+.formulas-page .formula-card {
+    width: 100% !important;
+
+    min-width: 0 !important;
+
+    min-height: 174px !important;
+
+    padding: 13px 14px !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+
+    background:
+        linear-gradient(
+            145deg,
+            #071e33,
+            #061827
+        ) !important;
+
+    border: 1px solid #183d5d !important;
+    border-radius: 13px !important;
+
+    overflow: visible !important;
+
+    transition: .2s ease !important;
+}
+
+.formulas-page .formula-card:hover {
+    border-color: #2475b8 !important;
+
+    transform: translateY(-1px) !important;
+}
+
+/* =========================================================
+   CARD HEADER
+========================================================= */
+
+.formulas-page .formula-card-header {
+    width: 100% !important;
+
+    min-height: 38px !important;
+
+    display: flex !important;
+    align-items: center !important;
+
+    gap: 9px !important;
+
+    margin-bottom: 9px !important;
+}
+
+.formulas-page .formula-card-icon {
+    width: 38px !important;
+    height: 38px !important;
+
+    flex: 0 0 38px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    border-radius: 50% !important;
+
+    color: white !important;
+
+    font-size: 16px !important;
+}
+
+/* COLORS */
+
+.formulas-page .formula-card-icon.algebra {
+    background: #4935df !important;
+}
+
+.formulas-page .formula-card-icon.trigonometry {
+    background: #0aa66f !important;
+}
+
+.formulas-page .formula-card-icon.calculus {
+    background: #ff9917 !important;
+}
+
+.formulas-page .formula-card-icon.matrices {
+    background: #087cff !important;
+}
+
+.formulas-page .formula-card-icon.geometry {
+    background: #2ca64b !important;
+}
+
+.formulas-page .formula-card-icon.statistics {
+    background: #e42e55 !important;
+}
+
+.formulas-page .formula-card-icon.physics {
+    background: #f2ad18 !important;
+}
+
+.formulas-page .formula-card-header h3 {
+    min-width: 0 !important;
+
+    margin: 0 !important;
+
+    color: #f2f6fd !important;
+
+    font-size: 15px !important;
+    font-weight: 650 !important;
+
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+}
+
+.formulas-page .formula-copy-button {
+    width: 30px !important;
+    height: 30px !important;
+
+    margin-left: auto !important;
+
+    flex: 0 0 30px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    border: none !important;
+    border-radius: 7px !important;
+
+    background: transparent !important;
+
+    color: #a9c6e2 !important;
+
+    cursor: pointer !important;
+
+    font-size: 16px !important;
+}
+
+/* =========================================================
+   EQUATION
+========================================================= */
+/* =========================================================
+   EQUATION
+   LONG FORMULA SUPPORT
+========================================================= */
+
+.formulas-page .formula-equation {
+    width: 100% !important;
+
+    min-width: 0 !important;
+    min-height: 61px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    margin-bottom: 9px !important;
+
+    padding: 6px 8px !important;
+
+    background: #071d32 !important;
+
+    border: 1px solid #173d5e !important;
+    border-radius: 8px !important;
+
+    color: #f4f7ff !important;
+
+    font-family:
+        "Cambria Math",
+        "STIX Two Math",
+        "Times New Roman",
+        serif !important;
+
+    font-size: 19px !important;
+
+    line-height: 1.2 !important;
+
+    text-align: center !important;
+
+    overflow: hidden !important;
+
+    box-sizing: border-box !important;
+}
+
+
+/* =========================================================
+   MATHJAX FORMULA
+========================================================= */
+
+.formulas-page .formula-equation .math-formula {
+    display: block !important;
+
+    width: 100% !important;
+    max-width: 100% !important;
+
+    min-width: 0 !important;
+
+    text-align: center !important;
+
+    overflow: hidden !important;
+}
+
+
+/* MathJax generated formula */
+
+.formulas-page .formula-equation mjx-container {
+    display: block !important;
+
+    width: 100% !important;
+    max-width: 100% !important;
+
+    margin: 0 auto !important;
+
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+
+    scrollbar-width: thin !important;
+
+    text-align: center !important;
+}
+.formulas-page .formula-equation mjx-container[jax="CHTML"] {
+    max-width: 100% !important;
+}
+
+.formulas-page .formula-equation mjx-container > span {
+    max-width: 100% !important;
+}
+
+
+/* =========================================================
+   OLD CUSTOM EQUATION SUPPORT
+========================================================= */
+
+.formulas-page .formula-equation .math-eq {
+    display: inline-flex !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+    gap: 7px !important;
+
+    max-width: 100% !important;
+
+    min-width: 0 !important;
+
+    white-space: normal !important;
+
+    text-align: center !important;
+
+    font-family:
+        "Cambria Math",
+        "STIX Two Math",
+        "Times New Roman",
+        serif !important;
+}
+
+
+/* =========================================================
+   FRACTION
+========================================================= */
+
+.formulas-page .formula-equation .frac {
+    display: inline-flex !important;
+
+    flex-direction: column !important;
+    align-items: center !important;
+
+    justify-content: center !important;
+
+    line-height: 1 !important;
+
+    min-width: 28px !important;
+
+    max-width: 100% !important;
+}
+
+
+.formulas-page .formula-equation .frac > span:first-child {
+    padding: 0 5px 3px !important;
+
+    border-bottom:
+        1.5px solid currentColor !important;
+}
+
+
+.formulas-page .formula-equation .frac > span:last-child {
+    padding: 3px 5px 0 !important;
+}
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.formulas-page .formula-description {
+    margin: 0 !important;
+
+    color: #c0d0e2 !important;
+
+    font-size: 11.5px !important;
+
+    line-height: 1.4 !important;
+
+    overflow: visible !important;
+}
+
+/* =========================================================
+   RIGHT SIDEBAR
+========================================================= */
+
+.formulas-page .formula-right-sidebar {
+    width: 100% !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+
+    gap: 12px !important;
+
+    overflow: visible !important;
+}
+
+/* =========================================================
+   RIGHT SEARCH CARD
+========================================================= */
+
+.formulas-page .formula-side-card {
+    width: 100% !important;
+
+    padding: 14px !important;
+
+    background: #06182a !important;
+
+    border: 1px solid #173957 !important;
+    border-radius: 12px !important;
+}
+
+.formulas-page .formula-search-card {
+    min-height: 116px !important;
+}
+
+.formulas-page .formula-side-title {
+    width: 100% !important;
+
+    display: flex !important;
+    align-items: center !important;
+
+    gap: 9px !important;
+
+    margin-bottom: 10px !important;
+}
+
+.formulas-page .formula-side-title > i {
+    color: #79bdf6 !important;
+}
+
+.formulas-page .formula-side-title h3 {
+    margin: 0 !important;
+
+    color: #edf4fc !important;
+
+    font-size: 15px !important;
+    font-weight: 600 !important;
+}
+
+.formulas-page .formula-side-search {
+    width: 100% !important;
+    height: 44px !important;
+
+    display: flex !important;
+    align-items: center !important;
+
+    gap: 9px !important;
+
+    padding: 0 12px !important;
+
+    background: #0a2138 !important;
+
+    border: 1px solid #193d60 !important;
+    border-radius: 9px !important;
+}
+
+.formulas-page .formula-side-search i {
+    color: #79a8d1 !important;
+}
+
+.formulas-page .formula-side-search input {
+    width: 100% !important;
+
+    border: none !important;
+    outline: none !important;
+
+    background: transparent !important;
+
+    color: #edf4ff !important;
+
+    font-size: 12px !important;
+}
+
+.formulas-page .formula-side-search input::placeholder {
+    color: #7890ab !important;
+}
+
+/* =========================================================
+   POPULAR FORMULAS
+========================================================= */
+
+.formulas-page .popular-formulas-card {
+    padding: 14px !important;
+}
+
+.formulas-page .popular-formulas-card .formula-side-title {
+    margin-bottom: 6px !important;
+}
+
+.formulas-page .popular-fire {
+    font-size: 20px !important;
+}
+
+.formulas-page .popular-arrow {
+    margin-left: auto !important;
+
+    color: #74b7ec !important;
+
+    font-size: 15px !important;
+}
+
+.formulas-page .popular-formula-list {
+    width: 100% !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.formulas-page .popular-formula-item {
+    width: 100% !important;
+
+    min-height: 42px !important;
+
+    display: flex !important;
+    align-items: center !important;
+
+    gap: 10px !important;
+
+    border-top: 1px solid #112f4b !important;
+
+    cursor: pointer !important;
+}
+
+.formulas-page .popular-formula-item:hover {
+    background: #0a2238 !important;
+}
+
+.formulas-page .popular-number {
+    width: 30px !important;
+    height: 30px !important;
+
+    flex: 0 0 30px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    border-radius: 50% !important;
+
+    background: #0b2944 !important;
+
+    border: 1px solid #214766 !important;
+
+    color: #dce9f7 !important;
+
+    font-size: 12px !important;
+}
+
+.formulas-page .popular-name {
+    min-width: 0 !important;
+
+    color: #e3edf8 !important;
+
+    font-size: 12px !important;
+
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+}
+
+/* =========================================================
+   STUDY TIP
+========================================================= */
+
+.formulas-page .formula-study-tip {
+    width: 100% !important;
+
+    min-height: 205px !important;
+
+    padding: 16px !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+
+    background:
+        linear-gradient(
+            145deg,
+            #233fa4,
+            #192c7d
+        ) !important;
+
+    border: 1px solid #4565df !important;
+    border-radius: 13px !important;
+
+    overflow: hidden !important;
+}
+
+.formulas-page .study-tip-icon {
+    width: 36px !important;
+    height: 36px !important;
+
+    flex: 0 0 36px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    margin-bottom: 9px !important;
+
+    border-radius: 50% !important;
+
+    background: rgba(100,160,255,.18) !important;
+
+    color: #91bdff !important;
+
+    font-size: 18px !important;
+}
+
+.formulas-page .study-tip-content {
+    display: flex !important;
+    flex-direction: column !important;
+
+    flex: 1 !important;
+}
+
+.formulas-page .study-tip-content h3 {
+    margin: 0 0 7px !important;
+
+    color: white !important;
+
+    font-size: 17px !important;
+}
+
+.formulas-page .study-tip-content p {
+    margin: 0 !important;
+
+    color: #dbe6ff !important;
+
+    font-size: 12px !important;
+    line-height: 1.45 !important;
+}
+
+.formulas-page .study-tip-content button {
+    width: 100% !important;
+    height: 42px !important;
+
+    margin-top: auto !important;
+
+    border: 1px solid #5d7cf0 !important;
+    border-radius: 9px !important;
+
+    background: rgba(5,55,170,.22) !important;
+
+    color: white !important;
+
+    font-size: 12px !important;
+    font-weight: 600 !important;
+
+    cursor: pointer !important;
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.formulas-page .formula-footer {
+    width: 100% !important;
+
+    min-height: 68px !important;
+
+    margin: 5px 0 0 !important;
+
+    padding: 0 18px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+
+    border-top: 1px solid #122d47 !important;
+
+    color: #a8bad0 !important;
+
+    font-size: 12px !important;
+}
+
+.formulas-page .formula-footer-links {
+    display: flex !important;
+
+    gap: 22px !important;
+}
+
+.formulas-page .formula-footer-links a {
+    color: #9fb4cb !important;
+
+    text-decoration: none !important;
+}
+
+/* =========================================================
+   NO RESULTS
+========================================================= */
+
+.formulas-page .no-formula {
+    grid-column: 1 / -1 !important;
+
+    min-height: 180px !important;
+
+    padding: 40px 20px !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    text-align: center !important;
+
+    background: #06182a !important;
+
+    border: 1px solid #163957 !important;
+    border-radius: 13px !important;
+
+    color: #8da6c2 !important;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1250px) {
+
+    .formulas-page .formula-content-layout {
+        grid-template-columns:
+            minmax(0, 1fr)
+            260px !important;
+    }
+
+    .formulas-page .formula-right-sidebar {
+        width: 260px !important;
+    }
+
+    .formulas-page .formula-tab {
+        font-size: 12px !important;
+    }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 850px) {
+
+    html,
+    body {
+        overflow: auto !important;
+    }
+
+    .formulas-page .calcura-sidebar {
+        position: relative !important;
+
+        width: 100% !important;
+        height: auto !important;
+    }
+
+    .formulas-page .sidebar-navigation {
+        overflow: visible !important;
+    }
+
+    .formulas-page .formulas-container {
+        width: 100% !important;
+
+        margin-left: 0 !important;
+
+        padding-top: 0 !important;
+
+        overflow: visible !important;
+    }
+
+    .formulas-page .formula-top-header {
+        position: relative !important;
+
+        left: 0 !important;
+
+        height: auto !important;
+
+        min-height: 80px !important;
+    }
+
+    .formulas-page .formula-main-layout {
+        min-height: auto !important;
+    }
+
+    .formulas-page .formula-content-layout {
+        grid-template-columns: 1fr !important;
+    }
+
+    .formulas-page .formula-list {
+        grid-template-columns: 1fr !important;
+    }
+
+    .formulas-page .formula-right-sidebar {
+        width: 100% !important;
+    }
+
+    .formulas-page .formula-hero-art,
+    .formulas-page .formula-hero-quote {
+        display: none !important;
+    }
+
+    .formulas-page .formula-footer {
+        flex-direction: column !important;
+
+        gap: 12px !important;
+
+        padding: 18px !important;
+    }
+}
+/* =========================================================
+   FINAL LEFT GAP FIX
+   Remove extra space between sidebar and Formula Library
+========================================================= */
+
+.formulas-page .formulas-container {
+    position: relative !important;
+
+    left: 0 !important;
+
+    margin-left: 280px !important;
+    margin-right: 0 !important;
+
+    width: calc(100% - 280px) !important;
+
+    max-width: none !important;
+
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+
+    box-sizing: border-box !important;
+
+    overflow-x: hidden !important;
+}
+
+
+/* MAIN CONTENT MUST START DIRECTLY AFTER SIDEBAR */
+
+.formulas-page .formula-main-layout {
+    position: relative !important;
+
+    left: 0 !important;
+    right: auto !important;
+
+    width: 100% !important;
+    max-width: none !important;
+
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+
+    box-sizing: border-box !important;
+
+    transform: none !important;
+}
+
+
+/* HERO */
+
+.formulas-page .formula-hero {
+    width: 100% !important;
+
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+
+/* CONTENT */
+
+.formulas-page .formula-content-layout {
+    width: 100% !important;
+
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+
+    padding: 0 !important;
+
+    box-sizing: border-box !important;
+}
+
+
+/* LEFT FORMULA SECTION */
+
+.formulas-page .formula-library-main {
+    width: 100% !important;
+
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+}
+
+
+/* CATEGORY TABS */
+
+.formulas-page .formula-category-tabs {
+    width: 100% !important;
+
+    margin-left: 0 !important;
+}
+
+
+/* FORMULA GRID */
+
+.formulas-page .formula-list {
+    width: 100% !important;
+
+    margin-left: 0 !important;
+}
+
+
+/* RIGHT SIDEBAR */
+
+.formulas-page .formula-right-sidebar {
+    margin-left: 0 !important;
+}
+/* =========================================================
+   SIDEBAR / HEADER SAME WIDTH
+========================================================= */
+
+.formulas-page .calcura-sidebar {
+    width: 280px !important;
+    left: 0 !important;
+}
+
+.formulas-page .formula-top-header {
+    left: 280px !important;
+    width: calc(100% - 280px) !important;
+}
+/* =========================================================
+   FORMULA LIBRARY - FINAL GAP FIX
+   Sidebar ke baad content directly start hoga
+========================================================= */
+
+/* Main container */
+.formulas-page .formulas-container {
+    width: calc(100% - 260px) !important;
+    margin-left: 260px !important;
+    margin-right: 0 !important;
+
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+
+    box-sizing: border-box !important;
+}
+
+/* Main formula section */
+.formulas-page .formula-main-layout {
+    width: 100% !important;
+
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+
+    box-sizing: border-box !important;
+}
+
+/* Hero/content should start at same left position */
+.formulas-page .formula-hero,
+.formulas-page .formula-content-layout {
+    width: 100% !important;
+
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+
+    box-sizing: border-box !important;
+}
+
+/* Formula library left section */
+.formulas-page .formula-library-main {
+    width: 100% !important;
+
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+
+    min-width: 0 !important;
+}
+
+/* Formula cards */
+.formulas-page .formula-list {
+    width: 100% !important;
+
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+
+    box-sizing: border-box !important;
+}
+
+/* Right sidebar */
+.formulas-page .formula-right-sidebar {
+    margin-left: 0 !important;
+}
+
+/* Sidebar */
+.formulas-page .calcura-sidebar {
+    width: 260px !important;
+    left: 0 !important;
+}
+
+/* Header must align exactly with main content */
+.formulas-page .formula-top-header {
+    left: 260px !important;
+    right: 0 !important;
+    width: auto !important;
+}
+/* =========================================================
+   ACTUAL FORMULA CARDS LEFT GAP FIX
+========================================================= */
+
+.formulas-page .formula-content-layout {
+    display: grid !important;
+
+    grid-template-columns: minmax(0, 1fr) 268px !important;
+
+    gap: 14px !important;
+
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+
+    width: 100% !important;
+
+    box-sizing: border-box !important;
+}
+
+.formulas-page .formula-library-main {
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+}
+
+.formulas-page .formula-list {
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+
+    width: 100% !important;
+}
+
+.formulas-page .formula-right-sidebar {
+    margin-left: 0 !important;
+}
+/* =========================================================
+   FINAL FORMULA PAGE POSITION FIX
+========================================================= */
+
+/* Main container starts after sidebar */
+.formulas-page .formulas-container {
+    margin-left: 260px !important;
+    width: calc(100% - 260px) !important;
+    max-width: none !important;
+
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+
+    box-sizing: border-box !important;
+}
+
+/* MAIN CONTENT - remove the unwanted extra 280px offset */
+.formulas-page .formula-main-layout {
+    position: relative !important;
+
+    left: -280px !important;
+
+    width: calc(100% + 280px) !important;
+
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+
+    box-sizing: border-box !important;
+
+    transform: none !important;
+}
+
+/* Hero */
+.formulas-page .formula-hero {
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+/* Content */
+.formulas-page .formula-content-layout {
+    position: relative !important;
+
+    left: 0 !important;
+
+    width: 100% !important;
+
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+
+    transform: none !important;
+
+    box-sizing: border-box !important;
+}
+
+/* Formula cards */
+.formulas-page .formula-list {
+    width: 100% !important;
+
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+
+    transform: none !important;
+}
+
+/* Right panel */
+.formulas-page .formula-right-sidebar {
+    margin-left: 0 !important;
+}
+
+/* Keep sidebar */
+.formulas-page .calcura-sidebar {
+    width: 260px !important;
+    left: 0 !important;
+}
+
+/* Header */
+.formulas-page .formula-top-header {
+    left: 260px !important;
+    right: 0 !important;
+    width: auto !important;
+}
+/* =========================================================
+   FINAL - REMOVE LEFT GAP
+========================================================= */
+
+.formulas-page .formulas-container {
+    position: relative !important;
+
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+
+    width: 100% !important;
+    max-width: none !important;
+
+    padding-top: 88px !important;
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+
+    box-sizing: border-box !important;
+}
+
+/* Formula content starts immediately after sidebar */
+.formulas-page .formula-main-layout {
+    position: relative !important;
+
+    left: 0 !important;
+    margin: 0 !important;
+
+    width: 100% !important;
+
+    padding: 18px 0 0 0 !important;
+
+    transform: none !important;
+
+    box-sizing: border-box !important;
+}
+/* =========================================================
+   CALCURA SIDEBAR
+   EXACT CALCULATOR / UPGRADE STYLE
+   SIDEBAR ONLY
+========================================================= */
+
+.calcura-sidebar {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+
+    width: 260px !important;
+    height: 100vh !important;
+
+    padding: 20px 10px 20px 10px !important;
+
+    background: #031522 !important;
+
+    border-right: 1px solid #17354d !important;
+
+    box-sizing: border-box !important;
+
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+
+    z-index: 9999 !important;
+}
+
+
+/* =========================================================
+   LOGO / BRAND
+========================================================= */
+
+.sidebar-brand {
+    width: 100% !important;
+
+    height: 70px !important;
+
+    display: flex !important;
+    align-items: center !important;
+
+    gap: 13px !important;
+
+    padding: 0 12px !important;
+    margin: 0 0 14px 0 !important;
+
+    border-bottom: 1px solid #17354d !important;
+
+    box-sizing: border-box !important;
+}
+
+.sidebar-logo {
+    width: 52px !important;
+    height: 52px !important;
+
+    min-width: 52px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    background: #087dff !important;
+
+    border-radius: 8px !important;
+
+    color: #ffffff !important;
+
+    font-size: 24px !important;
+}
+
+.sidebar-brand-text {
+    display: flex !important;
+    flex-direction: column !important;
+
+    justify-content: center !important;
+}
+
+.sidebar-brand-text h1 {
+    margin: 0 !important;
+
+    color: #ffffff !important;
+
+    font-size: 28px !important;
+    line-height: 1 !important;
+
+    font-weight: 800 !important;
+}
+
+.sidebar-brand-text span {
+    margin-top: 5px !important;
+
+    color: #91a9bd !important;
+
+    font-size: 12px !important;
+
+    white-space: nowrap !important;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.sidebar-nav {
+    width: 100% !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+
+    gap: 2px !important;
+
+    padding: 0 !important;
+    margin: 0 !important;
+
+    box-sizing: border-box !important;
+}
+
+
+/* Every menu item */
+
+.sidebar-item {
+    width: 100% !important;
+
+    height: 61px !important;
+    min-height: 61px !important;
+
+    display: flex !important;
+    align-items: center !important;
+
+    gap: 18px !important;
+
+    padding: 0 18px !important;
+
+    margin: 0 !important;
+
+    border-radius: 10px !important;
+
+    box-sizing: border-box !important;
+
+    color: #c6d9e9 !important;
+
+    text-decoration: none !important;
+
+    font-size: 16px !important;
+
+    font-weight: 500 !important;
+
+    flex-shrink: 0 !important;
+}
+
+
+/* Icons */
+
+.sidebar-item i {
+    width: 27px !important;
+    min-width: 27px !important;
+
+    text-align: center !important;
+
+    font-size: 23px !important;
+
+    color: #c6d9e9 !important;
+}
+
+
+/* Hover */
+
+.sidebar-item:hover {
+    background: #0b263d !important;
+
+    color: #ffffff !important;
+}
+
+.sidebar-item:hover i {
+    color: #ffffff !important;
+}
+
+
+/* =========================================================
+   ACTIVE ITEM
+========================================================= */
+
+.sidebar-item.active {
+    background: #087dff !important;
+
+    color: #ffffff !important;
+
+    font-weight: 600 !important;
+
+    box-shadow:
+        0 8px 20px rgba(8, 125, 255, 0.22) !important;
+}
+
+.sidebar-item.active i {
+    color: #ffffff !important;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+.calcura-sidebar::-webkit-scrollbar {
+    width: 7px !important;
+}
+
+.calcura-sidebar::-webkit-scrollbar-track {
+    background: transparent !important;
+}
+
+.calcura-sidebar::-webkit-scrollbar-thumb {
+    background: #526577 !important;
+
+    border-radius: 10px !important;
+}
+
+.calcura-sidebar::-webkit-scrollbar-thumb:hover {
+    background: #718397 !important;
+}
+
+
+/* =========================================================
+   UPGRADE TO PRO
+========================================================= */
+
+.sidebar-upgrade {
+    margin: 18px 8px 10px 8px !important;
+
+    padding: 18px !important;
+
+    border: 1px solid #176bb0 !important;
+
+    border-radius: 12px !important;
+
+    background: #071d31 !important;
+
+    box-sizing: border-box !important;
+}
+
+.sidebar-upgrade h3 {
+    margin: 0 0 10px 0 !important;
+
+    color: #ffffff !important;
+
+    font-size: 17px !important;
+}
+
+.sidebar-upgrade p,
+.sidebar-upgrade li {
+    color: #b8c8d8 !important;
+}
+
+.sidebar-upgrade-btn {
+    width: 100% !important;
+
+    min-height: 42px !important;
+
+    border: none !important;
+
+    border-radius: 8px !important;
+
+    background: #087dff !important;
+
+    color: #ffffff !important;
+}
+/* =========================================================
+   CALCURA SIDEBAR
+   EXACT UPGRADE PAGE SIDEBAR
+========================================================= */
+
+.calcura-sidebar {
+    position: fixed;
+
+    left: 0;
+    top: 0;
+
+    width: 260px;
+    height: 100vh;
+
+    z-index: 1000;
+
+    overflow-y: auto;
+
+    background:
+        linear-gradient(
+            180deg,
+            #031522,
+            #02111e
+        );
+
+    border-right: 1px solid #17354d;
+}
+
+
+/* ================= BRAND ================= */
+
+.sidebar-brand {
+    height: 88px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 13px;
+
+    padding: 0 24px;
+
+    border-bottom: 1px solid #17354d;
+}
+
+.sidebar-logo {
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 8px;
+
+    background: #087dff;
+
+    color: #fff;
+
+    font-size: 25px;
+}
+
+.sidebar-brand-text h1 {
+    margin: 0;
+
+    color: #fff;
+
+    font-size: 28px;
+    font-weight: 800;
+}
+
+.sidebar-brand-text span {
+    display: block;
+
+    margin-top: 3px;
+
+    color: #91a9bd;
+
+    font-size: 12px;
+}
+
+
+/* ================= NAVIGATION ================= */
+
+.sidebar-nav {
+    padding: 17px 11px;
+}
+
+.sidebar-item,
+.calcura-nav-item {
+    height: 45px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 18px;
+
+    margin-bottom: 2px;
+
+    padding: 0 14px;
+
+    border-radius: 8px;
+
+    color: #c6d9e9;
+
+    text-decoration: none;
+
+    font-size: 15px;
+
+    transition: .2s;
+
+    box-sizing: border-box;
+}
+
+.sidebar-item i,
+.calcura-nav-item i {
+    width: 22px;
+
+    min-width: 22px;
+
+    text-align: center;
+
+    font-size: 19px;
+}
+
+.sidebar-item:hover,
+.calcura-nav-item:hover {
+    background: #09253d;
+
+    color: #fff;
+}
+
+.sidebar-item.active,
+.calcura-nav-item.active {
+    background: #087dff;
+
+    color: #fff;
+
+    box-shadow:
+        0 7px 20px rgba(0, 125, 255, .25);
+}
+
+
+/* ================= SCROLLBAR ================= */
+
+.calcura-sidebar::-webkit-scrollbar {
+    width: 7px;
+}
+
+.calcura-sidebar::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.calcura-sidebar::-webkit-scrollbar-thumb {
+    background: #405263;
+
+    border-radius: 10px;
+}
+
+
+/* ================= UPGRADE CARD ================= */
+
+.sidebar-upgrade {
+    margin: 10px 16px 20px;
+
+    padding: 15px;
+
+    border: 1px solid #176bb0;
+
+    border-radius: 11px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #082746,
+            #061c31
+        );
+}
+
+.sidebar-upgrade-icon {
+    color: #ffd42f;
+
+    font-size: 22px;
+
+    margin-bottom: 6px;
+}
+
+.sidebar-upgrade h3 {
+    margin: 0 0 9px;
+
+    font-size: 17px;
+}
+
+.sidebar-upgrade ul {
+    margin: 0 0 12px;
+
+    padding-left: 17px;
+
+    color: #b5c8dc;
+
+    font-size: 12px;
+
+    line-height: 1.7;
+}
+/* =========================================================
+   FINAL SIDEBAR FIX
+   Calculator/Upgrade style sidebar
+========================================================= */
+
+.formulas-page .calcura-sidebar {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+
+    width: 260px !important;
+    height: 100vh !important;
+
+    display: block !important;
+
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+
+    padding: 0 !important;
+
+    background: linear-gradient(
+        180deg,
+        #031522,
+        #02111e
+    ) !important;
+
+    border-right: 1px solid #17354d !important;
+
+    z-index: 9999 !important;
+}
+
+
+/* Sidebar scrollbar */
+
+.formulas-page .calcura-sidebar::-webkit-scrollbar {
+    width: 6px;
+}
+
+.formulas-page .calcura-sidebar::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.formulas-page .calcura-sidebar::-webkit-scrollbar-thumb {
+    background: #405263;
+    border-radius: 10px;
+}
+
+
+/* Brand */
+
+.formulas-page .sidebar-brand {
+    height: 88px !important;
+
+    display: flex !important;
+    align-items: center !important;
+
+    gap: 13px !important;
+
+    padding: 0 24px !important;
+
+    border-bottom: 1px solid #17354d !important;
+
+    margin: 0 !important;
+}
+
+.formulas-page .sidebar-logo {
+    width: 52px !important;
+    height: 52px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    flex-shrink: 0 !important;
+
+    border-radius: 8px !important;
+
+    background: #087dff !important;
+
+    color: #fff !important;
+
+    font-size: 25px !important;
+}
+
+.formulas-page .sidebar-brand-text h1 {
+    margin: 0 !important;
+
+    color: #fff !important;
+
+    font-size: 28px !important;
+    font-weight: 800 !important;
+}
+
+.formulas-page .sidebar-brand-text span {
+    display: block !important;
+
+    margin-top: 3px !important;
+
+    color: #91a9bd !important;
+
+    font-size: 12px !important;
+}
+
+
+/* Navigation */
+
+.formulas-page .sidebar-nav {
+    display: block !important;
+
+    padding: 17px 11px !important;
+
+    margin: 0 !important;
+}
+
+.formulas-page .sidebar-item,
+.formulas-page .calcura-nav-item {
+    width: 100% !important;
+    height: 45px !important;
+
+    display: flex !important;
+    align-items: center !important;
+
+    gap: 18px !important;
+
+    margin: 0 0 2px 0 !important;
+
+    padding: 0 14px !important;
+
+    border-radius: 8px !important;
+
+    box-sizing: border-box !important;
+
+    color: #c6d9e9 !important;
+
+    text-decoration: none !important;
+
+    font-size: 15px !important;
+
+    white-space: nowrap !important;
+}
+
+.formulas-page .sidebar-item i,
+.formulas-page .calcura-nav-item i {
+    width: 22px !important;
+    min-width: 22px !important;
+
+    text-align: center !important;
+
+    font-size: px !important;
+}
+
+.formulas-page .sidebar-item:hover,
+.formulas-page .calcura-nav-item:hover {
+    background: #09253d !important;
+    color: #fff !important;
+}
+
+.formulas-page .sidebar-item.active,
+.formulas-page .calcura-nav-item.active {
+    background: #087dff !important;
+
+    color: #fff !important;
+
+    box-shadow:
+        0 7px 20px rgba(0, 125, 255, .25) !important;
+}
+
+
+/* =========================================================
+   IMPORTANT:
+   MAIN PAGE MUST START AFTER 260px SIDEBAR
+========================================================= */
+
+.formulas-page .formulas-container {
+    position: relative !important;
+
+    left: auto !important;
+
+    margin-left: 260px !important;
+    margin-right: 0 !important;
+
+    width: calc(100% - 260px) !important;
+
+    max-width: none !important;
+
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+
+    box-sizing: border-box !important;
+
+    overflow-x: hidden !important;
+}
+
+
+/* Header */
+
+.formulas-page .formula-top-header {
+    left: 260px !important;
+    right: 0 !important;
+
+    width: auto !important;
+}
+
+
+/* Main content */
+
+.formulas-page .formula-main-layout {
+    position: relative !important;
+
+    left: 0 !important;
+
+    width: 100% !important;
+
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+
+    box-sizing: border-box !important;
+
+    transform: none !important;
+}
+/* CALCURA SIDEBAR - MATCH CALCULATOR PAGE */
+.calcura-sidebar {
+    position: fixed !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 260px !important;
+    height: 100vh !important;
+    z-index: 3000 !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    box-sizing: border-box !important;
+    padding: 0 12px !important;
+    background: linear-gradient(180deg,#061321 0%,#04101d 100%) !important;
+    border-right: 1px solid #17354d !important;
+}
+
+.sidebar-brand {
+    height: 88px !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 13px !important;
+    margin: 0 !important;
+    padding: 0 10px !important;
+    border-bottom: 1px solid #17354d !important;
+}
+
+.sidebar-logo {
+    width: 48px !important;
+    height: 48px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
+    border-radius: 7px !important;
+    background: #087cff !important;
+    color: #fff !important;
+    font-size: 25px !important;
+}
+
+.sidebar-brand-text h1 {
+    margin: 0 !important;
+    color: #f4f8ff !important;
+    font-size: 28px !important;
+    font-weight: 800 !important;
+}
+
+.sidebar-brand-text span {
+    display: block !important;
+    margin-top: 3px !important;
+    color: #8da4bf !important;
+    font-size: 11px !important;
+}
+
+.sidebar-nav {
+    padding: 18px 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 4px !important;
+}
+
+.sidebar-item, .calcura-nav-item {
+    min-height: 45px !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 15px !important;
+    padding: 0 13px !important;
+    margin: 0 !important;
+    border-radius: 9px !important;
+    color: #b7c8df !important;
+    text-decoration: none !important;
+    font-size: 15px !important;
+    font-weight: 500 !important;
+    box-sizing: border-box !important;
+}
+
+.sidebar-item i, .calcura-nav-item i {
+    width: 22px !important;
+    text-align: center !important;
+    color: #a8c4e5 !important;
+    font-size: 19px !important;
+}
+
+.sidebar-item:hover, .calcura-nav-item:hover {
+    background: #0b2540 !important;
+    color: #fff !important;
+}
+
+.sidebar-item.active, .calcura-nav-item.active {
+    background: linear-gradient(135deg,#087cff,#0868dc) !important;
+    color: #fff !important;
+    box-shadow: 0 7px 22px rgba(8,124,255,.28) !important;
+}
+
+.sidebar-item.active i, .calcura-nav-item.active i {
+    color: #fff !important;
+}
+
+.sidebar-upgrade {
+    margin: 8px 4px 20px !important;
+    padding: 15px !important;
+    border: 1px solid #176ac3 !important;
+    border-radius: 12px !important;
+    background: linear-gradient(145deg,#0b2847,#06182a) !important;
+}
+
+.sidebar-upgrade-icon {
+    color: #ffd34f !important;
+    font-size: 21px !important;
+    margin-bottom: 6px !important;
+}
+
+.sidebar-upgrade h3 {
+    margin: 0 0 8px !important;
+    color: #fff !important;
+    font-size: 16px !important;
+}
+
+.sidebar-upgrade ul {
+    margin: 0 0 12px !important;
+    padding-left: 17px !important;
+    color: #9fb5ce !important;
+    font-size: 12px !important;
+    line-height: 1.7 !important;
+}
+
+.sidebar-upgrade-btn {
+    display: block !important;
+    text-align: center !important;
+    padding: 9px !important;
+    border-radius: 8px !important;
+    background: #087cff !important;
+    color: #fff !important;
+    text-decoration: none !important;
+    font-weight: 700 !important;
+    font-size: 13px !important;
+}
+
+.sidebar-upgrade-btn:hover { background: #1688ff !important; }
+/* =========================================================
+   FORMULA DETAIL MODAL
+========================================================= */
+
+.formula-detail-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+}
+
+.formula-detail-modal.active {
+    display: flex;
+}
+
+
+/* OVERLAY */
+
+.formula-detail-overlay {
+    position: absolute;
+    inset: 0;
+
+    background: rgba(0, 8, 20, 0.78);
+    backdrop-filter: blur(8px);
+}
+
+
+/* MODAL BOX */
+
+.formula-detail-box {
+    position: relative;
+    z-index: 2;
+
+    width: min(620px, 92vw);
+    max-height: 85vh;
+
+    overflow-y: auto;
+
+    padding: 30px;
+
+    border: 1px solid rgba(30, 136, 255, 0.45);
+    border-radius: 22px;
+
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(30, 136, 255, 0.14),
+            transparent 35%
+        ),
+        #061a2d;
+
+    box-shadow:
+        0 0 35px rgba(0, 110, 255, 0.22),
+        0 25px 80px rgba(0, 0, 0, 0.55);
+
+    animation: formulaModalIn 0.22s ease;
+}
+
+
+@keyframes formulaModalIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(15px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+}
+
+
+/* CLOSE ICON */
+
+.formula-detail-close {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+
+    width: 38px;
+    height: 38px;
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 10px;
+
+    background: rgba(255, 255, 255, 0.05);
+    color: #dcecff;
+
+    cursor: pointer;
+
+    font-size: 16px;
+
+    transition: 0.2s ease;
+}
+
+
+.formula-detail-close:hover {
+    background: rgba(255, 60, 100, 0.15);
+    color: #ff5c8a;
+    border-color: rgba(255, 60, 100, 0.4);
+}
+
+
+/* HEADER */
+
+.formula-detail-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    padding-right: 45px;
+
+    margin-bottom: 28px;
+}
+
+
+.formula-detail-icon {
+    width: 54px;
+    height: 54px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 15px;
+
+    background: linear-gradient(
+        135deg,
+        #1688ff,
+        #673cff
+    );
+
+    color: white;
+
+    font-size: 22px;
+
+    box-shadow:
+        0 0 22px rgba(30, 136, 255, 0.28);
+}
+
+
+.formula-detail-header h2 {
+    margin: 0 0 5px;
+
+    color: #ffffff;
+
+    font-size: 24px;
+    font-weight: 700;
+}
+
+
+.formula-detail-header span {
+    color: #65b5ff;
+
+    font-size: 13px;
+    text-transform: capitalize;
+}
+
+
+/* SECTIONS */
+
+.formula-detail-section {
+    margin-bottom: 22px;
+}
+
+
+.formula-detail-section label {
+    display: block;
+
+    margin-bottom: 9px;
+
+    color: #8ea8c5;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+
+.formula-detail-expression {
+    min-height: 75px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 18px;
+
+    border: 1px solid rgba(30, 136, 255, 0.25);
+    border-radius: 14px;
+
+    background: rgba(2, 15, 28, 0.75);
+
+    color: #ffffff;
+
+    font-size: 22px;
+
+    overflow-x: auto;
+}
+
+
+.formula-detail-description {
+    margin: 0;
+
+    color: #b8c9dc;
+
+    line-height: 1.7;
+
+    font-size: 14px;
+}
+
+
+/* INFO */
+
+.formula-detail-info {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 12px;
+
+    margin-bottom: 26px;
+}
+
+
+.formula-detail-info-item {
+    padding: 15px;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 13px;
+
+    background: rgba(255, 255, 255, 0.035);
+}
+
+
+.formula-detail-info-item span {
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: #7891ad;
+
+    font-size: 12px;
+}
+
+
+.formula-detail-info-item strong {
+    color: #ffffff;
+
+    font-size: 14px;
+}
+
+
+/* ACTIONS */
+
+.formula-detail-actions {
+    display: flex;
+
+    gap: 12px;
+
+    justify-content: flex-end;
+}
+
+
+.formula-detail-copy,
+.formula-detail-close-button {
+    min-height: 44px;
+
+    padding: 0 18px;
+
+    border-radius: 11px;
+
+    cursor: pointer;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition: 0.2s ease;
+}
+
+
+.formula-detail-copy {
+    border: 1px solid rgba(30, 136, 255, 0.4);
+
+    background: rgba(30, 136, 255, 0.1);
+
+    color: #65b5ff;
+}
+
+
+.formula-detail-copy:hover {
+    background: rgba(30, 136, 255, 0.2);
+
+    box-shadow:
+        0 0 18px rgba(30, 136, 255, 0.18);
+}
+
+
+.formula-detail-close-button {
+    border: none;
+
+    background: linear-gradient(
+        135deg,
+        #673cff,
+        #1688ff
+    );
+
+    color: #ffffff;
+}
+
+
+.formula-detail-close-button:hover {
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 0 20px rgba(60, 100, 255, 0.3);
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .formula-detail-modal {
+        padding: 15px;
+    }
+
+    .formula-detail-box {
+        padding: 22px;
+
+        width: 100%;
+    }
+
+    .formula-detail-info {
+        grid-template-columns: 1fr;
+    }
+
+    .formula-detail-actions {
+        flex-direction: column;
+    }
+
+    .formula-detail-copy,
+    .formula-detail-close-button {
+        width: 100%;
+    }
+
+}
+/* =========================================================
+   FORMULA PAGE - GLOBAL SEARCH BAR FINAL FIX
+========================================================= */
+
+.formulas-page .formula-search {
+    position: relative !important;
+
+    width: 565px !important;
+    max-width: 565px !important;
+    height: 56px !important;
+
+    display: flex !important;
+    align-items: center !important;
+
+    padding: 0 52px 0 18px !important;
+
+    background: #071a2d !important;
+    border: 1px solid #193a5b !important;
+    border-radius: 11px !important;
+
+    box-sizing: border-box !important;
+}
+
+
+/* SEARCH ICON */
+.formulas-page .formula-search .search-icon {
+    width: 22px !important;
+    height: 22px !important;
+
+    flex: 0 0 22px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    margin: 0 11px 0 0 !important;
+    padding: 0 !important;
+
+    color: #82b8ed !important;
+    font-size: 18px !important;
+    line-height: 1 !important;
+}
+
+
+/* SEARCH INPUT */
+.formulas-page .formula-search input {
+    flex: 1 1 auto !important;
+
+    width: auto !important;
+    height: 100% !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    border: none !important;
+    outline: none !important;
+
+    background: transparent !important;
+
+    color: #eaf3ff !important;
+
+    font-size: 14px !important;
+    line-height: 1 !important;
+}
+
+
+/* PLACEHOLDER */
+.formulas-page .formula-search input::placeholder {
+    color: #7890ad !important;
+    opacity: 1 !important;
+}
+
+
+/* CLEAR X BUTTON */
+.formulas-page #clearGlobalSearch {
+    position: absolute !important;
+
+    top: 50% !important;
+    right: 13px !important;
+
+    transform: translateY(-50%) !important;
+
+    width: 32px !important;
+    height: 32px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    border: none !important;
+    border-radius: 7px !important;
+
+    background: transparent !important;
+    color: #8eb5d8 !important;
+
+    font-size: 16px !important;
+    line-height: 1 !important;
+
+    cursor: pointer !important;
+}
+
+
+/* X ICON */
+.formulas-page #clearGlobalSearch i {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    font-size: 16px !important;
+}
+
+
+/* HOVER */
+.formulas-page #clearGlobalSearch:hover {
+    background: rgba(30, 136, 255, 0.12) !important;
+    color: #ffffff !important;
+}
+.formulas-page .formula-search {
+    position: relative !important;
+    width: 565px !important;
+    max-width: 565px !important;
+    height: 56px !important;
+
+    display: flex !important;
+    align-items: center !important;
+
+    padding: 0 52px 0 18px !important;
+
+    background: #071a2d !important;
+    border: 1px solid #193a5b !important;
+    border-radius: 11px !important;
+    box-sizing: border-box !important;
+}
+
+
+/* SEARCH ICON - FIXED */
+.formulas-page .formula-search .search-icon {
+    flex: 0 0 22px !important;
+
+    width: 22px !important;
+    height: 22px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    margin: 0 12px 0 0 !important;
+    padding: 0 !important;
+
+    color: #82b8ed !important;
+    font-size: 19px !important;
+
+    line-height: 1 !important;
+}
+
+
+/* INPUT - FIXED */
+.formulas-page .formula-search input {
+    flex: 1 !important;
+
+    width: auto !important;
+    min-width: 0 !important;
+    height: 100% !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    border: none !important;
+    outline: none !important;
+
+    background: transparent !important;
+
+    color: #eaf3ff !important;
+    font-size: 14px !important;
+    line-height: normal !important;
+}
+
+.formulas-page .formula-search input::placeholder {
+    color: #7890ad !important;
+    opacity: 1 !important;
+}
+/* =========================================================
+   FINAL FIX — FORMULA GLOBAL SEARCH ICON
+========================================================= */
+
+.formulas-page .formula-search {
+    position: relative !important;
+    display: block !important;
+    box-sizing: border-box !important;
+    height: 56px !important;
+    padding: 0 !important;
+}
+
+
+/* SEARCH ICON */
+.formulas-page .formula-search .search-icon {
+    position: absolute !important;
+
+    left: 18px !important;
+    top: 50% !important;
+
+    width: 22px !important;
+    height: 22px !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    transform: translateY(-50%) !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    z-index: 5 !important;
+
+    color: #82b8ed !important;
+    font-size: 19px !important;
+    line-height: 1 !important;
+
+    pointer-events: none !important;
+}
+
+
+/* INPUT */
+.formulas-page .formula-search input {
+    position: relative !important;
+
+    display: block !important;
+
+    width: 100% !important;
+    height: 56px !important;
+
+    box-sizing: border-box !important;
+
+    margin: 0 !important;
+
+    /* IMPORTANT — icon ke liye space */
+    padding: 0 50px 0 52px !important;
+
+    border: none !important;
+    outline: none !important;
+
+    background: transparent !important;
+
+    color: #eaf3ff !important;
+
+    font-size: 14px !important;
+    line-height: 56px !important;
+}
+
+
+/* PLACEHOLDER */
+.formulas-page .formula-search input::placeholder {
+    color: #7890ad !important;
+    opacity: 1 !important;
+}
+
+
+/* CLEAR X */
+.formulas-page #clearGlobalSearch {
+    position: absolute !important;
+
+    right: 12px !important;
+    top: 50% !important;
+
+    width: 32px !important;
+    height: 32px !important;
+
+    transform: translateY(-50%) !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    border: none !important;
+    background: transparent !important;
+
+    color: #82b8ed !important;
+
+    z-index: 6 !important;
+}

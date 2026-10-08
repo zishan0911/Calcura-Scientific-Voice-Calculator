@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Unit Converter - Calcura</title>
+
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/sidebar.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/converter.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+<main class="converter-page">
+
+      <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside class="calcura-sidebar">
+
+        <div class="sidebar-brand">
+
+            <div class="sidebar-logo">
+                <i class="fa-solid fa-calculator"></i>
+            </div>
+
+            <div class="sidebar-brand-text">
+                <h1>Calcura</h1>
+                <span>Speak · Calculate · Explore</span>
+            </div>
+
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <a href="dashboard.html" class="sidebar-item">
+                <i class="fa-solid fa-house"></i>
+                <span>Home</span>
+            </a>
+
+            <a href="calculator.html" class="sidebar-item">
+                <i class="fa-solid fa-calculator"></i>
+                <span>Calculator</span>
+            </a>
+
+            <a href="voice-input.html" class="sidebar-item">
+                <i class="fa-solid fa-microphone"></i>
+                <span>Voice Input</span>
+            </a>
+
+            <a href="graph.html" class="sidebar-item">
+                <i class="fa-solid fa-chart-line"></i>
+                <span>Graph &amp; Plot</span>
+            </a>
+
+             <a href="ai-calculator.html" class="calcura-nav-item">
+                <i class="fa-solid fa-robot"></i>
+                <span>AI Assistant</span>
+            </a>
+
+            <a href="formulas.html" class="sidebar-item">
+                <i class="fa-solid fa-book-open"></i>
+                <span>Formula Library</span>
+            </a>
+
+            <a href="converter.html" class="sidebar-item active">
+                <i class="fa-solid fa-right-left"></i>
+                <span>Unit Converter</span>
+            </a>
+
+            <a href="history.html" class="sidebar-item">
+                <i class="fa-regular fa-clock"></i>
+                <span>History</span>
+            </a>
+
+            <a href="saved.html" class="sidebar-item">
+                <i class="fa-regular fa-bookmark"></i>
+                <span>Saved</span>
+            </a>
+
+            <a href="settings.html" class="sidebar-item">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+            </a>
+
+            <a href="profile.html" class="sidebar-item">
+                <i class="fa-solid fa-user"></i>
+                <span>Profile</span>
+            </a>
+
+            <a href="about.html" class="sidebar-item">
+                <i class="fa-solid fa-circle-info"></i>
+                <span>About</span>
+            </a>
+
+            <a href="help.html" class="sidebar-item">
+                <i class="fa-solid fa-circle-question"></i>
+                <span>Help &amp; Support</span>
+            </a>
+
+            <a href="upgrade.html"
+               class="sidebar-item">
+
+                <i class="fa-solid fa-crown"></i>
+
+                <span>
+                    Upgrade to Pro
+                </span>
+
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
+
+    <div class="converter-container">
+
+        <!-- TOP HEADER -->
+
+        <header class="converter-top-header">
+
+            <div class="converter-global-search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input
+                    type="text"
+                    id="globalSearch"
+                    placeholder="Search tools, formulas, or units..."
+                >
+            </div>
+
+            <div class="converter-header-actions">
+
+                <button class="converter-pro-btn">
+                    <i class="fa-solid fa-crown"></i>
+                    Upgrade to Pro
+                </button>
+
+                <button class="converter-notification">
+                    <i class="fa-regular fa-bell"></i>
+                </button>
+
+  <a
+                href="profile.html"
+                class="header-user">
+
+                <div
+                    class="header-avatar"
+                    id="profileAvatar"
+                >
+                    U
+                </div>
+
+                <div class="header-user-details">
+
+                    <strong id="profileName">
+                        User
+                    </strong>
+
+                    <span>
+                        Free Plan
+                    </span>
+
+                </div>
+
+                <span class="header-arrow">
+                    ⌄
+                </span>
+
+            </a>
+
+            </div>
+
+        </header>
+
+
+        <!-- PAGE CONTENT -->
+
+        <section class="converter-main">
+
+            <!-- =================================================
+                 HERO
+            ================================================== -->
+
+            <section class="converter-hero">
+
+                <div class="hero-content">
+
+                    <h1>
+                        Unit <span>Converter</span>
+                    </h1>
+
+                    <p>
+                        Convert between different units easily and accurately.
+                    </p>
+
+                </div>
+
+                <div class="hero-illustration">
+
+                    <div class="globe-icon">
+                        <i class="fa-solid fa-globe"></i>
+                    </div>
+
+                    <div class="hero-arrows">
+                        <i class="fa-solid fa-arrow-right"></i>
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </div>
+
+                </div>
+
+                <div class="hero-quote">
+                    <p>
+                        "Different units<br>
+                        Same world."
+                    </p>
+                </div>
+
+                <div class="hero-handwriting">
+                    Convert<br>
+                    Anything<br>
+                    Anywhere
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 CATEGORY TABS
+            ================================================== -->
+
+            <div class="converter-content-grid">
+
+                <div class="converter-left">
+
+                    <div class="category-tabs" id="categoryTabs">
+
+                        <button class="category-tab active"
+                                data-category="length">
+                            <i class="fa-solid fa-ruler"></i>
+                            <span>Length</span>
+                        </button>
+
+                        <button class="category-tab"
+                                data-category="weight">
+                            <i class="fa-solid fa-weight-hanging"></i>
+                            <span>Weight</span>
+                        </button>
+
+                        <button class="category-tab"
+                                data-category="temperature">
+                            <i class="fa-solid fa-temperature-half"></i>
+                            <span>Temperature</span>
+                        </button>
+
+                        <button class="category-tab"
+                                data-category="time">
+                            <i class="fa-regular fa-clock"></i>
+                            <span>Time</span>
+                        </button>
+
+                        <button class="category-tab"
+                                data-category="area">
+                            <i class="fa-solid fa-border-all"></i>
+                            <span>Area</span>
+                        </button>
+
+                        <button class="category-tab"
+                                data-category="volume">
+                            <i class="fa-solid fa-cube"></i>
+                            <span>Volume</span>
+                        </button>
+
+                        <button class="category-tab"
+                                data-category="speed">
+                            <i class="fa-solid fa-gauge-high"></i>
+                            <span>Speed</span>
+                        </button>
+
+                        <button class="category-tab"
+                                data-category="energy">
+                            <i class="fa-solid fa-bolt"></i>
+                            <span>Energy</span>
+                        </button>
+
+                        <button class="category-tab"
+                                data-category="data">
+                            <i class="fa-solid fa-database"></i>
+                            <span>Data</span>
+                        </button>
+
+                        <button class="category-tab"
+                                data-category="marks">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                            <span>Marks</span>
+                        </button>
+
+                    </div>
+
+
+                    <!-- =============================================
+                         CONVERTER CARD
+                    ============================================== -->
+
+                    <section class="converter-main-card">
+
+                        <div class="converter-card-heading">
+
+                            <div class="heading-icon" id="categoryIcon">
+                                <i class="fa-solid fa-ruler"></i>
+                            </div>
+
+                            <div>
+                                <h2 id="converterTitle">
+                                    Length Converter
+                                </h2>
+
+                                <p id="converterDescription">
+                                    Convert between meters, kilometers,
+                                    miles, feet, inches and more.
+                                </p>
+                            </div>
+
+                            <button class="switch-units-btn"
+                                    id="switchUnitsBtn">
+                                <i class="fa-solid fa-right-left"></i>
+                                Switch Units
+                            </button>
+
+                        </div>
+
+
+                        <!-- NORMAL CONVERTER -->
+
+                        <div id="normalConverter">
+
+                            <div class="converter-input-row">
+
+                                <div class="converter-input-card">
+
+                                    <label for="fromValue">
+                                        From
+                                    </label>
+
+                                    <input
+                                        type="number"
+                                        id="fromValue"
+                                        value="5"
+                                        placeholder="Enter value"
+                                    >
+
+                                    <select id="fromUnit"></select>
+
+                                </div>
+
+
+                                <button
+                                    class="swap-button"
+                                    id="swapButton"
+                                    title="Swap units">
+
+                                    <i class="fa-solid fa-right-left"></i>
+
+                                </button>
+
+
+                                <div class="converter-input-card">
+
+                                    <label for="toValue">
+                                        To
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="toValue"
+                                        value="0"
+                                        readonly
+                                    >
+
+                                    <select id="toUnit"></select>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- MARKS CONVERTER -->
+
+<!-- =====================================================
+     MARKS CONVERTER
+===================================================== -->
+
+<div id="marksConverter" class="marks-converter">
+
+    <div class="marks-input-row">
+
+        <!-- FROM -->
+
+<div class="marks-input-card">
+
+    <label for="marksValue">
+        From
+    </label>
+
+    <input
+        type="number"
+        id="marksValue"
+        placeholder="Enter value"
+        step="0.01"
+        min="0"
+    >
+
+    <select id="marksFromUnit">
+
+        <option value="percentage">
+            Percentage (%)
+        </option>
+
+        <option value="totalMarks">
+            Total Marks
+        </option>
+
+        <option value="cgpa">
+            CGPA
+        </option>
+
+        <option value="sgpa">
+            SGPA
+        </option>
+
+    </select>
+
+</div>
+
+
+        <!-- SWAP -->
+
+        <button
+            type="button"
+            id="marksSwapButton"
+            class="marks-swap-button"
+            title="Swap">
+
+            <i class="fa-solid fa-right-left"></i>
+
+        </button>
+
+
+        <!-- TO -->
+
+        <div class="marks-input-card">
+
+            <label for="marksResultValue">
+                To
+            </label>
+
+            <input
+                type="text"
+                id="marksResultValue"
+                value="0"
+                readonly
+            >
+
+           <select id="marksToUnit">
+
+    <option value="totalMarks">
+        Total Marks
+    </option>
+
+    <option value="percentage">
+        Percentage (%)
+    </option>
+
+    <option value="cgpa">
+        CGPA
+    </option>
+
+    <option value="sgpa">
+        SGPA
+    </option>
+
+</select>
+
+        </div>
+
+    </div>
+<!-- =====================================================
+     TOTAL MARKS
+===================================================== -->
+
+<div id="totalMarksSection" class="total-marks-section">
+
+    <div class="total-marks-card">
+
+        <label for="maximumMarks">
+            Maximum / Total Marks
+        </label>
+
+        <input
+            type="number"
+            id="maximumMarks"
+            placeholder="Example: 600"
+            min="1"
+            step="1"
+        >
+
+        <p>
+            Enter the maximum marks for percentage calculation.
+        </p>
+
+    </div>
+
+</div>
+
+    <!-- =================================================
+         SEMESTER INPUTS
+    ================================================= -->
+
+    <div
+        id="semesterSection"
+        class="semester-section"
+    >
+
+        <div class="semester-header">
+
+            <div>
+                <h3>
+                    Semester SGPA & Credits
+                </h3>
+
+                <p>
+                    Enter each semester's SGPA and credits
+                    to calculate your cumulative CGPA.
+                </p>
+            </div>
+
+            <button
+                type="button"
+                id="addSemesterBtn"
+                class="add-semester-btn"
+            >
+                <i class="fa-solid fa-plus"></i>
+                Add Semester
+            </button>
+
+        </div>
+
+
+        <div
+            id="semesterList"
+            class="semester-list"
+        >
+
+            <!-- Semester 1 -->
+
+            <div class="semester-row">
+
+                <div class="semester-number">
+                    Semester 1
+                </div>
+
+                <input
+                    type="number"
+                    class="semester-sgpa"
+                    placeholder="SGPA"
+                    min="0"
+                    max="10"
+                    step="0.01"
+                >
+
+                <input
+                    type="number"
+                    class="semester-credit"
+                    placeholder="Credits"
+                    min="0"
+                    step="0.01"
+                >
+
+                <button
+                    type="button"
+                    class="remove-semester"
+                    title="Remove semester"
+                >
+                    <i class="fa-solid fa-trash"></i>
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <button
+            type="button"
+            id="calculateCgpaBtn"
+            class="calculate-cgpa-btn"
+        >
+            <i class="fa-solid fa-calculator"></i>
+            Calculate CGPA
+        </button>
+
+    </div>
+
+</div>
+
+
+                        <!-- RESULT -->
+
+                        <div class="converter-result-card">
+
+                            <div class="result-heading">
+
+                                <span>Result</span>
+
+                                <div class="result-actions">
+
+                                    <button id="copyResultBtn"
+                                            title="Copy result">
+                                        <i class="fa-regular fa-copy"></i>
+                                    </button>
+
+                                    <button id="shareResultBtn"
+                                            title="Share result">
+                                        <i class="fa-solid fa-share-nodes"></i>
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                            <div class="result-main"
+                                 id="result">
+                                5 km = 3.10686 mi
+                            </div>
+
+                            <div class="result-secondary"
+                                 id="resultSecondary">
+                                1 km = 0.621371 mi
+                            </div>
+
+                        </div>
+
+                    </section>
+
+
+                    <!-- =============================================
+                         COMMON CONVERSIONS
+                    ============================================== -->
+
+                    <section class="common-conversions">
+
+                        <div class="section-title">
+                            <i class="fa-solid fa-flask"></i>
+                            <h3 id="commonTitle">
+                                Common Conversions (Length)
+                            </h3>
+                        </div>
+
+                        <div class="common-grid"
+                             id="commonConversions">
+
+                        </div>
+
+                    </section>
+
+                </div>
+
+
+                <!-- =================================================
+                     RIGHT SIDEBAR
+                ================================================== -->
+
+                <aside class="converter-right-sidebar">
+
+                    <section class="quick-convert-card">
+
+                        <div class="right-card-title">
+
+                            <i class="fa-solid fa-bolt"></i>
+
+                            <h3>Quick Convert</h3>
+
+                        </div>
+
+                        <div id="quickConvertList"></div>
+
+                    </section>
+
+
+                    <section class="converter-tips-card">
+
+                        <div class="tips-icon">
+                            <i class="fa-solid fa-lightbulb"></i>
+                        </div>
+
+                        <h3>Unit Converter Tips</h3>
+
+                        <ul>
+                            <li>
+                                <i class="fa-solid fa-check"></i>
+                                Select the correct unit category.
+                            </li>
+
+                            <li>
+                                <i class="fa-solid fa-check"></i>
+                                Enter the value and choose units.
+                            </li>
+
+                            <li>
+                                <i class="fa-solid fa-check"></i>
+                                Click swap to reverse conversion.
+                            </li>
+
+                            <li>
+                                <i class="fa-solid fa-check"></i>
+                                You can also use voice input!
+                            </li>
+                        </ul>
+
+                    </section>
+
+                </aside>
+
+            </div>
+
+
+            <!-- FOOTER -->
+
+            <footer class="converter-footer">
+
+                <span>
+                    © 2026 Calcura. All rights reserved.
+                </span>
+
+                <div>
+                    <a href="about.html">About</a>
+                    <a href="help.html">Help</a>
+
+                </div>
+
+            </footer>
+
+        </section>
+
+    </div>
+
+</main>
+
+
+<script src="../js/converter.js"></script>
+<script src="../js/sidebar.js"></script>
+
+</body>
+</html>

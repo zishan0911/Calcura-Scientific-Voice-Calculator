@@ -1,0 +1,1157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Formula Library - Calcura Admin</title>
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <!-- Formula CSS -->
+    <link
+        rel="stylesheet"
+        href="../admin-css/formulas.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     SIDEBAR
+===================================================== -->
+
+<aside
+    id="adminSidebar"
+    class="admin-sidebar"
+>
+
+
+    <!-- BRAND -->
+
+    <div class="sidebar-brand">
+
+        <div class="brand-logo">
+            C
+        </div>
+
+        <div class="brand-text">
+
+            <strong>
+                CALCURA
+            </strong>
+
+            <span>
+                Admin Panel
+            </span>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- NAVIGATION -->
+
+    <nav class="sidebar-nav">
+
+
+        <a
+            href="dashboard.html"
+            class="sidebar-link"
+        >
+            <i class="fa-solid fa-house"></i>
+            <span>Dashboard</span>
+        </a>
+
+
+        <a
+            href="users.html"
+            class="sidebar-link"
+        >
+            <i class="fa-solid fa-users"></i>
+            <span>Users</span>
+        </a>
+
+
+        <a
+            href="calculations.html"
+            class="sidebar-link"
+        >
+            <i class="fa-solid fa-calculator"></i>
+            <span>Calculations</span>
+        </a>
+
+
+        <a
+            href="formulas.html"
+            class="sidebar-link active"
+        >
+            <i class="fa-solid fa-book-open"></i>
+            <span>Formula Library</span>
+        </a>
+
+
+        <a
+            href="subscriptions.html"
+            class="sidebar-link"
+        >
+            <i class="fa-solid fa-credit-card"></i>
+            <span>Subscriptions</span>
+        </a>
+
+
+        <a
+            href="reports.html"
+            class="sidebar-link"
+        >
+            <i class="fa-solid fa-chart-column"></i>
+            <span>Reports</span>
+        </a>
+
+
+        <a
+            href="activity-logs.html"
+            class="sidebar-link"
+        >
+            <i class="fa-solid fa-file-lines"></i>
+            <span>Activity Logs</span>
+        </a>
+
+
+        <a
+            href="settings.html"
+            class="sidebar-link"
+        >
+            <i class="fa-solid fa-gear"></i>
+            <span>System Settings</span>
+        </a>
+
+
+        <a
+            href="website-content.html"
+            class="sidebar-link"
+        >
+            <i class="fa-solid fa-palette"></i>
+            <span>Website Content</span>
+        </a>
+
+
+        <a
+            href="user-accounts.html"
+            class="sidebar-link"
+        >
+            <i class="fa-solid fa-user-shield"></i>
+            <span>User Accounts</span>
+        </a>
+
+
+    </nav>
+
+
+
+    <!-- ADMIN CONTROL -->
+
+    <div class="admin-control-card">
+
+        <div class="control-icon">
+            <i class="fa-solid fa-crown"></i>
+        </div>
+
+        <div class="control-title">
+            Admin Control
+        </div>
+
+        <div class="control-highlight">
+            Full Control
+        </div>
+
+        <p>
+            You have complete<br>
+            access to manage<br>
+            Calcura.
+        </p>
+
+    </div>
+
+
+</aside>
+
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main class="admin-main">
+
+
+    <!-- =================================================
+         TOP HEADER
+    ================================================== -->
+
+    <header class="admin-header">
+
+
+        <button
+            type="button"
+            id="sidebarToggle"
+            class="sidebar-toggle"
+            title="Toggle Sidebar"
+        >
+
+            <i class="fa-solid fa-bars"></i>
+
+        </button>
+
+
+
+        <div class="global-search">
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            <input
+                type="text"
+                id="globalSearch"
+                placeholder="Search formulas, topics, categories..."
+                autocomplete="off"
+            >
+
+        </div>
+
+
+
+        <div class="header-right">
+
+
+            <button
+                type="button"
+                id="notificationButton"
+                class="header-icon-button"
+                title="Notifications"
+            >
+
+                <i class="fa-regular fa-bell"></i>
+
+                <span class="notification-dot"></span>
+
+            </button>
+
+
+
+            <button
+                type="button"
+                id="adminProfileButton"
+                class="admin-profile"
+            >
+
+                <div
+                    id="adminAvatar"
+                    class="admin-avatar"
+                >
+                    A
+                </div>
+
+                <div class="admin-profile-text">
+
+                    <strong id="adminName">
+                        Admin
+                    </strong>
+
+                    <span id="adminRole">
+                        Administrator
+                    </span>
+
+                </div>
+
+                <i class="fa-solid fa-chevron-down"></i>
+
+            </button>
+
+
+        </div>
+
+
+    </header>
+
+
+
+    <!-- =================================================
+         PAGE CONTENT
+    ================================================== -->
+
+    <section class="page-content">
+
+
+        <!-- PAGE TITLE -->
+
+        <div class="page-heading">
+
+            <div>
+
+                <h1>
+                    Formula
+                    <span>Library</span>
+                </h1>
+
+                <p>
+                    Manage and organize mathematical formulas
+                    for different topics and categories.
+                </p>
+
+            </div>
+
+
+            <button
+                type="button"
+                id="addFormulaTopButton"
+                class="primary-button"
+            >
+
+                <i class="fa-solid fa-plus"></i>
+
+                Add New Formula
+
+            </button>
+
+        </div>
+
+
+
+        <!-- =================================================
+             STAT CARDS
+        ================================================== -->
+
+        <div class="stats-grid">
+
+
+            <!-- TOTAL -->
+
+            <div class="stat-card stat-blue">
+
+                <div class="stat-icon">
+
+                    <i class="fa-solid fa-book-open"></i>
+
+                </div>
+
+                <div class="stat-content">
+
+                    <span>
+                        Total Formulas
+                    </span>
+
+                    <strong id="totalFormulas">
+                        0
+                    </strong>
+
+                    <small>
+                        All available formulas
+                    </small>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- CATEGORIES -->
+
+            <div class="stat-card stat-green">
+
+                <div class="stat-icon">
+
+                    <i class="fa-solid fa-layer-group"></i>
+
+                </div>
+
+                <div class="stat-content">
+
+                    <span>
+                        Categories
+                    </span>
+
+                    <strong id="totalCategories">
+                        0
+                    </strong>
+
+                    <small>
+                        Formula categories
+                    </small>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- MOST VIEWED -->
+
+            <div class="stat-card stat-purple">
+
+                <div class="stat-icon">
+
+                    <i class="fa-solid fa-star"></i>
+
+                </div>
+
+                <div class="stat-content">
+
+                    <span>
+                        Most Viewed
+                    </span>
+
+                    <strong
+                        id="mostViewedFormula"
+                        class="stat-text"
+                    >
+                        —
+                    </strong>
+
+                    <small>
+                        Top formula
+                    </small>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- TOTAL VIEWS -->
+
+            <div class="stat-card stat-pink">
+
+                <div class="stat-icon">
+
+                    <i class="fa-solid fa-eye"></i>
+
+                </div>
+
+                <div class="stat-content">
+
+                    <span>
+                        Total Views
+                    </span>
+
+                    <strong id="totalViews">
+                        0
+                    </strong>
+
+                    <small>
+                        Formula page views
+                    </small>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- =================================================
+             MAIN FORMULA AREA
+        ================================================== -->
+
+        <div class="formula-layout">
+
+
+            <!-- =================================================
+                 LEFT TABLE
+            ================================================== -->
+
+            <section class="formula-table-panel">
+
+
+                <!-- FILTER BAR -->
+
+                <div class="formula-toolbar">
+
+
+                    <div class="formula-search">
+
+                        <i class="fa-solid fa-magnifying-glass"></i>
+
+                        <input
+                            type="text"
+                            id="formulaSearch"
+                            placeholder="Search formulas..."
+                            autocomplete="off"
+                        >
+
+                    </div>
+
+
+
+                    <select
+                        id="categoryFilter"
+                        class="filter-select"
+                    >
+
+                        <option value="all">
+                            All Categories
+                        </option>
+
+                    </select>
+
+
+
+                    <select
+                        id="levelFilter"
+                        class="filter-select"
+                    >
+
+                        <option value="all">
+                            All Levels
+                        </option>
+
+                        <option value="School">
+                            School
+                        </option>
+
+                        <option value="College">
+                            College
+                        </option>
+
+                    </select>
+
+
+
+                    <select
+                        id="difficultyFilter"
+                        class="filter-select"
+                    >
+
+                        <option value="all">
+                            All Difficulty
+                        </option>
+
+                        <option value="Easy">
+                            Easy
+                        </option>
+
+                        <option value="Medium">
+                            Medium
+                        </option>
+
+                        <option value="Hard">
+                            Hard
+                        </option>
+
+                    </select>
+
+
+
+                    <select
+                        id="sortFilter"
+                        class="filter-select"
+                    >
+
+                        <option value="newest">
+                            Added Date
+                        </option>
+
+                        <option value="oldest">
+                            Oldest
+                        </option>
+
+                        <option value="mostViewed">
+                            Most Viewed
+                        </option>
+
+                        <option value="name">
+                            Name
+                        </option>
+
+                    </select>
+
+
+
+                    <button
+                        type="button"
+                        id="resetButton"
+                        class="reset-button"
+                    >
+                        Reset
+                    </button>
+
+
+                </div>
+
+
+
+                <!-- TABLE -->
+
+                <div class="formula-table-wrapper">
+
+                    <table class="formula-table">
+
+                        <thead>
+
+                            <tr>
+
+                                <th class="col-number">
+                                    #
+                                </th>
+
+                                <th>
+                                    Formula
+                                </th>
+
+                                <th>
+                                    Category
+                                </th>
+
+                                <th>
+                                    Level
+                                </th>
+
+                                <th>
+                                    Difficulty
+                                </th>
+
+                                <th>
+                                    Added Date
+                                </th>
+
+                                <th class="actions-heading">
+                                    Actions
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody
+                            id="formulaTableBody"
+                        >
+
+                            <tr>
+
+                                <td
+                                    colspan="7"
+                                    class="loading-cell"
+                                >
+
+                                    <i class="fa-solid fa-spinner fa-spin"></i>
+
+                                    Loading real MongoDB formulas...
+
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+
+                <!-- TABLE FOOTER -->
+
+                <div class="table-footer">
+
+
+                    <div
+                        id="paginationInfo"
+                        class="pagination-info"
+                    >
+                        Showing 0 to 0 of 0 formulas
+                    </div>
+
+
+
+                    <div
+                        id="paginationControls"
+                        class="pagination-controls"
+                    >
+                    </div>
+
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 RIGHT ADD / EDIT PANEL
+            ================================================== -->
+
+            <aside
+                id="formulaEditorPanel"
+                class="formula-editor-panel"
+            >
+
+
+                <div class="editor-heading">
+
+                    <div class="editor-title-icon">
+
+                        <i class="fa-solid fa-book"></i>
+
+                    </div>
+
+                    <div>
+
+                        <h2>
+                            Add / Edit Formula
+                        </h2>
+
+                        <p>
+                            Manage formula details
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- TABS -->
+
+                <div class="editor-tabs">
+
+                    <button
+                        type="button"
+                        id="addTab"
+                        class="editor-tab active"
+                    >
+                        Add New
+                    </button>
+
+                    <button
+                        type="button"
+                        id="editTab"
+                        class="editor-tab"
+                    >
+                        Edit Existing
+                    </button>
+
+                </div>
+
+
+
+                <!-- FORM -->
+
+                <form
+                    id="formulaForm"
+                    autocomplete="off"
+                >
+
+
+                    <input
+                        type="hidden"
+                        id="formulaId"
+                    >
+
+
+
+                    <!-- NAME -->
+
+                    <div class="form-group">
+
+                        <label for="formulaName">
+                            Formula Name
+                            <span>*</span>
+                        </label>
+
+                        <input
+                            type="text"
+                            id="formulaName"
+                            placeholder="Enter formula name"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <!-- CATEGORY -->
+
+                    <div class="form-group">
+
+                        <label for="formulaCategory">
+                            Category
+                            <span>*</span>
+                        </label>
+
+                        <select
+                            id="formulaCategory"
+                            required
+                        >
+
+                            <option value="">
+                                Select category
+                            </option>
+
+                            <option value="Algebra">
+                                Algebra
+                            </option>
+
+                            <option value="Geometry">
+                                Geometry
+                            </option>
+
+                            <option value="Trigonometry">
+                                Trigonometry
+                            </option>
+
+                            <option value="Calculus">
+                                Calculus
+                            </option>
+
+                            <option value="Logarithms">
+                                Logarithms
+                            </option>
+
+                            <option value="Exponential">
+                                Exponential
+                            </option>
+
+                            <option value="Differential Equations">
+                                Differential Equations
+                            </option>
+
+                            <option value="Linear Algebra">
+                                Linear Algebra
+                            </option>
+
+                            <option value="Statistics">
+                                Statistics
+                            </option>
+
+                            <option value="Probability">
+                                Probability
+                            </option>
+
+                            <option value="Numerical Methods">
+                                Numerical Methods
+                            </option>
+
+                            <option value="Matrix">
+                                Matrix
+                            </option>
+
+                            <option value="Other">
+                                Other
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <!-- EXPRESSION -->
+
+                    <div class="form-group">
+
+                        <label for="formulaExpression">
+
+                            Formula Expression
+                            <span>*</span>
+
+                        </label>
+
+                        <textarea
+                            id="formulaExpression"
+                            rows="4"
+                            placeholder="Enter formula (LaTeX format supported)"
+                            required
+                        ></textarea>
+
+                        <small>
+                            You can use LaTeX syntax for better formatting.
+                        </small>
+
+                    </div>
+
+
+
+                    <!-- DESCRIPTION -->
+
+                    <div class="form-group">
+
+                        <label for="formulaDescription">
+                            Description
+                        </label>
+
+                        <textarea
+                            id="formulaDescription"
+                            rows="3"
+                            placeholder="Enter formula description (optional)"
+                        ></textarea>
+
+                    </div>
+
+
+
+                    <!-- LEVEL -->
+
+                    <div class="form-group">
+
+                        <label for="formulaLevel">
+                            Level
+                        </label>
+
+                        <select id="formulaLevel">
+
+                            <option value="School">
+                                School
+                            </option>
+
+                            <option value="College" selected>
+                                College
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <!-- DIFFICULTY -->
+
+                    <div class="form-group">
+
+                        <label for="formulaDifficulty">
+                            Difficulty
+                        </label>
+
+                        <select id="formulaDifficulty">
+
+                            <option value="Easy">
+                                Easy
+                            </option>
+
+                            <option value="Medium" selected>
+                                Medium
+                            </option>
+
+                            <option value="Hard">
+                                Hard
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <!-- TAGS -->
+
+                    <div class="form-group">
+
+                        <label for="formulaTags">
+                            Tags
+                        </label>
+
+                        <input
+                            type="text"
+                            id="formulaTags"
+                            placeholder="e.g. algebra, equation, important"
+                        >
+
+                        <small>
+                            Separate tags with commas.
+                        </small>
+
+                    </div>
+
+
+
+                    <!-- STATUS -->
+
+                    <div class="form-group">
+
+                        <label>
+                            Status
+                        </label>
+
+
+                        <div class="status-options">
+
+
+                            <label class="status-option">
+
+                                <input
+                                    type="radio"
+                                    name="formulaStatus"
+                                    value="active"
+                                    checked
+                                >
+
+                                <span class="radio-custom"></span>
+
+                                <span>
+                                    Active
+                                    <small>
+                                        Visible to users
+                                    </small>
+                                </span>
+
+                            </label>
+
+
+
+                            <label class="status-option">
+
+                                <input
+                                    type="radio"
+                                    name="formulaStatus"
+                                    value="hidden"
+                                >
+
+                                <span class="radio-custom"></span>
+
+                                <span>
+                                    Hidden
+                                    <small>
+                                        Not visible to users
+                                    </small>
+                                </span>
+
+                            </label>
+
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- BUTTONS -->
+
+                    <div class="editor-actions">
+
+
+                        <button
+                            type="button"
+                            id="clearFormulaButton"
+                            class="secondary-button"
+                        >
+                            Clear
+                        </button>
+
+
+
+                        <button
+                            type="submit"
+                            id="saveFormulaButton"
+                            class="primary-button"
+                        >
+
+                            <i class="fa-solid fa-plus"></i>
+
+                            Add Formula
+
+                        </button>
+
+
+                    </div>
+
+
+                </form>
+
+
+            </aside>
+
+
+        </div>
+
+
+    </section>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     VIEW MODAL
+===================================================== -->
+
+<div
+    id="formulaViewModal"
+    class="modal hidden"
+>
+
+    <div class="modal-box">
+
+
+        <button
+            type="button"
+            id="formulaModalClose"
+            class="modal-close"
+        >
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+
+
+        <div
+            id="formulaModalContent"
+            class="modal-content"
+        >
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     TOAST
+===================================================== -->
+
+<div
+    id="adminToast"
+    class="admin-toast hidden"
+>
+
+    <i class="fa-solid fa-circle-check"></i>
+
+    <span id="toastMessage">
+        Done
+    </span>
+
+</div>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script
+    src="../admin-js/formulas.js"
+></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        CALCURA - Website Content
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../admin-css/website-content.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<div class="admin-layout">
+
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside
+        class="admin-sidebar"
+        id="adminSidebar"
+    >
+
+        <div class="sidebar-brand">
+
+            <div class="brand-logo">
+                <span>C</span>
+            </div>
+
+            <div class="brand-text">
+
+                <h2>
+                    CALCURA
+                </h2>
+
+                <p>
+                    Admin Panel
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <a
+                href="dashboard.html"
+                class="sidebar-link"
+            >
+                <i class="fa-solid fa-house"></i>
+                <span>Dashboard</span>
+            </a>
+
+
+            <a
+                href="users.html"
+                class="sidebar-link"
+            >
+                <i class="fa-solid fa-users"></i>
+                <span>Users</span>
+            </a>
+
+
+            <a
+                href="calculations.html"
+                class="sidebar-link"
+            >
+                <i class="fa-solid fa-calculator"></i>
+                <span>Calculations</span>
+            </a>
+
+
+            <a
+                href="formulas.html"
+                class="sidebar-link"
+            >
+                <i class="fa-solid fa-book-open"></i>
+                <span>Formula Library</span>
+            </a>
+
+
+            <a
+                href="subscriptions.html"
+                class="sidebar-link"
+            >
+                <i class="fa-solid fa-credit-card"></i>
+                <span>Subscriptions</span>
+            </a>
+
+
+            <a
+                href="reports.html"
+                class="sidebar-link"
+            >
+                <i class="fa-solid fa-chart-column"></i>
+                <span>Reports</span>
+            </a>
+
+
+            <a
+                href="activity-logs.html"
+                class="sidebar-link"
+            >
+                <i class="fa-solid fa-file-lines"></i>
+                <span>Activity Logs</span>
+            </a>
+
+
+            <a
+                href="system-settings.html"
+                class="sidebar-link"
+            >
+                <i class="fa-solid fa-gear"></i>
+                <span>System Settings</span>
+            </a>
+
+
+            <a
+                href="website-content.html"
+                class="sidebar-link active"
+            >
+                <i class="fa-solid fa-palette"></i>
+                <span>Website Content</span>
+            </a>
+
+
+            <a
+                href="user-accounts.html"
+                class="sidebar-link"
+            >
+                <i class="fa-solid fa-user-shield"></i>
+                <span>User Accounts</span>
+            </a>
+
+
+        </nav>
+
+
+        <!-- ADMIN CONTROL -->
+
+        <div class="admin-control-card">
+
+            <div class="control-icon">
+
+                <i class="fa-solid fa-crown"></i>
+
+            </div>
+
+            <h3>
+                Admin Control
+            </h3>
+
+            <strong>
+                Full Control
+            </strong>
+
+            <p>
+                You have complete access
+                to manage Calcura.
+            </p>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <div class="admin-main">
+
+
+        <!-- HEADER -->
+
+        <header class="admin-header">
+
+
+            <button
+                type="button"
+                class="sidebar-toggle"
+                id="sidebarToggle"
+            >
+
+                <i class="fa-solid fa-bars"></i>
+
+            </button>
+
+
+            <div class="global-search">
+
+                <i
+                    class="fa-solid fa-magnifying-glass"
+                ></i>
+
+                <input
+                    type="text"
+                    id="globalSearch"
+                    placeholder="Search pages, sections, titles, content..."
+                >
+
+            </div>
+
+
+            <div class="header-right">
+
+
+                <button
+                    class="notification-button"
+                    id="notificationButton"
+                >
+
+                    <i
+                        class="fa-regular fa-bell"
+                    ></i>
+
+                    <span
+                        id="notificationDot"
+                    ></span>
+
+                </button>
+
+
+                <div class="header-divider"></div>
+
+
+                <button
+                    class="admin-profile"
+                    id="adminProfileButton"
+                >
+
+                    <span
+                        class="admin-avatar"
+                        id="adminAvatar"
+                    >
+                        A
+                    </span>
+
+                    <span
+                        class="admin-name"
+                        id="adminName"
+                    >
+                        Admin
+                    </span>
+
+                    <i
+                        class="fa-solid fa-chevron-down"
+                    ></i>
+
+                </button>
+
+
+                <div
+                    class="profile-dropdown"
+                    id="profileDropdown"
+                >
+
+                    <div class="profile-dropdown-header">
+
+                        <div
+                            class="dropdown-avatar"
+                            id="dropdownAvatar"
+                        >
+                            A
+                        </div>
+
+                        <div>
+
+                            <strong id="dropdownName">
+                                Admin
+                            </strong>
+
+                            <span id="dropdownRole">
+                                Administrator
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        id="logoutButton"
+                    >
+
+                        <i
+                            class="fa-solid fa-right-from-bracket"
+                        ></i>
+
+                        Logout
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =====================================================
+             PAGE CONTENT
+        ====================================================== -->
+
+        <main class="page-content">
+
+
+            <!-- PAGE HEADING -->
+
+            <section class="page-heading">
+
+                <div>
+
+                    <h1>
+                        Website
+                        <span>Content</span>
+                    </h1>
+
+                    <p>
+                        Manage and update website content,
+                        pages, banners and static information.
+                    </p>
+
+                </div>
+
+
+                <button
+                    class="add-content-button"
+                    id="addContentButton"
+                >
+
+                    <i
+                        class="fa-solid fa-plus"
+                    ></i>
+
+                    Add New Content
+
+                </button>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 STAT CARDS
+            ================================================== -->
+
+            <section class="stats-grid">
+
+
+                <div class="stat-card purple">
+
+                    <div class="stat-icon">
+
+                        <i
+                            class="fa-solid fa-file-lines"
+                        ></i>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Total Pages
+                        </span>
+
+                        <strong id="totalPages">
+                            0
+                        </strong>
+
+                        <small>
+                            All website pages
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="stat-card cyan">
+
+                    <div class="stat-icon">
+
+                        <i
+                            class="fa-solid fa-file-circle-check"
+                        ></i>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Published Pages
+                        </span>
+
+                        <strong id="publishedPages">
+                            0
+                        </strong>
+
+                        <small>
+                            Currently live
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="stat-card orange">
+
+                    <div class="stat-icon">
+
+                        <i
+                            class="fa-solid fa-eye"
+                        ></i>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Total Views
+                        </span>
+
+                        <strong id="totalViews">
+                            0
+                        </strong>
+
+                        <small>
+                            Tracked page views
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="stat-card pink">
+
+                    <div class="stat-icon">
+
+                        <i
+                            class="fa-solid fa-pen-to-square"
+                        ></i>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Last Updated
+                        </span>
+
+                        <strong
+                            id="lastUpdated"
+                        >
+                            —
+                        </strong>
+
+                        <small
+                            id="lastUpdatedBy"
+                        >
+                            No update recorded
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 SECTION TABS
+            ================================================== -->
+
+            <section class="section-tabs">
+
+    <button
+        class="section-tab active"
+        data-section=""
+        type="button"
+    >
+        <i class="fa-solid fa-layer-group"></i>
+        All Pages
+    </button>
+
+    <button
+        class="section-tab"
+        data-section="Home"
+        type="button"
+    >
+        <i class="fa-solid fa-house"></i>
+        Home
+    </button>
+
+    <button
+        class="section-tab"
+        data-section="About"
+        type="button"
+    >
+        <i class="fa-solid fa-file-lines"></i>
+        About
+    </button>
+
+    <button
+        class="section-tab"
+        data-section="Help"
+        type="button"
+    >
+        <i class="fa-solid fa-circle-question"></i>
+        Help & Support
+    </button>
+
+    <button
+        class="section-tab"
+        data-section="Upgrade"
+        type="button"
+    >
+        <i class="fa-solid fa-arrow-up"></i>
+        Upgrade
+    </button>
+
+    <button
+        class="section-tab"
+        data-section="Payment"
+        type="button"
+    >
+        <i class="fa-solid fa-credit-card"></i>
+        Payment
+    </button>
+
+    <button
+        class="section-tab"
+        data-section="Success"
+        type="button"
+    >
+        <i class="fa-solid fa-circle-check"></i>
+        Success
+    </button>
+
+</section>
+
+
+
+            <!-- =================================================
+                 FILTER BAR
+            ================================================== -->
+
+            <section class="content-panel">
+
+
+                <div class="filter-bar">
+
+
+                    <div class="table-search">
+
+                        <i
+                            class="fa-solid fa-magnifying-glass"
+                        ></i>
+
+                        <input
+                            type="text"
+                            id="pageSearch"
+                            placeholder="Search pages by title, slug or content..."
+                        >
+
+                    </div>
+
+
+                    <select
+                        id="statusFilter"
+                        class="filter-select"
+                    >
+
+                        <option value="">
+                            All Status
+                        </option>
+
+                        <option value="Published">
+                            Published
+                        </option>
+
+                        <option value="Draft">
+                            Draft
+                        </option>
+
+                    </select>
+
+
+                  <select
+    id="sectionFilter"
+    class="filter-select"
+>
+
+    <option value="">
+        All Sections
+    </option>
+
+    <option value="Home">
+        Home
+    </option>
+
+    <option value="About">
+        About
+    </option>
+
+    <option value="Help">
+        Help & Support
+    </option>
+
+    <option value="Upgrade">
+        Upgrade
+    </option>
+
+    <option value="Payment">
+        Payment
+    </option>
+
+    <option value="Success">
+        Success
+    </option>
+
+</select>
+
+
+                    <div class="date-filter">
+
+                        <i
+                            class="fa-regular fa-calendar"
+                        ></i>
+
+                        <span>
+                            Last Updated
+                        </span>
+
+                    </div>
+
+
+                    <button
+                        class="reset-button"
+                        id="resetButton"
+                    >
+                        Reset
+                    </button>
+
+                </div>
+
+
+
+                <!-- TABLE -->
+
+                <div class="table-wrapper">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>#</th>
+
+                                <th>
+                                    Page Title
+                                </th>
+
+                                <th>
+                                    Section
+                                </th>
+
+                                <th>
+                                    URL / Slug
+                                </th>
+
+                                <th>
+                                    Status
+                                </th>
+
+                                <th>
+                                    Last Updated
+                                </th>
+
+                                <th>
+                                    Views
+                                </th>
+
+                                <th>
+                                    Actions
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody
+                            id="pagesTableBody"
+                        >
+
+                            <tr>
+
+                                <td
+                                    colspan="8"
+                                    class="loading-row"
+                                >
+
+                                    <i
+                                        class="fa-solid fa-spinner fa-spin"
+                                    ></i>
+
+                                    Loading website content...
+
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+
+                <!-- PAGINATION -->
+
+                <div class="pagination-area">
+
+
+                    <span
+                        id="showingText"
+                    >
+                        Showing 0 pages
+                    </span>
+
+
+                    <div class="pagination">
+
+                        <button
+                            id="previousPage"
+                        >
+                            <i
+                                class="fa-solid fa-chevron-left"
+                            ></i>
+                        </button>
+
+
+                        <button
+                            class="page-number active"
+                            id="currentPage"
+                        >
+                            1
+                        </button>
+
+
+                        <button
+                            id="nextPage"
+                        >
+                            <i
+                                class="fa-solid fa-chevron-right"
+                            ></i>
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     EDITOR MODAL
+========================================================= -->
+
+<div
+    class="modal-overlay"
+    id="contentModal"
+>
+
+    <div class="content-modal">
+
+
+        <div class="modal-header">
+
+            <div>
+
+                <h2 id="modalTitle">
+                    Add New Content
+                </h2>
+
+                <p>
+                    Create or update website content.
+                </p>
+
+            </div>
+
+
+            <button
+                id="closeModal"
+                class="modal-close"
+            >
+
+                <i
+                    class="fa-solid fa-xmark"
+                ></i>
+
+            </button>
+
+        </div>
+
+
+
+        <form id="contentForm">
+
+
+            <input
+                type="hidden"
+                id="contentId"
+            >
+
+
+            <div class="form-grid">
+
+
+                <div class="form-group">
+
+                    <label>
+                        Page Title
+                    </label>
+
+                    <input
+                        type="text"
+                        id="contentTitle"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        URL / Slug
+                    </label>
+
+                    <input
+                        type="text"
+                        id="contentSlug"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Section
+                    </label>
+
+                    <select
+    id="contentSection"
+    required
+>
+
+    <option value="Home">
+        Home
+    </option>
+
+    <option value="About">
+        About
+    </option>
+
+    <option value="Help">
+        Help & Support
+    </option>
+
+    <option value="Upgrade">
+        Upgrade
+    </option>
+
+    <option value="Payment">
+        Payment
+    </option>
+
+    <option value="Success">
+        Success
+    </option>
+
+</select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Status
+                    </label>
+
+                    <select
+                        id="contentStatus"
+                    >
+
+                        <option value="Published">
+                            Published
+                        </option>
+
+                        <option value="Draft">
+                            Draft
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Content
+                </label>
+
+                <textarea
+                    id="contentBody"
+                    rows="10"
+                    placeholder="Enter page content..."
+                ></textarea>
+
+            </div>
+
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    class="cancel-button"
+                    id="cancelModal"
+                >
+                    Cancel
+                </button>
+
+
+                <button
+                    type="submit"
+                    class="save-button"
+                >
+
+                    <i
+                        class="fa-solid fa-floppy-disk"
+                    ></i>
+
+                    Save Content
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     VIEW MODAL
+========================================================= -->
+
+<div
+    class="modal-overlay"
+    id="viewModal"
+>
+
+    <div class="view-modal">
+
+        <div class="modal-header">
+
+            <div>
+
+                <h2 id="viewTitle">
+                    Page
+                </h2>
+
+                <p id="viewSlug">
+                    /
+                </p>
+
+            </div>
+
+
+            <button
+                class="modal-close"
+                id="closeViewModal"
+            >
+
+                <i
+                    class="fa-solid fa-xmark"
+                ></i>
+
+            </button>
+
+        </div>
+
+
+        <div
+            class="page-preview"
+            id="pagePreview"
+        ></div>
+
+    </div>
+
+</div>
+
+
+<script
+    src="../admin-js/website-content.js"
+></script>
+
+</body>
+
+</html>

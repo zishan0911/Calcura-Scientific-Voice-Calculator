@@ -1,0 +1,1528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="CALCURA - Scientific Voice Calculator. Speak, calculate and explore mathematics with powerful tools."
+    >
+
+    <title> | Speak · Calculate · Explore</title>
+
+    <!-- Main Landing Page CSS -->
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/landing.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+</head>
+
+<body>
+
+<!-- =========================================================
+     PAGE LOADER
+========================================================= -->
+
+<div id="pageLoader" class="page-loader">
+
+    <div class="loader-logo">
+        <span>C</span>
+    </div>
+
+    <div class="loader-name">CALCURA</div>
+
+    <div class="loader-bar">
+        <div class="loader-progress"></div>
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     BACKGROUND EFFECTS
+========================================================= -->
+
+<div class="background-effects">
+
+    <div class="glow glow-one"></div>
+    <div class="glow glow-two"></div>
+    <div class="glow glow-three"></div>
+
+    <div class="grid-background"></div>
+
+</div>
+
+
+<!-- =========================================================
+     HEADER / NAVBAR
+========================================================= -->
+
+<header class="landing-header" id="landingHeader">
+
+    <div class="header-container">
+
+        <!-- Logo -->
+
+        <a href="index.html" class="brand-logo">
+
+            <div class="brand-icon">
+                <i class="fa-solid fa-calculator"></i>
+            </div>
+
+            <div class="brand-content">
+
+                <div class="brand-name">
+                    CALCURA
+                </div>
+
+                <div class="brand-tagline">
+                    Speak · Calculate · Explore
+                </div>
+
+            </div>
+
+        </a>
+
+
+        <!-- Desktop Navigation -->
+
+        <nav class="desktop-navigation">
+
+            <a
+                href="#home"
+                class="nav-link active"
+                data-scroll="home"
+            >
+                Home
+            </a>
+
+            <a
+                href="#features"
+                class="nav-link"
+                data-scroll="features"
+            >
+                Features
+            </a>
+
+            <a
+                href="#how-it-works"
+                class="nav-link"
+                data-scroll="how-it-works"
+            >
+                How It Works
+            </a>
+
+            <a
+                href="#subjects"
+                class="nav-link"
+                data-scroll="subjects"
+            >
+                Subjects
+            </a>
+
+            <a
+                href="#about"
+                class="nav-link"
+                data-scroll="about"
+            >
+                About
+            </a>
+
+        </nav>
+
+
+        <!-- Header Actions -->
+
+        <div class="header-actions">
+
+            <a
+                href="login.html"
+                class="btn btn-login"
+                id="headerLoginBtn"
+            >
+                Login
+            </a>
+
+            <a
+                href="register.html"
+                class="btn btn-signup"
+                id="headerSignupBtn"
+            >
+                Sign Up
+            </a>
+
+        </div>
+
+
+        <!-- Mobile Menu -->
+
+        <button
+            class="mobile-menu-btn"
+            id="mobileMenuBtn"
+            aria-label="Open navigation menu"
+            type="button"
+        >
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </button>
+
+    </div>
+
+
+    <!-- Mobile Navigation -->
+
+    <div
+        class="mobile-navigation"
+        id="mobileNavigation"
+    >
+
+        <a href="#home" class="mobile-nav-link">
+            <i class="fa-solid fa-house"></i>
+            Home
+        </a>
+
+        <a href="#features" class="mobile-nav-link">
+            <i class="fa-solid fa-layer-group"></i>
+            Features
+        </a>
+
+        <a href="#how-it-works" class="mobile-nav-link">
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+            How It Works
+        </a>
+
+        <a href="#subjects" class="mobile-nav-link">
+            <i class="fa-solid fa-book"></i>
+            Subjects
+        </a>
+
+        <a href="#about" class="mobile-nav-link">
+            <i class="fa-solid fa-circle-info"></i>
+            About
+        </a>
+
+        <div class="mobile-auth-buttons">
+
+            <a
+                href="login.html"
+                class="mobile-login"
+            >
+                Login
+            </a>
+
+            <a
+                href="register.html"
+                class="mobile-signup"
+            >
+                Sign Up
+            </a>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- =========================================================
+     MAIN CONTENT
+========================================================= -->
+
+<main>
+
+
+<!-- =========================================================
+     HERO SECTION
+========================================================= -->
+
+<section
+    class="hero-section"
+    id="home"
+>
+
+    <div class="hero-container">
+
+
+        <!-- LEFT CONTENT -->
+
+        <div class="hero-content">
+
+
+            <!-- Small Badge -->
+
+            <div class="hero-badge">
+
+                <span class="badge-icon">
+                    <i class="fa-solid fa-wave-square"></i>
+                </span>
+
+                <span>
+                    Smart Calculations, Just a Voice Away
+                </span>
+
+                <span class="badge-pulse"></span>
+
+            </div>
+
+
+            <!-- Main Heading -->
+
+            <h1 class="hero-title">
+
+                Scientific
+
+                <span class="gradient-text">
+                    Voice
+                </span>
+
+                <br>
+
+                Calculator
+
+            </h1>
+
+
+            <!-- Description -->
+
+            <p class="hero-description">
+
+                Calculate faster, smarter, and hands-free.
+                Speak your mathematical expressions, get instant
+                results, explore graphs, formulas and understand
+                every answer.
+
+            </p>
+
+
+            <!-- Hero Buttons -->
+
+            <div class="hero-buttons">
+
+                <a
+                    href="pages/dashboard.html"
+                    class="hero-primary-btn"
+                    id="heroGetStarted"
+                >
+
+                    <span>
+                        Get Started
+                    </span>
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+            </div>
+
+
+            <!-- Trust Information -->
+
+            <div class="hero-trust">
+
+                <div class="trust-item">
+
+                    <i class="fa-solid fa-users"></i>
+
+                    <span>
+                        Trusted by Students,
+                        Professionals & Learners
+                    </span>
+
+                </div>
+
+
+                <div class="trust-divider"></div>
+
+
+                <div class="trust-item">
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                    <span>
+                        100% Free to Start
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- Floating Math Symbols -->
+
+            <div class="hero-math-symbol symbol-one">
+                ∫
+            </div>
+
+            <div class="hero-math-symbol symbol-two">
+                π
+            </div>
+
+            <div class="hero-math-symbol symbol-three">
+                x²
+            </div>
+
+        </div>
+
+
+        <!-- =====================================================
+             RIGHT HERO VISUAL
+        ====================================================== -->
+
+        <div class="hero-visual">
+
+
+            <!-- Mathematical Background -->
+
+            <div class="math-equation equation-one">
+                E = mc²
+            </div>
+
+            <div class="math-equation equation-two">
+                ∫ f(x) dx
+            </div>
+
+            <div class="math-equation equation-three">
+                a² + b² = c²
+            </div>
+
+
+            <!-- Handwritten Message -->
+
+            <div class="handwritten-note">
+
+                <span>
+                    Math
+                </span>
+
+                <span>
+                    Made
+                </span>
+
+                <span>
+                    Easier
+                </span>
+
+                <span>
+                    with AI
+                </span>
+
+                <div class="note-line"></div>
+
+            </div>
+
+
+            <!-- Laptop -->
+
+            <div
+                class="laptop"
+                id="calculatorPreview"
+            >
+
+                <div class="laptop-screen">
+
+                    <div class="laptop-topbar">
+
+                        <div class="preview-brand">
+
+                            <div class="preview-logo">
+                                <i class="fa-solid fa-calculator"></i>
+                            </div>
+
+                            <span>
+                                CALCURA
+                            </span>
+
+                        </div>
+
+                        <div class="preview-status">
+
+                            <span class="status-dot"></span>
+
+                            Ready
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Calculator Preview -->
+
+                    <div class="preview-app">
+
+
+                        <!-- Preview Sidebar -->
+
+                        <aside class="preview-sidebar">
+
+                            <div class="preview-side-logo">
+                                M
+                            </div>
+
+                            <div class="preview-side-item active">
+                                <i class="fa-solid fa-house"></i>
+                                <span>Home</span>
+                            </div>
+
+                            <div class="preview-side-item">
+                                <i class="fa-solid fa-calculator"></i>
+                                <span>Calculator</span>
+                            </div>
+
+                            <div class="preview-side-item">
+                                <i class="fa-solid fa-microphone"></i>
+                                <span>Voice Input</span>
+                            </div>
+
+                            <div class="preview-side-item">
+                                <i class="fa-solid fa-clock"></i>
+                                <span>History</span>
+                            </div>
+
+                            <div class="preview-side-item">
+                                <i class="fa-solid fa-bookmark"></i>
+                                <span>Saved</span>
+                            </div>
+
+                            <div class="preview-side-item">
+                                <i class="fa-solid fa-gear"></i>
+                                <span>Settings</span>
+                            </div>
+
+                        </aside>
+
+
+                        <!-- Preview Main -->
+
+                        <div class="preview-main">
+
+
+                            <div class="preview-expression">
+
+                                <span>
+                                    ∫ sin(x) dx
+                                </span>
+
+                                <button
+                                    type="button"
+                                    class="preview-mic"
+                                    id="previewMicBtn"
+                                    aria-label="Voice input preview"
+                                >
+
+                                    <i class="fa-solid fa-microphone"></i>
+
+                                </button>
+
+                            </div>
+
+
+                            <button
+                                type="button"
+                                class="preview-calculate"
+                                id="previewCalculateBtn"
+                            >
+                                Calculate
+                            </button>
+
+
+                            <div class="preview-result">
+
+                                <span class="result-label">
+                                    Result:
+                                </span>
+
+                                <span class="result-equation">
+                                    −cos(x) + C
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Laptop Base -->
+
+                <div class="laptop-base">
+
+                    <div class="laptop-keyboard"></div>
+
+                    <div class="laptop-trackpad"></div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Smartphone -->
+
+            <div class="phone">
+
+                <div class="phone-frame">
+
+                    <div class="phone-speaker"></div>
+
+                    <div class="phone-screen">
+
+
+                        <div class="phone-header">
+
+                            <div class="phone-logo">
+                                M
+                            </div>
+
+                            <span>
+                                CALCURA
+                            </span>
+
+                        </div>
+
+
+                        <div class="phone-mic-container">
+
+                            <div class="phone-mic-ring">
+
+                                <button
+                                    type="button"
+                                    class="phone-mic-btn"
+                                    id="phoneMicBtn"
+                                >
+
+                                    <i class="fa-solid fa-microphone"></i>
+
+                                </button>
+
+                            </div>
+
+                            <p>
+                                Speak to Calculate
+                            </p>
+
+                        </div>
+
+
+                        <div class="phone-wave">
+
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+
+                        </div>
+
+
+                        <div class="phone-bottom-nav">
+
+                            <div class="phone-nav active">
+                                <i class="fa-solid fa-house"></i>
+                                <span>Home</span>
+                            </div>
+
+                            <div class="phone-nav">
+                                <i class="fa-solid fa-clock"></i>
+                                <span>History</span>
+                            </div>
+
+                            <div class="phone-nav">
+                                <i class="fa-solid fa-gear"></i>
+                                <span>Settings</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Blue Glow -->
+
+            <div class="visual-glow"></div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         FEATURE CARDS
+    ====================================================== -->
+
+    <div
+        class="hero-features"
+        id="features"
+    >
+
+
+        <!-- Card 1 -->
+
+        <a
+            href="login.html"
+            class="hero-feature-card"
+            data-feature="voice"
+        >
+
+            <div class="feature-icon voice-icon">
+
+                <i class="fa-solid fa-microphone"></i>
+
+            </div>
+
+            <div class="feature-content">
+
+                <h3>
+                    Voice Input
+                </h3>
+
+                <p>
+                    Just speak your expression
+                    and get results instantly.
+                </p>
+
+            </div>
+
+            <i class="fa-solid fa-arrow-right feature-arrow"></i>
+
+        </a>
+
+
+        <!-- Card 2 -->
+
+        <a
+            href="login.html"
+            class="hero-feature-card"
+            data-feature="calculator"
+        >
+
+            <div class="feature-icon calculator-icon">
+
+                <i class="fa-solid fa-calculator"></i>
+
+            </div>
+
+            <div class="feature-content">
+
+                <h3>
+                    Advanced Calculator
+                </h3>
+
+                <p>
+                    From basic to complex
+                    scientific calculations.
+                </p>
+
+            </div>
+
+            <i class="fa-solid fa-arrow-right feature-arrow"></i>
+
+        </a>
+
+
+        <!-- Card 3 -->
+
+        <a
+            href="login.html"
+            class="hero-feature-card"
+            data-feature="saved"
+        >
+
+            <div class="feature-icon cloud-icon">
+
+                <i class="fa-solid fa-cloud"></i>
+
+            </div>
+
+            <div class="feature-content">
+
+                <h3>
+                    Save & Access
+                </h3>
+
+                <p>
+                    Keep your history and
+                    favorite calculations safely.
+                </p>
+
+            </div>
+
+            <i class="fa-solid fa-arrow-right feature-arrow"></i>
+
+        </a>
+
+
+        <!-- Card 4 -->
+
+        <a
+            href="login.html"
+            class="hero-feature-card"
+            data-feature="ai"
+        >
+
+            <div class="feature-icon ai-icon">
+
+                <i class="fa-solid fa-microchip"></i>
+
+            </div>
+
+            <div class="feature-content">
+
+                <h3>
+                    AI-Powered
+                </h3>
+
+                <p>
+                    Smarter mathematical
+                    solutions and explanations.
+                </p>
+
+            </div>
+
+            <i class="fa-solid fa-arrow-right feature-arrow"></i>
+
+        </a>
+
+    </div>
+
+
+    <!-- Scroll Indicator -->
+
+    <a
+        href="#how-it-works"
+        class="scroll-indicator"
+        data-scroll="how-it-works"
+    >
+
+        <span>
+            Scroll Down
+        </span>
+
+        <i class="fa-solid fa-chevron-down"></i>
+
+    </a>
+
+</section>
+
+
+<!-- =========================================================
+     HOW IT WORKS
+========================================================= -->
+
+<section
+    class="landing-section how-section"
+    id="how-it-works"
+>
+
+    <div class="section-heading">
+
+        <span class="section-badge">
+            Simple Process
+        </span>
+
+        <h2>
+            How <span>CALCURA</span> Works
+        </h2>
+
+        <p>
+            Solve mathematical problems in just a few simple steps.
+        </p>
+
+    </div>
+
+
+    <div class="steps-container">
+
+
+        <div class="step-card">
+
+            <div class="step-number">
+                01
+            </div>
+
+            <div class="step-icon">
+                <i class="fa-solid fa-microphone"></i>
+            </div>
+
+            <h3>
+                Speak or Type
+            </h3>
+
+            <p>
+                Enter your mathematical expression
+                using your keyboard or voice.
+            </p>
+
+        </div>
+
+
+        <div class="step-connector"></div>
+
+
+        <div class="step-card">
+
+            <div class="step-number">
+                02
+            </div>
+
+            <div class="step-icon">
+                <i class="fa-solid fa-brain"></i>
+            </div>
+
+            <h3>
+                CALCURA Understands
+            </h3>
+
+            <p>
+                CALCURA converts natural language
+                into a mathematical expression.
+            </p>
+
+        </div>
+
+
+        <div class="step-connector"></div>
+
+
+        <div class="step-card">
+
+            <div class="step-number">
+                03
+            </div>
+
+            <div class="step-icon">
+                <i class="fa-solid fa-square-root-variable"></i>
+            </div>
+
+            <h3>
+                Get Your Answer
+            </h3>
+
+            <p>
+                Receive the result with clear
+                explanations and calculations.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     SUBJECTS
+========================================================= -->
+
+<section
+    class="landing-section subjects-section"
+    id="subjects"
+>
+
+    <div class="section-heading">
+
+        <span class="section-badge">
+            Mathematics
+        </span>
+
+        <h2>
+            One Platform for
+            <span>Every Level</span>
+        </h2>
+
+        <p>
+            From school mathematics to advanced college calculations.
+        </p>
+
+    </div>
+
+
+    <div class="subject-grid">
+
+
+        <div class="subject-card">
+
+            <div class="subject-icon">
+                <i class="fa-solid fa-plus-minus"></i>
+            </div>
+
+            <h3>
+                Basic Mathematics
+            </h3>
+
+            <p>
+                Arithmetic, fractions, percentages,
+                ratios and more.
+            </p>
+
+        </div>
+
+
+        <div class="subject-card">
+
+            <div class="subject-icon">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+
+            <h3>
+                Algebra
+            </h3>
+
+            <p>
+                Equations, polynomials,
+                factorization and expressions.
+            </p>
+
+        </div>
+
+
+        <div class="subject-card">
+
+            <div class="subject-icon">
+                <i class="fa-solid fa-wave-square"></i>
+            </div>
+
+            <h3>
+                Trigonometry
+            </h3>
+
+            <p>
+                Sin, cos, tan, inverse functions
+                and identities.
+            </p>
+
+        </div>
+
+
+        <div class="subject-card">
+
+            <div class="subject-icon">
+                <i class="fa-solid fa-infinity"></i>
+            </div>
+
+            <h3>
+                Calculus
+            </h3>
+
+            <p>
+                Limits, differentiation,
+                integration and applications.
+            </p>
+
+        </div>
+
+
+        <div class="subject-card">
+
+            <div class="subject-icon">
+                <i class="fa-solid fa-chart-line"></i>
+            </div>
+
+            <h3>
+                Graphs
+            </h3>
+
+            <p>
+                Plot mathematical functions
+                and explore visualizations.
+            </p>
+
+        </div>
+
+
+        <div class="subject-card">
+
+            <div class="subject-icon">
+                <i class="fa-solid fa-table-cells"></i>
+            </div>
+
+            <h3>
+                Matrices
+            </h3>
+
+            <p>
+                Matrix operations, determinants
+                and linear algebra.
+            </p>
+
+        </div>
+
+
+        <div class="subject-card">
+
+            <div class="subject-icon">
+                <i class="fa-solid fa-ruler-combined"></i>
+            </div>
+
+            <h3>
+                Geometry
+            </h3>
+
+            <p>
+                Shapes, angles, distance,
+                area and volume.
+            </p>
+
+        </div>
+
+
+        <div class="subject-card">
+
+            <div class="subject-icon">
+                <i class="fa-solid fa-chart-simple"></i>
+            </div>
+
+            <h3>
+                Statistics
+            </h3>
+
+            <p>
+                Mean, median, probability,
+                variance and standard deviation.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     ABOUT SECTION
+========================================================= -->
+
+<section
+    class="landing-section about-section"
+    id="about"
+>
+
+    <div class="about-container">
+
+
+        <div class="about-content">
+
+            <span class="section-badge">
+                About CALCURA
+            </span>
+
+            <h2>
+                Mathematics Made
+                <span>Simple.</span>
+            </h2>
+
+            <p>
+                CALCURA is designed to make mathematics easier,
+                faster and more interactive for students,
+                professionals and lifelong learners.
+            </p>
+
+            <p>
+                Whether you type an equation or simply speak
+                naturally, CALCURA helps transform your problem
+                into a clear mathematical solution.
+            </p>
+
+
+            <div class="about-points">
+
+                <div>
+                    <i class="fa-solid fa-circle-check"></i>
+                    School & College Mathematics
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-circle-check"></i>
+                    Voice Powered Calculations
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-circle-check"></i>
+                    Step-by-Step Solutions
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-circle-check"></i>
+                    Graphs & Visualizations
+                </div>
+
+            </div>
+
+
+            <a
+                href="register.html"
+                class="about-btn"
+            >
+                Start Using CALCURA
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+
+        <div class="about-visual">
+
+            <div class="about-orbit orbit-one"></div>
+            <div class="about-orbit orbit-two"></div>
+
+            <div class="about-symbol symbol-pi">
+                π
+            </div>
+
+            <div class="about-symbol symbol-sigma">
+                Σ
+            </div>
+
+            <div class="about-symbol symbol-integral">
+                ∫
+            </div>
+
+            <div class="about-center">
+
+                <div class="about-logo">
+                    M
+                </div>
+
+                <strong>
+                    CALCURA
+                </strong>
+
+                <span>
+                    Speak · Calculate · Explore
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     FINAL CTA
+========================================================= -->
+
+<section class="cta-section">
+
+    <div class="cta-glow"></div>
+
+    <div class="cta-content">
+
+        <div class="cta-icon">
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+        </div>
+
+        <h2>
+            Ready to make mathematics
+            <span>easier?</span>
+        </h2>
+
+        <p>
+            Start calculating with CALCURA today.
+        </p>
+
+        <div class="cta-buttons">
+
+            <a
+                href="register.html"
+                class="cta-primary"
+            >
+                Get Started
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+            <a
+                href="login.html"
+                class="cta-secondary"
+            >
+                Login
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer class="landing-footer">
+
+    <div class="footer-container">
+
+
+        <div class="footer-brand">
+
+            <a
+                href="index.html"
+                class="footer-logo"
+            >
+
+                <div class="footer-logo-icon">
+                    M
+                </div>
+
+                <span>
+                    CALCURA
+                </span>
+
+            </a>
+
+            <p>
+                Speak · Calculate · Explore
+            </p>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <a href="#features">
+                Features
+            </a>
+
+            <a href="#how-it-works">
+                How It Works
+            </a>
+
+            <a href="#subjects">
+                Subjects
+            </a>
+
+            <a href="#about">
+                About
+            </a>
+
+            <a href="login.html">
+                Login
+            </a>
+
+            <a href="register.html">
+                Sign Up
+            </a>
+
+        </div>
+
+
+        <div class="footer-social">
+
+            <a
+                href="#"
+                aria-label="Instagram"
+                class="social-link"
+            >
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+
+            <a
+                href="#"
+                aria-label="YouTube"
+                class="social-link"
+            >
+                <i class="fa-brands fa-youtube"></i>
+            </a>
+
+            <a
+                href="#"
+                aria-label="GitHub"
+                class="social-link"
+            >
+                <i class="fa-brands fa-github"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <span>
+            © 2026 CALCURA. All rights reserved.
+        </span>
+
+        <div>
+
+            <a href="#">
+                Privacy
+            </a>
+
+            <a href="#">
+                Terms
+            </a>
+
+            <a href="pages/help.html">
+                Help
+            </a>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- =========================================================
+     DEMO MODAL
+========================================================= -->
+
+<div
+    class="demo-modal"
+    id="demoModal"
+    aria-hidden="true"
+>
+
+    <div class="demo-overlay"></div>
+
+    <div class="demo-container">
+
+        <button
+            type="button"
+            class="demo-close"
+            id="demoCloseBtn"
+            aria-label="Close demo"
+        >
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+
+        <div class="demo-header">
+
+            <span class="section-badge">
+                CALCURA Demo
+            </span>
+
+            <h2>
+                Speak. <span>Calculate.</span> Understand.
+            </h2>
+
+        </div>
+
+
+        <div class="demo-content">
+
+            <div class="demo-mic">
+
+                <div class="demo-mic-ring">
+
+                    <i class="fa-solid fa-microphone"></i>
+
+                </div>
+
+                <span>
+                    Listening...
+                </span>
+
+            </div>
+
+
+            <div class="demo-expression">
+
+                <span class="demo-label">
+                    You say
+                </span>
+
+                <strong>
+                    "two multiplied by sine thirty degrees plus five squared"
+                </strong>
+
+            </div>
+
+
+            <div class="demo-arrow">
+                <i class="fa-solid fa-arrow-down"></i>
+            </div>
+
+
+            <div class="demo-expression result">
+
+                <span class="demo-label">
+                    CALCURA understands
+                </span>
+
+                <strong>
+                    2 × sin(30°) + 5²
+                </strong>
+
+            </div>
+
+
+            <div class="demo-answer">
+
+                <span>
+                    Answer
+                </span>
+
+                <strong>
+                    27
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <a
+            href="register.html"
+            class="demo-start-btn"
+        >
+            Try CALCURA
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script src="js/config.js"></script>
+<script src="js/common.js"></script>
+<script src="js/landing.js"></script>
+
+</body>
+</html>

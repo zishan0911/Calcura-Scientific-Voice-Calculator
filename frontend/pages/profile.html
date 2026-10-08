@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Profile - Calcura</title>
+
+    <!-- GLOBAL -->
+    <link rel="stylesheet" href="../css/global.css">
+
+    <!-- PROFILE -->
+    <link rel="stylesheet" href="../css/profile.css">
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+<div class="profile-page">
+
+      <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside class="calcura-sidebar">
+
+        <div class="sidebar-brand">
+
+            <div class="sidebar-logo">
+                <i class="fa-solid fa-calculator"></i>
+            </div>
+
+            <div class="sidebar-brand-text">
+                <h1>Calcura</h1>
+                <span>Speak · Calculate · Explore</span>
+            </div>
+
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <a href="dashboard.html" class="sidebar-item">
+                <i class="fa-solid fa-house"></i>
+                <span>Home</span>
+            </a>
+
+            <a href="calculator.html" class="sidebar-item">
+                <i class="fa-solid fa-calculator"></i>
+                <span>Calculator</span>
+            </a>
+
+            <a href="voice-input.html" class="sidebar-item">
+                <i class="fa-solid fa-microphone"></i>
+                <span>Voice Input</span>
+            </a>
+
+            <a href="graph.html" class="sidebar-item">
+                <i class="fa-solid fa-chart-line"></i>
+                <span>Graph &amp; Plot</span>
+            </a>
+
+             <a href="ai-calculator.html" class="calcura-nav-item">
+                <i class="fa-solid fa-robot"></i>
+                <span>AI Assistant</span>
+            </a>
+
+            <a href="formulas.html" class="sidebar-item">
+                <i class="fa-solid fa-book-open"></i>
+                <span>Formula Library</span>
+            </a>
+
+            <a href="converter.html" class="sidebar-item">
+                <i class="fa-solid fa-right-left"></i>
+                <span>Unit Converter</span>
+            </a>
+
+            <a href="history.html" class="sidebar-item">
+                <i class="fa-regular fa-clock"></i>
+                <span>History</span>
+            </a>
+
+            <a href="saved.html" class="sidebar-item">
+                <i class="fa-regular fa-bookmark"></i>
+                <span>Saved</span>
+            </a>
+
+            <a href="settings.html" class="sidebar-item">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+            </a>
+
+            <a href="profile.html" class="sidebar-item active">
+                <i class="fa-solid fa-user"></i>
+                <span>Profile</span>
+            </a>
+
+            <a href="about.html" class="sidebar-item">
+                <i class="fa-solid fa-circle-info"></i>
+                <span>About</span>
+            </a>
+
+            <a href="help.html" class="sidebar-item">
+                <i class="fa-solid fa-circle-question"></i>
+                <span>Help &amp; Support</span>
+            </a>
+
+            <a href="upgrade.html"
+               class="sidebar-item">
+
+                <i class="fa-solid fa-crown"></i>
+
+                <span>
+                    Upgrade to Pro
+                </span>
+
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
+
+    <main class="profile-content">
+
+
+        <!-- =================================================
+             TOP HEADER
+        ================================================== -->
+
+        <header class="profile-topbar">
+
+            <div class="profile-search">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input
+                    type="text"
+                    placeholder="Search tools, formulas, or anything..."
+                    id="globalSearch">
+
+            </div>
+
+
+            <div class="profile-top-actions">
+
+                <a href="upgrade.html"
+                   class="profile-upgrade-btn">
+
+                    <i class="fa-solid fa-crown"></i>
+
+                    Upgrade to Pro
+
+                </a>
+
+
+                <button
+                    type="button"
+                    class="profile-notification-btn">
+
+                    <i class="fa-regular fa-bell"></i>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="profile-user-menu"
+                    id="profileUserMenu">
+
+                    <div
+                        class="profile-header-avatar"
+                        id="headerAvatar">
+                        U
+                    </div>
+
+                    <div class="profile-header-user-info">
+
+                        <strong id="headerUserName">
+                            User
+                        </strong>
+
+                        <span id="headerPlan">
+                            Free Plan
+                        </span>
+
+                    </div>
+
+                    <i class="fa-solid fa-chevron-down"></i>
+
+                </button>
+
+            </div>
+
+        </header>
+
+
+        <!-- =================================================
+             PAGE BODY
+        ================================================== -->
+
+        <div class="profile-body">
+
+
+            <!-- =================================================
+                 HERO
+            ================================================== -->
+
+            <section class="profile-hero">
+
+                <div class="profile-hero-content">
+
+                    <h1>
+                        My <span>Profile</span>
+                    </h1>
+
+                    <p>
+                        Manage your account, subscription, and preferences.
+                    </p>
+
+                </div>
+
+
+                <div class="profile-hero-icon">
+
+                    <i class="fa-regular fa-circle-user"></i>
+
+                </div>
+
+
+                <div class="profile-hero-quote">
+
+                    <span>
+                        “Same calculations.
+                    </span>
+
+                    <span>
+                        A smarter you.”
+                    </span>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 TWO COLUMN TOP
+            ================================================== -->
+
+            <div class="profile-main-grid">
+
+
+                <!-- =============================================
+                     PROFILE INFORMATION
+                ============================================== -->
+
+                <section class="profile-info-card">
+
+                    <div class="card-heading">
+
+                        <div class="card-title">
+
+                            <i class="fa-solid fa-user"></i>
+
+                            <h2>
+                                Profile Information
+                            </h2>
+
+                        </div>
+
+
+                        <button
+                            type="button"
+                            id="editProfileBtn"
+                            class="edit-profile-btn">
+
+                            <i class="fa-solid fa-pen"></i>
+
+                            Edit Profile
+
+                        </button>
+
+                    </div>
+
+
+                    <!-- PROFILE TOP -->
+
+                    <div class="profile-user-block">
+
+                        <div class="profile-avatar-wrapper">
+
+                            <div
+                                class="large-profile-avatar"
+                                id="profileAvatar">
+
+                                U
+
+                            </div>
+
+                            <button
+                                type="button"
+                                class="avatar-camera-btn"
+                                id="avatarCameraBtn"
+                                title="Change profile picture">
+
+                                <i class="fa-solid fa-camera"></i>
+
+                            </button>
+
+                            <input
+                                type="file"
+                                id="avatarInput"
+                                accept="image/*"
+                                hidden>
+
+                        </div>
+
+
+                        <div class="profile-user-details">
+
+                            <h2 id="profileName">
+                                Loading...
+                            </h2>
+
+                            <p id="profileEmail">
+                                Loading...
+                            </p>
+
+                            <span
+                                class="free-plan-badge"
+                                id="profilePlan">
+                                Free Plan
+                            </span>
+
+                            <p
+                                class="member-since"
+                                id="memberSince">
+                                Member since --
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- PROFILE FIELDS -->
+
+                    <div class="profile-fields">
+
+
+                        <div class="profile-field-row">
+
+                            <div class="profile-field-icon">
+                                <i class="fa-solid fa-user"></i>
+                            </div>
+
+                            <div class="profile-field-label">
+                                <span>Full Name</span>
+                            </div>
+
+                            <input
+                                type="text"
+                                id="name"
+                                class="profile-field-input"
+                                placeholder="Your full name"
+                                disabled>
+
+                        </div>
+
+
+                        <div class="profile-field-row">
+
+                            <div class="profile-field-icon">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+
+                            <div class="profile-field-label">
+                                <span>Email Address</span>
+                            </div>
+
+                            <input
+                                type="email"
+                                id="email"
+                                class="profile-field-input"
+                                placeholder="Your email"
+                                readonly>
+
+                        </div>
+
+
+                        <div class="profile-field-row">
+
+                            <div class="profile-field-icon">
+                                <i class="fa-solid fa-at"></i>
+                            </div>
+
+                            <div class="profile-field-label">
+                                <span>Username</span>
+                            </div>
+
+                            <input
+                                type="text"
+                                id="username"
+                                class="profile-field-input"
+                                placeholder="Username"
+                                disabled>
+
+                        </div>
+
+
+                        <div class="profile-field-row">
+
+                            <div class="profile-field-icon">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+
+                            <div class="profile-field-label">
+                                <span>Country</span>
+                            </div>
+
+                            <select
+                                id="country"
+                                class="profile-field-input"
+                                disabled>
+
+                                <option value="India">
+                                    India
+                                </option>
+
+                                <option value="United States">
+                                    United States
+                                </option>
+
+                                <option value="United Kingdom">
+                                    United Kingdom
+                                </option>
+
+                                <option value="Other">
+                                    Other
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="profile-field-row">
+
+                            <div class="profile-field-icon">
+                                <i class="fa-solid fa-globe"></i>
+                            </div>
+
+                            <div class="profile-field-label">
+                                <span>Preferred Language</span>
+                            </div>
+
+                            <select
+                                id="language"
+                                class="profile-field-input"
+                                disabled>
+
+                                <option value="English (US)">
+                                    English (US)
+                                </option>
+
+                                <option value="English (UK)">
+                                    English (UK)
+                                </option>
+
+                                <option value="Hindi">
+                                    Hindi
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- SAVE -->
+
+                    <div class="profile-save-area"
+                         id="profileSaveArea">
+
+                        <button
+                            type="button"
+                            id="saveProfileBtn"
+                            class="save-profile-btn">
+
+                            <i class="fa-solid fa-check"></i>
+
+                            Save Changes
+
+                        </button>
+
+                        <button
+                            type="button"
+                            id="cancelProfileBtn"
+                            class="cancel-profile-btn">
+
+                            Cancel
+
+                        </button>
+
+                    </div>
+
+
+                    <p
+                        id="profileMessage"
+                        class="profile-message">
+                    </p>
+
+                </section>
+
+
+                <!-- =============================================
+                     SUBSCRIPTION
+                ============================================== -->
+
+                <section class="subscription-card">
+
+                    <div class="card-heading">
+
+                        <div class="card-title">
+
+                            <i class="fa-solid fa-crown"></i>
+
+                            <h2>
+                                Subscription Plan
+                            </h2>
+
+                        </div>
+
+                        <span class="current-plan-label">
+                            Current Plan
+                        </span>
+
+                    </div>
+
+
+                    <!-- FREE PLAN -->
+
+                    <div class="plan-card free-plan">
+
+                        <div class="plan-main">
+
+                            <div class="plan-icon blue-icon">
+                                <i class="fa-solid fa-crown"></i>
+                            </div>
+
+                            <div class="plan-info">
+
+                                <h3>
+                                    Free Plan
+                                </h3>
+
+                                <p>
+                                    Great for everyday calculations.
+                                </p>
+
+                                <ul>
+
+                                    <li>
+                                        <i class="fa-solid fa-check"></i>
+                                        Basic calculator
+                                    </li>
+
+                                    <li>
+                                        <i class="fa-solid fa-check"></i>
+                                        Unit converter
+                                    </li>
+
+                                    <li>
+                                        <i class="fa-solid fa-check"></i>
+                                        History (limited)
+                                    </li>
+
+                                    <li>
+                                        <i class="fa-solid fa-check"></i>
+                                        Save up to 50 items
+                                    </li>
+
+                                </ul>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="plan-price">
+
+                            <strong>
+                                $0
+                            </strong>
+
+                            <span>
+                                per month
+                            </span>
+
+                            <a
+                                href="upgrade.html"
+                                class="plan-btn blue-plan-btn">
+
+                                <i class="fa-solid fa-crown"></i>
+
+                                Upgrade to Pro
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- PRO PLAN -->
+
+                    <div class="plan-card pro-plan">
+
+                        <div class="plan-main">
+
+                            <div class="plan-icon purple-icon">
+                                <i class="fa-solid fa-crown"></i>
+                            </div>
+
+                            <div class="plan-info">
+
+                                <h3>
+                                    Pro Plan
+                                    <small>
+                                        (Recommended)
+                                    </small>
+                                </h3>
+
+                                <p>
+                                    Unlock the full power of Calcura.
+                                </p>
+
+                                <ul>
+
+                                    <li>
+                                        <i class="fa-solid fa-check"></i>
+                                        Advanced calculations
+                                    </li>
+
+                                    <li>
+                                        <i class="fa-solid fa-check"></i>
+                                        Voice input &amp; AI assistant
+                                    </li>
+
+                                    <li>
+                                        <i class="fa-solid fa-check"></i>
+                                        Unlimited history &amp; saved items
+                                    </li>
+
+                                    <li>
+                                        <i class="fa-solid fa-check"></i>
+                                        Cloud sync across devices
+                                    </li>
+
+                                    <li>
+                                        <i class="fa-solid fa-check"></i>
+                                        No ads
+                                    </li>
+
+                                    <li>
+                                        <i class="fa-solid fa-check"></i>
+                                        Priority support
+                                    </li>
+
+                                </ul>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="plan-price">
+
+                            <strong>
+                                $20
+                            </strong>
+
+                            <span>
+                                per month
+                            </span>
+
+                            <a
+                                href="upgrade.html"
+                                class="plan-btn purple-plan-btn">
+
+                                <i class="fa-solid fa-crown"></i>
+
+                                Upgrade Now
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+
+            <!-- =================================================
+                 BOTTOM GRID
+            ================================================== -->
+
+            <div class="profile-bottom-grid">
+
+
+                <!-- =============================================
+                     ACCOUNT ACTIONS
+                ============================================== -->
+
+                <section class="account-actions-card">
+
+                    <div class="card-heading">
+
+                        <div class="card-title">
+
+                            <i class="fa-solid fa-gear"></i>
+
+                            <h2>
+                                Account Actions
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="account-action-list">
+
+
+                        <button
+                            type="button"
+                            id="changePasswordBtn"
+                            class="account-action">
+
+                            <div class="action-left">
+
+                                <i class="fa-solid fa-lock"></i>
+
+                                <span>
+                                    Change Password
+                                </span>
+
+                            </div>
+
+                            <i class="fa-solid fa-chevron-right"></i>
+
+                        </button>
+
+
+                        <a
+                            href="upgrade.html"
+                            class="account-action">
+
+                            <div class="action-left">
+
+                                <i class="fa-regular fa-credit-card"></i>
+
+                                <span>
+                                    Manage Subscription
+                                </span>
+
+                            </div>
+
+                            <i class="fa-solid fa-chevron-right"></i>
+
+                        </a>
+
+
+                        <button
+                            type="button"
+                            id="downloadDataBtn"
+                            class="account-action">
+
+                            <div class="action-left">
+
+                                <i class="fa-solid fa-download"></i>
+
+                                <span>
+                                    Download My Data
+                                </span>
+
+                            </div>
+
+                            <i class="fa-solid fa-chevron-right"></i>
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            id="deleteAccountBtn"
+                            class="account-action danger-action">
+
+                            <div class="action-left">
+
+                                <i class="fa-solid fa-trash"></i>
+
+                                <span>
+                                    Delete Account
+                                </span>
+
+                            </div>
+
+                            <i class="fa-solid fa-chevron-right"></i>
+
+                        </button>
+
+                    </div>
+
+
+                    <!-- PASSWORD AREA -->
+
+                    <div
+                        class="password-area"
+                        id="passwordArea">
+
+                        <h3>
+                            Change Password
+                        </h3>
+
+                        <input
+                            type="password"
+                            id="currentPassword"
+                            placeholder="Current password">
+
+                        <input
+                            type="password"
+                            id="newPassword"
+                            placeholder="New password">
+
+                        <input
+                            type="password"
+                            id="confirmPassword"
+                            placeholder="Confirm new password">
+
+                        <div class="password-buttons">
+
+                            <button
+                                type="button"
+                                id="confirmPasswordBtn">
+                                Change Password
+                            </button>
+
+                            <button
+                                type="button"
+                                id="cancelPasswordBtn">
+                                Cancel
+                            </button>
+
+                        </div>
+
+                        <p
+                            id="passwordMessage"
+                            class="profile-message">
+                        </p>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =============================================
+                     QUICK STATS
+                ============================================== -->
+
+                <section class="quick-stats-card">
+
+                    <div class="card-heading">
+
+                        <div class="card-title">
+
+                            <i class="fa-solid fa-chart-column"></i>
+
+                            <h2>
+                                Quick Stats
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="quick-stat-grid">
+
+
+                        <div class="quick-stat blue-stat">
+
+                            <strong id="calculationCount">
+                                48
+                            </strong>
+
+                            <span>
+                                Calculations
+                            </span>
+
+                        </div>
+
+
+                        <div class="quick-stat green-stat">
+
+                            <strong id="formulaCount">
+                                12
+                            </strong>
+
+                            <span>
+                                Formulas Saved
+                            </span>
+
+                        </div>
+
+
+                        <div class="quick-stat purple-stat">
+
+                            <strong id="graphCount">
+                                6
+                            </strong>
+
+                            <span>
+                                Graphs Created
+                            </span>
+
+                        </div>
+
+
+                        <div class="quick-stat orange-stat">
+
+                            <strong id="conversionCount">
+                                8
+                            </strong>
+
+                            <span>
+                                Unit Conversions
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="profile-bottom-quote">
+
+                        <span>
+                            “Keep exploring, keep calculating,
+                        </span>
+
+                        <span>
+                            keep learning.”
+                        </span>
+
+                        <i class="fa-solid fa-rocket"></i>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- =================================================
+             FOOTER
+        ================================================== -->
+
+        <footer class="profile-footer">
+
+            <span>
+                © 2026 Calcura. All rights reserved.
+            </span>
+
+            <div>
+
+                <a href="about.html">
+                    About
+                </a>
+
+                <a href="help.html">
+                    Help
+                </a>
+            </div>
+
+        </footer>
+
+    </main>
+
+</div>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+====================================================== -->
+
+<script src="../js/api.js"></script>
+<script src="../js/auth.js"></script>
+<script src="../js/profile.js"></script>
+
+</body>
+</html>

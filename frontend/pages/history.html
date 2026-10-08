@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>History - Calcura</title>
+
+    <!-- GLOBAL CSS -->
+    <link rel="stylesheet" href="../css/global.css">
+
+    <!-- SIDEBAR CSS -->
+    <link rel="stylesheet" href="../css/sidebar.css">
+
+    <!-- DASHBOARD / HEADER CSS -->
+    <link rel="stylesheet" href="../css/dashboard.css">
+
+    <!-- HISTORY CSS -->
+    <link rel="stylesheet" href="../css/history.css">
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+
+<body>
+
+
+<main class="history-page">
+
+
+     <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside class="calcura-sidebar">
+
+        <div class="sidebar-brand">
+
+            <div class="sidebar-logo">
+                <i class="fa-solid fa-calculator"></i>
+            </div>
+
+            <div class="sidebar-brand-text">
+                <h1>Calcura</h1>
+                <span>Speak · Calculate · Explore</span>
+            </div>
+
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <a href="dashboard.html" class="sidebar-item">
+                <i class="fa-solid fa-house"></i>
+                <span>Home</span>
+            </a>
+
+            <a href="calculator.html" class="sidebar-item">
+                <i class="fa-solid fa-calculator"></i>
+                <span>Calculator</span>
+            </a>
+
+            <a href="voice-input.html" class="sidebar-item">
+                <i class="fa-solid fa-microphone"></i>
+                <span>Voice Input</span>
+            </a>
+
+            <a href="graph.html" class="sidebar-item">
+                <i class="fa-solid fa-chart-line"></i>
+                <span>Graph &amp; Plot</span>
+            </a>
+
+             <a href="ai-calculator.html" class="calcura-nav-item">
+                <i class="fa-solid fa-robot"></i>
+                <span>AI Assistant</span>
+            </a>
+
+            <a href="formulas.html" class="sidebar-item">
+                <i class="fa-solid fa-book-open"></i>
+                <span>Formula Library</span>
+            </a>
+
+            <a href="converter.html" class="sidebar-item">
+                <i class="fa-solid fa-right-left"></i>
+                <span>Unit Converter</span>
+            </a>
+
+            <a href="history.html" class="sidebar-item active">
+                <i class="fa-regular fa-clock"></i>
+                <span>History</span>
+            </a>
+
+            <a href="saved.html" class="sidebar-item">
+                <i class="fa-regular fa-bookmark"></i>
+                <span>Saved</span>
+            </a>
+
+            <a href="settings.html" class="sidebar-item">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+            </a>
+
+            <a href="profile.html" class="sidebar-item">
+                <i class="fa-solid fa-user"></i>
+                <span>Profile</span>
+            </a>
+
+            <a href="about.html" class="sidebar-item">
+                <i class="fa-solid fa-circle-info"></i>
+                <span>About</span>
+            </a>
+
+            <a href="help.html" class="sidebar-item">
+                <i class="fa-solid fa-circle-question"></i>
+                <span>Help &amp; Support</span>
+            </a>
+
+            <a href="upgrade.html"
+               class="sidebar-item">
+
+                <i class="fa-solid fa-crown"></i>
+
+                <span>
+                    Upgrade to Pro
+                </span>
+
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
+
+    <section class="history-content">
+
+
+        <!-- =================================================
+             TOP HEADER
+        ================================================== -->
+
+        <header class="history-topbar">
+
+
+            <!-- GLOBAL SEARCH -->
+
+            <div class="history-global-search">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input
+                    type="text"
+                    id="globalSearch"
+                    placeholder="Search your calculations, formulas, or units..."
+                >
+
+            </div>
+
+
+            <!-- TOP RIGHT -->
+
+            <div class="history-top-actions">
+
+
+                <a href="upgrade.html"
+                   class="history-upgrade-btn">
+
+                    <i class="fa-solid fa-crown"></i>
+
+                    Upgrade to Pro
+
+                </a>
+
+
+                <button
+                    type="button"
+                    class="history-notification-btn"
+                    title="Notifications">
+
+                    <i class="fa-regular fa-bell"></i>
+
+                </button>
+
+
+                 <a
+                href="profile.html"
+                class="header-user">
+
+                <div
+                    class="header-avatar"
+                    id="profileAvatar"
+                >
+                    U
+                </div>
+
+                <div class="header-user-details">
+
+                    <strong id="profileName">
+                        User
+                    </strong>
+
+                    <span>
+                        Free Plan
+                    </span>
+
+                </div>
+
+                <span class="header-arrow">
+                    ⌄
+                </span>
+
+            </a>
+
+
+            </div>
+
+
+        </header>
+
+
+
+        <!-- =================================================
+             PAGE GRID
+        ================================================== -->
+
+        <div class="history-layout">
+
+
+            <!-- =================================================
+                 CENTER AREA
+            ================================================== -->
+
+            <section class="history-main">
+
+
+                <!-- HERO -->
+
+                <div class="history-hero">
+
+
+                    <div class="history-hero-content">
+
+                        <h1>
+                            Calculation
+                            <span>History</span>
+                        </h1>
+
+
+                        <p>
+                            View, search, and manage all your
+                            past calculations.
+                        </p>
+
+                    </div>
+
+
+                    <div class="history-hero-icon">
+
+                        <i class="fa-solid fa-clock-rotate-left"></i>
+
+                    </div>
+
+
+                    <div class="history-hero-quote">
+
+                        <span>
+                            “Every calculation
+                        </span>
+
+                        <span>
+                            is a step forward.”
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- =================================================
+                     SEARCH + FILTER
+                ================================================== -->
+
+                <div class="history-tools">
+
+
+                    <div class="history-search-box">
+
+                        <i class="fa-solid fa-magnifying-glass"></i>
+
+                        <input
+                            type="text"
+                            id="historySearch"
+                            placeholder="Search history (e.g. sin, sqrt, unit, graph...)"
+                        >
+
+                    </div>
+
+
+                    <select
+                        id="historyTypeFilter"
+                        class="history-type-filter">
+
+                        <option value="all">
+                            All Types
+                        </option>
+
+                        <option value="basic">
+                            Basic
+                        </option>
+
+                        <option value="trigonometry">
+                            Trigonometry
+                        </option>
+
+                        <option value="calculus">
+                            Calculus
+                        </option>
+
+                        <option value="unit">
+                            Unit Conversion
+                        </option>
+
+                        <option value="graph">
+                            Graph
+                        </option>
+
+                        <option value="formula">
+                            Formula
+                        </option>
+
+                    </select>
+
+
+                </div>
+
+
+
+                <!-- =================================================
+                     ACTION BUTTONS
+                ================================================== -->
+
+                <div class="history-actions">
+
+
+                    <button
+                        type="button"
+                        id="deleteSelectedBtn"
+                        class="history-delete-selected">
+
+                        <i class="fa-solid fa-trash-can"></i>
+
+                        Delete Selected
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        id="exportHistoryBtn"
+                        class="history-export-btn">
+
+                        <i class="fa-solid fa-download"></i>
+
+                        Export History
+
+                    </button>
+
+
+                    <!-- Existing functionality -->
+
+                    <button
+                        type="button"
+                        id="clearHistoryBtn"
+                        class="history-clear-btn"
+                        onclick="clearHistory()">
+
+                        <i class="fa-solid fa-trash"></i>
+
+                        Clear All
+
+                    </button>
+
+
+                </div>
+
+
+
+                <!-- =================================================
+                     HISTORY TABLE HEADER
+                ================================================== -->
+
+                <div class="history-table">
+
+
+                    <div class="history-table-header">
+
+
+                        <div class="history-check-cell">
+
+                            <input
+                                type="checkbox"
+                                id="selectAllHistory"
+                            >
+
+                        </div>
+
+
+                        <div>
+                            Expression / Input
+                        </div>
+
+
+                        <div>
+                            Result
+                        </div>
+
+
+                        <div>
+                            Type
+                        </div>
+
+
+                        <div>
+                            Date & Time
+                        </div>
+
+
+                        <div>
+                            Action
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- =================================================
+                         EXISTING JS WILL RENDER HISTORY HERE
+                    ================================================== -->
+
+                    <div
+                        id="historyList"
+                        class="history-list">
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- =================================================
+                     PAGINATION
+                ================================================== -->
+
+                <div class="history-pagination">
+
+
+                    <div class="history-pagination-info">
+
+                        Showing
+                        <strong id="historyStart">
+                            1
+                        </strong>
+
+                        to
+
+                        <strong id="historyEnd">
+                            10
+                        </strong>
+
+                        of
+
+                        <strong id="historyTotal">
+                            0
+                        </strong>
+
+                        results
+
+                    </div>
+
+
+                    <div class="history-page-buttons">
+
+
+                        <button
+                            type="button"
+                            class="history-page-btn">
+
+                            <i class="fa-solid fa-chevron-left"></i>
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="history-page-btn active">
+
+                            1
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="history-page-btn">
+
+                            2
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="history-page-btn">
+
+                            3
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="history-page-btn">
+
+                            4
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="history-page-btn">
+
+                            5
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="history-page-btn">
+
+                            <i class="fa-solid fa-chevron-right"></i>
+
+                        </button>
+
+
+                    </div>
+
+
+                    <div class="history-per-page">
+
+                        <span>
+                            Show
+                        </span>
+
+
+                        <select id="historyPerPage">
+
+                            <option value="10">
+                                10 per page
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 RIGHT SIDEBAR
+            ================================================== -->
+
+            <aside class="history-right-sidebar">
+
+
+                <!-- =================================================
+                     HISTORY OVERVIEW
+                ================================================== -->
+
+                <div class="history-overview-card">
+
+
+                    <div class="history-side-title">
+
+                        <i class="fa-solid fa-chart-column"></i>
+
+                        <h2>
+                            History Overview
+                        </h2>
+
+                    </div>
+
+
+                    <div class="history-stats-grid">
+
+
+                        <div class="history-stat-card blue">
+
+                            <strong id="totalCalculations">
+                                0
+                            </strong>
+
+                            <span>
+                                Total
+                                <br>
+                                Calculations
+                            </span>
+
+                        </div>
+
+
+                        <div class="history-stat-card green">
+
+                            <strong id="totalFormulas">
+                                0
+                            </strong>
+
+                            <span>
+                                Formulas
+                            </span>
+
+                        </div>
+
+
+                        <div class="history-stat-card orange">
+
+                            <strong id="totalConversions">
+                                0
+                            </strong>
+
+                            <span>
+                                Unit Conversions
+                            </span>
+
+                        </div>
+
+
+                        <div class="history-stat-card purple">
+
+                            <strong id="totalGraphs">
+                                0
+                            </strong>
+
+                            <span>
+                                Graphs
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- =================================================
+                     RECENT ACTIVITY
+                ================================================== -->
+
+                <div class="recent-activity-card">
+
+
+                    <div class="history-side-title">
+
+                        <i class="fa-solid fa-clock"></i>
+
+                        <h2>
+                            Recent Activity
+                        </h2>
+
+                    </div>
+
+
+                    <div
+                        id="recentActivity"
+                        class="recent-activity-list">
+
+
+                        <div class="recent-activity-empty">
+
+                            <i class="fa-regular fa-clock"></i>
+
+                            <p>
+                                Recent calculations
+                                will appear here.
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- =================================================
+                     PRO TIP
+                ================================================== -->
+
+                <div class="history-pro-tip">
+
+
+                    <div class="pro-tip-icon">
+
+                        <i class="fa-solid fa-lightbulb"></i>
+
+                    </div>
+
+
+                    <h2>
+                        Pro Tip
+                    </h2>
+
+
+                    <p>
+
+                        You can save important
+                        calculations for quick
+                        access later.
+
+                    </p>
+
+
+                    <a
+                        href="saved.html"
+                        class="save-calculation-btn">
+
+                        <i class="fa-regular fa-bookmark"></i>
+
+                        Save This Calculation
+
+                    </a>
+
+
+                </div>
+
+
+            </aside>
+
+
+        </div>
+
+
+
+        <!-- =================================================
+             FOOTER
+        ================================================== -->
+
+        <footer class="history-footer">
+
+
+            <div>
+                © 2026 Calcura. All rights reserved.
+            </div>
+
+
+            <div class="history-footer-links">
+
+                <a href="help.html">
+                    Help
+                </a>
+
+                <a href="about.html">
+                    About
+                </a>
+
+            </div>
+
+
+        </footer>
+
+
+    </section>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+====================================================== -->
+<script src="../js/api.js"></script>
+<script src="../js/auth.js"></script>
+<script src="../js/history.js"></script>
+
+
+</body>
+
+</html>

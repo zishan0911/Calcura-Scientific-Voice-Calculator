@@ -1,0 +1,1477 @@
+/* =========================================================
+   CALCURA - UPGRADE
+   REFERENCE DESIGN
+========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+}
+
+body {
+    background: #020f1c;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.calcura-sidebar {
+    position: fixed;
+
+    left: 0;
+    top: 0;
+
+    width: 260px;
+    height: 100vh;
+
+    z-index: 1000;
+
+    overflow-y: auto;
+
+    background:
+        linear-gradient(
+            180deg,
+            #031522,
+            #02111e
+        );
+
+    border-right: 1px solid #17354d;
+}
+
+.sidebar-brand {
+    height: 88px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 13px;
+
+    padding: 0 24px;
+
+    border-bottom: 1px solid #17354d;
+}
+
+.sidebar-logo {
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 8px;
+
+    background: #087dff;
+
+    color: #fff;
+
+    font-size: 25px;
+}
+
+.sidebar-brand-text h1 {
+    margin: 0;
+
+    color: #fff;
+
+    font-size: 28px;
+    font-weight: 800;
+}
+
+.sidebar-brand-text span {
+    display: block;
+
+    margin-top: 3px;
+
+    color: #91a9bd;
+
+    font-size: 12px;
+}
+
+.sidebar-nav {
+    padding: 17px 11px;
+}
+
+.sidebar-item {
+    height: 45px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 18px;
+
+    margin-bottom: 2px;
+
+    padding: 0 14px;
+
+    border-radius: 8px;
+
+    color: #c6d9e9;
+
+    text-decoration: none;
+
+    font-size: 15px;
+
+    transition: .2s;
+}
+
+.sidebar-item i {
+    width: 22px;
+
+    text-align: center;
+
+    font-size: 19px;
+}
+
+.sidebar-item:hover {
+    background: #09253d;
+    color: #fff;
+}
+
+.sidebar-item.active {
+    background: #087dff;
+
+    color: #fff;
+
+    box-shadow:
+        0 7px 20px rgba(0, 125, 255, .25);
+}
+
+
+/* SIDEBAR UPGRADE */
+
+.sidebar-upgrade {
+    margin: 10px 16px 20px;
+
+    padding: 15px;
+
+    border: 1px solid #176bb0;
+
+    border-radius: 11px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #082746,
+            #061c31
+        );
+}
+
+.sidebar-upgrade-icon {
+    color: #ffd42f;
+
+    font-size: 22px;
+
+    margin-bottom: 6px;
+}
+
+.sidebar-upgrade h3 {
+    margin: 0 0 9px;
+
+    font-size: 17px;
+}
+
+.sidebar-upgrade ul {
+    margin: 0 0 12px;
+    padding: 0;
+
+    list-style: none;
+}
+
+.sidebar-upgrade li {
+    position: relative;
+
+    margin: 5px 0;
+
+    padding-left: 17px;
+
+    color: #d1e0ed;
+
+    font-size: 12px;
+}
+
+.sidebar-upgrade li::before {
+    content: "✓";
+
+    position: absolute;
+    left: 0;
+
+    color: #fff;
+}
+
+.sidebar-upgrade-btn {
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 8px;
+
+    background: #087dff;
+
+    color: #fff;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.upgrade-content {
+    width: calc(100% - 260px);
+
+    min-height: 100vh;
+
+    margin-left: 260px;
+
+    background: #020f1c;
+}
+
+
+/* =========================================================
+   TOPBAR
+========================================================= */
+
+.upgrade-topbar {
+    height: 88px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 24px;
+
+    border-bottom: 1px solid #17354d;
+
+    background: #03111f;
+}
+
+.upgrade-search {
+    position: absolute;
+
+    left: 43.5%;
+
+    transform: translateX(-50%);
+
+    width: 485px;
+    height: 49px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 0 16px;
+
+    border: 1px solid #1b4163;
+
+    border-radius: 10px;
+
+    background: #071d32;
+}
+
+.upgrade-search i {
+    color: #bad7ef;
+
+    font-size: 18px;
+}
+
+.upgrade-search input {
+    width: 100%;
+
+    border: 0;
+    outline: 0;
+
+    background: transparent;
+
+    color: #fff;
+
+    font-size: 14px;
+}
+
+.upgrade-search input::placeholder {
+    color: #91a8bb;
+}
+
+.upgrade-top-actions {
+    margin-left: auto;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+}
+
+.top-upgrade-btn {
+    height: 49px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 0 18px;
+
+    border: 1px solid #d8a900;
+
+    border-radius: 10px;
+
+    background: #07182a;
+
+    color: #ffd735;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.notification-btn {
+    width: 47px;
+    height: 47px;
+
+    border: 0;
+
+    background: transparent;
+
+    color: #c5d9ed;
+
+    font-size: 22px;
+
+    cursor: pointer;
+}
+
+.real-user {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    color: #fff;
+
+    text-decoration: none;
+}
+
+.real-user-avatar {
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #5261ff,
+            #3159e8
+        );
+
+    color: #fff;
+
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.real-user-avatar img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.real-user-info {
+    display: flex;
+    flex-direction: column;
+
+    gap: 3px;
+}
+
+.real-user-info strong {
+    color: #fff;
+
+    font-size: 15px;
+}
+
+.real-user-info span {
+    color: #9fb4c8;
+
+    font-size: 12px;
+}
+
+.real-user > i {
+    margin-left: 6px;
+
+    color: #a9c5dd;
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   WRAPPER
+========================================================= */
+
+.upgrade-wrapper {
+    padding: 16px 18px 0;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.upgrade-hero {
+    position: relative;
+
+    min-height: 98px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    overflow: hidden;
+
+    padding: 16px 24px;
+
+    border: 1px solid #204f80;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            105deg,
+            #082d61,
+            #081e52 55%,
+            #17105c
+        );
+}
+
+.upgrade-hero::after {
+    content: "";
+
+    position: absolute;
+
+    right: -100px;
+    bottom: -70px;
+
+    width: 600px;
+    height: 150px;
+
+    border-top: 2px solid
+        rgba(117, 33, 255, .65);
+
+    border-radius: 50%;
+
+    transform: rotate(-8deg);
+}
+
+.hero-text {
+    position: relative;
+
+    z-index: 2;
+}
+
+.hero-text h1 {
+    margin: 0;
+
+    color: #fff;
+
+    font-size: 37px;
+    font-weight: 800;
+}
+
+.hero-text h1 span {
+    background:
+        linear-gradient(
+            90deg,
+            #087dff,
+            #b32bff
+        );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    color: transparent;
+}
+
+.hero-text p {
+    margin: 6px 0 0;
+
+    color: #d5e5f5;
+
+    font-size: 18px;
+}
+
+.hero-right {
+    position: relative;
+
+    z-index: 3;
+
+    display: flex;
+    align-items: center;
+
+    gap: 28px;
+
+    margin-right: 22px;
+}
+
+.hero-right > i {
+    color: #c34fff;
+
+    font-size: 57px;
+
+    filter:
+        drop-shadow(
+            0 0 18px
+            rgba(195, 79, 255, .4)
+        );
+}
+
+.hero-right em {
+    color: #f0e6ff;
+
+    font-size: 15px;
+
+    line-height: 1.55;
+}
+
+
+/* =========================================================
+   PRICING
+========================================================= */
+
+.plans-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 18px;
+
+    margin-top: 15px;
+}
+
+.pricing-card {
+    position: relative;
+
+    min-height: 396px;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 19px;
+
+    overflow: hidden;
+
+    border: 1px solid #173d58;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #061c2d,
+            #041725
+        );
+}
+
+.pricing-title {
+    display: flex;
+    align-items: center;
+
+    gap: 13px;
+}
+
+.pricing-icon {
+    width: 47px;
+    height: 47px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 9px;
+
+    color: #fff;
+
+    font-size: 21px;
+}
+
+.blue-icon {
+    background: #1266bf;
+}
+
+.purple-icon {
+    background:
+        linear-gradient(
+            145deg,
+            #b729ff,
+            #7d25e9
+        );
+}
+
+.green-icon {
+    background: #008b57;
+}
+
+.pricing-title h2 {
+    margin: 0 0 5px;
+
+    color: #fff;
+
+    font-size: 18px;
+}
+
+.pricing-title p {
+    margin: 0;
+
+    color: #bfd2e2;
+
+    font-size: 13px;
+}
+
+.pricing-price {
+    display: flex;
+    align-items: baseline;
+
+    gap: 7px;
+
+    margin: 17px 0 10px;
+}
+
+.pricing-price strong {
+    color: #d9e8ff;
+
+    font-size: 31px;
+    font-weight: 700;
+}
+
+.pricing-price span {
+    color: #d1dfeb;
+
+    font-size: 12px;
+}
+
+.pricing-features {
+    flex: 1;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+.pricing-features li {
+    display: flex;
+    align-items: center;
+
+    gap: 13px;
+
+    padding: 6px 0;
+
+    color: #dbe7f2;
+
+    font-size: 13px;
+}
+
+.pricing-features li i {
+    color: #d4e3ff;
+
+    font-size: 13px;
+}
+
+.pricing-btn {
+    width: 100%;
+    height: 40px;
+
+    margin-top: 12px;
+
+    border-radius: 7px;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: .2s;
+}
+
+.free-current-btn {
+    border: 1px solid #2586d8;
+
+    background: transparent;
+
+    color: #fff;
+
+    cursor: default;
+}
+
+.pro-plan {
+    border: 2px solid #c438ff;
+
+    background:
+        linear-gradient(
+            145deg,
+            #191143,
+            #0d1534
+        );
+
+    box-shadow:
+        0 0 25px
+        rgba(174, 42, 255, .14);
+}
+
+.most-popular {
+    position: absolute;
+
+    top: 10px;
+    right: 10px;
+
+    padding: 7px 12px;
+
+    border-radius: 5px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #b72aff,
+            #d735ff
+        );
+
+    color: #17032c;
+
+    font-size: 12px;
+
+    font-weight: 800;
+}
+
+.pro-plan .pricing-title {
+    margin-top: 4px;
+}
+
+.pro-plan .pricing-features li i {
+    color: #ef70ff;
+}
+
+.pro-btn {
+    border: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            #a526ff,
+            #cf36ef
+        );
+
+    color: #fff;
+
+    box-shadow:
+        0 6px 18px
+        rgba(188, 40, 255, .22);
+}
+
+.pro-btn:hover {
+    transform: translateY(-1px);
+
+    filter: brightness(1.1);
+}
+
+.student-plan {
+    border-color: #174d50;
+
+    background:
+        linear-gradient(
+            145deg,
+            #062427,
+            #041b22
+        );
+}
+
+.student-btn {
+    border: 1px solid #16a76b;
+
+    background: transparent;
+
+    color: #fff;
+}
+
+.student-btn:hover {
+    background: #087b54;
+
+    border-color: #16c47d;
+}
+
+
+/* =========================================================
+   WHY UPGRADE
+========================================================= */
+
+.why-upgrade {
+    margin-top: 14px;
+
+    padding: 11px 20px 15px;
+
+    border: 1px solid #173d58;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #061c2d,
+            #041725
+        );
+}
+
+.section-heading {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 8px;
+}
+
+.section-heading-icon {
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 8px;
+
+    background: #143f86;
+
+    color: #bcd8ff;
+}
+
+.section-heading h2 {
+    margin: 0;
+
+    color: #fff;
+
+    font-size: 20px;
+}
+
+.benefits-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, 1fr);
+
+    gap: 13px;
+}
+
+.benefit-card {
+    min-height: 74px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 11px;
+
+    padding: 10px;
+
+    border: 1px solid #1a4666;
+
+    border-radius: 8px;
+
+    background: #071e31;
+}
+
+.benefit-icon {
+    width: 37px;
+    height: 37px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 21px;
+}
+
+.benefit-icon.yellow {
+    color: #ffd000;
+}
+
+.benefit-icon.blue {
+    color: #1495ff;
+}
+
+.benefit-icon.red {
+    color: #ff3d64;
+}
+
+.benefit-icon.purple {
+    color: #d34cff;
+}
+
+.benefit-icon.gold {
+    color: #ffc400;
+}
+
+.benefit-card h3 {
+    margin: 0 0 3px;
+
+    color: #fff;
+
+    font-size: 14px;
+}
+
+.benefit-card p {
+    margin: 0;
+
+    color: #abc2d5;
+
+    font-size: 12px;
+
+    line-height: 1.4;
+}
+
+
+/* =========================================================
+   BOTTOM
+========================================================= */
+
+.bottom-grid {
+    display: grid;
+
+    grid-template-columns:
+        2fr 1fr;
+
+    gap: 16px;
+
+    margin-top: 13px;
+}
+
+
+/* FAQ */
+
+.faq-card {
+    padding: 12px 17px;
+
+    border: 1px solid #173d58;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #061c2d,
+            #041725
+        );
+}
+
+.faq-title {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 8px;
+}
+
+.faq-title-icon {
+    width: 29px;
+    height: 29px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #a72df1;
+
+    color: #fff;
+
+    font-size: 17px;
+
+    font-weight: 700;
+}
+
+.faq-title h2 {
+    margin: 0;
+
+    color: #fff;
+
+    font-size: 18px;
+}
+
+.faq-list details {
+    border: 1px solid #1b4565;
+
+    border-radius: 7px;
+
+    background: #071d30;
+
+    overflow: hidden;
+
+    margin-bottom: 5px;
+}
+
+.faq-list details:last-child {
+    margin-bottom: 0;
+}
+
+.faq-list summary {
+    min-height: 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 12px;
+
+    color: #e1edf7;
+
+    font-size: 13px;
+
+    cursor: pointer;
+
+    list-style: none;
+}
+
+.faq-list summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq-list summary i {
+    color: #bdd5ea;
+
+    font-size: 11px;
+
+    transition: .2s;
+}
+
+.faq-list details[open] summary i {
+    transform: rotate(180deg);
+}
+
+.faq-list details p {
+    margin: 0;
+
+    padding: 0 12px 11px;
+
+    color: #adc5d8;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+}
+
+
+/* CTA */
+
+.upgrade-cta {
+    position: relative;
+
+    min-height: 172px;
+
+    padding: 17px 20px;
+
+    overflow: hidden;
+
+    border: 1px solid #173d58;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #061c2d,
+            #041725
+        );
+}
+
+.cta-quote {
+    max-width: 260px;
+
+    color: #dbe8f5;
+
+    font-size: 14px;
+
+    font-style: italic;
+
+    line-height: 1.45;
+}
+
+.cta-chart {
+    position: absolute;
+
+    right: 22px;
+    top: 22px;
+
+    color: #7f65ff;
+
+    font-size: 36px;
+}
+
+.upgrade-today-btn {
+    width: 100%;
+    height: 42px;
+
+    margin-top: 12px;
+
+    border: 0;
+
+    border-radius: 8px;
+
+    background: #087dff;
+
+    color: #fff;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+.upgrade-today-btn:hover {
+    background: #1687ff;
+}
+
+.upgrade-cta > p {
+    margin: 8px 0 0;
+
+    color: #c1d0dd;
+
+    text-align: center;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.upgrade-footer {
+    min-height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-top: 12px;
+
+    padding: 0 6px;
+
+    border-top: 1px solid #17354d;
+
+    color: #9eb3c5;
+
+    font-size: 12px;
+}
+
+.upgrade-footer div {
+    display: flex;
+
+    gap: 28px;
+}
+
+.upgrade-footer a {
+    color: #bdcedd;
+
+    text-decoration: none;
+}
+
+.upgrade-footer a:hover {
+    color: #fff;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1200px) {
+
+    .benefits-grid {
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+    .bottom-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media (max-width: 1000px) {
+
+    .plans-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .pricing-card {
+        min-height: auto;
+    }
+
+    .pricing-features {
+        min-height: auto;
+    }
+
+    .upgrade-search {
+        width: 380px;
+    }
+}
+
+
+@media (max-width: 800px) {
+
+    .calcura-sidebar {
+        width: 78px;
+    }
+
+    .sidebar-brand {
+        justify-content: center;
+
+        padding: 0 10px;
+    }
+
+    .sidebar-brand-text {
+        display: none;
+    }
+
+    .sidebar-item {
+        justify-content: center;
+
+        padding: 0;
+    }
+
+    .sidebar-item span {
+        display: none;
+    }
+
+    .sidebar-upgrade {
+        display: none;
+    }
+
+    .upgrade-content {
+        width: calc(100% - 78px);
+
+        margin-left: 78px;
+    }
+
+    .upgrade-search {
+        display: none;
+    }
+
+    .hero-right {
+        display: none;
+    }
+
+    .benefits-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+}
+
+
+@media (max-width: 560px) {
+
+    .upgrade-wrapper {
+        padding: 12px;
+    }
+
+    .upgrade-hero {
+        min-height: 105px;
+
+        padding: 16px;
+    }
+
+    .hero-text h1 {
+        font-size: 28px;
+    }
+
+    .hero-text p {
+        font-size: 14px;
+    }
+
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .real-user-info,
+    .real-user > i {
+        display: none;
+    }
+
+    .top-upgrade-btn {
+        display: none;
+    }
+
+    .upgrade-footer {
+        flex-direction: column;
+
+        gap: 10px;
+
+        padding: 14px;
+    }
+}
+/* CALCURA SIDEBAR - MATCH CALCULATOR PAGE */
+.calcura-sidebar {
+    position: fixed !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 260px !important;
+    height: 100vh !important;
+    z-index: 3000 !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    box-sizing: border-box !important;
+    padding: 0 12px !important;
+    background: linear-gradient(180deg,#061321 0%,#04101d 100%) !important;
+    border-right: 1px solid #17354d !important;
+}
+
+.sidebar-brand {
+    height: 88px !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 13px !important;
+    margin: 0 !important;
+    padding: 0 10px !important;
+    border-bottom: 1px solid #17354d !important;
+}
+
+.sidebar-logo {
+    width: 48px !important;
+    height: 48px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
+    border-radius: 7px !important;
+    background: #087cff !important;
+    color: #fff !important;
+    font-size: 25px !important;
+}
+
+.sidebar-brand-text h1 {
+    margin: 0 !important;
+    color: #f4f8ff !important;
+    font-size: 28px !important;
+    font-weight: 800 !important;
+}
+
+.sidebar-brand-text span {
+    display: block !important;
+    margin-top: 3px !important;
+    color: #8da4bf !important;
+    font-size: 11px !important;
+}
+
+.sidebar-nav {
+    padding: 18px 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 4px !important;
+}
+
+.sidebar-item, .calcura-nav-item {
+    min-height: 45px !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 15px !important;
+    padding: 0 13px !important;
+    margin: 0 !important;
+    border-radius: 9px !important;
+    color: #b7c8df !important;
+    text-decoration: none !important;
+    font-size: 15px !important;
+    font-weight: 500 !important;
+    box-sizing: border-box !important;
+}
+
+.sidebar-item i, .calcura-nav-item i {
+    width: 22px !important;
+    text-align: center !important;
+    color: #a8c4e5 !important;
+    font-size: 19px !important;
+}
+
+.sidebar-item:hover, .calcura-nav-item:hover {
+    background: #0b2540 !important;
+    color: #fff !important;
+}
+
+.sidebar-item.active, .calcura-nav-item.active {
+    background: linear-gradient(135deg,#087cff,#0868dc) !important;
+    color: #fff !important;
+    box-shadow: 0 7px 22px rgba(8,124,255,.28) !important;
+}
+
+.sidebar-item.active i, .calcura-nav-item.active i {
+    color: #fff !important;
+}
+
+.sidebar-upgrade {
+    margin: 8px 4px 20px !important;
+    padding: 15px !important;
+    border: 1px solid #176ac3 !important;
+    border-radius: 12px !important;
+    background: linear-gradient(145deg,#0b2847,#06182a) !important;
+}
+
+.sidebar-upgrade-icon {
+    color: #ffd34f !important;
+    font-size: 21px !important;
+    margin-bottom: 6px !important;
+}
+
+.sidebar-upgrade h3 {
+    margin: 0 0 8px !important;
+    color: #fff !important;
+    font-size: 16px !important;
+}
+
+.sidebar-upgrade ul {
+    margin: 0 0 12px !important;
+    padding-left: 17px !important;
+    color: #9fb5ce !important;
+    font-size: 12px !important;
+    line-height: 1.7 !important;
+}
+
+.sidebar-upgrade-btn {
+    display: block !important;
+    text-align: center !important;
+    padding: 9px !important;
+    border-radius: 8px !important;
+    background: #087cff !important;
+    color: #fff !important;
+    text-decoration: none !important;
+    font-weight: 700 !important;
+    font-size: 13px !important;
+}
+
+.sidebar-upgrade-btn:hover { background: #1688ff !important; }

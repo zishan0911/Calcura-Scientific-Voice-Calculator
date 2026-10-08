@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Scientific Calculator - Calcura</title>
+
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/calculator.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body class="calculator-page">
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="calcura-sidebar">
+
+        <div class="sidebar-brand">
+
+            <div class="sidebar-logo">
+                <i class="fa-solid fa-calculator"></i>
+            </div>
+
+            <div class="sidebar-brand-text">
+                <h1>Calcura</h1>
+                <span>Speak · Calculate · Explore</span>
+            </div>
+
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <a href="dashboard.html" class="sidebar-item">
+                <i class="fa-solid fa-house"></i>
+                <span>Home</span>
+            </a>
+
+            <a href="calculator.html" class="sidebar-item active">
+                <i class="fa-solid fa-calculator"></i>
+                <span>Calculator</span>
+            </a>
+
+            <a href="voice-input.html" class="sidebar-item">
+                <i class="fa-solid fa-microphone"></i>
+                <span>Voice Input</span>
+            </a>
+
+            <a href="graph.html" class="sidebar-item">
+                <i class="fa-solid fa-chart-line"></i>
+                <span>Graph &amp; Plot</span>
+            </a>
+
+            <a href="ai-calculator.html" class="calcura-nav-item">
+                <i class="fa-solid fa-robot"></i>
+                <span>AI Assistant</span>
+            </a>
+
+            <a href="formulas.html" class="sidebar-item">
+                <i class="fa-solid fa-book-open"></i>
+                <span>Formula Library</span>
+            </a>
+
+            <a href="converter.html" class="sidebar-item">
+                <i class="fa-solid fa-right-left"></i>
+                <span>Unit Converter</span>
+            </a>
+
+            <a href="history.html" class="sidebar-item">
+                <i class="fa-regular fa-clock"></i>
+                <span>History</span>
+            </a>
+
+            <a href="saved.html" class="sidebar-item">
+                <i class="fa-regular fa-bookmark"></i>
+                <span>Saved</span>
+            </a>
+
+            <a href="settings.html" class="sidebar-item">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+            </a>
+
+            <a href="profile.html" class="sidebar-item">
+                <i class="fa-solid fa-user"></i>
+                <span>Profile</span>
+            </a>
+
+            <a href="about.html" class="sidebar-item">
+                <i class="fa-solid fa-circle-info"></i>
+                <span>About</span>
+            </a>
+
+            <a href="help.html" class="sidebar-item">
+                <i class="fa-solid fa-circle-question"></i>
+                <span>Help &amp; Support</span>
+            </a>
+
+            <a href="upgrade.html" class="sidebar-item">
+                <i class="fa-solid fa-crown"></i>
+                <span>Upgrade to Pro</span>
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+    <!-- ================= TOP HEADER ================= -->
+
+    <header class="dashboard-top-header">
+
+        <div class="calculator-search">
+
+            <span class="search-icon">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </span>
+
+             <!-- GLOBAL SEARCH -->
+
+            <div class="saved-global-search">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input
+                    type="text"
+                    id="globalSearch"
+                    placeholder="Search your saved calculations..."
+                    autocomplete="off">
+
+            </div>
+
+        </div>
+
+        <div class="dashboard-header-actions">
+
+            <a href="upgrade.html" class="header-pro-button">
+                <i class="fa-solid fa-crown"></i>
+                Upgrade to Pro
+            </a>
+
+            <button
+                class="header-icon-button"
+                id="notificationButton"
+                type="button">
+                <i class="fa-regular fa-bell"></i>
+            </button>
+
+            <a href="profile.html" class="header-user">
+
+                <div class="header-avatar" id="profileAvatar">
+                    U
+                </div>
+
+                <div class="header-user-details">
+
+                    <strong id="profileName">
+                        User
+                    </strong>
+
+                    <span id="profilePlan">
+                        Free Plan
+                    </span>
+
+                </div>
+
+                <span class="header-arrow"></span>
+
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="calculator-main">
+
+        <section class="calculator-layout">
+
+            <!-- ================= CENTER ================= -->
+
+            <div class="calculator-center">
+
+                <!-- HERO -->
+
+                <header class="calculator-hero">
+
+                    <div class="calculator-hero-content">
+
+                        <h1>
+                            Scientific <span>Calculator</span>
+                        </h1>
+
+                        <p>
+                            Powerful. Accurate. Voice Enabled.
+                        </p>
+
+                    </div>
+
+                    <div class="calculator-hero-decoration">
+
+                        <div class="hero-quote">
+                            “Mathematics gives us hope<br>
+                            that every problem has a solution.”
+                            <span>— Stephen Hawking</span>
+                        </div>
+
+                        <div class="hero-math math-one">
+                            ∫
+                        </div>
+
+                        <div class="hero-math math-two">
+                            f(x) dx
+                        </div>
+
+                        <div class="hero-math math-three">
+                            π
+                        </div>
+
+                    </div>
+
+                </header>
+
+
+                <!-- ================= CALCULATOR CARD ================= -->
+
+                <section class="calculator-card">
+
+                    <!-- DISPLAY -->
+
+                    <div class="calculator-display">
+
+                        <div class="display-top">
+
+                            <div class="angle-dropdown">
+
+                                <button
+                                    type="button"
+                                    class="display-angle"
+                                    id="displayAngle">
+
+                                    <span id="displayAngleText">
+                                        DEG
+                                    </span>
+
+                                    <span class="angle-arrow">
+                                        ⌄
+                                    </span>
+
+                                </button>
+
+                                <div
+                                    class="angle-dropdown-menu"
+                                    id="angleDropdownMenu">
+
+                                    <button
+                                        type="button"
+                                        class="angle-option active"
+                                        data-angle="DEG">
+
+                                        <span>DEG</span>
+                                        <i class="fa-solid fa-check"></i>
+
+                                    </button>
+
+                                    <button
+                                        type="button"
+                                        class="angle-option"
+                                        data-angle="RAD">
+
+                                        <span>RAD</span>
+                                        <i class="fa-solid fa-check"></i>
+
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="display-expression-row">
+
+                            <div
+                                class="calculator-expression"
+                                id="expression">
+                                0
+                            </div>
+
+                            <button
+                                type="button"
+                                class="display-clear"
+                                id="displayClear">
+
+                                <i class="fa-solid fa-xmark"></i>
+
+                            </button>
+
+                            <button
+                                type="button"
+                                class="display-mic"
+                                id="calculatorMic">
+
+                                <i class="fa-solid fa-microphone"></i>
+
+                            </button>
+
+                        </div>
+
+
+                        <div
+                            class="calculator-result"
+                            id="result">
+                            0
+                        </div>
+
+                    </div>
+
+
+                    <!-- ================= TABS ================= -->
+
+                    <div class="calculator-tabs">
+
+                        <button
+                            class="calculator-tab active"
+                            data-tab="basic">
+                            Basic
+                        </button>
+
+                        <button
+                            class="calculator-tab"
+                            data-tab="scientific">
+                            Scientific
+                        </button>
+
+                        <button
+                            class="calculator-tab"
+                            data-tab="trigonometry">
+                            Trigonometry
+                        </button>
+
+                        <button
+                            class="calculator-tab"
+                            data-tab="logexp">
+                            Log &amp; Exp
+                        </button>
+
+                        <button
+                            class="calculator-tab"
+                            data-tab="matrix">
+                            Matrix
+                        </button>
+
+                        <button
+                            class="calculator-tab"
+                            data-tab="constants">
+                            Constants
+                        </button>
+
+                    </div>
+
+
+                    <!-- ================= BUTTON AREA ================= -->
+
+                    <div class="calculator-buttons-wrap">
+
+
+                        <!-- ================= BASIC ================= -->
+
+                        <div
+                            class="calculator-panel active"
+                            data-panel="basic">
+
+                            <div class="calculator-buttons">
+
+                                <button type="button" class="calc-btn" data-value="(">(</button>
+                                <button type="button" class="calc-btn" data-value=")">)</button>
+                                <button type="button" class="calc-btn" data-action="percent">%</button>
+                                <button type="button" class="calc-btn" data-action="clearEntry">CE</button>
+                                <button type="button" class="calc-btn clear" data-action="clear">AC</button>
+                                <button type="button" class="calc-btn" data-action="delete">
+                                    <i class="fa-regular fa-delete-left"></i>
+                                </button>
+
+                                <button type="button" class="calc-btn" data-value="7">7</button>
+                                <button type="button" class="calc-btn" data-value="8">8</button>
+                                <button type="button" class="calc-btn" data-value="9">9</button>
+                                <button type="button" class="calc-btn operator" data-value="/">÷</button>
+                                <button type="button" class="calc-btn" data-action="sqrt">√</button>
+                                <button type="button" class="calc-btn" data-action="square">x²</button>
+
+                                <button type="button" class="calc-btn" data-value="4">4</button>
+                                <button type="button" class="calc-btn" data-value="5">5</button>
+                                <button type="button" class="calc-btn" data-value="6">6</button>
+                                <button type="button" class="calc-btn operator" data-value="*">×</button>
+                                <button type="button" class="calc-btn" data-action="power">xʸ</button>
+                                <button type="button" class="calc-btn" data-action="cbrt">∛</button>
+
+                                <button type="button" class="calc-btn" data-value="1">1</button>
+                                <button type="button" class="calc-btn" data-value="2">2</button>
+                                <button type="button" class="calc-btn" data-value="3">3</button>
+                                <button type="button" class="calc-btn operator" data-value="-">−</button>
+                                <button type="button" class="calc-btn" data-action="sin">sin</button>
+                                <button type="button" class="calc-btn" data-action="cos">cos</button>
+
+                                <button type="button" class="calc-btn" data-value="0">0</button>
+                                <button type="button" class="calc-btn" data-value=".">.</button>
+                                <button type="button" class="calc-btn" data-action="pi">π</button>
+                                <button type="button" class="calc-btn operator" data-value="+">+</button>
+                                <button type="button" class="calc-btn" data-action="tan">tan</button>
+                                <button type="button" class="calc-btn" data-action="log">log</button>
+
+                                <button
+                                    type="button"
+                                    class="calc-btn equals"
+                                    data-action="calculate">
+                                    =
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- ================= SCIENTIFIC ================= -->
+
+                        <div
+                            class="calculator-panel"
+                            data-panel="scientific">
+
+                            <div class="calculator-buttons">
+
+                                <button class="calc-btn" data-action="abs">Abs</button>
+                                <button class="calc-btn" data-action="cube">x³</button>
+                                <button class="calc-btn" data-action="inverse">x⁻¹</button>
+                                <button class="calc-btn" data-action="log">log</button>
+                                <button class="calc-btn" data-action="ln">ln</button>
+                                <button class="calc-btn" data-action="square">x²</button>
+
+                                <button class="calc-btn" data-action="power">xʸ</button>
+                                <button class="calc-btn" data-action="sqrt">√</button>
+                                <button class="calc-btn" data-action="cbrt">∛</button>
+                                <button class="calc-btn" data-action="tenPower">10ˣ</button>
+                                <button class="calc-btn" data-action="exp">eˣ</button>
+                                <button class="calc-btn" data-action="factorial">FACT</button>
+
+                                <button class="calc-btn" data-action="asin">sin⁻¹</button>
+                                <button class="calc-btn" data-action="acos">cos⁻¹</button>
+                                <button class="calc-btn" data-action="atan">tan⁻¹</button>
+                                <button class="calc-btn" data-action="npr">nPr</button>
+                                <button class="calc-btn" data-action="ncr">nCr</button>
+                                <button class="calc-btn" data-action="ans">Ans</button>
+
+                                <button class="calc-btn" data-value="7">7</button>
+                                <button class="calc-btn" data-value="8">8</button>
+                                <button class="calc-btn" data-value="9">9</button>
+                                <button class="calc-btn" data-value="(">(</button>
+                                <button class="calc-btn" data-value=")">)</button>
+                                <button class="calc-btn operator" data-value="/">÷</button>
+
+                                <button class="calc-btn" data-value="4">4</button>
+                                <button class="calc-btn" data-value="5">5</button>
+                                <button class="calc-btn" data-value="6">6</button>
+                                <button class="calc-btn operator" data-value="*">×</button>
+                                <button class="calc-btn" data-action="pi">π</button>
+                                <button class="calc-btn clear" data-action="clear">AC</button>
+
+                                <button class="calc-btn" data-value="1">1</button>
+                                <button class="calc-btn" data-value="2">2</button>
+                                <button class="calc-btn" data-value="3">3</button>
+                                <button class="calc-btn operator" data-value="-">−</button>
+                                <button class="calc-btn" data-action="delete">DEL</button>
+                                <button class="calc-btn operator" data-value="+">+</button>
+
+                                <button class="calc-btn" data-value="0">0</button>
+                                <button class="calc-btn" data-value=".">.</button>
+                                <button class="calc-btn" data-action="e">e</button>
+                                <button class="calc-btn" data-action="negate">±</button>
+
+                                <button
+                                    class="calc-btn equals"
+                                    data-action="calculate">
+                                    =
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- ================= TRIGONOMETRY ================= -->
+
+                        <div
+                            class="calculator-panel"
+                            data-panel="trigonometry">
+
+                            <div class="calculator-buttons">
+
+                                <button class="calc-btn" data-action="sin">sin</button>
+                                <button class="calc-btn" data-action="cos">cos</button>
+                                <button class="calc-btn" data-action="tan">tan</button>
+
+                                <button class="calc-btn" data-action="asin">sin⁻¹</button>
+                                <button class="calc-btn" data-action="acos">cos⁻¹</button>
+                                <button class="calc-btn" data-action="atan">tan⁻¹</button>
+
+                                <button class="calc-btn" data-action="sinh">sinh</button>
+                                <button class="calc-btn" data-action="cosh">cosh</button>
+                                <button class="calc-btn" data-action="tanh">tanh</button>
+
+                                <button class="calc-btn" data-action="sec">sec</button>
+                                <button class="calc-btn" data-action="csc">csc</button>
+                                <button class="calc-btn" data-action="cot">cot</button>
+
+                                <button class="calc-btn" data-value="7">7</button>
+                                <button class="calc-btn" data-value="8">8</button>
+                                <button class="calc-btn" data-value="9">9</button>
+                                <button class="calc-btn" data-value="(">(</button>
+                                <button class="calc-btn" data-value=")">)</button>
+                                <button class="calc-btn operator" data-value="/">÷</button>
+
+                                <button class="calc-btn" data-value="4">4</button>
+                                <button class="calc-btn" data-value="5">5</button>
+                                <button class="calc-btn" data-value="6">6</button>
+                                <button class="calc-btn operator" data-value="*">×</button>
+                                <button class="calc-btn" data-action="pi">π</button>
+                                <button class="calc-btn clear" data-action="clear">AC</button>
+
+                                <button class="calc-btn" data-value="1">1</button>
+                                <button class="calc-btn" data-value="2">2</button>
+                                <button class="calc-btn" data-value="3">3</button>
+                                <button class="calc-btn operator" data-value="-">−</button>
+                                <button class="calc-btn" data-action="delete">DEL</button>
+                                <button class="calc-btn" data-action="e">e</button>
+
+                                <button class="calc-btn" data-value="0">0</button>
+                                <button class="calc-btn" data-value=".">.</button>
+                                <button class="calc-btn operator" data-value="+">+</button>
+
+                                <button
+                                    class="calc-btn equals"
+                                    data-action="calculate">
+                                    =
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- ================= LOG & EXP ================= -->
+
+                        <div
+                            class="calculator-panel"
+                            data-panel="logexp">
+
+                            <div class="calculator-buttons">
+
+                                <button class="calc-btn" data-action="log">log</button>
+                                <button class="calc-btn" data-action="ln">ln</button>
+                                <button class="calc-btn" data-action="exp">eˣ</button>
+                                <button class="calc-btn" data-action="tenPower">10ˣ</button>
+                                <button class="calc-btn" data-action="e">e</button>
+                                <button class="calc-btn" data-action="inverse">1/x</button>
+
+                                <button class="calc-btn" data-value="7">7</button>
+                                <button class="calc-btn" data-value="8">8</button>
+                                <button class="calc-btn" data-value="9">9</button>
+                                <button class="calc-btn operator" data-value="/">÷</button>
+                                <button class="calc-btn" data-action="sqrt">√</button>
+                                <button class="calc-btn" data-action="abs">Abs</button>
+
+                                <button class="calc-btn" data-value="4">4</button>
+                                <button class="calc-btn" data-value="5">5</button>
+                                <button class="calc-btn" data-value="6">6</button>
+                                <button class="calc-btn operator" data-value="*">×</button>
+                                <button class="calc-btn" data-action="power">xʸ</button>
+                                <button class="calc-btn" data-action="cbrt">∛</button>
+
+                                <button class="calc-btn" data-value="1">1</button>
+                                <button class="calc-btn" data-value="2">2</button>
+                                <button class="calc-btn" data-value="3">3</button>
+                                <button class="calc-btn operator" data-value="-">−</button>
+                                <button class="calc-btn" data-action="square">x²</button>
+                                <button class="calc-btn clear" data-action="clear">AC</button>
+
+                                <button class="calc-btn" data-value="0">0</button>
+                                <button class="calc-btn" data-value=".">.</button>
+                                <button class="calc-btn operator" data-value="+">+</button>
+                                <button class="calc-btn" data-value="(">(</button>
+                                <button class="calc-btn" data-value=")">)</button>
+
+                                <button
+                                    class="calc-btn equals"
+                                    data-action="calculate">
+                                    =
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- ================= MATRIX ================= -->
+
+                       <div class="calculator-panel" data-panel="matrix">
+
+    <div class="matrix-size-controls">
+
+        <div class="matrix-size-group">
+            <label>Rows</label>
+            <select id="matrixRows">
+                <option value="1">1</option>
+                <option value="2" selected>2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+            </select>
+        </div>
+
+        <div class="matrix-size-group">
+            <label>Columns</label>
+            <select id="matrixCols">
+                <option value="1">1</option>
+                <option value="2" selected>2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+            </select>
+        </div>
+
+       <button
+            type="button"
+            id="generateMatrix"
+            class="matrix-generate"
+            onclick="calcuraMatrixUI.generate()">
+            Generate Matrix
+        </button>
+
+    </div>
+
+
+    <div class="matrix-container">
+
+        <div class="matrix-box">
+
+            <div class="matrix-title">
+                Matrix A
+            </div>
+
+            <div class="matrix-grid" id="matrixAGrid"></div>
+
+        </div>
+
+
+        <div class="matrix-box">
+
+            <div class="matrix-title">
+                Matrix B
+            </div>
+
+            <div class="matrix-grid" id="matrixBGrid"></div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Existing JS uses these -->
+    <textarea id="matrixA" hidden></textarea>
+    <textarea id="matrixB" hidden></textarea>
+
+
+    <div class="matrix-tools">
+
+        <button type="button" class="matrix-action" data-matrix-action="add">
+            A + B
+        </button>
+
+        <button type="button" class="matrix-action" data-matrix-action="subtract">
+            A − B
+        </button>
+
+        <button type="button" class="matrix-action" data-matrix-action="multiply">
+            A × B
+        </button>
+
+        <button type="button" class="matrix-action" data-matrix-action="determinant">
+            det(A)
+        </button>
+
+        <button type="button" class="matrix-action" data-matrix-action="inverse">
+            A⁻¹
+        </button>
+
+        <button type="button" class="matrix-action" data-matrix-action="transpose">
+            Aᵀ
+        </button>
+
+    </div>
+
+
+    <div class="matrix-result-box">
+
+        <div class="matrix-result-title">
+            Result
+        </div>
+
+        <pre id="matrixResult">0</pre>
+
+    </div>
+
+</div>
+
+
+                        <!-- ================= CONSTANTS ================= -->
+
+                        <div
+                            class="calculator-panel"
+                            data-panel="constants">
+
+                            <div class="calculator-buttons constants-grid">
+
+                                <button class="calc-btn" data-action="pi">
+                                    π
+                                </button>
+
+                                <button class="calc-btn" data-action="e">
+                                    e
+                                </button>
+
+                                <button class="calc-btn" data-value="1.61803398875">
+                                    φ
+                                </button>
+
+                                <button class="calc-btn" data-value="1.41421356237">
+                                    √2
+                                </button>
+
+                                <button class="calc-btn" data-value="299792458">
+                                    c
+                                </button>
+
+                                <button class="calc-btn" data-value="6.67430e-11">
+                                    G
+                                </button>
+
+                                <button class="calc-btn" data-value="6.62607015e-34">
+                                    h
+                                </button>
+
+                                <button class="calc-btn" data-value="1.380649e-23">
+                                    k
+                                </button>
+
+                                <button class="calc-btn" data-value="9.80665">
+                                    g
+                                </button>
+
+                                <button class="calc-btn" data-action="ans">
+                                    Ans
+                                </button>
+
+                                <button class="calc-btn" data-value="(">
+                                    (
+                                </button>
+
+                                <button class="calc-btn" data-value=")">
+                                    )
+                                </button>
+
+                                <button class="calc-btn operator" data-value="+">
+                                    +
+                                </button>
+
+                                <button class="calc-btn operator" data-value="-">
+                                    −
+                                </button>
+
+                                <button class="calc-btn operator" data-value="*">
+                                    ×
+                                </button>
+
+                                <button class="calc-btn operator" data-value="/">
+                                    ÷
+                                </button>
+
+                                <button class="calc-btn clear" data-action="clear">
+                                    AC
+                                </button>
+
+                                <button class="calc-btn" data-action="delete">
+                                    DEL
+                                </button>
+
+                                <button
+                                    class="calc-btn equals"
+                                    data-action="calculate">
+                                    =
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+
+            <!-- ================= RIGHT SIDE ================= -->
+
+            <aside class="calculator-right">
+
+
+                <!-- VOICE -->
+
+                <section class="voice-card side-card">
+
+                    <div class="side-card-title">
+
+                        <i class="fa-solid fa-microphone"></i>
+
+                        <div>
+
+                            <h2>
+                                Voice Input
+                            </h2>
+
+                            <p>
+                                Just speak your expression
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <button
+                        id="startListening"
+                        class="listen-button"
+                        type="button">
+
+                        <i class="fa-solid fa-wave-square"></i>
+
+                        <span>
+                            Start Listening
+                        </span>
+
+                    </button>
+
+                    <div
+                        id="voiceStatus"
+                        class="voice-status">
+                    </div>
+
+                </section>
+
+
+                <!-- HISTORY -->
+
+                <section class="calculator-history side-card">
+
+                    <div class="history-header">
+
+                        <div class="history-title">
+
+                            <span class="history-icon">
+                                <i class="fa-regular fa-clock"></i>
+                            </span>
+
+                            <h2>
+                                Recent Calculations
+                            </h2>
+
+                        </div>
+
+                        <a
+                            href="history.html"
+                            class="history-view-all">
+                            View All
+                        </a>
+
+                    </div>
+
+                    <div
+                        class="history-list"
+                        id="historyList">
+                    </div>
+
+                </section>
+
+
+                <!-- PRO TIP -->
+
+                <section class="calculator-pro-tip">
+
+                    <div class="pro-tip-icon">
+                        <i class="fa-solid fa-lightbulb"></i>
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Pro Tip
+                        </h3>
+
+                        <p>
+                            You can also use voice input like:
+                            “integrate x square” or
+                            “sin 30 degrees”.
+                        </p>
+
+                    </div>
+
+                </section>
+
+            </aside>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="calculator-footer">
+
+        <span>
+            © 2026 Calcura. All rights reserved.
+        </span>
+
+        <div>
+            <a href="about.html">About</a>
+            <a href="help.html">Help</a>
+
+        </div>
+
+    </footer>
+
+
+    <script src="../js/api.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/calculator.js"></script>
+<script>
+window.calcuraMatrixUI = {
+
+    generate: function () {
+
+        const rows =
+            Number(document.getElementById("matrixRows").value);
+
+        const cols =
+            Number(document.getElementById("matrixCols").value);
+
+        const gridA =
+            document.getElementById("matrixAGrid");
+
+        const gridB =
+            document.getElementById("matrixBGrid");
+
+        gridA.innerHTML = "";
+        gridB.innerHTML = "";
+
+        gridA.style.gridTemplateColumns =
+            `repeat(${cols}, minmax(55px, 1fr))`;
+
+        gridB.style.gridTemplateColumns =
+            `repeat(${cols}, minmax(55px, 1fr))`;
+
+        for (let r = 0; r < rows; r++) {
+
+            for (let c = 0; c < cols; c++) {
+
+                const a =
+                    document.createElement("input");
+
+                a.type = "number";
+                a.step = "any";
+                a.className = "matrix-cell";
+                a.placeholder = "0";
+
+                gridA.appendChild(a);
+
+
+                const b =
+                    document.createElement("input");
+
+                b.type = "number";
+                b.step = "any";
+                b.className = "matrix-cell";
+                b.placeholder = "0";
+
+                gridB.appendChild(b);
+            }
+        }
+
+        this.sync();
+    },
+
+
+    sync: function () {
+
+        const rows =
+            Number(document.getElementById("matrixRows").value);
+
+        const cols =
+            Number(document.getElementById("matrixCols").value);
+
+        const inputsA =
+            document.querySelectorAll(
+                "#matrixAGrid .matrix-cell"
+            );
+
+        const inputsB =
+            document.querySelectorAll(
+                "#matrixBGrid .matrix-cell"
+            );
+
+        const matrixA = [];
+        const matrixB = [];
+
+        for (let r = 0; r < rows; r++) {
+
+            const rowA = [];
+            const rowB = [];
+
+            for (let c = 0; c < cols; c++) {
+
+                const index = r * cols + c;
+
+                rowA.push(
+                    inputsA[index]?.value || "0"
+                );
+
+                rowB.push(
+                    inputsB[index]?.value || "0"
+                );
+            }
+
+            matrixA.push(rowA);
+            matrixB.push(rowB);
+        }
+
+        const hiddenA =
+            document.getElementById("matrixA");
+
+        const hiddenB =
+            document.getElementById("matrixB");
+
+        if (hiddenA) {
+            hiddenA.value =
+                matrixA
+                    .map(row => row.join(","))
+                    .join(";");
+        }
+
+        if (hiddenB) {
+            hiddenB.value =
+                matrixB
+                    .map(row => row.join(","))
+                    .join(";");
+        }
+    }
+};
+
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+        calcuraMatrixUI.generate();
+
+        document.addEventListener(
+            "input",
+            function (event) {
+
+                if (
+                    event.target.classList.contains(
+                        "matrix-cell"
+                    )
+                ) {
+                    calcuraMatrixUI.sync();
+                }
+
+            }
+        );
+
+    }
+);
+</script>
+</body>
+
+</html>

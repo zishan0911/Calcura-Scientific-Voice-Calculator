@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard - Calcura</title>
+
+<link rel="stylesheet" href="../css/global.css">
+<link rel="stylesheet" href="../css/dashboard.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+    
+     <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside class="calcura-sidebar">
+
+        <div class="sidebar-brand">
+
+            <div class="sidebar-logo">
+                <i class="fa-solid fa-calculator"></i>
+            </div>
+
+            <div class="sidebar-brand-text">
+                <h1>Calcura</h1>
+                <span>Speak · Calculate · Explore</span>
+            </div>
+
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <a href="dashboard.html" class="sidebar-item active">
+                <i class="fa-solid fa-house"></i>
+                <span>Home</span>
+            </a>
+
+            <a href="calculator.html" class="sidebar-item">
+                <i class="fa-solid fa-calculator"></i>
+                <span>Calculator</span>
+            </a>
+
+            <a href="voice-input.html" class="sidebar-item">
+                <i class="fa-solid fa-microphone"></i>
+                <span>Voice Input</span>
+            </a>
+
+            <a href="graph.html" class="sidebar-item">
+                <i class="fa-solid fa-chart-line"></i>
+                <span>Graph &amp; Plot</span>
+            </a>
+
+             <a href="ai-calculator.html" class="calcura-nav-item">
+                <i class="fa-solid fa-robot"></i>
+                <span>AI Assistant</span>
+            </a>
+
+            <a href="formulas.html" class="sidebar-item">
+                <i class="fa-solid fa-book-open"></i>
+                <span>Formula Library</span>
+            </a>
+
+            <a href="converter.html" class="sidebar-item">
+                <i class="fa-solid fa-right-left"></i>
+                <span>Unit Converter</span>
+            </a>
+
+            <a href="history.html" class="sidebar-item">
+                <i class="fa-regular fa-clock"></i>
+                <span>History</span>
+            </a>
+
+            <a href="saved.html" class="sidebar-item">
+                <i class="fa-regular fa-bookmark"></i>
+                <span>Saved</span>
+            </a>
+
+            <a href="settings.html" class="sidebar-item">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+            </a>
+
+            <a href="profile.html" class="sidebar-item">
+                <i class="fa-solid fa-user"></i>
+                <span>Profile</span>
+            </a>
+
+            <a href="about.html" class="sidebar-item">
+                <i class="fa-solid fa-circle-info"></i>
+                <span>About</span>
+            </a>
+
+            <a href="help.html" class="sidebar-item">
+                <i class="fa-solid fa-circle-question"></i>
+                <span>Help &amp; Support</span>
+            </a>
+
+            <a href="upgrade.html"
+               class="sidebar-item">
+
+                <i class="fa-solid fa-crown"></i>
+
+                <span>
+                    Upgrade to Pro
+                </span>
+
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+
+    <!-- =========================================
+         TOP HEADER
+    ========================================== -->
+
+    <header class="dashboard-top-header">
+
+        <!-- SEARCH -->
+
+        <div class="dashboard-search">
+
+            <span class="search-icon">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </span>
+
+            <input
+                type="text"
+                id="globalSearch"
+                placeholder="Search tools, history, or help..."
+            >
+
+        </div>
+
+
+        <!-- HEADER ACTIONS -->
+
+        <div class="dashboard-header-actions">
+
+            <a
+                href="upgrade.html"
+                class="header-pro-button"
+            >
+                <i class="fa-solid fa-crown"></i>
+                Upgrade to Pro
+            </a>
+
+
+            <button
+                class="header-icon-button"
+                id="notificationButton"
+                type="button"
+            >
+                <i class="fa-regular fa-bell"></i>
+            </button>
+
+
+            <a
+                href="profile.html"
+                class="header-user"
+            >
+
+                <div
+                    class="header-avatar"
+                    id="profileAvatar"
+                >
+                    U
+                </div>
+
+                <div class="header-user-details">
+
+                    <strong id="profileName">
+                        User
+                    </strong>
+
+                    <span>
+                        Free Plan
+                    </span>
+
+                </div>
+
+                <span class="header-arrow">
+                    ⌄
+                </span>
+
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================================
+         MAIN DASHBOARD
+    ========================================== -->
+
+    <main class="dashboard-main">
+
+
+        <!-- =====================================
+             MAIN CENTER
+        ====================================== -->
+
+        <section class="dashboard-content">
+
+
+            <!-- WELCOME / HERO -->
+
+            <section class="dashboard-hero">
+
+                <div class="hero-left">
+
+                    <span class="hero-small-title">
+                        CALCURA DASHBOARD
+                    </span>
+
+                    <h1>
+                        Hello,
+                        <span id="welcomeName">
+                            User
+                        </span>
+                        👋
+                    </h1>
+
+                    <p>
+                        What would you like to calculate today?
+                    </p>
+
+                </div>
+
+
+                <div class="hero-quote">
+
+                    <div class="quote-mark">
+                        “
+                    </div>
+
+                    <p>
+                        Mathematics is the language
+                        with which God has written
+                        the universe.
+                    </p>
+
+                    <span>
+                        — Galileo Galilei
+                    </span>
+
+                </div>
+
+
+                <div class="hero-decoration">
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================
+                 CALCULATOR WORKSPACE
+            ================================== -->
+
+            <section class="dashboard-calculator-card">
+
+
+                <!-- CALCULATOR TABS -->
+
+                <div class="calculator-tabs">
+
+                    <button
+                        class="calculator-tab active"
+                        data-mode="standard"
+                        type="button"
+                    >
+                        <span><i class="fa-solid fa-calculator"></i></span>
+                        Standard
+                    </button>
+
+                    <button
+                        class="calculator-tab"
+                        data-mode="scientific"
+                        type="button"
+                    >
+                        <span><i class="fa-solid fa-flask"></i></span>
+                        Scientific
+                    </button>
+
+                    <button
+                        class="calculator-tab"
+                        data-mode="graphing"
+                        type="button"
+                    >
+                        <span><i class="fa-solid fa-chart-line"></i></span>
+                        Graphing
+                    </button>
+
+                    <button
+                        class="calculator-tab"
+                        data-mode="matrix"
+                        type="button"
+                    >
+                        <span><i class="fa-solid fa-table-cells-large"></i></span>
+                        Matrix
+                    </button>
+
+                    <button
+                        class="calculator-tab"
+                        data-mode="equation"
+                        type="button"
+                    >
+                        <span><i class="fa-solid fa-square-root-variable"></i></span>
+                        Equation Solver
+                    </button>
+
+                    <button
+                        class="calculator-tab"
+                        data-mode="ai"
+                        type="button"
+                    >
+                        <span><i class="fa-solid fa-wand-magic-sparkles"></i></span>
+                        AI Assistant
+                    </button>
+
+                </div>
+
+
+                <!-- CALCULATOR BODY -->
+
+                <div class="calculator-workspace">
+
+
+                    <!-- EXPRESSION -->
+
+                    <div class="expression-container">
+
+                        <label for="dashboardExpression">
+                            Enter expression
+                        </label>
+
+
+                        <div class="expression-input-wrapper">
+
+                            <textarea
+                                id="dashboardExpression"
+                                rows="2"
+                                placeholder="Type your expression here..."
+                            ></textarea>
+
+
+                            <div class="expression-tools">
+
+                                <button
+                                    id="dashboardMic"
+                                    type="button"
+                                    title="Voice Input"
+                                >
+                                    <i class="fa-solid fa-microphone"></i>
+                                </button>
+
+                                <button
+                                    id="dashboardKeyboard"
+                                    type="button"
+                                    title="Keyboard"
+                                >
+                                    <i class="fa-solid fa-keyboard"></i>
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- CALCULATE ROW -->
+
+                    <div class="calculate-row">
+
+                        <div class="expression-hint">
+
+                            <span>
+                                Example:
+                            </span>
+
+                            <button
+                                type="button"
+                                class="hint-example"
+                                data-expression="sin(30) + 5^2"
+                            >
+                                sin(30) + 5²
+                            </button>
+
+                            <span>
+                                or
+                            </span>
+
+                            <button
+                                type="button"
+                                class="hint-example"
+                                data-expression="sqrt(256)"
+                            >
+                                √256
+                            </button>
+
+                        </div>
+
+
+                        <button
+                            id="dashboardCalculate"
+                            class="dashboard-calculate-button"
+                            type="button"
+                        >
+                            <span><i class="fa-solid fa-equals"></i></span>
+                            Calculate
+                        </button>
+
+                    </div>
+
+
+                    <!-- RESULT -->
+
+                    <div class="dashboard-result-box">
+
+                        <div class="result-header">
+
+                            <span>
+                                Result
+                            </span>
+
+                            <div class="result-buttons">
+
+                                <button
+                                    id="copyResult"
+                                    type="button"
+                                    title="Copy result"
+                                >
+                                    <i class="fa-regular fa-copy"></i>
+                                </button>
+
+                                <button
+                                    id="expandResult"
+                                    type="button"
+                                    title="Expand result"
+                                >
+                                    <i class="fa-solid fa-expand"></i>
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+                        <div
+                            id="dashboardResult"
+                            class="dashboard-result"
+                        >
+                            0
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================
+                 POPULAR EXAMPLES
+            ================================== -->
+
+            <section class="dashboard-section popular-section">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span class="section-kicker">
+                            EXPLORE
+                        </span>
+
+                        <h2>
+                            <i class="fa-solid fa-lightbulb"></i>
+                            Popular Examples
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="popular-grid">
+
+
+                    <button
+                        class="popular-card"
+                        data-expression="sin(45)"
+                        type="button"
+                    >
+
+                        <div class="popular-card-top">
+                            <span class="formula-symbol">
+                                sin
+                            </span>
+
+                            <span>
+                                →
+                            </span>
+                        </div>
+
+                        <strong>
+                            sin(45)
+                        </strong>
+
+                        <small>
+                            Trigonometry
+                        </small>
+
+                    </button>
+
+
+                    <button
+                        class="popular-card"
+                        data-expression="integrate x^2 dx"
+                        type="button"
+                    >
+
+                        <div class="popular-card-top">
+                            <span class="formula-symbol">
+                                ∫
+                            </span>
+
+                            <span>
+                                →
+                            </span>
+                        </div>
+
+                        <strong>
+                            ∫ x² dx
+                        </strong>
+
+                        <small>
+                            Integration
+                        </small>
+
+                    </button>
+
+
+                    <button
+                        class="popular-card"
+                        data-expression="derivative of x^2"
+                        type="button"
+                    >
+
+                        <div class="popular-card-top">
+                            <span class="formula-symbol">
+                                d/dx
+                            </span>
+
+                            <span>
+                                →
+                            </span>
+                        </div>
+
+                        <strong>
+                            d/dx (x²)
+                        </strong>
+
+                        <small>
+                            Differentiation
+                        </small>
+
+                    </button>
+
+
+                    <button
+                        class="popular-card"
+                        data-expression="sqrt(256)"
+                        type="button"
+                    >
+
+                        <div class="popular-card-top">
+                            <span class="formula-symbol">
+                                √
+                            </span>
+
+                            <span>
+                                →
+                            </span>
+                        </div>
+
+                        <strong>
+                            √256
+                        </strong>
+
+                        <small>
+                            Square Root
+                        </small>
+
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================
+                 AI CALCULATIONS BANNER
+            ================================== -->
+
+            <section class="ai-dashboard-banner">
+
+                <div class="ai-banner-icon">
+                    ✦
+                </div>
+
+
+                <div class="ai-banner-content">
+
+                    <span>
+                        CALCURA AI
+                    </span>
+
+                    <h2>
+                        Try AI Calculations
+                    </h2>
+
+                    <p>
+                        Get step-by-step solutions,
+                        explanations, and graphs with AI.
+                    </p>
+
+                </div>
+
+
+                <a
+                    href="ai-calculator.html"
+                    class="ask-ai-button"
+                >
+                    ✦
+                    Ask AI
+                </a>
+
+            </section>
+
+
+            <!-- =================================
+                 FOOTER
+            ================================== -->
+
+            <footer class="dashboard-footer">
+
+                <p>
+                    © 2026 Calcura. All rights reserved.
+                </p>
+
+                <div>
+
+                    <a href="about.html">
+                        About
+                    </a>
+
+                    <a href="help.html">
+                        Help
+                    </a>
+                </div>
+
+            </footer>
+
+        </section>
+
+
+        <!-- =====================================
+             RIGHT COLUMN
+        ====================================== -->
+
+        <aside class="dashboard-right-column">
+
+
+            <!-- QUICK ACTIONS -->
+
+            <section class="dashboard-panel">
+
+                <div class="panel-title">
+
+                    <div>
+
+                        <span>
+                            <i class="fa-solid fa-bolt"></i>
+                        </span>
+
+                        <h2>
+                            Quick Actions
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="quick-actions-grid">
+
+
+                    <a
+                        href="calculator.html"
+                        class="quick-action-card"
+                    >
+
+                        <div class="quick-action-icon">
+                            <i class="fa-solid fa-wave-square"></i>
+                        </div>
+
+                        <div>
+                            <strong>
+                                Trigonometry
+                            </strong>
+
+                            <span>
+                                sin · cos · tan
+                            </span>
+                        </div>
+
+                    </a>
+
+
+                    <a
+                        href="formulas.html"
+                        class="quick-action-card"
+                    >
+
+                        <div class="quick-action-icon">
+                            ∫
+                        </div>
+
+                        <div>
+                            <strong>
+                                Calculs
+                            </strong>
+
+                            <span>
+                                Derivatives & integrals
+                            </span>
+                        </div>
+
+                    </a>
+
+
+                    <a
+                        href="calculator.html"
+                        class="quick-action-card"
+                    >
+
+                        <div class="quick-action-icon">
+                            x²
+                        </div>
+
+                        <div>
+                            <strong>
+                                Algebra
+                            </strong>
+
+                            <span>
+                                Equations & powers
+                            </span>
+                        </div>
+
+                    </a>
+
+
+                    <a
+                        href="converter.html"
+                        class="quick-action-card"
+                    >
+
+                        <div class="quick-action-icon">
+                            <i class="fa-solid fa-right-left"></i>
+                        </div>
+
+                        <div>
+                            <strong>
+                                Unit Conversion
+                            </strong>
+
+                            <span>
+                                Length · weight · more
+                            </span>
+                        </div>
+
+                    </a>
+
+
+                    <a
+                        href="calculator.html"
+                        class="quick-action-card"
+                    >
+
+                        <div class="quick-action-icon">
+                            <i class="fa-solid fa-table-cells-large"></i>
+                        </div>
+
+                        <div>
+                            <strong>
+                                Matrices
+                            </strong>
+
+                            <span>
+                                Matrix calculations
+                            </span>
+                        </div>
+
+                    </a>
+
+
+                    <a
+                        href="graph.html"
+                        class="quick-action-card"
+                    >
+
+                        <div class="quick-action-icon">
+                            <i class="fa-solid fa-chart-column"></i>
+                        </div>
+
+                        <div>
+                            <strong>
+                                Graph Plotter
+                            </strong>
+
+                            <span>
+                                Plot mathematical functions
+                            </span>
+
+                        </div>
+
+                    </a>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================
+                 RECENT HISTORY
+            ================================== -->
+
+            <section class="dashboard-panel history-panel">
+
+                <div class="panel-title history-title">
+
+                    <div>
+
+                        <span>
+                            <i class="fa-regular fa-clock"></i>
+                        </span>
+
+                        <h2>
+                            Recent History
+                        </h2>
+
+                    </div>
+
+                    <a href="history.html">
+                        View All
+                    </a>
+
+                </div>
+
+
+                <div
+                    id="recentCalculations"
+                    class="recent-calculations"
+                >
+
+                    <div class="empty-state">
+
+                        <div class="empty-icon">
+                            ∑
+                        </div>
+
+                        <h3>
+                            No calculations yet
+                        </h3>
+
+                        <p>
+                            Start using the calculator to see
+                            your recent calculations here.
+                        </p>
+
+                        <a
+                            href="calculator.html"
+                            class="dashboard-secondary-button"
+                        >
+                            Start Calculating
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================
+                 PRO CARD
+            ================================== -->
+
+        </aside>
+
+    </main>
+
+
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================== -->
+
+    <script src="../js/api.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/voiceEngine.js"></script>
+    <script src="../js/dashboard.js"></script>
+
+
+</body>
+
+</html>

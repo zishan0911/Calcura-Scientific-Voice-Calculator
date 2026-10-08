@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Help & Support - Calcura</title>
+
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/help.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+     <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside class="calcura-sidebar">
+
+        <div class="sidebar-brand">
+
+            <div class="sidebar-logo">
+                <i class="fa-solid fa-calculator"></i>
+            </div>
+
+            <div class="sidebar-brand-text">
+                <h1>Calcura</h1>
+                <span>Speak · Calculate · Explore</span>
+            </div>
+
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <a href="dashboard.html" class="sidebar-item">
+                <i class="fa-solid fa-house"></i>
+                <span>Home</span>
+            </a>
+
+            <a href="calculator.html" class="sidebar-item">
+                <i class="fa-solid fa-calculator"></i>
+                <span>Calculator</span>
+            </a>
+
+            <a href="voice-input.html" class="sidebar-item">
+                <i class="fa-solid fa-microphone"></i>
+                <span>Voice Input</span>
+            </a>
+
+            <a href="graph.html" class="sidebar-item">
+                <i class="fa-solid fa-chart-line"></i>
+                <span>Graph &amp; Plot</span>
+            </a>
+
+             <a href="ai-calculator.html" class="calcura-nav-item">
+                <i class="fa-solid fa-robot"></i>
+                <span>AI Assistant</span>
+            </a>
+
+            <a href="formulas.html" class="sidebar-item">
+                <i class="fa-solid fa-book-open"></i>
+                <span>Formula Library</span>
+            </a>
+
+            <a href="converter.html" class="sidebar-item">
+                <i class="fa-solid fa-right-left"></i>
+                <span>Unit Converter</span>
+            </a>
+
+            <a href="history.html" class="sidebar-item">
+                <i class="fa-regular fa-clock"></i>
+                <span>History</span>
+            </a>
+
+            <a href="saved.html" class="sidebar-item">
+                <i class="fa-regular fa-bookmark"></i>
+                <span>Saved</span>
+            </a>
+
+            <a href="settings.html" class="sidebar-item">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+            </a>
+
+            <a href="profile.html" class="sidebar-item">
+                <i class="fa-solid fa-user"></i>
+                <span>Profile</span>
+            </a>
+
+            <a href="about.html" class="sidebar-item">
+                <i class="fa-solid fa-circle-info"></i>
+                <span>About</span>
+            </a>
+
+            <a href="help.html" class="sidebar-item active">
+                <i class="fa-solid fa-circle-question"></i>
+                <span>Help &amp; Support</span>
+            </a>
+
+            <a href="upgrade.html"
+               class="sidebar-item">
+
+                <i class="fa-solid fa-crown"></i>
+
+                <span>
+                    Upgrade to Pro
+                </span>
+
+            </a>
+
+        </nav>
+
+    </aside>
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <main class="help-content">
+
+
+        <!-- TOP BAR -->
+
+        <header class="help-topbar">
+
+            <div class="help-top-search">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input
+                    type="text"
+                    id="topSearchInput"
+                    placeholder="Search help articles, topics, or keywords..."
+                >
+
+            </div>
+
+
+            <div class="help-top-actions">
+
+                <a href="upgrade.html"
+                   class="help-upgrade-btn">
+
+                    <i class="fa-solid fa-crown"></i>
+                    Upgrade to Pro
+
+                </a>
+
+
+                <button
+                    class="notification-btn"
+                    type="button"
+                    id="notificationBtn">
+
+                    <i class="fa-regular fa-bell"></i>
+
+                </button>
+
+
+                <!-- REAL USER -->
+
+                <a href="profile.html"
+                   class="help-user-menu">
+
+                    <div
+                        class="help-header-avatar"
+                        id="headerAvatar">
+                        U
+                    </div>
+
+                    <div class="help-user-info">
+
+                        <strong id="headerUserName">
+                            User
+                        </strong>
+
+                        <span id="headerPlan">
+                            Free Plan
+                        </span>
+
+                    </div>
+
+                    <i class="fa-solid fa-chevron-down"></i>
+
+                </a>
+
+            </div>
+
+        </header>
+
+
+        <!-- PAGE -->
+
+        <div class="help-layout">
+
+
+            <!-- =================================================
+                 LEFT / CENTER CONTENT
+            ================================================== -->
+
+            <section class="help-main">
+
+
+                <!-- HERO -->
+
+                <div class="help-hero">
+
+                    <div>
+
+                        <h1>
+                            Help &amp;
+                            <span>Support</span>
+                        </h1>
+
+                        <p>
+                            We’re here to help you get the most out of Calcura.
+                        </p>
+
+                    </div>
+
+
+                    <div class="help-hero-visual">
+
+                        <div class="question-circle">
+                            ?
+                        </div>
+
+                        <em>
+                            “Questions today,<br>
+                            better calculations tomorrow.”
+                        </em>
+
+                    </div>
+
+                </div>
+
+
+                <!-- SEARCH -->
+
+                <div class="help-search-row">
+
+                    <div class="help-search-box">
+
+                        <i class="fa-solid fa-magnifying-glass"></i>
+
+                        <input
+                            type="text"
+                            id="helpSearchInput"
+                            placeholder="Search for help topics..."
+                        >
+
+                    </div>
+
+                    <button
+                        type="button"
+                        id="helpSearchBtn"
+                        class="help-search-btn">
+
+                        Search
+
+                    </button>
+
+                </div>
+
+
+                <!-- POPULAR TOPICS -->
+
+                <div class="section-title-row">
+
+                    <div>
+
+                        <h2>
+                            Popular Help Topics
+                        </h2>
+
+                        <p>
+                            Find quick answers to the most common questions.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="help-topic-grid"
+                     id="helpTopicGrid">
+
+
+                    <!-- 1 -->
+
+                    <button
+                        class="help-topic-card purple"
+                        data-topic="getting-started">
+
+                        <div class="topic-icon">
+                            <i class="fa-solid fa-calculator"></i>
+                        </div>
+
+                        <div class="topic-text">
+
+                            <strong>
+                                Getting Started
+                            </strong>
+
+                            <span>
+                                Learn the basics of Calcura
+                            </span>
+
+                        </div>
+
+                        <i class="fa-solid fa-chevron-right topic-arrow"></i>
+
+                    </button>
+
+
+                    <!-- 2 -->
+
+                    <button
+                        class="help-topic-card green"
+                        data-topic="voice">
+
+                        <div class="topic-icon">
+                            <i class="fa-solid fa-microphone"></i>
+                        </div>
+
+                        <div class="topic-text">
+
+                            <strong>
+                                Voice Input
+                            </strong>
+
+                            <span>
+                                How to use voice commands
+                            </span>
+
+                        </div>
+
+                        <i class="fa-solid fa-chevron-right topic-arrow"></i>
+
+                    </button>
+
+
+                    <!-- 3 -->
+
+                    <button
+                        class="help-topic-card blue"
+                        data-topic="graph">
+
+                        <div class="topic-icon">
+                            <i class="fa-solid fa-chart-line"></i>
+                        </div>
+
+                        <div class="topic-text">
+
+                            <strong>
+                                Graph &amp; Plot
+                            </strong>
+
+                            <span>
+                                Create and customize graphs
+                            </span>
+
+                        </div>
+
+                        <i class="fa-solid fa-chevron-right topic-arrow"></i>
+
+                    </button>
+
+
+                    <!-- 4 -->
+
+                    <button
+                        class="help-topic-card orange"
+                        data-topic="converter">
+
+                        <div class="topic-icon">
+                            <i class="fa-solid fa-right-left"></i>
+                        </div>
+
+                        <div class="topic-text">
+
+                            <strong>
+                                Unit Converter
+                            </strong>
+
+                            <span>
+                                Convert units easily
+                            </span>
+
+                        </div>
+
+                        <i class="fa-solid fa-chevron-right topic-arrow"></i>
+
+                    </button>
+
+
+                    <!-- 5 -->
+
+                    <button
+                        class="help-topic-card pink"
+                        data-topic="history">
+
+                        <div class="topic-icon">
+                            <i class="fa-solid fa-bookmark"></i>
+                        </div>
+
+                        <div class="topic-text">
+
+                            <strong>
+                                Save &amp; History
+                            </strong>
+
+                            <span>
+                                Manage your data
+                            </span>
+
+                        </div>
+
+                        <i class="fa-solid fa-chevron-right topic-arrow"></i>
+
+                    </button>
+
+
+                    <!-- 6 -->
+
+                    <button
+                        class="help-topic-card violet"
+                        data-topic="account">
+
+                        <div class="topic-icon">
+                            <i class="fa-solid fa-gear"></i>
+                        </div>
+
+                        <div class="topic-text">
+
+                            <strong>
+                                Account &amp; Settings
+                            </strong>
+
+                            <span>
+                                Manage your profile
+                            </span>
+
+                        </div>
+
+                        <i class="fa-solid fa-chevron-right topic-arrow"></i>
+
+                    </button>
+
+
+                    <!-- 7 -->
+
+                    <button
+                        class="help-topic-card yellow"
+                        data-topic="billing">
+
+                        <div class="topic-icon">
+                            <i class="fa-solid fa-crown"></i>
+                        </div>
+
+                        <div class="topic-text">
+
+                            <strong>
+                                Subscription &amp; Billing
+                            </strong>
+
+                            <span>
+                                Upgrade, payment &amp; plans
+                            </span>
+
+                        </div>
+
+                        <i class="fa-solid fa-chevron-right topic-arrow"></i>
+
+                    </button>
+
+
+                    <!-- 8 -->
+
+                    <button
+                        class="help-topic-card cyan"
+                        data-topic="privacy">
+
+                        <div class="topic-icon">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+
+                        <div class="topic-text">
+
+                            <strong>
+                                Privacy &amp; Security
+                            </strong>
+
+                            <span>
+                                Your data is safe with us
+                            </span>
+
+                        </div>
+
+                        <i class="fa-solid fa-chevron-right topic-arrow"></i>
+
+                    </button>
+
+
+                    <!-- 9 -->
+
+                </div>
+
+
+                <!-- FAQ -->
+
+                <div class="faq-heading">
+
+                    <div>
+
+                        <h2>
+                            Frequently Asked Questions
+                        </h2>
+
+                        <p>
+                            Quick answers to help you solve problems instantly.
+                        </p>
+
+                    </div>
+
+                    <button
+                        type="button"
+                        id="viewAllFaqBtn">
+
+                        View All FAQs
+
+                    </button>
+
+                </div>
+
+
+                <div class="faq-list" id="faqList">
+
+
+                    <details>
+
+                        <summary>
+                            <span>
+                                How do I use voice input in Calcura?
+                            </span>
+
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </summary>
+
+                        <p>
+                            Open Voice Input, allow microphone access
+                            when requested, press the microphone button
+                            and speak your mathematical expression.
+                        </p>
+
+                    </details>
+
+
+                    <details>
+
+                        <summary>
+                            <span>
+                                Is Calcura free to use?
+                            </span>
+
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </summary>
+
+                        <p>
+                            Calcura provides a Free Plan with basic
+                            calculation features. Additional features
+                            can be available through the Pro plan.
+                        </p>
+
+                    </details>
+
+
+                    <details>
+
+                        <summary>
+                            <span>
+                                Can I save my calculations and formulas?
+                            </span>
+
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </summary>
+
+                        <p>
+                            Yes. Use the Save option where available.
+                            Your saved calculations can be accessed
+                            from the Saved page and previous calculations
+                            can be viewed in History.
+                        </p>
+
+                    </details>
+
+
+                    <details>
+
+                        <summary>
+                            <span>
+                                How do I upgrade to Pro?
+                            </span>
+
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </summary>
+
+                        <p>
+                            Open the Upgrade to Pro page from the sidebar
+                            or the button in the top navigation.
+                        </p>
+
+                    </details>
+
+
+                    <details>
+
+                        <summary>
+                            <span>
+                                Does Calcura work offline?
+                            </span>
+
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </summary>
+
+                        <p>
+                            Offline availability depends on the feature
+                            and the current Calcura implementation.
+                        </p>
+
+                    </details>
+
+
+                    <details>
+
+                        <summary>
+                            <span>
+                                How do I contact support?
+                            </span>
+
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </summary>
+
+                        <p>
+                            Select a support topic in the Contact Support
+                            panel and send your message. You can also use
+                            the support options shown on this page.
+                        </p>
+
+                    </details>
+
+                </div>
+
+            </section>
+
+        </div>
+
+
+        <!-- FOOTER -->
+
+        <footer class="help-footer">
+
+            <span>
+                © 2026 Calcura. All rights reserved.
+            </span>
+
+            <div>
+                <a href="help.html">Help</a>
+                <a href="about.html">About</a>
+
+            </div>
+
+        </footer>
+
+    </main>
+
+
+    <script src="../js/api.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/help.js"></script>
+
+</body>
+
+</html>

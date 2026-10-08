@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Calculations - Calcura Admin</title>
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../admin-css/calculations.css"
+    >
+</head>
+
+<body>
+
+<!-- =====================================================
+     SIDEBAR
+===================================================== -->
+
+<aside
+    class="admin-sidebar"
+    id="adminSidebar"
+>
+
+    <div class="sidebar-brand">
+
+        <div class="brand-logo">
+            C
+        </div>
+
+        <div class="brand-text">
+            <strong>CALCURA</strong>
+            <span>Admin Panel</span>
+        </div>
+
+    </div>
+
+
+    <nav class="sidebar-nav">
+
+        <a
+            href="dashboard.html"
+            class="sidebar-link"
+        >
+            <i class="fa-solid fa-house"></i>
+            <span>Dashboard</span>
+        </a>
+
+
+        <a
+            href="users.html"
+            class="sidebar-link"
+        >
+            <i class="fa-solid fa-users"></i>
+            <span>Users</span>
+        </a>
+
+
+        <a
+            href="calculations.html"
+            class="sidebar-link active"
+        >
+            <i class="fa-solid fa-calculator"></i>
+            <span>Calculations</span>
+        </a>
+
+
+        <a
+            href="formulas.html"
+            class="sidebar-link"
+        >
+            <i class="fa-solid fa-book-open"></i>
+            <span>Formula Library</span>
+        </a>
+
+
+        <a
+            href="subscriptions.html"
+            class="sidebar-link"
+        >
+            <i class="fa-solid fa-credit-card"></i>
+            <span>Subscriptions</span>
+        </a>
+
+
+        <a
+            href="reports.html"
+            class="sidebar-link"
+        >
+            <i class="fa-solid fa-chart-column"></i>
+            <span>Reports</span>
+        </a>
+
+
+        <a
+            href="activity-logs.html"
+            class="sidebar-link"
+        >
+            <i class="fa-solid fa-file-lines"></i>
+            <span>Activity Logs</span>
+        </a>
+
+
+        <a
+            href="settings.html"
+            class="sidebar-link"
+        >
+            <i class="fa-solid fa-gear"></i>
+            <span>System Settings</span>
+        </a>
+
+
+        <a
+            href="website-content.html"
+            class="sidebar-link"
+        >
+            <i class="fa-solid fa-palette"></i>
+            <span>Website Content</span>
+        </a>
+
+
+        <a
+            href="user-accounts.html"
+            class="sidebar-link"
+        >
+            <i class="fa-solid fa-user-shield"></i>
+            <span>User Accounts</span>
+        </a>
+
+
+    </nav>
+
+
+    <div class="admin-control-card">
+
+        <div class="control-icon">
+            <i class="fa-solid fa-crown"></i>
+        </div>
+
+        <strong>Admin Control</strong>
+
+        <b>Full Control</b>
+
+        <p>
+            You have complete access to manage
+            Calcura.
+        </p>
+
+    </div>
+
+</aside>
+
+
+<!-- =====================================================
+     MAIN AREA
+===================================================== -->
+
+<main class="admin-main">
+
+
+    <!-- =================================================
+         HEADER
+    ================================================= -->
+
+    <header class="admin-header">
+
+        <button
+            type="button"
+            class="sidebar-toggle"
+            id="sidebarToggle"
+            aria-label="Toggle sidebar"
+        >
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+
+        <div class="global-search">
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            <input
+                type="search"
+                id="globalSearch"
+                placeholder="Search calculations by user, expression, type..."
+            >
+
+        </div>
+
+
+        <div class="header-right">
+
+
+            <button
+                type="button"
+                class="notification-button"
+                id="notificationButton"
+                title="Notifications"
+            >
+                <i class="fa-regular fa-bell"></i>
+            </button>
+
+
+            <button
+                type="button"
+                class="admin-profile"
+                id="adminProfileButton"
+            >
+
+                <span
+                    class="admin-avatar"
+                    id="adminAvatar"
+                >
+                    A
+                </span>
+
+
+                <span class="admin-profile-info">
+
+                    <strong id="adminName">
+                        Admin
+                    </strong>
+
+                    <small id="adminRole">
+                        Administrator
+                    </small>
+
+                </span>
+
+
+                <i class="fa-solid fa-chevron-down"></i>
+
+            </button>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =================================================
+         PAGE CONTENT
+    ================================================= -->
+
+    <section class="page-content">
+
+
+        <!-- PAGE TITLE -->
+
+        <div class="page-heading">
+
+            <div>
+
+                <h1>
+                    Calculations
+                </h1>
+
+                <p>
+                    View and manage all calculations
+                    performed by users on Calcura.
+                </p>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="export-button"
+                id="exportButton"
+            >
+
+                <i class="fa-solid fa-download"></i>
+
+                Export Data
+
+            </button>
+
+        </div>
+
+
+
+        <!-- =================================================
+             STAT CARDS
+        ================================================= -->
+
+        <section class="stats-grid">
+
+
+            <div class="stat-card blue">
+
+                <div class="stat-icon">
+                    <i class="fa-solid fa-calculator"></i>
+                </div>
+
+                <div class="stat-content">
+
+                    <span>
+                        Total Calculations
+                    </span>
+
+                    <strong id="totalCalculations">
+                        0
+                    </strong>
+
+                    <small id="totalChange">
+                        Live database data
+                    </small>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="stat-card green">
+
+                <div class="stat-icon">
+                    <i class="fa-solid fa-users"></i>
+                </div>
+
+                <div class="stat-content">
+
+                    <span>
+                        Unique Users
+                    </span>
+
+                    <strong id="uniqueUsers">
+                        0
+                    </strong>
+
+                    <small id="uniqueChange">
+                        Users who made calculations
+                    </small>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="stat-card purple">
+
+                <div class="stat-icon">
+                    <i class="fa-solid fa-bookmark"></i>
+                </div>
+
+                <div class="stat-content">
+
+                    <span>
+                        Saved Calculations
+                    </span>
+
+                    <strong id="savedCalculations">
+                        0
+                    </strong>
+
+                    <small>
+                        Calculations saved by users
+                    </small>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="stat-card red">
+
+                <div class="stat-icon">
+                    <i class="fa-solid fa-trash-can"></i>
+                </div>
+
+                <div class="stat-content">
+
+                    <span>
+                        Deleted Calculations
+                    </span>
+
+                    <strong id="deletedCalculations">
+                        0
+                    </strong>
+
+                    <small>
+                        Deletion tracking unavailable
+                    </small>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             CHARTS
+        ================================================= -->
+
+        <section class="charts-grid">
+
+
+            <!-- CALCULATIONS BY TYPE -->
+
+            <div class="chart-card">
+
+                <div class="chart-header">
+
+                    <h2>
+                        <i class="fa-solid fa-chart-pie"></i>
+                        Calculations by Type
+                    </h2>
+
+                    <span id="typeTotal">
+                        0 total
+                    </span>
+
+                </div>
+
+
+                <div class="type-chart-area">
+
+                    <div
+                        class="donut-chart"
+                        id="typeDonut"
+                    >
+
+                        <div class="donut-center">
+
+                            <strong id="donutTotal">
+                                0
+                            </strong>
+
+                            <span>
+                                Total
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        class="type-legend"
+                        id="typeLegend"
+                    >
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- DAILY CALCULATIONS -->
+
+            <div class="chart-card">
+
+                <div class="chart-header">
+
+                    <h2>
+                        <i class="fa-solid fa-chart-line"></i>
+                        Daily Calculations
+                    </h2>
+
+
+                    <select id="activityRange">
+
+                        <option value="7">
+                            Last 7 Days
+                        </option>
+
+                        <option value="14">
+                            Last 14 Days
+                        </option>
+
+                        <option
+                            value="30"
+                            selected
+                        >
+                            Last 30 Days
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div
+                    class="daily-chart"
+                    id="dailyChart"
+                >
+                </div>
+
+            </div>
+
+
+
+            <!-- POPULAR TYPES -->
+
+            <div class="chart-card">
+
+                <div class="chart-header">
+
+                    <h2>
+                        <i class="fa-solid fa-chart-simple"></i>
+                        Popular Calculation Types
+                    </h2>
+
+                </div>
+
+
+                <div
+                    class="popular-types"
+                    id="popularTypes"
+                >
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             FILTERS
+        ================================================= -->
+
+        <section class="filters-panel">
+
+
+            <div class="filter-search">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input
+                    type="search"
+                    id="calculationSearch"
+                    placeholder="Search by user, expression or result..."
+                >
+
+            </div>
+
+
+            <select id="categoryFilter">
+
+                <option value="all">
+                    All Types
+                </option>
+
+                <option value="Basic Arithmetic">
+                    Basic Arithmetic
+                </option>
+
+                <option value="Trigonometry">
+                    Trigonometry
+                </option>
+
+                <option value="Algebra">
+                    Algebra
+                </option>
+
+                <option value="Calculus">
+                    Calculus
+                </option>
+
+                <option value="Graph/Plot">
+                    Graph/Plot
+                </option>
+
+                <option value="Matrix">
+                    Matrix
+                </option>
+
+                <option value="Log & Exp">
+                    Log & Exp
+                </option>
+
+                <option value="Numerical Methods">
+                    Numerical Methods
+                </option>
+
+                <option value="Unit Converter">
+                    Unit Converter
+                </option>
+
+                <option value="Other">
+                    Other
+                </option>
+
+            </select>
+
+
+            <select id="userFilter">
+
+                <option value="all">
+                    All Users
+                </option>
+
+            </select>
+
+
+            <select id="statusFilter">
+
+                <option value="all">
+                    All Status
+                </option>
+
+                <option value="completed">
+                    Completed
+                </option>
+
+            </select>
+
+
+            <input
+                type="date"
+                id="dateFrom"
+                title="From date"
+            >
+
+
+            <input
+                type="date"
+                id="dateTo"
+                title="To date"
+            >
+
+
+            <button
+                type="button"
+                class="reset-button"
+                id="resetButton"
+            >
+                Reset
+            </button>
+
+        </section>
+
+
+
+        <!-- =================================================
+             CALCULATIONS TABLE
+        ================================================= -->
+
+        <section class="table-panel">
+
+            <div class="table-scroll">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                #
+                            </th>
+
+                            <th>
+                                User
+                            </th>
+
+                            <th>
+                                Expression
+                            </th>
+
+                            <th>
+                                Result
+                            </th>
+
+                            <th>
+                                Type
+                            </th>
+
+                            <th>
+                                Date & Time
+                            </th>
+
+                            <th>
+                                Status
+                            </th>
+
+                            <th>
+                                Actions
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody
+                        id="calculationsTableBody"
+                    >
+
+                        <tr>
+
+                            <td
+                                colspan="8"
+                                class="loading-cell"
+                            >
+
+                                Loading real
+                                MongoDB calculations...
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+
+
+            <!-- TABLE FOOTER -->
+
+            <div class="table-footer">
+
+                <span id="paginationInfo">
+                    Showing 0 to 0 of 0 calculations
+                </span>
+
+
+                <div
+                    id="paginationControls"
+                    class="pagination-controls"
+                >
+                </div>
+
+            </div>
+
+        </section>
+
+    </section>
+
+</main>
+
+
+
+<!-- =====================================================
+     CALCULATION DETAILS MODAL
+===================================================== -->
+
+<div
+    class="modal-backdrop hidden"
+    id="calculationModal"
+>
+
+    <div class="calculation-modal">
+
+
+        <button
+            type="button"
+            class="modal-close"
+            id="modalClose"
+        >
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+
+        <div class="modal-icon">
+            <i class="fa-solid fa-calculator"></i>
+        </div>
+
+
+        <h2>
+            Calculation Details
+        </h2>
+
+
+        <div
+            id="calculationDetails"
+            class="calculation-details"
+        >
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     TOAST
+===================================================== -->
+
+<div
+    class="admin-toast hidden"
+    id="adminToast"
+>
+
+    <i class="fa-solid fa-circle-check"></i>
+
+    <span id="toastMessage">
+    </span>
+
+</div>
+
+
+
+<script
+    src="../admin-js/calculations.js"
+></script>
+
+</body>
+</html>
