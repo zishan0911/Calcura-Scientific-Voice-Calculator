@@ -5,6 +5,7 @@ const {
     loginUser,
     updateProfile,
     changePassword,
+    resetPassword,
     getSettings,
     updateSettings
 } = require("../controllers/authController");
@@ -33,6 +34,14 @@ router.post(
     loginUser
 );
 
+// ===============================
+// RESET PASSWORD
+// ===============================
+
+router.put(
+    "/reset-password",
+    resetPassword
+);
 
 // ===============================
 // UPDATE PROFILE

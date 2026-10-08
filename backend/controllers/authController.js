@@ -93,7 +93,57 @@ const loginUser = async (req, res) => {
             });
 
         }
+// ==========================================
+// FIXED ADMIN LOGIN FROM .ENV
+// ==========================================
 
+if (
+    email.trim().toLowerCase() ===
+        process.env.ADMIN_EMAIL.trim().toLowerCase() &&
+    password === process.env.ADMIN_PASSWORD
+) {
+
+    const adminUser = await User.findOne({
+        email: process.env.ADMIN_EMAIL.trim().toLowerCase(),
+        role: "admin"
+    });
+
+    if (!adminUser) {
+        return res.status(401).json({
+            success: false,
+            message: "Admin account not found"
+        });
+    }
+
+    if (adminUser.blocked) {
+        return res.status(403).json({
+            success: false,
+            message: "Admin account is blocked"
+        });
+    }
+
+    const token = jwt.sign(
+        {
+            userId: adminUser._id
+        },
+        process.env.JWT_SECRET,
+        {
+            expiresIn: "7d"
+        }
+    );
+
+    return res.status(200).json({
+        success: true,
+        message: "Admin login successful",
+        token: token,
+        user: {
+            id: adminUser._id,
+            name: adminUser.name,
+            email: adminUser.email,
+            role: "admin"
+        }
+    });
+}
 
         // Find user
         const user = await User.findOne({
@@ -550,6 +600,90 @@ const getSettings = async (req, res) => {
     }
 };
 
+// ===============================
+// RESET PASSWORD
+// ===============================
+
+const resetPassword = async (req, res) => {
+    try {
+
+        const {
+            email,
+            newPassword
+        } = req.body;
+
+        if (!email || !newPassword) {
+            return res.status(400).json({
+                success: false,
+                message: "Email and new password are required"
+            });
+        }
+
+        if (newPassword.length < 8) {
+            return res.status(400).json({
+                success: false,
+                message:
+                    "Password must contain at least 8 characters"
+            });
+        }
+
+        if (!/[0-9]/.test(newPassword)) {
+            return res.status(400).json({
+                success: false,
+                message:
+                    "Password must contain at least one number"
+            });
+        }
+
+        if (!/[^A-Za-z0-9]/.test(newPassword)) {
+            return res.status(400).json({
+                success: false,
+                message:
+                    "Password must contain one special character"
+            });
+        }
+
+        const user = await User.findOne({
+            email: email.trim().toLowerCase()
+        });
+
+        if (!user) {
+            return res.status(404).json({
+                success: false,
+                message:
+                    "No account found with this email"
+            });
+        }
+
+        const hashedPassword = await bcrypt.hash(
+            newPassword,
+            12
+        );
+
+        user.password = hashedPassword;
+
+        await user.save();
+
+        return res.status(200).json({
+            success: true,
+            message:
+                "Password reset successfully"
+        });
+
+    } catch (error) {
+
+        console.error(
+            "Reset password error:",
+            error
+        );
+
+        return res.status(500).json({
+            success: false,
+            message:
+                "Server error while resetting password"
+        });
+    }
+};
 
 // ===============================
 // UPDATE USER SETTINGS
@@ -693,6 +827,7 @@ module.exports = {
     loginUser,
     updateProfile,
     changePassword,
+    resetPassword,
     getSettings,
     updateSettings
 };

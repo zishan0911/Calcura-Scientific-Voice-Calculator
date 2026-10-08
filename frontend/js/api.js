@@ -1,5 +1,4 @@
-const API_BASE_URL = "https://calcura-scientific-voice-calculator-beta.vercel.app/api";
-
+const API_BASE_URL = "http://localhost:5000/api";
 async function apiRequest(endpoint, options = {}) {
     try {
         const response = await fetch(`${API_BASE_URL}${endpoint}`, {
